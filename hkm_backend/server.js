@@ -6,9 +6,7 @@ import crypto from "crypto";
 dotenv.config(); // loads .env file
 
 const app = express();
-app.use(cors({
-  origin: "https://your-frontend-domain.com"
-}));
+app.use(cors());
 app.use(express.json());
 
 // 🔑 ICICI Config from .env
@@ -40,60 +38,125 @@ function decrypt(encryptedText) {
 
 // 🟢 API to initiate payment
 app.post("/api/initiate-payment", (req, res) => {
+  console.log("🔍 Request received:", req.body);
+  
   try {
+    // 1. Check environment variables first
+    console.log("🔑 Environment check:");
+    console.log("AES_KEY exists:", !!AES_KEY);
+    console.log("AES_KEY length:", AES_KEY ? AES_KEY.length : 0);
+    console.log("MERCHANT_ID exists:", !!MERCHANT_ID);
+    console.log("RETURN_URL exists:", !!RETURN_URL);
+    
+    if (!AES_KEY || !MERCHANT_ID || !RETURN_URL) {
+      console.error("❌ Missing environment variables!");
+      return res.status(500).json({ 
+        success: false, 
+        error: "Server configuration error" 
+      });
+    }
+
+    // ✅ Fixed: Use the correct field names from frontend
     const {
       referenceNo,
-      subMerchantId,
-      amount,
-      name,
-      mobile,
-      email,
+      submerchantId,
+      transactionAmount,
+      customerName,
+      mobileNumber,
+      emailId,
       city,
       state,
       address,
       pincode,
       paymode,
+      returnUrl
     } = req.body;
 
-    // Basic validation
-    if (
-      !referenceNo ||
-      !subMerchantId ||
-      !amount ||
-      !name ||
-      !mobile ||
-      !email ||
-      !city ||
-      !state ||
-      !address ||
-      !pincode
-    ) {
-      return res.status(400).json({ success: false, error: "Missing required fields" });
+    // ✅ Fixed: Log the correct variable names
+    console.log("📝 Extracted data:", {
+      referenceNo, 
+      submerchantId, 
+      transactionAmount, 
+      customerName, 
+      mobileNumber, 
+      emailId
+    });
+
+    // ✅ Fixed: Validate using the correct field names
+    const missingFields = [];
+    if (!referenceNo) missingFields.push('referenceNo');
+    if (!submerchantId) missingFields.push('submerchantId');
+    if (!transactionAmount) missingFields.push('transactionAmount');
+    if (!customerName) missingFields.push('customerName');
+    if (!mobileNumber) missingFields.push('mobileNumber');
+    if (!emailId) missingFields.push('emailId');
+    if (!city) missingFields.push('city');
+    if (!state) missingFields.push('state');
+    if (!address) missingFields.push('address');
+    if (!pincode) missingFields.push('pincode');
+
+    if (missingFields.length > 0) {
+      console.log("❌ Missing fields:", missingFields);
+      return res.status(400).json({ 
+        success: false, 
+        error: "Missing required fields",
+        missingFields 
+      });
     }
 
-    // Mandatory fields (pipe separated, exactly 10)
+    // ✅ Fixed: Use correct variable names in mandatory fields
     const mandatoryFields = [
       referenceNo,
-      subMerchantId,
-      amount,
-      name,
-      mobile,
-      email,
+      submerchantId,
+      transactionAmount,
+      customerName,
+      mobileNumber,
+      emailId,
       city,
       state,
       address,
       pincode,
     ].join("|");
+    
+    console.log("📦 Mandatory fields:", mandatoryFields);
 
-    // Encrypt required fields
-    const encryptedMandatory = encrypt(mandatoryFields);
-    const encryptedReturnUrl = encrypt(RETURN_URL);
-    const encryptedReferenceNo = encrypt(referenceNo);
-    const encryptedSubmerchantId = encrypt(subMerchantId);
-    const encryptedAmount = encrypt(amount.toString());
-    const encryptedPaymode = encrypt(paymode?.toString() || "9");
+    // 4. Test encryption with error handling
+    console.log("🔐 Starting encryption...");
+    
+    let encryptedMandatory, encryptedReturnUrl, encryptedReferenceNo, 
+        encryptedSubmerchantId, encryptedAmount, encryptedPaymode;
+    
+    try {
+      encryptedMandatory = encrypt(mandatoryFields);
+      console.log("✅ Mandatory fields encrypted");
+      
+      encryptedReturnUrl = encrypt(RETURN_URL);
+      console.log("✅ Return URL encrypted");
+      
+      encryptedReferenceNo = encrypt(referenceNo);
+      console.log("✅ Reference No encrypted");
+      
+      encryptedSubmerchantId = encrypt(submerchantId);
+      console.log("✅ Submerchant ID encrypted");
+      
+      // ✅ Fixed: Use transactionAmount instead of amount
+      encryptedAmount = encrypt(transactionAmount.toString());
+      console.log("✅ Amount encrypted");
+      
+      encryptedPaymode = encrypt(paymode?.toString() || "9");
+      console.log("✅ Paymode encrypted");
+      
+    } catch (encryptError) {
+      console.error("💥 Encryption failed:", encryptError);
+      return res.status(500).json({ 
+        success: false, 
+        error: "Encryption failed: " + encryptError.message 
+      });
+    }
 
-    // Build ICICI payment URL
+    // 5. Build payment URL
+    console.log("🔗 Building payment URL...");
+    
     const baseUrl = "https://eazypay.icicibank.com/EazyPG";
     const params = new URLSearchParams({
       merchantid: MERCHANT_ID,
@@ -101,16 +164,24 @@ app.post("/api/initiate-payment", (req, res) => {
       "optional fields": "",
       returnurl: encryptedReturnUrl,
       "Reference No": encryptedReferenceNo,
+      // ✅ Fixed: Use correct variable name
       submerchantid: encryptedSubmerchantId,
       "transaction amount": encryptedAmount,
       paymode: encryptedPaymode,
     });
 
     const paymentUrl = `${baseUrl}?${params.toString()}`;
+    console.log("✅ Payment URL generated successfully");
 
     res.json({ success: true, paymentUrl });
+    
   } catch (err) {
-    res.status(500).json({ success: false, error: err.message });
+    console.error("💥 Unexpected error:", err);
+    console.error("Stack trace:", err.stack);
+    res.status(500).json({ 
+      success: false, 
+      error: "Internal server error: " + err.message 
+    });
   }
 });
 
