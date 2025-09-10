@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICICI Payment Gateway Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .button:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
+        }
+        .error {
+            border-left-color: #dc3545;
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .success {
+            border-left-color: #28a745;
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .info-box {
+            background-color: #e7f3ff;
+            border: 1px solid #b3d7ff;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🏦 ICICI Payment Gateway Test</h2>
+        
+        <div class="info-box">
+            <h3>Test Payment Details:</h3>
+            <p><strong>Amount:</strong> ₹10</p>
+            <p><strong>Merchant:</strong> HARE KRISHNA MOVEMENT JODHPUR</p>
+            <p><strong>Test Mode:</strong> Yes</p>
+        </div>
+
+        <h3>Test Options:</h3>
+        
+        <button class="button" onclick="handlePayment()">
+            💳 Pay ₹10 (Redirect)
+        </button>
+        
+        <button class="button" onclick="testAPICall()">
+            🔗 Test API Call
+        </button>
+        
+        <button class="button" onclick="testEncryption()">
+            🔐 Test Encryption
+        </button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:5000';
+        
+        // Function to show results
+        function showResult(content, type = 'info') {
+            const resultDiv = document.getElementById('result');
+            resultDiv.className = `result ${type}`;
+            resultDiv.innerHTML = content;
+        }
+
+        // Handle payment - redirect to payment gateway
+        const handlePayment = async () => {
+            try {
+                showResult('🔄 Generating payment URL...', 'info');
+                
+                const response = await fetch(`${API_BASE}/api/pay`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    showResult('✅ Payment URL generated! Redirecting to ICICI Bank...', 'success');
+                    
+                    // Small delay to show the success message
+                    setTimeout(() => {
+                        window.location.href = data.paymentUrl;
+                    }, 1500);
+                } else {
+                    showResult('❌ Error: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showResult('❌ Failed to connect to server: ' + error.message, 'error');
+            }
+        };
+
+        // Test API call without redirect
+        const testAPICall = async () => {
+            try {
+                showResult('🔄 Testing API call...', 'info');
+                
+                const response = await fetch(`${API_BASE}/api/pay`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    const content = `
+                        <h4>✅ API Call Successful</h4>
+                        <p><strong>Payment URL Generated:</strong></p>
+                        <textarea style="width: 100%; height: 100px; font-size: 12px;">${data.paymentUrl}</textarea>
+                        <br><br>
+                        <button class="button" onclick="window.open('${data.paymentUrl}', '_blank')">
+                            Open Payment URL
+                        </button>
+                    `;
+                    showResult(content, 'success');
+                } else {
+                    showResult('❌ API Error: ' + data.error, 'error');
+                }
+            } catch (error) {
+                showResult('❌ Connection Error: ' + error.message, 'error');
+            }
+        };
+
+        // Test encryption endpoint
+        const testEncryption = async () => {
+            try {
+                showResult('🔄 Testing encryption...', 'info');
+                
+                const response = await fetch(`${API_BASE}/test-encryption`);
+                const data = await response.json();
+                
+                if (data.match) {
+                    const content = `
+                        <h4>✅ Encryption Test Successful</h4>
+                        <p><strong>Original:</strong><br><code>${data.original}</code></p>
+                        <p><strong>Encrypted:</strong><br><code>${data.encrypted}</code></p>
+                        <p><strong>Decrypted:</strong><br><code>${data.decrypted}</code></p>
+                        <p><strong>Match:</strong> ${data.match ? '✅ Yes' : '❌ No'}</p>
+                    `;
+                    showResult(content, 'success');
+                } else if (data.error) {
+                    showResult('❌ Encryption Error: ' + data.error, 'error');
+                } else {
+                    showResult('❌ Encryption/Decryption mismatch!', 'error');
+                }
+            } catch (error) {
+                showResult('❌ Connection Error: ' + error.message, 'error');
+            }
+        };
+
+        // Auto-test connection on page load
+        window.onload = () => {
+            fetch(`${API_BASE}/`)
+                .then(() => {
+                    console.log('✅ Server connection successful');
+                })
+                .catch(() => {
+                    showResult('⚠️ Warning: Cannot connect to server. Make sure the Node.js server is running on port 5000.', 'error');
+                });
+        };
+    </script>
+</body>
+</html>

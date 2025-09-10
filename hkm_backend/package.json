@@ -1,0 +1,19 @@
+{
+  "name": "hkm_backend",
+  "version": "1.0.0",
+  "description": "This is the payment integration for HKM Jodhpur",
+  "license": "ISC",
+  "author": "Puneet Sharma",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon ./server.js"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0"
+  }
+}
