@@ -17,9 +17,13 @@ const RETURN_URL = process.env.ICICI_RETURN_URL;
 // 🔒 AES-128-ECB encryption
 function encrypt(text) {
   try {
-    const key = Buffer.from(AES_KEY, "utf8"); // Use full key, not sliced
+    if (!text && text !== 0) {
+      throw new Error("Text to encrypt is undefined or null");
+    }
+    
+    const key = Buffer.from(AES_KEY.slice(0, 16), "utf8"); // Consistent with decrypt
     const cipher = crypto.createCipheriv("aes-128-ecb", key, null);
-    let encrypted = cipher.update(text, "utf8", "base64");
+    let encrypted = cipher.update(String(text), "utf8", "base64");
     encrypted += cipher.final("base64");
     return encrypted;
   } catch (error) {
@@ -27,6 +31,7 @@ function encrypt(text) {
     throw error;
   }
 }
+
 
 // 🔓 AES-128-ECB decryption (for ICICI response)
 function decrypt(encryptedText) {
@@ -126,38 +131,47 @@ app.post("/api/initiate-payment", (req, res) => {
     console.log("📦 Mandatory fields:", mandatoryFields);
 
     // 4. Test encryption with error handling
-    console.log("🔐 Starting encryption...");
-    
-    let encryptedMandatory, encryptedReturnUrl, encryptedReferenceNo, 
-        encryptedSubmerchantId, encryptedAmount, encryptedPaymode;
-    
-    try {
-      encryptedMandatory = encrypt(mandatoryFields);
-      console.log("✅ Mandatory fields encrypted");
-      
-      encryptedReturnUrl = encrypt(RETURN_URL);
-      console.log("✅ Return URL encrypted");
-      
-      encryptedReferenceNo = encrypt(referenceNo);
-      console.log("✅ Reference No encrypted");
-      
-      encryptedSubmerchantId = encrypt(submerchantId);
-      console.log("✅ Submerchant ID encrypted");
-      
-      // ✅ Fixed: Use transactionAmount instead of amount
-      encryptedAmount = encrypt(transactionAmount.toString());
-      console.log("✅ Amount encrypted");
-      
-      encryptedPaymode = encrypt(paymode?.toString() || "9");
-      console.log("✅ Paymode encrypted");
-      
-    } catch (encryptError) {
-      console.error("💥 Encryption failed:", encryptError);
-      return res.status(500).json({ 
-        success: false, 
-        error: "Encryption failed: " + encryptError.message 
-      });
-    }
+console.log("🔐 Starting encryption...");
+
+// Add debugging to find undefined values
+console.log("🔍 Debugging field values before encryption:");
+console.log("referenceNo:", referenceNo, typeof referenceNo);
+console.log("submerchantId:", submerchantId, typeof submerchantId);
+console.log("transactionAmount:", transactionAmount, typeof transactionAmount);
+console.log("paymode:", paymode, typeof paymode);
+console.log("RETURN_URL:", RETURN_URL, typeof RETURN_URL);
+
+let encryptedMandatory, encryptedReturnUrl, encryptedReferenceNo, 
+    encryptedSubmerchantId, encryptedAmount, encryptedPaymode;
+
+try {
+  encryptedMandatory = encrypt(mandatoryFields);
+  console.log("✅ Mandatory fields encrypted");
+  
+  encryptedReturnUrl = encrypt(RETURN_URL);
+  console.log("✅ Return URL encrypted");
+  
+  encryptedReferenceNo = encrypt(String(referenceNo || ''));
+  console.log("✅ Reference No encrypted");
+  
+  encryptedSubmerchantId = encrypt(String(submerchantId || ''));
+  console.log("✅ Submerchant ID encrypted");
+  
+  // ✅ Safe conversion: Handle undefined transactionAmount
+  encryptedAmount = encrypt(String(transactionAmount || '0'));
+  console.log("✅ Amount encrypted");
+  
+  encryptedPaymode = encrypt(String(paymode || '9'));
+  console.log("✅ Paymode encrypted");
+  
+} catch (encryptError) {
+  console.error("💥 Encryption failed:", encryptError);
+  return res.status(500).json({ 
+    success: false, 
+    error: "Encryption failed: " + encryptError.message 
+  });
+}
+
 
     // 5. Build payment URL
     console.log("🔗 Building payment URL...");
