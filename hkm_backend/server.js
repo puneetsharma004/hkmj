@@ -6,7 +6,15 @@ import crypto from "crypto";
 dotenv.config(); // loads .env file
 
 const app = express();
-app.use(cors());
+// With this more secure version:
+app.use(cors({
+  origin: [
+    "https://harekrishnamarwar.org",
+    "https://www.harekrishnamarwar.org"
+  ],
+  methods: ["GET", "POST", "OPTIONS"],
+  credentials: true
+}));
 app.use(express.json());
 
 // 🔑 ICICI Config from .env
