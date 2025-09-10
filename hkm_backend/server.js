@@ -16,11 +16,16 @@ const RETURN_URL = process.env.ICICI_RETURN_URL;
 
 // 🔒 AES-128-ECB encryption
 function encrypt(text) {
-  const key = Buffer.from(AES_KEY.slice(0, 16), "utf8");
-  const cipher = crypto.createCipheriv("aes-128-ecb", key, null);
-  let encrypted = cipher.update(text, "utf8", "base64");
-  encrypted += cipher.final("base64");
-  return encrypted;
+  try {
+    const key = Buffer.from(AES_KEY, "utf8"); // Use full key, not sliced
+    const cipher = crypto.createCipheriv("aes-128-ecb", key, null);
+    let encrypted = cipher.update(text, "utf8", "base64");
+    encrypted += cipher.final("base64");
+    return encrypted;
+  } catch (error) {
+    console.error("Encryption error:", error);
+    throw error;
+  }
 }
 
 // 🔓 AES-128-ECB decryption (for ICICI response)
