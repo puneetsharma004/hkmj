@@ -237,68 +237,71 @@ app.post("/api/initiate-payment", (req, res) => {
 });
 
 // 🟢 Enhanced payment response handler - REDIRECT to your frontend
-app.post("/thank-you", (req, res) => {
-  const responseId = `RESP_${Date.now()}`;
-  console.log(`💳 [${responseId}] ICICI Response received:`, req.body);
+// In your server.js, update the response processing section:
+app.all("/thank-you", (req, res) => {
+  if (req.method === 'POST') {
+    const responseId = `RESP_${Date.now()}`;
+    console.log(`💳 [${responseId}] ICICI Response received:`, req.body);
 
-  try {
-    // Decrypt response data
-    const decryptedResponse = {};
-    const rawResponse = req.body;
+    try {
+      // Some fields come unencrypted from ICICI - don't try to decrypt everything
+      const unencryptedFields = ['Response Code', 'SubMerchantId', 'ReferenceNo', 'ID', 'TPS'];
+      const decryptedResponse = {};
 
-    for (const [key, value] of Object.entries(rawResponse)) {
-      if (value) {
-        const decrypted = decrypt(value);
-        decryptedResponse[key] = decrypted || value;
+      for (const [key, value] of Object.entries(req.body)) {
+        if (value && value !== 'null') {
+          if (unencryptedFields.includes(key)) {
+            // Use as-is for unencrypted fields
+            decryptedResponse[key] = value;
+          } else {
+            // Try to decrypt, fall back to original if decryption fails
+            const decrypted = decrypt(value);
+            decryptedResponse[key] = decrypted || value;
+          }
+        }
       }
-    }
 
-    console.log(`🔓 [${responseId}] Decrypted response:`, decryptedResponse);
+      console.log(`🔓 [${responseId}] Processed response:`, decryptedResponse);
 
-    // Parse response code and status
-    const responseCode = decryptedResponse.responsecode || decryptedResponse.ResponseCode;
-    const responseInfo = parseICICIResponse(responseCode);
-
-    // Extract key transaction details
-    const transactionDetails = {
-      referenceNo: decryptedResponse.ReferenceNo || decryptedResponse.referenceno,
-      amount: decryptedResponse.TransactionAmount || decryptedResponse.transactionamount,
-      paymentId: decryptedResponse.PaymentID || decryptedResponse.paymentid,
-      responseCode: responseCode,
-      status: responseInfo.status,
-      message: responseInfo.message,
-      timestamp: new Date().toISOString()
-    };
-
-    console.log(`📊 [${responseId}] Transaction processed:`, transactionDetails);
-
-    // TODO: Save to your database
-    // await saveTransactionToDB(transactionDetails);
-
-    // ✅ Redirect to your beautiful frontend page with payment data
-    const frontendUrl = `https://www.harekrishnamarwar.org/thank-you?` +
-      `status=${encodeURIComponent(responseInfo.status)}&` +
-      `amount=${encodeURIComponent(transactionDetails.amount || '0')}&` +
-      `transactionId=${encodeURIComponent(transactionDetails.referenceNo || '')}&` +
-      `paymentId=${encodeURIComponent(transactionDetails.paymentId || '')}&` +
-      `message=${encodeURIComponent(responseInfo.message)}&` +
-      `responseCode=${encodeURIComponent(responseCode || '')}&` +
-      `timestamp=${encodeURIComponent(transactionDetails.timestamp)}`;
-
-    console.log(`🔗 [${responseId}] Redirecting to frontend:`, frontendUrl);
-    
-    // Redirect user to your frontend page
-    res.redirect(frontendUrl);
-
-  } catch (error) {
-    console.error(`💥 [${responseId}] Response processing error:`, error);
-    
-    // Redirect to frontend error page
-    const errorUrl = `https://www.harekrishnamarwar.org/thank-you?` +
-      `status=ERROR&` +
-      `message=${encodeURIComponent('Payment processing error - please contact support')}`;
+      // Parse response code (handle different field name formats)
+      const responseCode = decryptedResponse['Response Code'] || 
+                          decryptedResponse.responsecode || 
+                          decryptedResponse.ResponseCode;
       
-    res.redirect(errorUrl);
+      const responseInfo = parseICICIResponse(responseCode);
+
+      // Extract transaction details
+      const transactionDetails = {
+        referenceNo: decryptedResponse.ReferenceNo || decryptedResponse.referenceno,
+        amount: decryptedResponse.TransactionAmount || decryptedResponse.transactionamount || '0',
+        paymentId: decryptedResponse.PaymentID || decryptedResponse.paymentid,
+        responseCode: responseCode,
+        status: responseInfo.status,
+        message: responseInfo.message,
+        timestamp: new Date().toISOString()
+      };
+
+      console.log(`📊 [${responseId}] Transaction processed:`, transactionDetails);
+
+      // Redirect to frontend with proper status
+      const frontendUrl = `https://www.harekrishnamarwar.org/thank-you?` +
+        `status=${encodeURIComponent(responseInfo.status)}&` +
+        `amount=${encodeURIComponent(transactionDetails.amount)}&` +
+        `transactionId=${encodeURIComponent(transactionDetails.referenceNo || '')}&` +
+        `message=${encodeURIComponent(responseInfo.message)}&` +
+        `responseCode=${encodeURIComponent(responseCode || '')}&` +
+        `timestamp=${encodeURIComponent(transactionDetails.timestamp)}`;
+
+      res.redirect(frontendUrl);
+
+    } catch (error) {
+      console.error(`💥 [${responseId}] Response processing error:`, error);
+      res.redirect(`https://www.harekrishnamarwar.org/thank-you?status=ERROR&message=Processing%20Error`);
+    }
+  } else {
+    // Handle GET requests
+    const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
+    res.redirect(`https://www.harekrishnamarwar.org/thank-you${query}`);
   }
 });
 

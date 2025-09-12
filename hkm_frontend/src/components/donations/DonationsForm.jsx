@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { 
   FaFileAlt, 
+  FaPrayingHands, 
+  FaTimes,
   FaCreditCard, 
   FaUniversity, 
   FaUtensils, 
@@ -51,6 +53,9 @@ export default function DonationForm() {
   const [step, setStep] = useState(1);
   const [errors, setErrors] = useState({});
 
+  // ✅ ADD THIS NEW STATE FOR CONFIRMATION MODAL
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+
   const donationPurposes = [
     { id: 'general', name: 'General Temple Operations', icon: <FaUniversity /> },
     { id: 'gau-seva', name: 'Gau Seva (Cow Protection)', icon: <FaHeart /> },
@@ -75,7 +80,24 @@ export default function DonationForm() {
     }
   };
 
-  // Validation functions
+  // ✅ ADD THIS NEW FUNCTION HERE
+  const validateMobileNumber = (mobile) => {
+    // Remove any spaces, dashes, or special characters
+    const cleanMobile = mobile.replace(/[^0-9]/g, '');
+    
+    // Should be exactly 10 digits, no leading zero for Indian mobile numbers
+    if (cleanMobile.length === 11 && cleanMobile.startsWith('0')) {
+      return cleanMobile.substring(1); // Remove leading 0
+    }
+    
+    if (cleanMobile.length === 10 && /^[6-9]/.test(cleanMobile)) {
+      return cleanMobile;
+    }
+    
+    throw new Error('Please enter a valid 10-digit mobile number starting with 6-9');
+  };
+
+  // ✅ REPLACE YOUR EXISTING validateStep1 FUNCTION WITH THIS
   const validateStep1 = () => {
     const newErrors = {};
     
@@ -89,10 +111,15 @@ export default function DonationForm() {
       newErrors.email = 'Please enter a valid email';
     }
     
+    // ✅ UPDATED PHONE VALIDATION
     if (!formData.phone.trim()) {
       newErrors.phone = 'Phone number is required';
-    } else if (!/^[+]?[\d\s-()]{10,}$/.test(formData.phone.replace(/\s/g, ''))) {
-      newErrors.phone = 'Please enter a valid phone number';
+    } else {
+      try {
+        validateMobileNumber(formData.phone);
+      } catch (error) {
+        newErrors.phone = error.message;
+      }
     }
     
     if (!formData.city.trim()) {
@@ -117,6 +144,8 @@ export default function DonationForm() {
     return Object.keys(newErrors).length === 0;
   };
 
+
+
   const validateStep2 = () => {
     const newErrors = {};
     
@@ -135,13 +164,31 @@ export default function DonationForm() {
     return Object.keys(newErrors).length === 0;
   };
 
+  // ✅ REPLACE YOUR EXISTING handleNext FUNCTION WITH THIS
   const handleNext = () => {
     if (step === 1 && validateStep1()) {
       setStep(2);
     } else if (step === 2 && validateStep2()) {
-      setStep(3);
+      // ✅ SHOW CONFIRMATION MODAL INSTEAD OF DIRECT REDIRECT
+      setShowConfirmModal(true);
     }
   };
+
+  // ✅ ADD THESE NEW FUNCTIONS
+  const handleConfirmPayment = () => {
+    setShowConfirmModal(false);
+    setStep(3);
+    // Automatically submit after user confirms
+    setTimeout(() => {
+      document.getElementById('donation-form').requestSubmit();
+    }, 100);
+  };
+
+  const handleCancelPayment = () => {
+    setShowConfirmModal(false);
+    // User stays on step 2
+  };
+
 
   const handlePrevious = () => {
     if (step > 1) {
@@ -154,61 +201,85 @@ export default function DonationForm() {
     return 'TXN' + Date.now() + Math.floor(Math.random() * 1000);
   };
 
+  // ✅ REPLACE YOUR EXISTING handleSubmit FUNCTION WITH THIS
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
-    const donationAmount = formData.customAmount || formData.amount;
-    const referenceNo = generateReferenceNo();
+    try {
+      const donationAmount = formData.customAmount || formData.amount;
+      const referenceNo = generateReferenceNo();
+      
+      // ✅ VALIDATE AND FORMAT MOBILE NUMBER
+      let validatedMobile;
+      try {
+        validatedMobile = validateMobileNumber(formData.phone);
+      } catch (error) {
+        setErrors(prev => ({ ...prev, phone: error.message }));
+        return; // Stop submission if phone is invalid
+      }
 
-    const paymentData = {
-      referenceNo,
-      submerchantId: '45',
-      transactionAmount: donationAmount,
-      customerName: formData.anonymous ? 'Anonymous Donor' : formData.name,
-      mobileNumber: formData.phone.replace(/\s/g, ''),
-      emailId: formData.email,
-      city: formData.city,
-      state: formData.state,
-      address: formData.address,
-      pincode: formData.pincode,
-      paymode: '9',
-      returnUrl: `${window.location.origin}/thank-you`
-    };
+      const paymentData = {
+        referenceNo,
+        submerchantId: '45',
+        transactionAmount: donationAmount,
+        customerName: formData.anonymous ? 'Anonymous Donor' : formData.name,
+        mobileNumber: validatedMobile, // ✅ USE VALIDATED MOBILE NUMBER
+        emailId: formData.email,
+        city: formData.city,
+        state: formData.state,
+        address: formData.address,
+        pincode: formData.pincode,
+        paymode: '9',
+        returnUrl: `${window.location.origin}/thank-you`
+      };
 
-    // Send data to backend
-    const response = await fetch('/api/initiate-payment', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(paymentData)
-    });
+      // ✅ STORE DONATION DATA FOR THANK-YOU PAGE
+      localStorage.setItem('donationData', JSON.stringify({
+        donorName: paymentData.customerName,
+        email: paymentData.emailId,
+        purpose: formData.purpose
+      }));
 
-    const result = await response.json();
+      // Send data to backend
+      const response = await fetch('/api/initiate-payment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(paymentData)
+      });
 
-    if (result.success && result.paymentUrl) {
-      // Redirect to Payment Gateway
-      window.location.href = result.paymentUrl;
-    } else {
-      alert('Something went wrong, please try again.');
+      const result = await response.json();
+
+      if (result.success && result.paymentUrl) {
+        // Redirect to Payment Gateway
+        window.location.href = result.paymentUrl;
+      } else {
+        alert('Something went wrong, please try again.');
+      }
+    } catch (error) {
+      console.error('Payment Error:', error);
+      alert('Failed to connect to payment server. Please try again.');
     }
-  } catch (error) {
-    console.error('Payment Error:', error);
-    alert('Failed to connect to payment server. Please try again.');
-  }
-};
-
-
-  // Check if current step is valid
-  const isStep1Valid = () => {
-    return formData.name.trim() && 
-           formData.email.trim() && 
-           /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) &&
-           formData.phone.trim() && 
-           formData.city.trim() && 
-           formData.state.trim() && 
-           formData.address.trim() && 
-           /^\d{6}$/.test(formData.pincode);
   };
+
+
+
+  // ✅ REPLACE YOUR EXISTING isStep1Valid FUNCTION WITH THIS
+  const isStep1Valid = () => {
+    try {
+      return formData.name.trim() && 
+            formData.email.trim() && 
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) &&
+            formData.phone.trim() && 
+            validateMobileNumber(formData.phone) && // ✅ UPDATED PHONE CHECK
+            formData.city.trim() && 
+            formData.state.trim() && 
+            formData.address.trim() && 
+            /^\d{6}$/.test(formData.pincode);
+    } catch (error) {
+      return false; // Return false if phone validation fails
+    }
+  };
+
 
   const isStep2Valid = () => {
     const donationAmount = formData.customAmount || formData.amount;
@@ -360,18 +431,35 @@ export default function DonationForm() {
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Phone Number *
                     </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className={`w-full px-4 py-3 bg-white dark:bg-gray-800/50 border rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 ${
-                        errors.phone ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
-                      }`}
-                      placeholder="+91 98765 43210"
-                    />
+                    <div className="flex">
+                      {/* Fixed country code display */}
+                      <div className="inline-flex items-center px-3 py-3 bg-gray-100 dark:bg-gray-700 border border-r-0 border-gray-300 dark:border-gray-600 rounded-l-lg text-gray-700 dark:text-gray-300 font-medium">
+                        +91
+                      </div>
+                      {/* 10-digit phone input */}
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={(e) => {
+                          // Only allow numbers, max 10 digits
+                          const value = e.target.value.replace(/[^0-9]/g, '').slice(0, 10);
+                          setFormData(prev => ({ ...prev, phone: value }));
+                          // Clear error when user starts typing
+                          if (errors.phone) {
+                            setErrors(prev => ({ ...prev, phone: '' }));
+                          }
+                        }}
+                        className={`flex-1 px-4 py-3 bg-white dark:bg-gray-800/50 border border-l-0 rounded-r-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 ${
+                          errors.phone ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+                        }`}
+                        placeholder="9876543210"
+                        maxLength="10"
+                      />
+                    </div>
                     {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
                   </div>
+
                   
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -710,6 +798,97 @@ export default function DonationForm() {
             </div>
           </form>
         </motion.div>
+        {/* ✅ ADD THIS CONFIRMATION MODAL */}
+        {showConfirmModal && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 overflow-hidden">
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white dark:bg-gray-900 rounded-2xl p-8 max-w-md w-full shadow-2xl border border-orange-200 dark:border-purple-400"
+            >
+              {/* Header with Icon */}
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-saffron-gradient rounded-full flex items-center justify-center mx-auto mb-4">
+                  <FaPrayingHands className="text-white text-2xl" />
+                </div>
+                <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+                  🙏 Ready for Sacred Seva?
+                </h2>
+                <p className="text-gray-600 dark:text-gray-300">
+                  You are about to make a divine contribution
+                </p>
+              </div>
+
+              {/* Donation Summary */}
+              <div className="bg-orange-50 dark:bg-saffron/10 rounded-xl p-4 mb-6 border border-orange-200 dark:border-saffron/20">
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-600 dark:text-gray-400">Seva Amount:</span>
+                    <span className="font-bold text-saffron text-xl">
+                      ₹{(formData.customAmount || formData.amount).toLocaleString()}
+                    </span>
+                  </div>
+                  
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-600 dark:text-gray-400">Seva Purpose:</span>
+                    <span className="font-medium text-gray-800 dark:text-white">
+                      {donationPurposes.find(p => p.id === formData.purpose)?.name || formData.purpose}
+                    </span>
+                  </div>
+                  
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-600 dark:text-gray-400">Devotee:</span>
+                    <span className="font-medium text-gray-800 dark:text-white">
+                      {formData.anonymous ? 'Anonymous Donor' : formData.name}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Blessing Message */}
+              <div className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/20 dark:to-gold/20 rounded-xl p-4 mb-6 border border-saffron/40 dark:border-saffron/30">
+                <p className="text-gray-700 dark:text-gray-300 text-center italic text-sm">
+                  "दानं वीर्यं यशस्तेजो धैर्यं चैव पराक्रमः।"
+                  <br />
+                  <span className="text-xs mt-1 block">
+                    Your seva will bring divine blessings and contribute to the spiritual welfare of many devotees.
+                  </span>
+                </p>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex gap-4">
+                <motion.button
+                  type="button"
+                  onClick={handleCancelPayment}
+                  className="flex-1 px-6 py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 font-medium"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <FaTimes className="inline mr-2" />
+                  Cancel
+                </motion.button>
+                
+                <motion.button
+                  type="button"
+                  onClick={handleConfirmPayment}
+                  className="flex-1 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 font-medium"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <FaHeart className="inline mr-2" />
+                  Proceed to Payment
+                </motion.button>
+              </div>
+
+              {/* Footer Note */}
+              <p className="text-center text-xs text-gray-500 dark:text-gray-400 mt-4">
+                🔒 Your payment is secured by ICICI Bank EazyPay
+              </p>
+            </motion.div>
+          </div>
+        )}
       </div>
     </section>
   );
