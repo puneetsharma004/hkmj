@@ -192,7 +192,7 @@ export default function SevaOptions() {
                 <motion.button
                   className={`w-full font-bold py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg ${
                     seva.popular
-                      ? 'bg-gradient-to-r from-saffron to-gold text-white hover:shadow-saffron/30'
+                      ? 'bg-saffron-gradient text-white hover:shadow-saffron/30'
                       : 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:from-saffron hover:to-gold hover:text-white hover:shadow-saffron/30'
                   }`}
                   whileHover={{ scale: 1.02 }}
@@ -226,7 +226,7 @@ export default function SevaOptions() {
             Every contribution, no matter the size, is valuable and appreciated. You can also donate any amount for general temple operations.
           </p>
           <motion.button
-            className="px-8 py-3 bg-gradient-to-r from-saffron to-gold text-white font-bold rounded-full hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2 mx-auto"
+            className="px-8 py-3 bg-saffron-gradient text-white font-bold rounded-full hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2 mx-auto"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

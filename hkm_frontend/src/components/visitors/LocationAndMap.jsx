@@ -126,7 +126,7 @@ export default function LocationAndMap() {
                     <p className="text-gray-600 dark:text-gray-400 text-sm">{templeLocation.landmark}</p>
                   </div>
                   <motion.button
-                    className="px-4 py-2 bg-gradient-to-r from-saffron to-gold text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2"
+                    className="px-4 py-2 bg-saffron-gradient text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -244,7 +244,7 @@ export default function LocationAndMap() {
             {/* Quick Actions */}
             <div className="grid grid-cols-2 gap-4">
               <motion.button
-                className="p-4 bg-gradient-to-r from-saffron to-gold text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center justify-center space-x-2"
+                className="p-4 bg-saffron-gradient text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center justify-center space-x-2"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >

@@ -144,7 +144,7 @@ export default function Footer() {
               >
                 <FaOm className="text-2xl" />
               </motion.div>
-              <span className="bg-gradient-to-r from-saffron to-gold dark:from-purple-300 dark:to-pink-300 bg-clip-text text-transparent">
+              <span className="bg-saffron-gradient dark:from-purple-300 dark:to-pink-300 bg-clip-text text-transparent">
                 Hare Krishna Marwar Mandir
               </span>
             </motion.h3>

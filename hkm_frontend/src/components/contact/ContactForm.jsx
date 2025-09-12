@@ -286,7 +286,7 @@ export default function ContactForm() {
                 className={`px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg ${
                   isSubmitting
                     ? 'bg-gray-400 text-gray-600 cursor-not-allowed'
-                    : 'bg-gradient-to-r from-saffron to-gold text-white hover:shadow-saffron/30 hover:scale-105'
+                    : 'bg-saffron-gradient text-white hover:shadow-saffron/30 hover:scale-105'
                 }`}
                 whileHover={!isSubmitting ? { scale: 1.05 } : {}}
                 whileTap={!isSubmitting ? { scale: 0.95 } : {}}

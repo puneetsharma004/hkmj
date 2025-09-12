@@ -243,7 +243,7 @@ export default function WhyVolunteer() {
             Join us in this sacred path of selfless service.
           </p>
           <motion.button
-            className="px-8 py-3 bg-gradient-to-r from-saffron to-gold text-white font-bold rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2 mx-auto"
+            className="px-8 py-3 bg-saffron-gradient text-white font-bold rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2 mx-auto"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

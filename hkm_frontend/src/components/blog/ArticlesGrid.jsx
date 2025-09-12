@@ -253,7 +253,7 @@ export default function ArticlesGrid() {
               onClick={() => setCurrentPage(index + 1)}
               className={`w-10 h-10 rounded-lg font-semibold transition-all duration-300 shadow-lg ${
                 currentPage === index + 1
-                  ? 'bg-gradient-to-r from-saffron to-gold text-white'
+                  ? 'bg-saffron-gradient text-white'
                   : 'bg-white/90 dark:bg-gray-900/80 text-gray-700 dark:text-gray-300 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50'
               }`}
             >

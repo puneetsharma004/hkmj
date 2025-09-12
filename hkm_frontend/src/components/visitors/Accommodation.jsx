@@ -188,7 +188,7 @@ export default function Accommodation() {
                   </div>
 
                   <motion.button
-                    className="w-full bg-gradient-to-r from-saffron to-gold text-white font-bold py-3 rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300"
+                    className="w-full bg-saffron-gradient text-white font-bold py-3 rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >

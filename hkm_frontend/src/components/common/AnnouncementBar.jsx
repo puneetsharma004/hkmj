@@ -137,7 +137,7 @@ export default function Announcements() {
                   >
                     <div className="relative">
                       <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-saffron to-gold rounded-full blur-md opacity-50"
+                        className="absolute inset-0 bg-saffron-gradient rounded-full blur-md opacity-50"
                         animate={{ scale: [1, 1.2, 1] }}
                         transition={{ duration: 2, repeat: Infinity }}
                       />
@@ -160,7 +160,7 @@ export default function Announcements() {
                     
                     <motion.a
                       href={currentItem.link}
-                      className="hidden group relative md:inline-flex items-center font-bold text-sm text-white bg-gradient-to-r from-saffron to-gold px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                      className="hidden group relative md:inline-flex items-center font-bold text-sm text-white bg-saffron-gradient px-6 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                       initial={{ opacity: 0, x: 20 }}

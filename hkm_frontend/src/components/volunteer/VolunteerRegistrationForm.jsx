@@ -511,7 +511,7 @@ export default function VolunteerRegistrationForm() {
                 className={`px-12 py-4 rounded-lg font-bold text-lg transition-all duration-300 ${
                   isSubmitting
                     ? 'bg-gray-400 text-gray-600 cursor-not-allowed'
-                    : 'bg-gradient-to-r from-saffron to-gold text-white hover:shadow-lg hover:shadow-saffron/30 hover:scale-105'
+                    : 'bg-saffron-gradient text-white hover:shadow-lg hover:shadow-saffron/30 hover:scale-105'
                 }`}
                 whileHover={!isSubmitting ? { scale: 1.05 } : {}}
                 whileTap={!isSubmitting ? { scale: 0.95 } : {}}

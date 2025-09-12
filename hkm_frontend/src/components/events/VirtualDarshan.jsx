@@ -119,7 +119,7 @@ export default function VirtualDarshan() {
                   onClick={() => setActiveTab(option.id)}
                   className={`p-4 rounded-xl border transition-all duration-300 shadow-lg ${
                     activeTab === option.id
-                      ? 'bg-gradient-to-r from-saffron to-gold text-white border-saffron'
+                      ? 'bg-saffron-gradient text-white border-saffron'
                       : 'bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 text-gray-700 dark:text-gray-300 border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50'
                   } ${!option.available ? 'opacity-50 cursor-not-allowed' : ''}`}
                   whileHover={{ scale: option.available ? 1.02 : 1 }}
@@ -168,7 +168,7 @@ export default function VirtualDarshan() {
                       </div>
                     </div>
                     <motion.button
-                      className="w-full bg-gradient-to-r from-saffron to-gold text-white font-bold py-3 rounded-lg mt-4 flex items-center justify-center gap-2 shadow-lg hover:shadow-saffron/30 transition-all duration-300"
+                      className="w-full bg-saffron-gradient text-white font-bold py-3 rounded-lg mt-4 flex items-center justify-center gap-2 shadow-lg hover:shadow-saffron/30 transition-all duration-300"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >

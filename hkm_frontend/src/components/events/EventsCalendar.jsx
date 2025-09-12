@@ -182,7 +182,7 @@ export default function EventsCalendar() {
                 onClick={() => setSelectedFilter(type.id)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center space-x-2 shadow-lg ${
                   selectedFilter === type.id
-                    ? 'bg-gradient-to-r from-saffron to-gold text-white'
+                    ? 'bg-saffron-gradient text-white'
                     : 'bg-white/80 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 text-gray-700 dark:text-gray-300 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50'
                 }`}
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -257,7 +257,7 @@ export default function EventsCalendar() {
                 <div className="flex flex-col md:flex-row md:items-center justify-between">
                   <div className="flex items-start space-x-4 mb-4 md:mb-0">
                     {/* Date Badge */}
-                    <div className="flex-shrink-0 bg-gradient-to-r from-saffron to-gold text-white p-3 rounded-xl text-center min-w-[80px] shadow-lg">
+                    <div className="flex-shrink-0 bg-saffron-gradient text-white p-3 rounded-xl text-center min-w-[80px] shadow-lg">
                       <div className="font-bold text-lg">
                         {new Date(event.date).getDate()}
                       </div>
@@ -316,7 +316,7 @@ export default function EventsCalendar() {
                     
                     {event.registration && (
                       <motion.button
-                        className="px-4 py-2 bg-gradient-to-r from-saffron to-gold text-white rounded-lg font-medium text-sm hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2"
+                        className="px-4 py-2 bg-saffron-gradient text-white rounded-lg font-medium text-sm hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >

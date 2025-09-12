@@ -265,7 +265,7 @@ export default function SocialMediaFeed() {
               Follow us for daily updates, spiritual insights, and community moments
             </p>
             <motion.button
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-saffron to-gold text-white font-semibold rounded-full hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-saffron-gradient text-white font-semibold rounded-full hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

@@ -134,7 +134,7 @@ export default function SpiritualLineage() {
                     alt={teacher.name}
                     className="w-24 h-24 rounded-full mx-auto border-4 border-saffron border-opacity-50 group-hover:border-opacity-80 transition-all duration-300 shadow-lg"
                   />
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-r from-saffron to-gold rounded-full flex items-center justify-center text-white text-sm shadow-lg">
+                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-saffron-gradient rounded-full flex items-center justify-center text-white text-sm shadow-lg">
                     {teacher.icon}
                   </div>
                 </div>

@@ -137,7 +137,7 @@ export default function HowToDonate() {
                 onClick={() => setSelectedMethod(method.id)}
                 className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2 ${
                   selectedMethod === method.id
-                    ? 'bg-gradient-to-r from-saffron to-gold text-white'
+                    ? 'bg-saffron-gradient outline-none text-white'
                     : 'text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10'
                 }`}
                 whileHover={{ scale: 1.05 }}
@@ -245,7 +245,7 @@ export default function HowToDonate() {
                 </div>
                 
                 <motion.button
-                  className="w-full mt-4 bg-gradient-to-r from-saffron to-gold text-white font-semibold py-2 rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300"
+                  className="w-full mt-4 bg-saffron-gradient text-white font-semibold py-2 rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >

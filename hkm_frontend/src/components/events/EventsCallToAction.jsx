@@ -221,7 +221,7 @@ export default function EventsCallToAction() {
                 className="flex-1 px-4 py-3 rounded-lg bg-white dark:bg-gray-900/50 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:border-opacity-80 dark:focus:border-opacity-60 transition-all duration-300"
               />
               <motion.button
-                className="px-6 py-3 bg-gradient-to-r from-saffron to-gold text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2"
+                className="px-6 py-3 bg-saffron-gradient text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >

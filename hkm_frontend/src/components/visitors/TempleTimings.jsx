@@ -266,7 +266,7 @@ export default function TempleTimings() {
                 viewport={{ once: true }}
                 className="flex items-start space-x-4 p-4 bg-white/90 dark:bg-gray-900/50 rounded-xl shadow-lg"
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-saffron to-gold rounded-full flex items-center justify-center text-white font-bold">
+                <div className="flex-shrink-0 w-12 h-12 bg-saffron-gradient rounded-full flex items-center justify-center text-white font-bold">
                   {index + 1}
                 </div>
                 <div className="flex-1">

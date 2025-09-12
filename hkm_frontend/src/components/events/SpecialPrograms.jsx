@@ -254,7 +254,7 @@ export default function SpecialPrograms() {
                       {program.registration ? (
                         <>
                           <motion.button
-                            className="flex-1 bg-gradient-to-r from-saffron to-gold text-white font-semibold py-2 px-4 rounded-lg text-sm hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center justify-center gap-2"
+                            className="flex-1 bg-saffron-gradient text-white font-semibold py-2 px-4 rounded-lg text-sm hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center justify-center gap-2"
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                           >

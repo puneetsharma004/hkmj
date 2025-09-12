@@ -146,7 +146,7 @@ export default function MapAndDirections() {
                   </div>
                   <div className="flex space-x-3">
                     <motion.button
-                      className="px-4 py-2 bg-gradient-to-r from-saffron to-gold text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2"
+                      className="px-4 py-2 bg-saffron-gradient text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >

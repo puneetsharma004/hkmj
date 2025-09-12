@@ -116,7 +116,7 @@ export default function TempleHistory() {
                 viewport={{ once: true }}
                 className="flex items-start space-x-4 bg-white/80 dark:bg-gradient-to-r dark:from-indigo-900/50 dark:to-purple-900/50 rounded-xl p-4 border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300 group shadow-lg"
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-saffron to-gold rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                <div className="flex-shrink-0 w-12 h-12 bg-saffron-gradient rounded-full flex items-center justify-center text-white font-bold shadow-lg">
                   {item.icon}
                 </div>
                 <div className="flex-1">

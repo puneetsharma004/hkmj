@@ -306,7 +306,7 @@ export default function PrasadamAndSeva() {
                 </div>
 
                 <motion.button
-                  className="w-full bg-gradient-to-r from-saffron to-gold text-white font-semibold py-3 rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center justify-center gap-2"
+                  className="w-full bg-saffron-gradient text-white font-semibold py-3 rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center justify-center gap-2"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -372,7 +372,7 @@ export default function PrasadamAndSeva() {
                 <motion.button
                   className={`w-full font-semibold py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 ${
                     tier.popular
-                      ? 'bg-gradient-to-r from-saffron to-gold text-white hover:shadow-lg hover:shadow-saffron/30'
+                      ? 'bg-saffron-gradient text-white hover:shadow-lg hover:shadow-saffron/30'
                       : 'border border-saffron text-saffron hover:bg-saffron hover:text-white dark:hover:text-black'
                   }`}
                   whileHover={{ scale: 1.02 }}

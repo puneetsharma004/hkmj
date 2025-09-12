@@ -248,7 +248,7 @@ export default function DonorTestimonials() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.button
-              className="px-6 py-3 bg-gradient-to-r from-saffron to-gold text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center justify-center gap-2"
+              className="px-6 py-3 bg-saffron-gradient text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center justify-center gap-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

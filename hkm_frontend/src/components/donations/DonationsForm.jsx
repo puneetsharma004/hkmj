@@ -774,7 +774,7 @@ export default function DonationForm() {
                     disabled={step === 1 ? !isStep1Valid() : !isStep2Valid()}
                     className={`px-8 py-3 font-bold rounded-lg transition-all duration-300 flex items-center gap-2 ${
                       (step === 1 ? isStep1Valid() : isStep2Valid())
-                        ? 'bg-gradient-to-r from-saffron to-gold bg-green-400 text-white hover:shadow-lg hover:shadow-saffron/30'
+                        ? 'bg-saffron-gradient bg-green-400 text-white hover:shadow-lg hover:shadow-saffron/30'
                         : 'dark:bg-gray-300 bg-gray-700 text-gray-500 dark:text-gray-400 cursor-not-allowed'
                     }`}
                     whileHover={(step === 1 ? isStep1Valid() : isStep2Valid()) ? { scale: 1.02 } : {}}

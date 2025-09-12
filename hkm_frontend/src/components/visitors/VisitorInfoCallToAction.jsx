@@ -290,7 +290,7 @@ export default function VisitorInfoCallToAction() {
                 <motion.button
                   className={`w-full font-bold py-3 rounded-lg transition-all duration-300 ${
                     index === 1
-                      ? 'bg-gradient-to-r from-saffron to-gold text-white hover:shadow-lg hover:shadow-saffron/30'
+                      ? 'bg-saffron-gradient text-white hover:shadow-lg hover:shadow-saffron/30'
                       : 'border border-saffron text-saffron hover:bg-saffron hover:text-white dark:hover:text-black'
                   }`}
                   whileHover={{ scale: 1.02 }}
@@ -366,7 +366,7 @@ export default function VisitorInfoCallToAction() {
           
           <div className="mt-8 text-center">
             <motion.button
-              className="px-8 py-3 bg-gradient-to-r from-saffron to-gold text-gray-500 font-bold rounded-full hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2 mx-auto shadow-2xl"
+              className="px-8 py-3 bg-saffron-gradient text-gray-500 font-bold rounded-full hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2 mx-auto shadow-2xl"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

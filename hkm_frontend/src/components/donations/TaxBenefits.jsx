@@ -221,7 +221,7 @@ export default function TaxBenefits() {
                 viewport={{ once: true }}
                 className="flex items-start space-x-4"
               >
-                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-saffron to-gold rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                <div className="flex-shrink-0 w-12 h-12 bg-saffron-gradient rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
                   {step.step}
                 </div>
                 <div className="flex-1">

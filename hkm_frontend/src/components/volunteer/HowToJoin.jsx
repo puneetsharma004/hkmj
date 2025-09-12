@@ -160,12 +160,12 @@ export default function HowToJoin() {
               >
                 {/* Connection Line */}
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-saffron to-gold opacity-30 z-0"></div>
+                  <div className="hidden lg:block absolute top-16 left-full w-full h-0.5 bg-saffron-gradient opacity-30 z-0"></div>
                 )}
                 
                 <div className="relative bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group h-full shadow-xl">
                   {/* Step Number */}
-                  <div className="absolute top-4 left-6 w-8 h-8 bg-gradient-to-r from-saffron to-gold rounded-full flex items-center justify-center text-gray-500 dark:text-white font-bold text-sm z-10 shadow-lg">
+                  <div className="absolute top-4 left-6 w-8 h-8 bg-saffron-gradient rounded-full flex items-center justify-center text-gray-500 dark:text-white font-bold text-sm z-10 shadow-lg">
                     {step.step}
                   </div>
 
@@ -294,7 +294,7 @@ export default function HowToJoin() {
           
           <div className="mt-8 text-center">
             <motion.button
-              className="px-8 py-3 bg-gradient-to-r from-saffron to-gold text-white font-bold rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2 mx-auto"
+              className="px-8 py-3 bg-saffron-gradient text-white font-bold rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2 mx-auto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

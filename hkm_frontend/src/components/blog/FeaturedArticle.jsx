@@ -150,7 +150,7 @@ export default function FeaturedArticle() {
 
               {/* Read More Button */}
               <motion.button
-                className="bg-gradient-to-r from-saffron to-gold text-white font-bold py-3 px-8 rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 inline-flex items-center space-x-2 w-fit"
+                className="bg-saffron-gradient text-white font-bold py-3 px-8 rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 inline-flex items-center space-x-2 w-fit"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

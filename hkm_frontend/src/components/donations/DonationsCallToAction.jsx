@@ -198,7 +198,7 @@ export default function DonationsCallToAction() {
               >
                 {/* Icon Badge */}
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-saffron to-gold rounded-full flex items-center justify-center text-white text-xl shadow-lg">
+                  <div className="w-12 h-12 bg-saffron-gradient rounded-full flex items-center justify-center text-white text-xl shadow-lg">
                     {need.icon}
                   </div>
                   {need.urgent && (
@@ -244,7 +244,7 @@ export default function DonationsCallToAction() {
                   className={`w-full font-bold py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg ${
                     need.urgent
                       ? 'bg-gradient-to-r from-red-500 to-orange-500 text-white hover:shadow-red-500/30'
-                      : 'bg-gradient-to-r from-saffron to-gold text-white hover:shadow-saffron/30'
+                      : 'bg-saffron-gradient text-white hover:shadow-saffron/30'
                   }`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}

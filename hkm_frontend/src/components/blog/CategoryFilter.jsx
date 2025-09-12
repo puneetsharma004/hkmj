@@ -50,7 +50,7 @@ export default function CategoryFilter() {
             onClick={() => setActiveCategory(category.id)}
             className={`px-4 py-2 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2 shadow-lg ${
               activeCategory === category.id
-                ? 'bg-gradient-to-r from-saffron to-gold text-white'
+                ? 'bg-saffron-gradient text-white'
                 : 'bg-white/90 dark:bg-gray-900/80 text-gray-700 dark:text-gray-300 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50'
             }`}
             initial={{ opacity: 0, scale: 0.8 }}
