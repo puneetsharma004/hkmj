@@ -3,10 +3,11 @@ import cors from "cors";
 import dotenv from "dotenv";
 import crypto from "crypto";
 
-dotenv.config(); // loads .env file
+dotenv.config();
 
 const app = express();
-// With this more secure version:
+
+// Enhanced CORS with better security
 app.use(cors({
   origin: [
     "https://harekrishnamarwar.org",
@@ -16,65 +17,101 @@ app.use(cors({
   credentials: true
 }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // For ICICI callbacks
 
-// 🔑 ICICI Config from .env
-const AES_KEY = process.env.ICICI_AES_KEY; // must be 16 chars
+// 🔑 ICICI Config from .env with validation
+const AES_KEY = process.env.ICICI_AES_KEY;
 const MERCHANT_ID = process.env.ICICI_MERCHANT_ID;
 const RETURN_URL = process.env.ICICI_RETURN_URL;
 
-// 🔒 AES-128-ECB encryption
+// ✅ Production Environment Validation
+function validateEnvironment() {
+  const errors = [];
+  
+  if (!AES_KEY) errors.push("ICICI_AES_KEY is required");
+  else if (AES_KEY.length !== 16) errors.push("ICICI_AES_KEY must be exactly 16 characters");
+  
+  if (!MERCHANT_ID) errors.push("ICICI_MERCHANT_ID is required");
+  if (!RETURN_URL) errors.push("ICICI_RETURN_URL is required");
+  
+  if (errors.length > 0) {
+    console.error("❌ Environment Configuration Errors:");
+    errors.forEach(error => console.error(`   - ${error}`));
+    process.exit(1);
+  }
+  
+  console.log("✅ Environment validation passed");
+}
+
+// Validate on startup
+validateEnvironment();
+
+// 🔒 Enhanced AES-128-ECB encryption with better error handling
 function encrypt(text) {
   try {
-    if (!text && text !== 0) {
-      throw new Error("Text to encrypt is undefined or null");
+    if (text === undefined || text === null) {
+      throw new Error(`Cannot encrypt undefined/null value: ${text}`);
     }
     
-    const key = Buffer.from(AES_KEY.slice(0, 16), "utf8"); // Consistent with decrypt
+    const key = Buffer.from(AES_KEY.slice(0, 16), "utf8");
     const cipher = crypto.createCipheriv("aes-128-ecb", key, null);
     let encrypted = cipher.update(String(text), "utf8", "base64");
     encrypted += cipher.final("base64");
     return encrypted;
   } catch (error) {
-    console.error("Encryption error:", error);
-    throw error;
+    console.error("💥 Encryption error for:", text, error.message);
+    throw new Error(`Encryption failed: ${error.message}`);
   }
 }
 
-
-// 🔓 AES-128-ECB decryption (for ICICI response)
+// 🔓 Enhanced AES-128-ECB decryption
 function decrypt(encryptedText) {
   try {
+    if (!encryptedText) return null;
+    
     const key = Buffer.from(AES_KEY.slice(0, 16), "utf8");
     const decipher = crypto.createDecipheriv("aes-128-ecb", key, null);
     let decrypted = decipher.update(encryptedText, "base64", "utf8");
     decrypted += decipher.final("utf8");
     return decrypted;
-  } catch {
+  } catch (error) {
+    console.warn("⚠️ Decryption failed for:", encryptedText);
     return null;
   }
 }
 
-// 🟢 API to initiate payment
+// 🔐 SHA512 signature generation (for response validation)
+function generateSHA512(data) {
+  return crypto.createHash('sha512').update(data).digest('hex');
+}
+
+// 🔍 Enhanced response code handler
+function parseICICIResponse(responseCode) {
+  const responseCodes = {
+    'E000': { status: 'SUCCESS', message: 'Payment successful' },
+    'E327': { status: 'PENDING', message: 'Offline payment - challan generated (Bank)' },
+    'E328': { status: 'PENDING', message: 'Offline payment - challan generated (Post)' },
+    'E329': { status: 'PENDING', message: 'Offline payment - challan generated (EMI)' },
+    'E00331': { status: 'PENDING', message: 'UPI transaction initiated' },
+    'E001': { status: 'FAILED', message: 'Payment failed - insufficient funds' },
+    'E002': { status: 'FAILED', message: 'Payment failed - invalid card' },
+    'E003': { status: 'FAILED', message: 'Payment failed - transaction declined' },
+    'E004': { status: 'FAILED', message: 'Payment failed - expired card' },
+  };
+  
+  return responseCodes[responseCode] || { 
+    status: 'UNKNOWN', 
+    message: `Unknown response code: ${responseCode}` 
+  };
+}
+
+// 🟢 Enhanced API to initiate payment
 app.post("/api/initiate-payment", (req, res) => {
-  console.log("🔍 Request received:", req.body);
+  const transactionId = `TXN_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+  console.log(`🔍 [${transactionId}] Payment initiation started`);
   
   try {
-    // 1. Check environment variables first
-    console.log("🔑 Environment check:");
-    console.log("AES_KEY exists:", !!AES_KEY);
-    console.log("AES_KEY length:", AES_KEY ? AES_KEY.length : 0);
-    console.log("MERCHANT_ID exists:", !!MERCHANT_ID);
-    console.log("RETURN_URL exists:", !!RETURN_URL);
-    
-    if (!AES_KEY || !MERCHANT_ID || !RETURN_URL) {
-      console.error("❌ Missing environment variables!");
-      return res.status(500).json({ 
-        success: false, 
-        error: "Server configuration error" 
-      });
-    }
-
-    // ✅ Fixed: Use the correct field names from frontend
+    // Extract and validate request data
     const {
       referenceNo,
       submerchantId,
@@ -86,43 +123,46 @@ app.post("/api/initiate-payment", (req, res) => {
       state,
       address,
       pincode,
-      paymode,
+      paymode = "9", // Default to all payment modes
       returnUrl
     } = req.body;
 
-    // ✅ Fixed: Log the correct variable names
-    console.log("📝 Extracted data:", {
-      referenceNo, 
-      submerchantId, 
-      transactionAmount, 
-      customerName, 
-      mobileNumber, 
-      emailId
+    console.log(`📝 [${transactionId}] Request data:`, {
+      referenceNo, submerchantId, transactionAmount, customerName, 
+      mobileNumber, emailId, paymode
     });
 
-    // ✅ Fixed: Validate using the correct field names
-    const missingFields = [];
-    if (!referenceNo) missingFields.push('referenceNo');
-    if (!submerchantId) missingFields.push('submerchantId');
-    if (!transactionAmount) missingFields.push('transactionAmount');
-    if (!customerName) missingFields.push('customerName');
-    if (!mobileNumber) missingFields.push('mobileNumber');
-    if (!emailId) missingFields.push('emailId');
-    if (!city) missingFields.push('city');
-    if (!state) missingFields.push('state');
-    if (!address) missingFields.push('address');
-    if (!pincode) missingFields.push('pincode');
+    // Comprehensive field validation
+    const requiredFields = {
+      referenceNo, submerchantId, transactionAmount, customerName,
+      mobileNumber, emailId, city, state, address, pincode
+    };
+
+    const missingFields = Object.entries(requiredFields)
+      .filter(([key, value]) => !value)
+      .map(([key]) => key);
 
     if (missingFields.length > 0) {
-      console.log("❌ Missing fields:", missingFields);
-      return res.status(400).json({ 
-        success: false, 
+      console.log(`❌ [${transactionId}] Missing fields:`, missingFields);
+      return res.status(400).json({
+        success: false,
         error: "Missing required fields",
-        missingFields 
+        missingFields,
+        transactionId
       });
     }
 
-    // ✅ Fixed: Use correct variable names in mandatory fields
+    // Validate transaction amount
+    const amount = parseFloat(transactionAmount);
+    if (isNaN(amount) || amount <= 0) {
+      return res.status(400).json({
+        success: false,
+        error: "Invalid transaction amount",
+        transactionId
+      });
+    }
+
+    // Build mandatory fields string
     const mandatoryFields = [
       referenceNo,
       submerchantId,
@@ -135,109 +175,161 @@ app.post("/api/initiate-payment", (req, res) => {
       address,
       pincode,
     ].join("|");
-    
-    console.log("📦 Mandatory fields:", mandatoryFields);
 
-    // 4. Test encryption with error handling
-console.log("🔐 Starting encryption...");
+    console.log(`📦 [${transactionId}] Mandatory fields prepared`);
 
-// Add debugging to find undefined values
-console.log("🔍 Debugging field values before encryption:");
-console.log("referenceNo:", referenceNo, typeof referenceNo);
-console.log("submerchantId:", submerchantId, typeof submerchantId);
-console.log("transactionAmount:", transactionAmount, typeof transactionAmount);
-console.log("paymode:", paymode, typeof paymode);
-console.log("RETURN_URL:", RETURN_URL, typeof RETURN_URL);
-
-let encryptedMandatory, encryptedReturnUrl, encryptedReferenceNo, 
-    encryptedSubmerchantId, encryptedAmount, encryptedPaymode;
-
-try {
-  encryptedMandatory = encrypt(mandatoryFields);
-  console.log("✅ Mandatory fields encrypted");
-  
-  encryptedReturnUrl = encrypt(RETURN_URL);
-  console.log("✅ Return URL encrypted");
-  
-  encryptedReferenceNo = encrypt(String(referenceNo || ''));
-  console.log("✅ Reference No encrypted");
-  
-  encryptedSubmerchantId = encrypt(String(submerchantId || ''));
-  console.log("✅ Submerchant ID encrypted");
-  
-  // ✅ Safe conversion: Handle undefined transactionAmount
-  encryptedAmount = encrypt(String(transactionAmount || '0'));
-  console.log("✅ Amount encrypted");
-  
-  encryptedPaymode = encrypt(String(paymode || '9'));
-  console.log("✅ Paymode encrypted");
-  
-} catch (encryptError) {
-  console.error("💥 Encryption failed:", encryptError);
-  return res.status(500).json({ 
-    success: false, 
-    error: "Encryption failed: " + encryptError.message 
-  });
-}
-
-
-    // 5. Build payment URL
-    console.log("🔗 Building payment URL...");
-    
-    const baseUrl = "https://eazypay.icicibank.com/EazyPG";
-    const params = new URLSearchParams({
-      merchantid: MERCHANT_ID,
-      "mandatory fields": encryptedMandatory,
-      "optional fields": "",
-      returnurl: encryptedReturnUrl,
-      "Reference No": encryptedReferenceNo,
-      // ✅ Fixed: Use correct variable name
-      submerchantid: encryptedSubmerchantId,
-      "transaction amount": encryptedAmount,
-      paymode: encryptedPaymode,
-    });
-
-    const paymentUrl = `${baseUrl}?${params.toString()}`;
-    console.log("✅ Payment URL generated successfully");
-
-    res.json({ success: true, paymentUrl });
-    
-  } catch (err) {
-    console.error("💥 Unexpected error:", err);
-    console.error("Stack trace:", err.stack);
-    res.status(500).json({ 
-      success: false, 
-      error: "Internal server error: " + err.message 
-    });
-  }
-});
-
-// 🟢 Payment response endpoint (ICICI return URL should point here)
-app.get("/api/payment-response", (req, res) => {
-  try {
-    const responseData = req.query;
-    const decryptedResponse = {};
-
-    for (const [key, value] of Object.entries(responseData)) {
-      decryptedResponse[key] = decrypt(value) || value;
+    // Encrypt all required fields
+    let encryptedData;
+    try {
+      encryptedData = {
+        mandatoryFields: encrypt(mandatoryFields),
+        returnUrl: encrypt(returnUrl || RETURN_URL),
+        referenceNo: encrypt(String(referenceNo)),
+        submerchantId: encrypt(String(submerchantId)),
+        transactionAmount: encrypt(String(transactionAmount)),
+        paymode: encrypt(String(paymode))
+      };
+      console.log(`✅ [${transactionId}] All fields encrypted successfully`);
+    } catch (encryptError) {
+      console.error(`💥 [${transactionId}] Encryption failed:`, encryptError);
+      return res.status(500).json({
+        success: false,
+        error: "Payment processing error - encryption failed",
+        transactionId
+      });
     }
+
+    // ✅ Fixed: Proper URL construction without URLSearchParams issues
+    const baseUrl = "https://eazypay.icicibank.com/EazyPG";
+    
+    // Manual parameter construction to handle spaces in parameter names
+    const params = [
+      `merchantid=${encodeURIComponent(MERCHANT_ID)}`,
+      `mandatory%20fields=${encodeURIComponent(encryptedData.mandatoryFields)}`,
+      `optional%20fields=${encodeURIComponent("")}`,
+      `returnurl=${encodeURIComponent(encryptedData.returnUrl)}`,
+      `Reference%20No=${encodeURIComponent(encryptedData.referenceNo)}`,
+      `submerchantid=${encodeURIComponent(encryptedData.submerchantId)}`,
+      `transaction%20amount=${encodeURIComponent(encryptedData.transactionAmount)}`,
+      `paymode=${encodeURIComponent(encryptedData.paymode)}`
+    ].join('&');
+
+    const paymentUrl = `${baseUrl}?${params}`;
+    
+    console.log(`✅ [${transactionId}] Payment URL generated successfully`);
+    console.log(`🔗 [${transactionId}] Redirecting to ICICI EazyPay`);
 
     res.json({
       success: true,
-      raw: responseData,
-      decrypted: decryptedResponse,
+      paymentUrl,
+      transactionId,
+      referenceNo
     });
+
   } catch (err) {
-    res.status(500).json({ success: false, error: err.message });
+    console.error(`💥 [${transactionId}] Unexpected error:`, err);
+    res.status(500).json({
+      success: false,
+      error: "Internal server error",
+      transactionId
+    });
   }
 });
 
-// 🟢 Test route
+// 🟢 Enhanced payment response handler - REDIRECT to your frontend
+app.post("/thank-you", (req, res) => {
+  const responseId = `RESP_${Date.now()}`;
+  console.log(`💳 [${responseId}] ICICI Response received:`, req.body);
+
+  try {
+    // Decrypt response data
+    const decryptedResponse = {};
+    const rawResponse = req.body;
+
+    for (const [key, value] of Object.entries(rawResponse)) {
+      if (value) {
+        const decrypted = decrypt(value);
+        decryptedResponse[key] = decrypted || value;
+      }
+    }
+
+    console.log(`🔓 [${responseId}] Decrypted response:`, decryptedResponse);
+
+    // Parse response code and status
+    const responseCode = decryptedResponse.responsecode || decryptedResponse.ResponseCode;
+    const responseInfo = parseICICIResponse(responseCode);
+
+    // Extract key transaction details
+    const transactionDetails = {
+      referenceNo: decryptedResponse.ReferenceNo || decryptedResponse.referenceno,
+      amount: decryptedResponse.TransactionAmount || decryptedResponse.transactionamount,
+      paymentId: decryptedResponse.PaymentID || decryptedResponse.paymentid,
+      responseCode: responseCode,
+      status: responseInfo.status,
+      message: responseInfo.message,
+      timestamp: new Date().toISOString()
+    };
+
+    console.log(`📊 [${responseId}] Transaction processed:`, transactionDetails);
+
+    // TODO: Save to your database
+    // await saveTransactionToDB(transactionDetails);
+
+    // ✅ Redirect to your beautiful frontend page with payment data
+    const frontendUrl = `https://www.harekrishnamarwar.org/thank-you?` +
+      `status=${encodeURIComponent(responseInfo.status)}&` +
+      `amount=${encodeURIComponent(transactionDetails.amount || '0')}&` +
+      `transactionId=${encodeURIComponent(transactionDetails.referenceNo || '')}&` +
+      `paymentId=${encodeURIComponent(transactionDetails.paymentId || '')}&` +
+      `message=${encodeURIComponent(responseInfo.message)}&` +
+      `responseCode=${encodeURIComponent(responseCode || '')}&` +
+      `timestamp=${encodeURIComponent(transactionDetails.timestamp)}`;
+
+    console.log(`🔗 [${responseId}] Redirecting to frontend:`, frontendUrl);
+    
+    // Redirect user to your frontend page
+    res.redirect(frontendUrl);
+
+  } catch (error) {
+    console.error(`💥 [${responseId}] Response processing error:`, error);
+    
+    // Redirect to frontend error page
+    const errorUrl = `https://www.harekrishnamarwar.org/thank-you?` +
+      `status=ERROR&` +
+      `message=${encodeURIComponent('Payment processing error - please contact support')}`;
+      
+    res.redirect(errorUrl);
+  }
+});
+
+// 🟢 Health check endpoint
 app.get("/", (req, res) => {
-  res.send("ICICI Payment Backend is running 🚀");
+  res.json({
+    service: "ICICI EazyPay Payment Backend",
+    status: "🚀 Running",
+    version: "2.0.0",
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV || "development"
+  });
+});
+
+// 🟢 API health endpoint
+app.get("/api/health", (req, res) => {
+  res.json({
+    status: "healthy",
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString()
+  });
 });
 
 const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
+  console.log(`
+🚀 ICICI EazyPay Server Started Successfully!
+📍 Port: ${PORT}
+🌐 Environment: ${process.env.NODE_ENV || 'development'}
+🔑 Merchant ID: ${MERCHANT_ID}
+✅ Ready to process payments!
+  `);
 });
