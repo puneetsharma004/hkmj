@@ -12,7 +12,8 @@ import {
   FaStar,
   FaQuoteLeft,
   FaUserCheck,
-  FaPlayCircle
+  FaPlayCircle,
+  FaQuoteRight
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
 import { GiMeditation } from "react-icons/gi";
@@ -324,11 +325,8 @@ export default function SpecialPrograms() {
                 <div className="flex items-start space-x-2">
                   <FaQuoteLeft className="text-saffron text-lg mt-1 flex-shrink-0" />
                   <p className="text-gray-700 dark:text-gray-300 italic">{testimonial.quote}</p>
-                </div>
-                <div className="flex justify-end mt-4">
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar key={i} className="text-gold text-sm" />
-                  ))}
+                  <FaQuoteRight className="text-saffron text-lg mt-1 flex-shrink-0 self-end" />
+
                 </div>
               </motion.div>
             ))}

@@ -180,7 +180,7 @@ export default function EventsCalendar() {
               <motion.button
                 key={type.id}
                 onClick={() => setSelectedFilter(type.id)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center space-x-2 shadow-lg ${
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center space-x-2 shadow-lg outline-none ${
                   selectedFilter === type.id
                     ? 'bg-saffron-gradient text-white'
                     : 'bg-white/80 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 text-gray-700 dark:text-gray-300 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50'
@@ -191,7 +191,7 @@ export default function EventsCalendar() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="text-saffron">{type.icon}</span>
+                <span className={` ${selectedFilter === type.id ? 'text-white' : 'text-saffron'}`}>{type.icon}</span>
                 <span>{type.name}</span>
               </motion.button>
             ))}
@@ -233,9 +233,6 @@ export default function EventsCalendar() {
             </span>
           </div>
         </motion.div>
-
-        {/* Chart Reference */}
-        [92]
 
         {/* Events List */}
         <div className="space-y-6">

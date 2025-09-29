@@ -14,6 +14,8 @@ import {
   FaArrowRight
 } from 'react-icons/fa';
 import { HiOutlineSparkles as HiSparkles } from 'react-icons/hi';
+import { BsFillSunriseFill, BsFillSunsetFill } from "react-icons/bs";
+import { IoMdContacts } from "react-icons/io";
 
 export default function CallToAction() {
   return (
@@ -52,13 +54,6 @@ export default function CallToAction() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="flex justify-center items-center mb-8">
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-32"></div>
-            <span className="mx-6 text-5xl text-saffron animate-pulse">
-              <FaDoorOpen />
-            </span>
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-32"></div>
-          </div>
           
           <h2 className="text-4xl md:text-5xl font-bold gradient-text-saffron-gold mb-6">
             Visit Our Sacred Temple
@@ -85,7 +80,7 @@ export default function CallToAction() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className="bg-gradient-to-r from-saffron via-orange-500 to-gold text-black font-bold px-8 py-4 rounded-full shadow-2xl hover:shadow-saffron/50 transition-all duration-300 flex items-center space-x-3">
+            <div className=" bg-saffron text-white font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center space-x-3">
               <FaDoorOpen className="text-2xl" />
               <span className="text-lg">Plan Your Visit</span>
               <motion.span
@@ -182,10 +177,10 @@ export default function CallToAction() {
               </h4>
               <div className="space-y-2 text-gray-700 dark:text-gray-300">
                 <p className="flex items-center gap-2">
-                  <span className="text-saffron">🌅</span> Morning: 5:00 AM - 12:00 PM
+                  <span className="text-saffron"><BsFillSunriseFill /></span> Morning: 5:00 AM - 12:00 PM
                 </p>
                 <p className="flex items-center gap-2">
-                  <span className="text-gold">🌇</span> Evening: 4:00 PM - 9:00 PM
+                  <span className="text-saffron"><BsFillSunsetFill /></span> Evening: 4:00 PM - 9:00 PM
                 </p>
                 <p className="flex items-center gap-2">
                   <FaCalendarAlt className="text-saffron" /> Special festivals: Extended hours
@@ -194,7 +189,7 @@ export default function CallToAction() {
             </div>
             <div>
               <h4 className="font-semibold text-saffron mb-3 flex items-center gap-2">
-                <FaPhone /> Contact Details
+                <IoMdContacts /> Contact Details
               </h4>
               <div className="space-y-2 text-gray-700 dark:text-gray-300">
                 <p className="flex items-center gap-2">

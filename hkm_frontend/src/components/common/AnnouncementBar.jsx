@@ -99,10 +99,10 @@ export default function Announcements() {
           <div className="flex items-center justify-between py-2 px-4 sm:px-6 lg:px-8">
             
             {/* Left Navigation */}
-            <div className="hidden md:flex items-center space-x-2">
+            <div className="hidden md:flex items-center space-x-2 ">
               <motion.button
                 onClick={goToPrevious}
-                className="p-2 rounded-full text-gold/70 hover:text-saffron hover:bg-saffron/10 transition-all duration-300"
+                className="p-2 rounded-full text-gold/70 hover:text-saffron hover:bg-saffron/10 transition-all duration-300 outline-none"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 aria-label="Previous announcement"
@@ -127,7 +127,6 @@ export default function Announcements() {
                     className="flex items-center justify-center"
                     animate={{ 
                       scale: [1, 1.1, 1],
-                      rotate: [0, 5, -5, 0]
                     }}
                     transition={{ 
                       duration: 3,
@@ -137,7 +136,7 @@ export default function Announcements() {
                   >
                     <div className="relative">
                       <motion.div
-                        className="absolute inset-0 bg-saffron-gradient rounded-full blur-md opacity-50"
+                        className="absolute inset-0 rounded-full blur-md opacity-50"
                         animate={{ scale: [1, 1.2, 1] }}
                         transition={{ duration: 2, repeat: Infinity }}
                       />
@@ -191,7 +190,7 @@ export default function Announcements() {
             {/* Right Section */}
             <div className="hidden md:flex items-center space-x-2">
               {/* Mobile Navigation */}
-              <div className="md:hidden flex items-center space-x-2">
+              <div className="md:hidden flex items-center space-x-2 ">
                 <motion.button
                   onClick={goToPrevious}
                   className="p-1.5 rounded-full text-gold/70 hover:text-saffron hover:bg-saffron/10 transition-all duration-300"

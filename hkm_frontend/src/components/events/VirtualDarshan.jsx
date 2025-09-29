@@ -64,20 +64,7 @@ export default function VirtualDarshan() {
         <div className="absolute top-20 left-20 w-80 h-80 bg-gradient-to-r from-purple-400/30 to-indigo-400/30 dark:bg-purple-600 rounded-full opacity-40 dark:opacity-15 blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-saffron/30 to-orange-400/30 dark:bg-orange-600 rounded-full opacity-30 dark:opacity-10 blur-3xl animate-pulse delay-1000"></div>
       </div>
-
-      {/* Spiritual Background Elements */}
-      <div className="absolute inset-0 opacity-20 dark:opacity-5">
-        <div className="absolute top-16 left-16 text-5xl text-saffron animate-pulse delay-200">
-          <FaMobileAlt />
-        </div>
-        <div className="absolute top-32 right-20 text-4xl text-gold animate-pulse delay-800">
-          <FaDesktop />
-        </div>
-        <div className="absolute bottom-32 left-20 text-6xl text-saffron animate-pulse delay-1200">
-          <FaTv />
-        </div>
-      </div>
-
+      
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Section Header */}
         <motion.div
@@ -117,7 +104,7 @@ export default function VirtualDarshan() {
                 <motion.button
                   key={option.id}
                   onClick={() => setActiveTab(option.id)}
-                  className={`p-4 rounded-xl border transition-all duration-300 shadow-lg ${
+                  className={`p-4 rounded-xl border transition-all duration-300 shadow-lg outline-none ${
                     activeTab === option.id
                       ? 'bg-saffron-gradient text-white border-saffron'
                       : 'bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 text-gray-700 dark:text-gray-300 border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50'
@@ -126,7 +113,7 @@ export default function VirtualDarshan() {
                   whileTap={{ scale: option.available ? 0.98 : 1 }}
                   disabled={!option.available}
                 >
-                  <div className="text-2xl mb-2 text-saffron">{option.icon}</div>
+                  <div className={`text-2xl mb-2 ${activeTab === option.id? "text-white": "text-saffron"}`}>{option.icon}</div>
                   <div className="font-semibold text-sm">{option.title}</div>
                   {!option.available && (
                     <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">Coming Soon</div>

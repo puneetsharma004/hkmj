@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-
+import { GiByzantinTemple } from "react-icons/gi";
 export default function EventsAndDarshan() {
   const events = [
     { img: '/images/event1.jpg', title: 'Janmashtami 2025', date: '6 Sep', desc: 'Celebrate the birth of Lord Krishna.' },
@@ -156,7 +156,7 @@ export default function EventsAndDarshan() {
               className="mt-8 p-6 bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-xl border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 text-center shadow-lg"
             >
               <p className="text-gray-800 dark:text-gray-200 mb-2">
-                <span className="text-saffron font-semibold">🚪 Temple Opens:</span> 5:00 AM - 9:00 PM (Daily)
+                <span className="text-saffron font-semibold flex items-center gap-1 justify-center"><GiByzantinTemple /> Temple Opens:</span> 5:00 AM - 9:00 PM (Daily)
               </p>
               <p className="text-gray-700 dark:text-gray-300 text-sm">
                 Visitors are welcome during all aarti timings. Please maintain silence during prayers.

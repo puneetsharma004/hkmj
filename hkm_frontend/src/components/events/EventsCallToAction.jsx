@@ -17,6 +17,7 @@ import {
   FaWhatsapp
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
+import { PiHandsPrayingFill } from 'react-icons/pi';
 
 export default function EventsCallToAction() {
   const quickActions = [
@@ -66,22 +67,6 @@ export default function EventsCallToAction() {
         <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-gradient-to-r from-gold/20 to-saffron/20 dark:bg-gold rounded-full opacity-25 dark:opacity-10 blur-3xl animate-pulse delay-500 transform -translate-x-1/2 -translate-y-1/2"></div>
       </div>
 
-      {/* Spiritual Background Elements */}
-      <div className="absolute inset-0 opacity-20 dark:opacity-5">
-        <div className="absolute top-16 left-16 text-6xl text-saffron animate-pulse delay-500">
-          <FaTheaterMasks />
-        </div>
-        <div className="absolute top-32 right-20 text-4xl text-gold animate-pulse delay-1000">
-          <FaCalendarAlt />
-        </div>
-        <div className="absolute bottom-32 left-20 text-5xl text-saffron animate-pulse delay-1500">
-          <HiSparkles />
-        </div>
-        <div className="absolute bottom-16 right-16 text-4xl text-gold animate-pulse delay-200">
-          <FaPray />
-        </div>
-      </div>
-
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Main CTA Header */}
         <motion.div
@@ -91,14 +76,6 @@ export default function EventsCallToAction() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="flex justify-center items-center mb-8">
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-32"></div>
-            <span className="mx-6 text-5xl text-saffron animate-pulse">
-              <FaTheaterMasks />
-            </span>
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-32"></div>
-          </div>
-          
           <h2 className="text-4xl md:text-5xl font-bold gradient-text-saffron-gold mb-6">
             Begin Your Spiritual Journey
           </h2>
@@ -121,7 +98,7 @@ export default function EventsCallToAction() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="bg-gradient-to-r from-saffron via-orange-500 to-gold text-white font-bold px-8 py-4 rounded-full shadow-2xl hover:shadow-saffron/50 transition-all duration-300 flex items-center space-x-3">
+              <div className="bg-saffron text-white font-bold px-8 py-4 rounded-full transition-all duration-300 flex items-center space-x-3">
                 <FaDoorOpen className="text-2xl" />
                 <span className="text-lg">Plan Your Visit</span>
                 <motion.span
@@ -144,9 +121,6 @@ export default function EventsCallToAction() {
             </motion.a>
           </motion.div>
         </motion.div>
-
-        {/* Chart Reference */}
-        [93]
 
         {/* Quick Actions Grid */}
         <motion.div
@@ -296,7 +270,7 @@ export default function EventsCallToAction() {
               "Wherever you are, whatever you do, remember Krishna and His divine love"
             </p>
             <div className="flex items-center justify-center space-x-4">
-              <FaPray className="text-2xl text-saffron" />
+              <PiHandsPrayingFill className="text-2xl text-saffron" />
               <p className="text-saffron font-semibold text-xl">
                 Hare Krishna!
               </p>

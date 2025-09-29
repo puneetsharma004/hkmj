@@ -137,14 +137,7 @@ export default function Footer() {
               className="text-xl font-bold mb-4 flex items-center gap-3"
               variants={itemVariants}
             >
-              <motion.div
-                variants={omVariants}
-                animate="animate"
-                className="text-saffron dark:text-purple-300"
-              >
-                <FaOm className="text-2xl" />
-              </motion.div>
-              <span className="bg-saffron-gradient dark:from-purple-300 dark:to-pink-300 bg-clip-text text-transparent">
+              <span className="text-saffron dark:from-purple-300 dark:to-pink-300">
                 Hare Krishna Marwar Mandir
               </span>
             </motion.h3>
@@ -382,7 +375,7 @@ export default function Footer() {
                   ease: "easeInOut"
                 }}
               >
-                <FaHeart />
+                <FaHeart onClick={() => window.location.href = "https://www.youtube.com/channel/UC4Jr9xeXapc8fXb9N1fiXnw"} />
               </motion.span>
               <span>and devotion for Lord Krishna</span>
             </motion.div>

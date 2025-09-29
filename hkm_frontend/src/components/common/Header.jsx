@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { FaHandHoldingHeart } from 'react-icons/fa';
 import { GiByzantinTemple } from 'react-icons/gi';
 import ThemeToggle from './ThemeToggle';
-
+import  clsx  from "clsx"
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -113,10 +113,16 @@ export default function Header() {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    isActive ? 'shadow-md' : 'hover:shadow-sm' }
-                    ${ isScrolled?"dark:text-white text-[#003366]": "text-[#003366] dark:text-[#003366]"}
-                    `}
+                  // Using clsx
+                  className={clsx(
+                    'px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200',
+                    {
+                      'shadow-md': isActive,
+                      'hover:shadow-sm': !isActive,
+                      'text-[#003366] dark:text-white': isScrolled,
+                      'text-[#003366] dark:text-[#003366]': !isScrolled
+                    }
+                  )}
                   style={{
                     backgroundColor: isActive ? '#FFD700' : 'transparent',
                   }}
@@ -126,7 +132,7 @@ export default function Header() {
                   whileHover={{ 
                     y: -2,
                     backgroundColor: isActive ? '#FFD700' : (isScrolled ? 'rgba(255, 255, 255, 0.1)' : '#FFD700'),
-                    color: isActive ? '#003366' : (isScrolled ? 'white' : '#003366')
+                    color: isActive ? '#003366' : (isScrolled ? '#fff' : '#003366')
                   }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -138,28 +144,6 @@ export default function Header() {
 
           {/* Right Section */}
           <div className="flex items-center space-x-3">
-            {/* Next Aarti - Desktop Only */}
-            <motion.div 
-              className="hidden lg:block text-right"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <div 
-                className={`text-xs font-medium transition-colors duration-300 ${
-                  isScrolled ? 'text-white/80' : ''
-                }`}
-                style={{ color: isScrolled ? 'rgba(255, 255, 255, 0.8)' : '#003366' }}
-              >
-                Next Aarti
-              </div>
-              <div 
-                className="text-sm font-semibold"
-                style={{ color: '#FF9933' }}
-              >
-                7:00 PM
-              </div>
-            </motion.div>
                 <ThemeToggle/>
             {/* Donate Button */}
             <motion.button 
@@ -185,7 +169,7 @@ export default function Header() {
             {/* Mobile Menu Toggle */}
             <motion.button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg transition-colors duration-200"
+              className="md:hidden p-2 rounded-lg transition-colors duration-200 outline-none"
               style={{ color: isScrolled ? 'white' : '#003366' }}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -226,7 +210,14 @@ export default function Header() {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200 #003366"
+                  className={clsx(`px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200`,
+                    {
+                      'shadow-md': isActive,
+                      'hover:shadow-sm': !isActive,
+                      'text-[#003366] dark:text-white': isScrolled,
+                      'text-[#003366] dark:text-[#003366]': !isScrolled
+                    })
+                  }
                   style={{
                     backgroundColor: isActive ? '#FFD700' : 'transparent',
                   }}
@@ -236,7 +227,6 @@ export default function Header() {
                   whileHover={{ 
                     x: 5,
                     backgroundColor: isActive ? '#FFD700' : (isScrolled ? 'rgba(255, 255, 255, 0.1)' : '#FFD700'),
-                    color: isActive ? '#003366' : (isScrolled ? 'white' : '#003366')
                   }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -246,32 +236,6 @@ export default function Header() {
                 </motion.a>
               );
             })}
-            
-            {/* Mobile Next Aarti */}
-            <motion.div
-              className="px-4 py-3 mt-2 border-t"
-              style={{ borderColor: isScrolled ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 51, 102, 0.2)' }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.3 }}
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <div 
-                    className="text-xs font-medium"
-                    style={{ color: isScrolled ? 'rgba(255, 255, 255, 0.8)' : '#003366' }}
-                  >
-                    Next Aarti
-                  </div>
-                  <div 
-                    className="text-sm font-semibold"
-                    style={{ color: '#FF9933' }}
-                  >
-                    7:00 PM
-                  </div>
-                </div>
-              </div>
-            </motion.div>
           </nav>
         </motion.div>
       </div>

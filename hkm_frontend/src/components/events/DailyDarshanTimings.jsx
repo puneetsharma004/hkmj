@@ -14,6 +14,7 @@ import {
   FaInfoCircle
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
+import { BsFillSunsetFill } from "react-icons/bs";
 
 export default function DailyDarshanTimings() {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -62,7 +63,7 @@ export default function DailyDarshanTimings() {
       timeValue: 19 * 60,
       description: 'Evening prayers and lamp ceremony',
       significance: 'The most popular evening aarti with beautiful lamp offerings',
-      icon: <span className="text-2xl">🌇</span>,
+      icon: <BsFillSunsetFill />,
       duration: '1 hour'
     },
     {
@@ -110,12 +111,6 @@ export default function DailyDarshanTimings() {
     <section className="relative py-16 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:bg-black">
       {/* Light/Dark Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-100/50 via-amber-100/50 to-yellow-100/50 dark:from-black dark:via-purple-950 dark:to-indigo-950"></div>
-      
-      {/* Animated Background Glow */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 right-20 w-80 h-80 bg-gradient-to-r from-saffron/30 to-orange-400/30 dark:bg-orange-600 rounded-full opacity-40 dark:opacity-15 blur-3xl animate-pulse delay-500"></div>
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-r from-purple-400/25 to-indigo-400/25 dark:bg-purple-600 rounded-full opacity-30 dark:opacity-10 blur-3xl animate-pulse delay-1500"></div>
-      </div>
 
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Section Header */}
@@ -126,13 +121,6 @@ export default function DailyDarshanTimings() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="flex justify-center items-center mb-6">
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-            <span className="mx-4 text-4xl text-saffron animate-pulse">
-              <FaClock />
-            </span>
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-          </div>
           
           <h2 className="text-3xl md:text-4xl font-bold gradient-text-saffron-gold mb-4">
             Daily Darshan & Aarti Timings
@@ -152,9 +140,8 @@ export default function DailyDarshanTimings() {
             className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/20 dark:to-gold/20 rounded-2xl p-6 mb-12 border border-saffron/40 dark:border-saffron border-opacity-60 dark:border-opacity-40 backdrop-blur-xl shadow-lg"
           >
             <div className="text-center">
-              <div className="text-4xl mb-3 text-saffron">{nextAarti.icon}</div>
-              <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">Next Aarti</h3>
-              <div className="text-3xl font-bold text-saffron mb-2">{nextAarti.name}</div>
+              <h3 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">Next Aarti</h3>
+              <div className="text-2xl font-bold text-saffron mb-2">{nextAarti.name}</div>
               <div className="text-xl text-gold mb-2 flex items-center justify-center gap-2">
                 <FaRegClock />
                 {nextAarti.time}
@@ -165,9 +152,6 @@ export default function DailyDarshanTimings() {
             </div>
           </motion.div>
         )}
-
-        {/* Chart Reference */}
-        [91]
 
         {/* Aarti Schedule Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -228,7 +212,7 @@ export default function DailyDarshanTimings() {
                 {/* Next Indicator */}
                 {isNext && (
                   <motion.div
-                    className="absolute top-3 right-3 bg-saffron text-white text-xs font-bold px-2 py-1 rounded-full shadow-lg"
+                    className="absolute top-1 right-1 bg-red-500 text-white text-[10px] font-bold px-2 py-1 rounded-full shadow-lg"
                     animate={{ scale: [1, 1.1, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
@@ -251,7 +235,7 @@ export default function DailyDarshanTimings() {
           <h3 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-6">Temple Timings</h3>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="text-center">
-              <div className="text-4xl mb-3 text-saffron">
+              <div className="text-4xl mb-3 text-saffron flex justify-center items-center">
                 <FaSun />
               </div>
               <h4 className="font-bold text-saffron mb-2">Morning Session</h4>
@@ -259,8 +243,8 @@ export default function DailyDarshanTimings() {
               <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Daily darshan and morning activities</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl mb-3 text-saffron">
-                <span>🌇</span>
+              <div className="text-4xl mb-3 text-saffron flex justify-center items-center">
+                <BsFillSunsetFill />
               </div>
               <h4 className="font-bold text-saffron mb-2">Evening Session</h4>
               <p className="text-gray-700 dark:text-gray-300">4:00 PM - 9:30 PM</p>

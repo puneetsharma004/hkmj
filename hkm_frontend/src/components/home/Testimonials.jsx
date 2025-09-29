@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
-
+import { BiSolidQuoteLeft } from "react-icons/bi";
+import { BiSolidQuoteRight } from "react-icons/bi";
+import { FaStar } from "react-icons/fa";
 export default function Testimonials() {
   const testimonials = [
     { 
@@ -56,13 +58,7 @@ export default function Testimonials() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center mb-16"
-        >
-          <div className="flex justify-center items-center mb-6">
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-            <span className="mx-4 text-4xl animate-pulse">💭</span>
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-          </div>
-          
+        > 
           <h3 className="text-3xl md:text-4xl font-bold gradient-text-saffron-gold mb-4">
             What Devotees Say
           </h3>
@@ -88,8 +84,8 @@ export default function Testimonials() {
             >
               {/* Quote */}
               <div className="relative mb-6">
-                <div className="absolute -top-2 -left-2 text-4xl text-saffron opacity-50 dark:opacity-30">"</div>
-                <div className="absolute -bottom-4 -right-2 text-4xl text-saffron opacity-50 dark:opacity-30">"</div>
+                <div className="absolute -top-4 -left-6 text-2xl text-saffron opacity-50 dark:opacity-30"><BiSolidQuoteLeft /></div>
+                <div className="absolute -bottom-4 -right-2 text-2xl text-saffron opacity-50 dark:opacity-30"><BiSolidQuoteRight /></div>
                 <p className="text-gray-700 dark:text-gray-100 text-lg italic leading-relaxed relative z-10 group-hover:text-gray-800 dark:group-hover:text-white transition-colors duration-300">
                   {testimonial.quote}
                 </p>
@@ -106,7 +102,7 @@ export default function Testimonials() {
                     viewport={{ once: true }}
                     className="text-gold text-xl mr-1 glow"
                   >
-                    ⭐
+                    <FaStar />
                   </motion.span>
                 ))}
               </div>
@@ -142,7 +138,7 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 p-8 rounded-2xl border border-saffron/50 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm max-w-2xl mx-auto shadow-lg">
+          <div className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 p-8 rounded-2xl border border-saffron/50 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm max-w-2xl mx-auto shadow-lg ">
             <h4 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Share Your Experience</h4>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
               We'd love to hear about your spiritual journey with us. Your words inspire others to join our divine family.
@@ -154,9 +150,9 @@ export default function Testimonials() {
                 boxShadow: "0 10px 30px rgba(255, 153, 51, 0.3)"
               }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-saffron via-orange-500 to-amber-400 text-white dark:text-black font-bold px-6 py-3 rounded-full shadow-xl hover:shadow-saffron/50 transition-all duration-300 glow-button"
+              className="bg-saffron text-white dark:text-black font-bold px-6 py-3 rounded-full shadow-xl hover:shadow-saffron/50 transition-all duration-300 glow-button"
             >
-              Submit Your Testimonial 📝
+              Submit Your Testimonial
             </motion.button>
           </div>
         </motion.div>
@@ -170,9 +166,9 @@ export default function Testimonials() {
           className="grid grid-cols-3 gap-6 mt-12 max-w-2xl mx-auto"
         >
           {[
-            { number: '1000+', label: 'Happy Devotees', icon: '😊' },
-            { number: '15+', label: 'Years of Service', icon: '🏛️' },
-            { number: '50+', label: 'Community Events', icon: '🎉' }
+            { number: '1000+', label: 'Happy Devotees', },
+            { number: '15+', label: 'Years of Service', },
+            { number: '50+', label: 'Community Events', }
           ].map((stat, i) => (
             <motion.div
               key={i}
@@ -183,7 +179,6 @@ export default function Testimonials() {
               whileHover={{ scale: 1.05 }}
               className="text-center p-4 bg-white/70 dark:bg-gradient-to-br dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm shadow-lg hover:shadow-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300"
             >
-              <div className="text-2xl mb-2">{stat.icon}</div>
               <div className="text-2xl font-bold text-saffron glow">{stat.number}</div>
               <div className="text-gray-700 dark:text-gray-300 text-xs">{stat.label}</div>
             </motion.div>

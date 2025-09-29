@@ -18,25 +18,21 @@ export default function TempleArchitecture() {
     {
       title: 'Marwar Style Domes',
       description: 'Traditional Rajasthani architectural elements with intricate carvings',
-      // icon: <GiGreekTemple />,
       image: 'https://images.unsplash.com/photo-1574401572222-9e4c2b6b5e4c?w=400&h=300&fit=crop'
     },
     {
       title: 'Blue City Aesthetics',
       description: 'Incorporating Jodhpur\'s famous blue color palette in temple design',
-      icon: <FaCircle />,
       image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop'
     },
     {
       title: 'Sacred Sanctum',
       description: 'Inner sanctuary housing beautiful deities of Krishna and Radha',
-      // icon: <GiPillar />,
       image: 'https://images.unsplash.com/photo-1582555172866-f73bb12ba8c6?w=400&h=300&fit=crop'
     },
     {
       title: 'Community Halls',
       description: 'Spacious areas for gatherings, festivals, and spiritual programs',
-      icon: <FaBuilding />,
       image: 'https://images.unsplash.com/photo-1571896848203-97f5ce0b9e9e?w=400&h=300&fit=crop'
     }
   ];
@@ -144,9 +140,6 @@ export default function TempleArchitecture() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                <div className="absolute top-4 right-4 text-3xl text-white shadow-lg">
-                  {feature.icon}
-                </div>
               </div>
 
               {/* Content */}

@@ -25,7 +25,6 @@ export default function MajorFestivals() {
       specialPrograms: ['Midnight Aarti', 'Krishna Jhanki', 'Devotional Drama', 'Special Bhog'],
       image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&h=300&fit=crop',
       color: 'from-blue-600 to-purple-600',
-      icon: '👶',
       duration: '2 Days'
     },
     {
@@ -36,7 +35,6 @@ export default function MajorFestivals() {
       specialPrograms: ['Radha Abhishek', 'Flower Decorations', 'Special Kirtans', 'Radha Katha'],
       image: 'https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=500&h=300&fit=crop',
       color: 'from-pink-500 to-rose-600',
-      icon: '🌹',
       duration: '1 Day'
     },
     {
@@ -47,7 +45,6 @@ export default function MajorFestivals() {
       specialPrograms: ['Color Celebrations', 'Holika Dahan', 'Community Feast', 'Cultural Programs'],
       image: 'https://images.unsplash.com/photo-1583211892916-5e38c6ee3297?w=500&h=300&fit=crop',
       color: 'from-yellow-500 to-red-500',
-      icon: '🎨',
       duration: '2 Days'
     },
     {
@@ -58,7 +55,6 @@ export default function MajorFestivals() {
       specialPrograms: ['Grand Procession', 'Chariot Pulling', 'Street Kirtans', 'Public Darshan'],
       image: 'https://images.unsplash.com/photo-1589802829985-817e51171b92?w=500&h=300&fit=crop',
       color: 'from-orange-500 to-amber-600',
-      icon: '🏛️',
       duration: '1 Day'
     },
     {
@@ -69,7 +65,6 @@ export default function MajorFestivals() {
       specialPrograms: ['Lamp Lighting', 'Fireworks Display', 'Special Aarti', 'Community Dinner'],
       image: 'https://images.unsplash.com/photo-1605538883669-825200433431?w=500&h=300&fit=crop',
       color: 'from-amber-500 to-yellow-600',
-      icon: '🪔',
       duration: '3 Days'
     },
     {
@@ -80,7 +75,6 @@ export default function MajorFestivals() {
       specialPrograms: ['Mountain Replica', 'Anna Koot', '108 Food Items', 'Parikrama'],
       image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=300&fit=crop',
       color: 'from-green-500 to-teal-600',
-      icon: '⛰️',
       duration: '1 Day'
     }
   ];
@@ -96,22 +90,6 @@ export default function MajorFestivals() {
         <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-r from-purple-400/25 to-indigo-400/25 dark:bg-purple-600 rounded-full opacity-30 dark:opacity-15 blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      {/* Spiritual Background Elements */}
-      <div className="absolute inset-0 opacity-20 dark:opacity-5">
-        <div className="absolute top-16 left-16 text-5xl text-saffron animate-pulse delay-500">
-          <FaGift />
-        </div>
-        <div className="absolute top-32 right-20 text-4xl text-gold animate-pulse delay-1000">
-          <IoCalendar />
-        </div>
-        <div className="absolute bottom-32 left-20 text-6xl text-saffron animate-pulse delay-1500">
-          <FaUniversity />
-        </div>
-        <div className="absolute bottom-16 right-16 text-4xl text-gold animate-pulse delay-200">
-          <HiSparkles />
-        </div>
-      </div>
-
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Section Header */}
         <motion.div
@@ -121,13 +99,6 @@ export default function MajorFestivals() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="flex justify-center items-center mb-6">
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-            <span className="mx-4 text-4xl text-saffron animate-pulse">
-              <FaGift />
-            </span>
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-          </div>
           
           <h2 className="text-3xl md:text-4xl font-bold gradient-text-saffron-gold mb-4">
             Major Festivals & Celebrations
@@ -157,11 +128,6 @@ export default function MajorFestivals() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent`}></div>
-                
-                {/* Festival Icon */}
-                <div className="absolute top-4 right-4 text-4xl bg-black/50 rounded-full p-2 backdrop-blur-sm">
-                  {festival.icon}
-                </div>
                 
                 {/* Duration Badge */}
                 <div className="absolute top-4 left-4 bg-saffron text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1">
@@ -280,7 +246,7 @@ export default function MajorFestivals() {
           className="mt-12 text-center"
         >
           <motion.button
-            className="px-8 py-4 bg-gradient-to-r from-saffron via-orange-500 to-gold text-white font-bold rounded-full shadow-xl hover:shadow-saffron/50 transition-all duration-300 flex items-center gap-3 mx-auto"
+            className="px-8 py-4 bg-saffron text-white font-bold rounded-full shadow-xl hover:shadow-saffron/50 transition-all duration-300 flex items-center gap-3 mx-auto"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

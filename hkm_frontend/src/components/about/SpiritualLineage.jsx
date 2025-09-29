@@ -89,14 +89,12 @@ export default function SpiritualLineage() {
                 <div className="grid grid-cols-2 gap-4 mt-6">
                   <div className="text-center p-4 bg-gradient-to-r from-saffron/10 to-gold/10 rounded-lg border border-saffron/20">
                     <div className="text-2xl font-bold text-gold flex items-center justify-center gap-2">
-                      <FaGlobeAmericas className="text-saffron" />
                       800+
                     </div>
                     <div className="text-sm text-gray-600 dark:text-gray-400">Global Centers</div>
                   </div>
                   <div className="text-center p-4 bg-gradient-to-r from-gold/10 to-saffron/10 rounded-lg border border-gold/20">
                     <div className="text-2xl font-bold text-gold flex items-center justify-center gap-2">
-                      <FaGlobeAmericas className="text-saffron" />
                       50+
                     </div>
                     <div className="text-sm text-gray-600 dark:text-gray-400">Countries</div>

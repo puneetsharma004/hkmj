@@ -17,15 +17,15 @@ const ThemeToggle = () => {
     <button
       ref={ref}
       onClick={toggleSwitchTheme}
-      className="flex items-center justify-center p-3 rounded-full
-                 bg-white dark:bg-gray-900 shadow-lg hover:shadow-xl
+      className="flex items-center justify-center p-2 rounded-full
+                 bg-[#ffd700] dark:bg-gray-900 shadow-lg hover:shadow-xl
                  transition-all duration-300 outline-none"
       aria-label="Toggle Theme"
     >
       {isDarkMode ? (
-        <FiMoon className="text-xl text-purple-400" />
+        <FiMoon className="text-md text-purple-400" />
       ) : (
-        <FiSun className="text-xl text-amber-500" />
+        <FiSun className="text-md text-jodhpur-blue shadow-lg" />
       )}
     </button>
   );

@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { FaDonate, FaHandsHelping, FaVideo, FaPhone } from 'react-icons/fa';
-
+import { IoCall } from "react-icons/io5";
+import { GoClockFill } from "react-icons/go";
+import { SiMinutemailer } from "react-icons/si";
+import { FaWhatsapp } from "react-icons/fa";
 export default function QuickLinks() {
   const links = [
     { 
@@ -138,20 +141,20 @@ export default function QuickLinks() {
           className="mt-12 text-center"
         >
           <div className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 p-6 rounded-2xl border border-saffron/50 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm max-w-4xl mx-auto shadow-lg">
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
-              <span className="text-saffron font-semibold">📞 24/7 Support:</span> Need immediate assistance? Our temple staff is always ready to help.
+            <p className="text-gray-700 dark:text-gray-300 mb-4 flex items-center gap-2 justify-center">
+              <span className="text-saffron font-semibold flex items-center gap-2"><IoCall /> 24/7 Support:</span> Need immediate assistance? Our temple staff is always ready to help.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-600 dark:text-gray-400">
               <div className="flex items-center justify-center space-x-2 hover:text-saffron transition-colors duration-300">
-                <span>🕐</span>
+                <span><GoClockFill /></span>
                 <span>Temple Hours: 5 AM - 9 PM</span>
               </div>
               <div className="flex items-center justify-center space-x-2 hover:text-saffron transition-colors duration-300">
-                <span>📧</span>
+                <span><SiMinutemailer /></span>
                 <span>Email: info@Marwarmandir.org</span>
               </div>
               <div className="flex items-center justify-center space-x-2 hover:text-saffron transition-colors duration-300">
-                <span>📱</span>
+                <span><FaWhatsapp /></span>
                 <span>WhatsApp: +91 98765 43210</span>
               </div>
             </div>

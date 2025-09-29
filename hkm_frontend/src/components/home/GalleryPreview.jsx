@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
-
+import { IoMdPhotos } from "react-icons/io";
+import { BsCalendar2Event } from "react-icons/bs";
+import { MdFestival } from "react-icons/md";
 export default function GalleryPreview() {
   const gallery = [
     '/images/gallery1.jpg',
@@ -99,18 +101,11 @@ export default function GalleryPreview() {
               boxShadow: "0 20px 40px rgba(255, 153, 51, 0.3)"
             }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center bg-gradient-to-r from-saffron via-orange-500 to-amber-400 text-white dark:text-black font-bold px-8 py-4 rounded-full shadow-2xl hover:shadow-saffron/40 dark:hover:shadow-saffron/50 transition-all duration-300 group glow-button"
+            className="inline-flex items-center bg-saffron text-white font-medium px-8 py-3.5 rounded-xl shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-saffron/50 focus:ring-offset-2 transition-all duration-200 group"
           >
             <span className="mr-3">View Full Gallery</span>
             <motion.span
-              animate={{ x: [0, 5, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="text-xl"
-            >
-              📸
-            </motion.span>
-            <motion.span
-              className="ml-2 group-hover:translate-x-1 transition-transform duration-300"
+              className="group-hover:translate-x-1 transition-transform duration-200"
             >
               →
             </motion.span>
@@ -137,9 +132,9 @@ export default function GalleryPreview() {
           className="grid grid-cols-3 gap-6 mt-12 max-w-2xl mx-auto"
         >
           {[
-            { number: '500+', label: 'Photos', icon: '📷' },
-            { number: '50+', label: 'Events', icon: '🎭' },
-            { number: '25+', label: 'Festivals', icon: '🎉' }
+            { number: '500+', label: 'Photos', icon: <IoMdPhotos /> },
+            { number: '50+', label: 'Events', icon: <BsCalendar2Event /> },
+            { number: '25+', label: 'Festivals', icon: <MdFestival /> }
           ].map((stat, i) => (
             <motion.div
               key={i}
@@ -150,28 +145,11 @@ export default function GalleryPreview() {
               whileHover={{ scale: 1.05 }}
               className="text-center p-4 bg-white/70 dark:bg-gradient-to-br dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm shadow-lg hover:shadow-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300"
             >
-              <div className="text-2xl mb-2">{stat.icon}</div>
+              <span className="text-2xl mb-2 text-saffron flex justify-center">{stat.icon}</span>
               <div className="text-2xl font-bold text-saffron glow">{stat.number}</div>
               <div className="text-gray-700 dark:text-gray-300 text-sm">{stat.label}</div>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Decorative Elements */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          viewport={{ once: true }}
-          className="text-center mt-8"
-        >
-          <div className="inline-flex items-center space-x-4 text-xl opacity-60">
-            <span className="text-saffron animate-pulse">📿</span>
-            <span className="text-gold animate-pulse delay-300">🪔</span>
-            <span className="text-saffron animate-pulse delay-600">🏛️</span>
-            <span className="text-gold animate-pulse delay-900">🪔</span>
-            <span className="text-saffron animate-pulse delay-1200">📿</span>
-          </div>
         </motion.div>
       </div>
     </section>

@@ -6,7 +6,8 @@ import {
   FaHandshake, 
   FaGraduationCap, 
   FaUniversity,
-  FaQuoteLeft
+  FaQuoteLeft,
+  FaQuoteRight
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
 
@@ -71,9 +72,6 @@ export default function MissionVision() {
             className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 transition-all duration-300 group"
           >
             <div className="text-center mb-6">
-              <div className="text-6xl mb-4 text-saffron">
-                <FaBullseye />
-              </div>
               <h3 className="text-2xl font-bold text-saffron group-hover:text-gold transition-colors duration-300">
                 Our Mission
               </h3>
@@ -97,9 +95,6 @@ export default function MissionVision() {
             className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-gold hover:border-opacity-80 dark:hover:border-opacity-50 transition-all duration-300 group"
           >
             <div className="text-center mb-6">
-              <div className="text-6xl mb-4 text-gold">
-                <FaStar />
-              </div>
               <h3 className="text-2xl font-bold text-gold group-hover:text-saffron transition-colors duration-300">
                 Our Vision
               </h3>
@@ -162,9 +157,12 @@ export default function MissionVision() {
               <FaQuoteLeft />
             </div>
             <blockquote className="text-xl italic text-gray-700 dark:text-gray-100 mb-4">
-              "A temple is not just a building; it is a living embodiment of divine love where every soul can find their eternal home in Krishna's embrace."
+              A temple is not just a building; it is a living embodiment of divine love where every soul can find their eternal home in Krishna's embrace.
             </blockquote>
             <p className="text-saffron font-semibold">– Temple Founder</p>
+             <div className="text-4xl text-saffron mb-4 flex justify-end items-center">
+              <FaQuoteRight />
+            </div>
           </div>
         </motion.div>
       </div>
