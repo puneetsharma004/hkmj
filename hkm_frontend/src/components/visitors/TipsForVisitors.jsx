@@ -16,9 +16,11 @@ import {
   FaRoute,
   FaCar,
   FaEye,
-  FaHandsHelping
+  FaHandsHelping,
+  FaHeart
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
+import { MdElderly } from "react-icons/md";
 
 export default function TipsForVisitors() {
   const seasonalTips = [
@@ -102,7 +104,7 @@ export default function TipsForVisitors() {
   const specialNeedsTips = [
     {
       category: 'Elderly Visitors',
-      icon: <span>👴</span>,
+      icon: <MdElderly />,
       tips: [
         'Reserved seating available in prayer halls',
         'Wheelchairs can be arranged on request',
@@ -156,6 +158,7 @@ export default function TipsForVisitors() {
         'Join community activities and festivals',
         'Learn basic Sanskrit mantras from volunteers'
       ],
+      icon: <FaHeart />
     },
     {
       category: 'Health & Safety',
@@ -286,7 +289,6 @@ export default function TipsForVisitors() {
                 className="bg-white/90 dark:bg-gradient-to-br dark:from-indigo-900/50 dark:to-purple-900/50 rounded-xl p-6 border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-30 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group shadow-lg"
               >
                 <div className="flex items-start space-x-4">
-                  <div className="text-3xl text-saffron">{attraction.icon}</div>
                   <div className="flex-1">
                     <h4 className="font-bold text-gray-800 dark:text-white mb-2 group-hover:text-saffron transition-colors duration-300">
                       {attraction.name}
@@ -343,7 +345,7 @@ export default function TipsForVisitors() {
                 className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-xl p-6 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg"
               >
                 <div className="text-center mb-4">
-                  <div className="text-4xl mb-3 text-saffron">{category.icon}</div>
+                  <div className="text-4xl mb-3 text-saffron flex justify-center">{category.icon}</div>
                   <h4 className="font-bold text-saffron">{category.category}</h4>
                 </div>
                 
@@ -378,7 +380,7 @@ export default function TipsForVisitors() {
               className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl"
             >
               <div className="text-center mb-4">
-                <div className="text-4xl mb-3 text-saffron">{tipCategory.icon}</div>
+                <div className="text-2xl mb-3 text-saffron flex justify-center ">{tipCategory.icon}</div>
                 <h4 className="font-bold text-gray-800 dark:text-white">{tipCategory.category}</h4>
               </div>
               

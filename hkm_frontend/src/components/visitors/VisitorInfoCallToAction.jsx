@@ -146,7 +146,7 @@ export default function VisitorInfoCallToAction() {
           >
             {/* Primary Visit Button */}
             <motion.button
-              className="group relative overflow-hidden px-12 py-4 bg-gradient-to-r from-saffron via-orange-500 to-gold text-white font-bold rounded-full shadow-2xl hover:shadow-saffron/50 transition-all duration-300 text-lg"
+              className="group relative overflow-hidden px-12 py-4 bg-saffron text-white font-bold rounded-full shadow-2xl hover:shadow-saffron/50 transition-all duration-300 text-lg"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -361,12 +361,11 @@ export default function VisitorInfoCallToAction() {
           </p>
           <p className="text-saffron font-semibold text-xl flex items-center justify-center gap-2">
             Hare Krishna! We look forward to welcoming you 
-            <span>🙏</span>
           </p>
           
           <div className="mt-8 text-center">
             <motion.button
-              className="px-8 py-3 bg-saffron-gradient text-gray-500 font-bold rounded-full hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2 mx-auto shadow-2xl"
+              className="px-8 py-3 bg-saffron-gradient text-white font-bold rounded-full hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2 mx-auto shadow-2xl"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

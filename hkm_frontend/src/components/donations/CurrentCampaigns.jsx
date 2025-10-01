@@ -151,15 +151,11 @@ export default function CurrentCampaigns() {
                       className="w-full h-64 lg:h-full object-cover"
                     />
                     
-                    {/* Campaign Icon Badge */}
-                    <div className="absolute top-4 right-4 w-12 h-12 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center text-white text-xl shadow-lg">
-                      {campaign.icon}
-                    </div>
                     
                     {/* Urgent Badge */}
                     {campaign.urgent && (
                       <motion.div
-                        className="absolute top-4 left-4 bg-red-500 text-white font-bold px-3 py-1 rounded-full text-sm flex items-center gap-1 shadow-lg"
+                        className="absolute top-4 left-4 bg-red-500 text-white font-bold px-3 py-1 rounded-full text-sm flex items-center gap-1 shadow-lg z-10"
                         animate={{ scale: [1, 1.1, 1] }}
                         transition={{ duration: 2, repeat: Infinity }}
                       >
@@ -170,7 +166,7 @@ export default function CurrentCampaigns() {
 
                     {/* Video Play Button */}
                     {campaign.video && (
-                      <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-100 transition-opacity duration-300">
                         <motion.button
                           className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg"
                           whileHover={{ scale: 1.1 }}
@@ -186,7 +182,7 @@ export default function CurrentCampaigns() {
                     )}
 
                     {/* Progress Overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4" >
                       <div className="text-white text-sm font-semibold mb-2 flex items-center gap-2">
                         <FaRupeeSign />
                         {formatAmount(campaign.raised)} raised of {formatAmount(campaign.target)} goal
@@ -254,7 +250,7 @@ export default function CurrentCampaigns() {
                     {/* Action Buttons */}
                     <div className="flex space-x-4">
                       <motion.button
-                        className={`flex-1 font-bold py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg ${
+                        className={`flex-1 font-bold py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg outline-none ${
                           campaign.urgent
                             ? 'bg-gradient-to-r from-red-500 to-orange-500 text-white hover:shadow-red-500/30'
                             : 'bg-gradient-to-r from-orange-500 to-yellow-500 text-white hover:shadow-orange-500/30'
@@ -267,7 +263,7 @@ export default function CurrentCampaigns() {
                         Contribute Now
                       </motion.button>
                       <motion.button
-                        className="px-6 py-3 border border-orange-500 text-orange-500 rounded-lg hover:bg-orange-500 hover:text-white dark:hover:text-white transition-all duration-300"
+                        className="px-6 py-3 border border-orange-500 text-orange-500 rounded-lg hover:bg-orange-500 hover:text-white dark:hover:text-white transition-all duration-300 outline-none"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
@@ -378,7 +374,7 @@ export default function CurrentCampaigns() {
                 </motion.button>
               ) : (
                 <motion.button
-                  className="px-8 py-3 bg-gradient-to-r from-gray-600 to-gray-700 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 flex items-center gap-3 mx-auto"
+                  className="px-8 py-3 bg-gradient-to-r from-gray-600 to-gray-700 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 flex items-center gap-3 mx-auto outline-none"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => {

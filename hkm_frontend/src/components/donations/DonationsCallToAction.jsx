@@ -13,11 +13,11 @@ import {
   FaCalendarAlt,
   FaArrowRight,
   FaRedo,
-  // FaCow,
   FaUtensils,
   // FaHandHeart
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
+import { PiCowFill } from "react-icons/pi";
 
 export default function DonationsCallToAction() {
   const urgentNeeds = [
@@ -27,7 +27,7 @@ export default function DonationsCallToAction() {
       amount: '₹75,000',
       deadline: '15 days',
       urgent: true,
-      // icon: <FaCow />
+      icon: <PiCowFill />
     },
     {
       title: 'Festival Kitchen Upgrade',
@@ -58,22 +58,6 @@ export default function DonationsCallToAction() {
         <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-gradient-to-r from-gold/20 to-saffron/20 dark:bg-gold rounded-full opacity-25 dark:opacity-10 blur-3xl animate-pulse delay-500 transform -translate-x-1/2 -translate-y-1/2"></div>
       </div>
 
-      {/* Spiritual Background Elements */}
-      <div className="absolute inset-0 opacity-20 dark:opacity-5">
-        <div className="absolute top-16 left-16 text-6xl text-saffron animate-pulse delay-500">
-          <FaPray />
-        </div>
-        <div className="absolute top-32 right-20 text-4xl text-gold animate-pulse delay-1000">
-          <FaGift />
-        </div>
-        <div className="absolute bottom-32 left-20 text-5xl text-saffron animate-pulse delay-1500">
-          <HiSparkles />
-        </div>
-        <div className="absolute bottom-16 right-16 text-4xl text-gold animate-pulse delay-200">
-          <FaRupeeSign />
-        </div>
-      </div>
-
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Main CTA Header */}
         <motion.div
@@ -83,13 +67,6 @@ export default function DonationsCallToAction() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="flex justify-center items-center mb-8">
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-32"></div>
-            <span className="mx-6 text-5xl text-saffron animate-pulse">
-              <FaPray />
-            </span>
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-32"></div>
-          </div>
           
           <h2 className="text-4xl md:text-5xl font-bold gradient-text-saffron-gold mb-6">
             Your Support Makes a Difference
@@ -109,7 +86,7 @@ export default function DonationsCallToAction() {
           >
             {/* Primary Donate Button */}
             <motion.button
-              className="group relative overflow-hidden px-12 py-4 bg-gradient-to-r from-saffron via-orange-500 to-gold text-white font-bold rounded-full shadow-2xl hover:shadow-saffron/50 transition-all duration-300 text-lg"
+              className="group relative overflow-hidden px-12 py-4 bg-saffron text-white font-bold rounded-full shadow-2xl hover:shadow-saffron/50 transition-all duration-300 text-lg outline-none"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -129,7 +106,7 @@ export default function DonationsCallToAction() {
 
             {/* Recurring Donation */}
             <motion.button
-              className="group border-2 border-saffron text-saffron font-bold px-8 py-4 rounded-full hover:bg-saffron hover:text-white dark:hover:text-black transition-all duration-300 flex items-center space-x-3"
+              className="group border-2 border-saffron text-saffron font-bold px-8 py-4 rounded-full hover:bg-saffron hover:text-white dark:hover:text-black transition-all duration-300 flex items-center space-x-3 outline-none"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -159,9 +136,6 @@ export default function DonationsCallToAction() {
                 whileHover={{ y: -5, scale: 1.05 }}
                 className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-60 transition-all duration-300 group text-center shadow-lg"
               >
-                <div className="text-2xl mb-2 text-saffron group-hover:scale-110 transition-transform duration-300 flex justify-center items-center">
-                  {option.icon}
-                </div>
                 <div className="text-3xl font-bold text-saffron mb-2 group-hover:text-gold transition-colors duration-300">
                   {option.amount}
                 </div>
@@ -190,7 +164,7 @@ export default function DonationsCallToAction() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`rounded-2xl p-6 border backdrop-blur-xl transition-all duration-300 group shadow-lg ${
+                className={`rounded-2xl p-6 border backdrop-blur-xl transition-all duration-300 group shadow-lg outline-none ${
                   need.urgent 
                     ? 'bg-gradient-to-br from-red-100/90 to-orange-100/90 dark:from-red-900/20 dark:to-orange-900/20 border-red-400 dark:border-red-500 border-opacity-60 dark:border-opacity-50' 
                     : 'bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50'
@@ -241,7 +215,7 @@ export default function DonationsCallToAction() {
                 </div>
                 
                 <motion.button
-                  className={`w-full font-bold py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg ${
+                  className={`w-full font-bold py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg outline-none ${
                     need.urgent
                       ? 'bg-gradient-to-r from-red-500 to-orange-500 text-white hover:shadow-red-500/30'
                       : 'bg-saffron-gradient text-white hover:shadow-saffron/30'

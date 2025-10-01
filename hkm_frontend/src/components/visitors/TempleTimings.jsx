@@ -14,7 +14,9 @@ import {
   FaUserClock
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
-
+import { RiRestTimeFill } from "react-icons/ri";
+import { BsFillSunriseFill } from "react-icons/bs";
+import { BsFillSunsetFill } from "react-icons/bs";
 export default function TempleTimings() {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [isOpen, setIsOpen] = useState(false);
@@ -37,21 +39,21 @@ export default function TempleTimings() {
     {
       session: 'Morning Session',
       time: '5:00 AM - 12:00 PM',
-      icon: '🌅',
+      icon: <BsFillSunriseFill />,
       activities: ['Mangala Aarti', 'Guru Puja', 'Sringar Aarti', 'Raj Bhog'],
       highlight: true
     },
     {
       session: 'Afternoon Break',
       time: '12:00 PM - 4:00 PM',
-      icon: '😴',
+      icon: <RiRestTimeFill />,
       activities: ['Temple Closed', 'Deity Rest Time'],
       highlight: false
     },
     {
       session: 'Evening Session',
       time: '4:00 PM - 9:00 PM',
-      icon: '🌇',
+      icon: <BsFillSunsetFill />,
       activities: ['Utthapan Aarti', 'Sandhya Aarti', 'Shayan Aarti'],
       highlight: true
     }
@@ -176,7 +178,7 @@ export default function TempleTimings() {
               }`}
             >
               <div className="text-center">
-                <div className="text-5xl mb-4">{schedule.icon}</div>
+                <div className="text-5xl mb-4 text-saffron flex justify-center">{schedule.icon}</div>
                 <h3 className={`text-xl font-bold mb-2 ${schedule.highlight ? 'text-gray-800 dark:text-white' : 'text-gray-600 dark:text-gray-400'}`}>
                   {schedule.session}
                 </h3>

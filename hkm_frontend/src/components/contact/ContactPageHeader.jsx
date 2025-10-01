@@ -9,7 +9,7 @@ import {
   FaMapMarkerAlt,
   FaPray
 } from 'react-icons/fa';
-import { HiSparkles } from 'react-icons/hi';
+import { FaShieldHeart } from "react-icons/fa6";
 
 export default function ContactPageHeader() {
   return (
@@ -126,7 +126,7 @@ export default function ContactPageHeader() {
               </div>
               <div>
                 <div className="text-3xl text-saffron mb-2 flex justify-center items-center">
-                  <HiSparkles />
+                  <FaShieldHeart />
                 </div>
                 <div className="text-2xl font-bold text-gray-800 dark:text-white">100%</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">Personal Care</div>

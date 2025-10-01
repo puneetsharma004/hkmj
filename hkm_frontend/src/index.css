@@ -192,3 +192,5 @@ html {
   background-clip: text;
   filter: drop-shadow(0 0 20px rgba(255, 153, 51, 0.3));
 }
+
+*{scrollbar-color: #ff9933;}

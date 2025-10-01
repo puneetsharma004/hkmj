@@ -147,7 +147,7 @@ export default function SevaOptions() {
               } backdrop-blur-xl`}
             >
               {seva.popular && (
-                <div className="absolute -top-2 right-4 bg-saffron text-white text-xs font-bold px-3 py-1 rounded-b-lg shadow-lg flex items-center gap-1">
+                <div className="absolute top-0 right-4 bg-saffron text-white text-xs font-bold px-3 py-1 rounded-b-lg shadow-lg flex items-center gap-1">
                   <FaStar />
                   POPULAR
                 </div>

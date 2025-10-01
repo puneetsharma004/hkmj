@@ -23,7 +23,10 @@ import {
   FaShieldAlt
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
-
+import { RiWheelchairFill } from "react-icons/ri";
+import { PiBabyCarriageFill } from "react-icons/pi";
+import { MdElderly } from "react-icons/md";
+import { IoPersonSharp } from "react-icons/io5";
 export default function Facilities() {
   const facilities = [
     {
@@ -88,19 +91,19 @@ export default function Facilities() {
     {
       feature: 'Wheelchair Access',
       description: 'Ramps and wide pathways for wheelchair users',
-      icon: <FaWheelchair />,
+      icon: <RiWheelchairFill />,
       locations: ['Main entrance', 'Prayer halls', 'Restrooms', 'Dining area']
     },
     {
       feature: 'Senior Citizen Support',
       description: 'Special seating and assistance for elderly visitors',
-      icon: <span>👴</span>,
+      icon: <MdElderly />,
       locations: ['Reserved seating in prayer hall', 'Walking support available', 'Priority prasadam service']
     },
     {
       feature: 'Baby Care',
       description: 'Facilities for families with young children',
-      icon: <span>👶</span>,
+      icon: <PiBabyCarriageFill />,
       locations: ['Baby changing stations', 'High chairs available', 'Quiet feeding area']
     }
   ];
@@ -220,7 +223,7 @@ export default function Facilities() {
                 viewport={{ once: true }}
                 className="bg-gradient-to-br from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-xl p-6 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 text-center shadow-lg"
               >
-                <div className="text-4xl mb-4 text-saffron">{feature.icon}</div>
+                <div className="text-4xl mb-4 text-saffron flex justify-center">{feature.icon}</div>
                 <h4 className="font-bold text-gray-800 dark:text-white mb-3">{feature.feature}</h4>
                 <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{feature.description}</p>
                 
@@ -247,7 +250,7 @@ export default function Facilities() {
           <h3 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-8">Additional Services</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { service: 'Guided Tours', availability: 'On request', icon: <span>🗣️</span> },
+              { service: 'Guided Tours', availability: 'On request', icon: <IoPersonSharp /> },
               { service: 'Group Bookings', availability: 'Advance notice', icon: <FaUsers /> },
               { service: 'Photography Permission', availability: 'Prior approval', icon: <FaCamera /> },
               { service: 'Event Hosting', availability: 'Based on calendar', icon: <FaCalendarAlt /> }
@@ -260,7 +263,7 @@ export default function Facilities() {
                 viewport={{ once: true }}
                 className="text-center p-4 bg-orange-100/80 dark:bg-gray-900/50 rounded-xl shadow-lg"
               >
-                <div className="text-3xl mb-2 text-saffron">{service.icon}</div>
+                <div className="text-3xl mb-2 text-saffron flex justify-center">{service.icon}</div>
                 <h4 className="font-semibold text-gray-800 dark:text-white mb-1">{service.service}</h4>
                 <p className="text-gray-600 dark:text-gray-400 text-xs">{service.availability}</p>
               </motion.div>

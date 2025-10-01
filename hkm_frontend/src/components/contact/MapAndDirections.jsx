@@ -95,7 +95,7 @@ export default function MapAndDirections() {
               {/* Map Placeholder */}
               <div className="aspect-video bg-gradient-to-br from-orange-100/80 to-amber-100/80 dark:from-saffron/20 dark:to-gold/20 flex items-center justify-center relative">
                 <div className="text-center">
-                  <div className="text-6xl mb-4 text-saffron">
+                  <div className="text-6xl mb-4 text-saffron flex justify-center items-center">
                     <FaMap />
                   </div>
                   <p className="text-gray-800 dark:text-white font-semibold text-xl">Interactive Map</p>
@@ -119,22 +119,6 @@ export default function MapAndDirections() {
                     <FaMapMarkerAlt className="text-lg text-saffron" />
                   </motion.button>
                 </div>
-
-                {/* Location Pin */}
-                <motion.div
-                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                  animate={{ 
-                    scale: [1, 1.2, 1],
-                    rotate: [0, 10, -10, 0]
-                  }}
-                  transition={{ 
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                >
-                  <FaMapMarkerAlt className="text-4xl text-red-600" />
-                </motion.div>
               </div>
 
               {/* Map Info Bar */}
@@ -178,8 +162,8 @@ export default function MapAndDirections() {
                 <div 
                   key={index}
                   className="bg-white/90 dark:bg-gradient-to-r dark:from-purple-900/30 dark:to-indigo-900/30 rounded-lg p-3 text-center border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 shadow-lg"
-                >
-                  <div className="text-2xl mb-1 text-saffron">{feature.icon}</div>
+                > 
+                  <div className="text-2xl mb-1 text-saffron flex justify-center">{feature.icon}</div>
                   <div className="text-gray-700 dark:text-gray-300 text-xs">{feature.feature}</div>
                 </div>
               ))}

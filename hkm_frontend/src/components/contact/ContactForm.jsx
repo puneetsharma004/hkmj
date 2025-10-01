@@ -285,7 +285,7 @@ export default function ContactForm() {
                 disabled={isSubmitting}
                 className={`px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg ${
                   isSubmitting
-                    ? 'bg-gray-400 text-gray-600 cursor-not-allowed'
+                    ? 'bg-gray-400 text-white cursor-not-allowed'
                     : 'bg-saffron-gradient text-white hover:shadow-saffron/30 hover:scale-105'
                 }`}
                 whileHover={!isSubmitting ? { scale: 1.05 } : {}}
@@ -297,7 +297,7 @@ export default function ContactForm() {
                     <span>Sending Message...</span>
                   </div>
                 ) : (
-                  <div className="flex items-center justify-center space-x-2 text-gray-400">
+                  <div className="flex items-center justify-center space-x-2 text-white">
                     <FaPaperPlane />
                     <span>Send Message</span>
                   </div>

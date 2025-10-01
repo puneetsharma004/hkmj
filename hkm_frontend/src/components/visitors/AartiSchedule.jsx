@@ -9,7 +9,12 @@ import {
   FaLeaf
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
-
+import { BsFillSunriseFill } from "react-icons/bs";
+import { FaCrown } from "react-icons/fa";
+import { BsCloudSunFill } from "react-icons/bs";
+import { BsFillSunFill } from "react-icons/bs";
+import { BsSunsetFill } from "react-icons/bs";
+import { IoIosCloudyNight } from "react-icons/io";
 export default function AartiSchedule() {
   const aartiSchedule = [
     {
@@ -18,7 +23,7 @@ export default function AartiSchedule() {
       duration: '30 mins',
       description: 'Early morning awakening ceremony for the deities',
       significance: 'Awakens the deities with devotional songs and prayers',
-      icon: '🌅',
+      icon: <BsFillSunriseFill />,
       color: 'from-orange-500 to-yellow-500'
     },
     {
@@ -27,7 +32,7 @@ export default function AartiSchedule() {
       duration: '45 mins',
       description: 'Morning dress and decoration ceremony',
       significance: 'Adorning the deities with beautiful clothes and ornaments',
-      icon: '👑',
+      icon: <FaCrown />,
       color: 'from-pink-500 to-rose-500'
     },
     {
@@ -36,7 +41,7 @@ export default function AartiSchedule() {
       duration: '1 hour',
       description: 'Grand midday offering ceremony',
       significance: 'The royal lunch offering to Krishna with elaborate bhog',
-      icon: '☀️',
+      icon: <BsFillSunFill /> ,
       color: 'from-yellow-500 to-orange-500'
     },
     {
@@ -45,7 +50,7 @@ export default function AartiSchedule() {
       duration: '20 mins',
       description: 'Afternoon awakening ceremony',
       significance: 'Waking the deities from their afternoon rest',
-      icon: '🌤️',
+      icon: <BsCloudSunFill />,
       color: 'from-blue-500 to-cyan-500'
     },
     {
@@ -54,7 +59,7 @@ export default function AartiSchedule() {
       duration: '1 hour',
       description: 'Evening lamp offering ceremony',
       significance: 'The most beautiful evening aarti with ghee lamps',
-      icon: '🌇',
+      icon: <BsSunsetFill />,
       color: 'from-purple-500 to-indigo-500'
     },
     {
@@ -63,7 +68,7 @@ export default function AartiSchedule() {
       duration: '30 mins',
       description: 'Night rest ceremony',
       significance: 'Putting the deities to peaceful rest for the night',
-      icon: '🌙',
+      icon: <IoIosCloudyNight />,
       color: 'from-indigo-500 to-purple-500'
     }
   ];
@@ -131,7 +136,7 @@ export default function AartiSchedule() {
             >
               {/* Header */}
               <div className={`bg-gradient-to-r ${aarti.color} p-6 text-center`}>
-                <div className="text-4xl mb-2">{aarti.icon}</div>
+                <div className="text-4xl mb-2 text-white flex justify-center">{aarti.icon}</div>
                 <h3 className="text-xl font-bold text-white">{aarti.name}</h3>
                 <div className="text-2xl font-bold text-white mt-2 flex items-center justify-center gap-2">
                   <FaClock />

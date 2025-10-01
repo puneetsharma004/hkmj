@@ -115,7 +115,7 @@ export default function Header() {
                   href={item.href}
                   // Using clsx
                   className={clsx(
-                    'px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200',
+                    'px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 outline-none',
                     {
                       'shadow-md': isActive,
                       'hover:shadow-sm': !isActive,
@@ -129,11 +129,6 @@ export default function Header() {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  whileHover={{ 
-                    y: -2,
-                    backgroundColor: isActive ? '#FFD700' : (isScrolled ? 'rgba(255, 255, 255, 0.1)' : '#FFD700'),
-                    color: isActive ? '#003366' : (isScrolled ? '#fff' : '#003366')
-                  }}
                   whileTap={{ scale: 0.95 }}
                 >
                   {item.name}
@@ -210,7 +205,7 @@ export default function Header() {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className={clsx(`px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200`,
+                  className={clsx(`px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200 outline-none`,
                     {
                       'shadow-md': isActive,
                       'hover:shadow-sm': !isActive,

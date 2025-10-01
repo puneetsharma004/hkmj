@@ -71,7 +71,6 @@ export default function VisitorInfoPageHeader() {
             className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/20 dark:to-gold/20 rounded-2xl p-6 max-w-3xl mx-auto border border-saffron/40 dark:border-saffron/30 border-opacity-60 dark:border-opacity-100 shadow-lg"
           >
             <p className="text-gray-800 dark:text-white text-lg flex items-center justify-center gap-2">
-              <span>🙏</span>
               Welcome to our sacred space. We're here to help make your visit meaningful and memorable.
             </p>
           </motion.div>

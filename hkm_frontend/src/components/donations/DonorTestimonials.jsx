@@ -16,7 +16,7 @@ import {
   FaRupeeSign
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
-
+import { BiSolidDonateHeart } from "react-icons/bi";
 export default function DonorTestimonials() {
   const testimonials = [
     {
@@ -67,7 +67,7 @@ export default function DonorTestimonials() {
 
   const donorStats = [
     { icon: <FaUsers />, number: '2,500+', label: 'Happy Donors' },
-    { icon: <FaRupeeSign />, number: '₹2.5Cr+', label: 'Total Raised' },
+    { icon: <BiSolidDonateHeart />, number: '₹2.5Cr+', label: 'Total Raised' },
     { icon: <FaStar />, number: '4.9/5', label: 'Donor Satisfaction' },
     { icon: <FaChartLine />, number: '75%', label: 'Recurring Donors' }
   ];
@@ -138,7 +138,7 @@ export default function DonorTestimonials() {
               viewport={{ once: true }}
               className="text-center p-6 bg-white/80 dark:bg-gradient-to-br dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm shadow-lg hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300 group"
             >
-              <div className="text-4xl mb-3 text-saffron group-hover:scale-110 transition-transform duration-300">
+              <div className="text-4xl mb-3 text-saffron group-hover:scale-110 transition-transform duration-300 flex justify-center items-center">
                 {stat.icon}
               </div>
               <div className="text-2xl font-bold text-saffron glow mb-2">{stat.number}</div>
@@ -195,7 +195,7 @@ export default function DonorTestimonials() {
                 <p className="text-gray-700 dark:text-gray-200 leading-relaxed italic group-hover:text-gray-800 dark:group-hover:text-white transition-colors duration-300">
                   {testimonial.quote}
                 </p>
-                <div className="text-4xl text-saffron opacity-30 text-right">
+                <div className="text-4xl text-saffron opacity-30 text-right flex justify-end mt-2">
                   <FaQuoteRight />
                 </div>
               </div>
@@ -214,7 +214,7 @@ export default function DonorTestimonials() {
                 </div>
               </div>
 
-              {/* Rating */}
+              {/* Rating
               <div className="flex items-center justify-center mt-4 space-x-1">
                 {[...Array(5)].map((_, starIndex) => (
                   <motion.span
@@ -228,7 +228,7 @@ export default function DonorTestimonials() {
                     <FaStar />
                   </motion.span>
                 ))}
-              </div>
+              </div> */}
             </motion.div>
           ))}
         </div>
@@ -248,7 +248,7 @@ export default function DonorTestimonials() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.button
-              className="px-6 py-3 bg-saffron-gradient text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center justify-center gap-2"
+              className="px-6 py-3 bg-saffron-gradient text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center justify-center gap-2 outline-none"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -256,7 +256,7 @@ export default function DonorTestimonials() {
               Share Your Story
             </motion.button>
             <motion.button
-              className="px-6 py-3 border border-saffron text-saffron rounded-lg hover:bg-saffron hover:text-white dark:hover:text-black transition-all duration-300 flex items-center justify-center gap-2"
+              className="px-6 py-3 border border-saffron text-saffron rounded-lg hover:bg-saffron hover:text-white dark:hover:text-black transition-all duration-300 flex items-center justify-center gap-2 outline-none"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

@@ -295,7 +295,7 @@ export default function FeaturedMoments() {
           className="text-center mt-12"
         >
           <motion.button
-            className="px-8 py-4 bg-gradient-to-r from-saffron via-orange-500 to-gold text-white font-bold rounded-full shadow-xl hover:shadow-saffron/50 transition-all duration-300 flex items-center gap-2 mx-auto"
+            className="px-8 py-4 bg-saffron text-white font-bold rounded-full shadow-xl hover:shadow-saffron/50 transition-all duration-300 flex items-center gap-2 mx-auto"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

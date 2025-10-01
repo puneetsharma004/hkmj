@@ -269,7 +269,7 @@ export default function ContactCallToAction() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <motion.button
-                className="px-8 py-4 bg-gradient-to-r from-saffron via-orange-500 to-gold text-white font-bold rounded-full shadow-2xl hover:shadow-saffron/50 transition-all duration-300 text-lg flex items-center justify-center gap-2"
+                className="px-8 py-4 bg-saffron text-white font-bold rounded-full shadow-2xl hover:shadow-saffron/50 transition-all duration-300 text-lg flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -288,7 +288,6 @@ export default function ContactCallToAction() {
             </div>
             
             <div className="flex items-center justify-center space-x-4">
-              <FaPray className="text-2xl text-saffron" />
               <p className="text-saffron font-semibold text-xl">
                 Hare Krishna! We're excited to hear from you
               </p>

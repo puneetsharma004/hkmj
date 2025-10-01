@@ -10,6 +10,7 @@ import {
   FaUsers,
   FaHeart
 } from 'react-icons/fa';
+import { GiReceiveMoney } from 'react-icons/gi';
 import { HiSparkles } from 'react-icons/hi';
 
 export default function DonationsPageHeader() {
@@ -17,29 +18,6 @@ export default function DonationsPageHeader() {
     <section className="relative py-20 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:bg-black">
       {/* Light/Dark Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-100/50 via-amber-100/50 to-yellow-100/50 dark:from-black dark:via-purple-950 dark:to-indigo-950"></div>
-      
-      {/* Animated Background Glow */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-saffron/30 to-orange-400/30 dark:bg-orange-600 rounded-full opacity-40 dark:opacity-20 blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-purple-400/25 to-indigo-400/25 dark:bg-purple-600 rounded-full opacity-30 dark:opacity-15 blur-3xl animate-pulse delay-1000"></div>
-      </div>
-
-      {/* Spiritual Background Elements */}
-      <div className="absolute inset-0 opacity-20 dark:opacity-5">
-        <div className="absolute top-16 left-16 text-6xl text-saffron animate-pulse delay-300">
-          <FaPray />
-        </div>
-        <div className="absolute top-32 right-20 text-5xl text-gold animate-pulse delay-800">
-          <FaGift />
-        </div>
-        <div className="absolute bottom-32 left-20 text-7xl text-saffron animate-pulse delay-1200">
-          <FaRupeeSign />
-        </div>
-        <div className="absolute bottom-16 right-16 text-4xl text-gold animate-pulse delay-600">
-          <HiSparkles />
-        </div>
-      </div>
-
       <div className="relative max-w-6xl mx-auto z-10 text-center">
         {/* Breadcrumb */}
         <motion.nav
@@ -67,13 +45,6 @@ export default function DonationsPageHeader() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="flex justify-center items-center mb-8">
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-32"></div>
-            <span className="mx-6 text-5xl text-saffron animate-pulse">
-              <FaPray />
-            </span>
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-32"></div>
-          </div>
           
           <h1 className="text-4xl md:text-6xl font-bold gradient-text-saffron-gold mb-6">
             Donations
@@ -106,7 +77,7 @@ export default function DonationsPageHeader() {
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-4xl mx-auto"
         >
           {[
-            { number: '₹50L+', label: 'Raised This Year', icon: <FaRupeeSign /> },
+            { number: '₹50L+', label: 'Raised This Year', icon: <GiReceiveMoney /> },
             { number: '1000+', label: 'Happy Donors', icon: <FaHeart /> },
             { number: '25+', label: 'Active Projects', icon: <FaTools /> },
             { number: '500+', label: 'Daily Meals Served', icon: <FaUtensils /> }
@@ -118,7 +89,7 @@ export default function DonationsPageHeader() {
               transition={{ duration: 0.5, delay: 0.8 + (index * 0.1) }}
               className="text-center p-4 bg-white/80 dark:bg-gradient-to-br dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300 shadow-lg group"
             >
-              <div className="text-2xl mb-2 text-saffron group-hover:scale-110 transition-transform duration-300">
+              <div className="text-2xl mb-2 text-saffron group-hover:scale-110 transition-transform duration-300 flex justify-center items-center">
                 {stat.icon}
               </div>
               <div className="text-2xl font-bold text-saffron glow">{stat.number}</div>

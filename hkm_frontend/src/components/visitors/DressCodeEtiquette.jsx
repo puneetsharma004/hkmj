@@ -225,7 +225,7 @@ export default function DressCodeEtiquette() {
                 className="bg-white/90 dark:bg-gradient-to-br dark:from-indigo-900/50 dark:to-purple-900/50 rounded-xl p-6 border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-30 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group shadow-lg"
               >
                 <div className="text-center mb-4">
-                  <div className="text-3xl mb-2 text-saffron">{rule.icon}</div>
+                  <div className="text-3xl mb-2 text-saffron flex justify-center">{rule.icon}</div>
                   <h4 className="font-bold text-gray-800 dark:text-white group-hover:text-saffron transition-colors duration-300">
                     {rule.rule}
                   </h4>
@@ -264,7 +264,7 @@ export default function DressCodeEtiquette() {
               className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-xl p-6 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg"
             >
               <h4 className="font-bold text-saffron mb-4 text-center flex items-center justify-center gap-2">
-                <span className="text-2xl">{section.icon}</span>
+                <span className="text-2xl flex justify-center">{section.icon}</span>
                 {section.title}
               </h4>
               <ul className="space-y-2">
@@ -287,9 +287,7 @@ export default function DressCodeEtiquette() {
           viewport={{ once: true }}
           className="mt-12 text-center bg-white/90 dark:bg-gradient-to-r dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl p-6 border border-orange-200 dark:border-purple-500 border-opacity-60 dark:border-opacity-30 shadow-lg"
         >
-          <div className="text-4xl mb-4">🙏</div>
           <p className="text-gray-700 dark:text-gray-300 italic flex items-center justify-center gap-2">
-            <FaHeart className="text-saffron" />
             "These guidelines help maintain the sacred atmosphere of our temple. 
             When in doubt, observe others or ask our friendly volunteers for assistance."
           </p>

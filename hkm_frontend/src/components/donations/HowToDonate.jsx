@@ -135,7 +135,7 @@ export default function HowToDonate() {
               <motion.button
                 key={method.id}
                 onClick={() => setSelectedMethod(method.id)}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2 ${
+                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2 outline-none ${
                   selectedMethod === method.id
                     ? 'bg-saffron-gradient outline-none text-white'
                     : 'text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10'
@@ -245,7 +245,7 @@ export default function HowToDonate() {
                 </div>
                 
                 <motion.button
-                  className="w-full mt-4 bg-saffron-gradient text-white font-semibold py-2 rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300"
+                  className="w-full mt-4 bg-saffron-gradient text-white font-semibold py-2 rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 outline-none"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -340,7 +340,7 @@ export default function HowToDonate() {
               <div className="grid grid-cols-2 gap-4">
                 {securityFeatures.map((feature, index) => (
                   <div key={index} className="text-center">
-                    <div className="text-2xl mb-2 text-saffron">{feature.icon}</div>
+                    <div className="text-2xl mb-2 text-saffron flex justify-center">{feature.icon}</div>
                     <div className="text-sm font-semibold text-gray-800 dark:text-white">{feature.title}</div>
                     <div className="text-xs text-gray-600 dark:text-gray-400">{feature.description}</div>
                   </div>
@@ -359,9 +359,14 @@ export default function HowToDonate() {
           className="text-center"
         >
           <motion.button
-            className="px-12 py-4 bg-gradient-to-r from-saffron via-orange-500 to-gold text-white font-bold rounded-full shadow-2xl hover:shadow-saffron/50 transition-all duration-300 text-lg flex items-center gap-3 mx-auto"
+            className="px-12 py-4 bg-saffron outline-none text-white font-bold rounded-full shadow-2xl hover:shadow-saffron/50 transition-all duration-300 text-lg flex items-center gap-3 mx-auto cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => {
+                    document.querySelector('#donation-form')?.scrollIntoView({ 
+                      behavior: 'smooth' 
+                    });
+                  }}
           >
             Start Donation Process
             <FaArrowRight />
