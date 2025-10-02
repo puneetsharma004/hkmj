@@ -18,30 +18,40 @@ import {
   FaRoute
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 export default function LocationAndMap() {
   const [mapLoaded, setMapLoaded] = useState(false);
 
   const templeLocation = {
-    address: 'Hare Krishna Marwar Mandir, Sector 12, Near Blue City Mall, Jodhpur, Rajasthan 342001, India',
-    gpsCoordinates: '26.2863° N, 73.0392° E',
-    landmark: 'Near Blue City Mall, Opposite City Hospital',
-    pincode: '342001',
+    address: 'Hare Krishna Marwar Mandir, Chokha Chopasni Rd, Gopal Bari, Jodhpur, Rajasthan 342024, India',
+    gpsCoordinates: '26.273568206420695, 72.92895033343702',
+    landmark: 'Opposite JDA Colony',
+    pincode: '342024',
     district: 'Jodhpur',
     state: 'Rajasthan'
   };
 
   const nearbyLandmarks = [
-    { name: 'Mehrangarh Fort', distance: '8 km', time: '15 mins' },
-    { name: 'Jodhpur Railway Station', distance: '5 km', time: '12 mins' },
-    { name: 'Umaid Bhawan Palace', distance: '10 km', time: '20 mins' },
-    { name: 'Clock Tower Market', distance: '6 km', time: '15 mins' }
+    { name: 'Mehrangarh Fort', distance: '14.5 km', time: '33 mins' },
+    { name: 'Jodhpur Railway Station', distance: '11.7 km', time: '26 mins' },
+    { name: 'Umaid Bhawan Palace', distance: '15.6 km', time: '33 mins' },
+    { name: 'Clock Tower Market', distance: '12.7 km', time: '32 mins' }
   ];
+  const Copy = () => {
+    toast.success('Coordinates Copied')
+    navigator.clipboard.writeText(templeLocation.gpsCoordinates)
+  }
 
   return (
     <section className="relative py-16 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:bg-black">
       {/* Light/Dark Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-100/50 via-amber-100/50 to-yellow-100/50 dark:from-black dark:via-purple-950 dark:to-indigo-950"></div>
+      <Toaster 
+        position="bottom-center"
+        reverseOrder={false}
+      />
       
       {/* Animated Background Glow */}
       <div className="absolute inset-0">
@@ -98,14 +108,31 @@ export default function LocationAndMap() {
           >
             {/* Map Container */}
             <div className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl overflow-hidden border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl">
-              <div className="aspect-video bg-gradient-to-br from-orange-100/80 to-amber-100/80 dark:from-saffron/20 dark:to-gold/20 flex items-center justify-center relative">
+              <div className="aspect-video bg-gradient-to-br from-orange-100/80 to-amber-100/80 dark:from-saffron/20 dark:to-gold/20  relative">
                 {/* Placeholder for Google Maps */}
-                <div className="text-center">
-                  <div className="text-6xl mb-4 text-saffron">
-                    <FaMap />
-                  </div>
-                  <p className="text-gray-800 dark:text-white font-semibold">Interactive Map</p>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">Loading Google Maps...</p>
+                
+                <div className="w-full h-full relative">
+                  {!mapLoaded && (
+                    <div className='w-full h-full grid items-center'>
+                      <div className="text-center">
+                        <div className="text-6xl mb-4 text-saffron flex justify-center items-center animate-pulse">
+                          <FaMap />
+                        </div>
+                        <p className="text-gray-800 dark:text-white font-semibold">Interactive Map</p>
+                        <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">Loading Google Maps...</p>
+                      </div>
+                    </div>
+                  )}
+  
+                  <iframe
+                    title="Temple Location Map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d223.60221799336995!2d72.92808394879104!3d26.273491250976406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418f00266be169%3A0x9ca057426b5d4bec!2sHare%20Krishna%20Marwar%20Mandir%2C%20Chokha%2CChopasni%2C%20Jodhpur!5e0!3m2!1sen!2sin!4v1759394060148!5m2!1sen!2sin" 
+                    width="100%"
+                    height="100%"
+                    allowFullScreen=""
+                    loading="lazy"
+                    onLoad={() => setMapLoaded(true)}
+                  ></iframe>
                 </div>
                 
                 {/* Map Controls */}
@@ -126,9 +153,10 @@ export default function LocationAndMap() {
                     <p className="text-gray-600 dark:text-gray-400 text-sm">{templeLocation.landmark}</p>
                   </div>
                   <motion.button
-                    className="px-4 py-2 bg-saffron-gradient text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2"
+                    className="px-4 py-2 bg-saffron-gradient text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2 outline-none"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    onClick={() => window.open('https://www.google.com/maps/dir/?api=1&destination=Hare+Krishna+Marwar+Mandir,+Sector+12,+Near+Blue+City+Mall,+Jodhpur,+Rajasthan+342001,+India', '_blank')}
                   >
                     <FaDirections />
                     Open in Maps
@@ -150,8 +178,9 @@ export default function LocationAndMap() {
                 GPS Coordinates
               </h4>
               <p className="text-gray-800 dark:text-white font-mono text-lg">{templeLocation.gpsCoordinates}</p>
-              <button className="text-saffron text-sm hover:text-gold transition-colors duration-300 mt-2 flex items-center gap-1">
+              <button className="text-saffron text-sm hover:text-gold transition-colors duration-300 mt-2 flex items-center gap-1 cursor-pointer outline-none" onClick={Copy}>
                 <FaCopy />
+                
                 Copy Coordinates
               </button>
             </motion.div>
@@ -244,18 +273,20 @@ export default function LocationAndMap() {
             {/* Quick Actions */}
             <div className="grid grid-cols-2 gap-4">
               <motion.button
-                className="p-4 bg-saffron-gradient text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center justify-center space-x-2"
+                className="p-4 bg-saffron-gradient text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center justify-center space-x-2 cursor-pointer outline-none"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                onClick={() => window.open('https://www.google.com/maps/dir/?api=1&destination=Hare+Krishna+Marwar+Mandir,+Sector+12,+Near+Blue+City+Mall,+Jodhpur,+Rajasthan+342024,+India', '_blank')}
               >
                 <FaDirections />
                 <span>Get Directions</span>
               </motion.button>
               
               <motion.button
-                className="p-4 border border-saffron text-saffron font-semibold rounded-xl hover:bg-saffron hover:text-white dark:hover:text-black transition-all duration-300 flex items-center justify-center space-x-2"
+                className="p-4 border border-saffron text-saffron font-semibold rounded-xl hover:bg-saffron hover:text-white dark:hover:text-black transition-all duration-300 flex items-center justify-center space-x-2 cursor-pointer outline-none"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
+                onClick={() => { window.location.href = "tel:+919876543210"; }}
               >
                 <FaPhone />
                 <span>Call Temple</span>
