@@ -164,7 +164,7 @@ export default function EmergencyNotices() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-6 border border-red-300 dark:border-red-500 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-red-500 hover:border-opacity-80 dark:hover:border-opacity-60 hover:shadow-red-300/30 dark:hover:shadow-red-500/20 transition-all duration-300 group text-center shadow-xl"
+                className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-6 border border-red-300 dark:border-red-500 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-red-500 hover:border-opacity-80 dark:hover:border-opacity-60 hover:shadow-red-300/30 dark:hover:shadow-red-500/20 transition-all duration-300 group text-center shadow-xl"
               >
                 <div className={`w-16 h-16 bg-gradient-to-r ${contact.color} rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                   {contact.icon}
@@ -275,7 +275,7 @@ export default function EmergencyNotices() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/30 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg"
+          className="bg-saffron/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/30 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg"
         >
           <h3 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-8">Upcoming Festival - Special Arrangements</h3>
           

@@ -87,7 +87,7 @@ export default function EventsPageHeader() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-12"
         >
-          <div className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-2xl p-6 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg max-w-4xl mx-auto">
+          <div className="bg-saffron/10 rounded-2xl p-6 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg max-w-4xl mx-auto">
             <div className="grid md:grid-cols-3 gap-6 text-center">
               <div>
                 <div className="text-3xl text-saffron mb-2 flex justify-center items-center">

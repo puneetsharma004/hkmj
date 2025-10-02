@@ -243,7 +243,7 @@ export default function VolunteerRegistrationForm() {
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white/90 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
+                    className="w-full px-4 py-3 bg-white/10 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
                     placeholder="Enter your full name"
                     required
                   />
@@ -258,7 +258,7 @@ export default function VolunteerRegistrationForm() {
                     name="age"
                     value={formData.age}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white/90 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
+                    className="w-full px-4 py-3 bg-white/10 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
                     placeholder="Your age"
                     min="14"
                     max="100"
@@ -276,7 +276,7 @@ export default function VolunteerRegistrationForm() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white/90 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
+                    className="w-full px-4 py-3 bg-white/10 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
                     placeholder="+91 98765 43210"
                     required
                   />
@@ -292,7 +292,7 @@ export default function VolunteerRegistrationForm() {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white/90 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
+                    className="w-full px-4 py-3 bg-white/10 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
                     placeholder="your.email@example.com"
                     required
                   />
@@ -309,7 +309,7 @@ export default function VolunteerRegistrationForm() {
                   value={formData.address}
                   onChange={handleInputChange}
                   rows={3}
-                  className="w-full px-4 py-3 bg-white/90 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
+                  className="w-full px-4 py-3 bg-white/10 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
                   placeholder="Your full address"
                 />
               </div>
@@ -330,7 +330,7 @@ export default function VolunteerRegistrationForm() {
                   name="serviceArea"
                   value={formData.serviceArea}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/90 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
+                  className="w-full px-4 py-3 bg-white/10 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
                   required
                 >
                   {serviceAreas.map((area, index) => (
@@ -404,7 +404,7 @@ export default function VolunteerRegistrationForm() {
                     value={formData.skills}
                     onChange={handleInputChange}
                     rows={4}
-                    className="w-full px-4 py-3 bg-white/90 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
+                    className="w-full px-4 py-3 bg-white/10 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
                     placeholder="Cooking, event management, teaching, music, art, etc."
                   />
                 </div>
@@ -419,7 +419,7 @@ export default function VolunteerRegistrationForm() {
                     value={formData.experience}
                     onChange={handleInputChange}
                     rows={4}
-                    className="w-full px-4 py-3 bg-white/90 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
+                    className="w-full px-4 py-3 bg-white/10 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
                     placeholder="Previous volunteer work, community service, etc."
                   />
                 </div>
@@ -442,7 +442,7 @@ export default function VolunteerRegistrationForm() {
                     name="emergencyContact"
                     value={formData.emergencyContact}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white/90 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
+                    className="w-full px-4 py-3 bg-white/10 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
                     placeholder="Full name of emergency contact"
                   />
                 </div>
@@ -456,7 +456,7 @@ export default function VolunteerRegistrationForm() {
                     name="emergencyPhone"
                     value={formData.emergencyPhone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white/90 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
+                    className="w-full px-4 py-3 bg-white/10 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
                     placeholder="+91 98765 43210"
                   />
                 </div>
@@ -474,13 +474,13 @@ export default function VolunteerRegistrationForm() {
                 value={formData.motivation}
                 onChange={handleInputChange}
                 rows={4}
-                className="w-full px-4 py-3 bg-white/90 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
+                className="w-full px-4 py-3 bg-white/10 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
                 placeholder="Share your motivation for volunteering and how you hope to contribute..."
               />
             </div>
 
             {/* Agreement */}
-            <div className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-lg p-6 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg">
+            <div className="bg-saffron/10 rounded-lg p-6 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg">
               <label className="flex items-start space-x-3 cursor-pointer">
                 <input
                   type="checkbox"

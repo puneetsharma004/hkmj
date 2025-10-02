@@ -59,7 +59,7 @@ export default function EventsAndDarshan() {
                 transition={{ duration: 0.6, delay: i * 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl overflow-hidden shadow-2xl border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl group hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-2xl hover:shadow-saffron/20 transition-all duration-300"
+                className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl overflow-hidden shadow-2xl border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl group hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-2xl hover:shadow-saffron/20 transition-all duration-300"
               >
                 {/* Event Image */}
                 <div className="relative overflow-hidden">
@@ -123,7 +123,7 @@ export default function EventsAndDarshan() {
                   transition={{ duration: 0.6, delay: i * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.02 }}
-                  className="flex items-center justify-between p-6 bg-white/80 dark:bg-gradient-to-r dark:from-indigo-900/50 dark:to-purple-900/50 rounded-xl shadow-xl border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 hover:shadow-lg hover:shadow-saffron/10 transition-all duration-300 group"
+                  className="flex items-center justify-between p-6 bg-white/10 dark:bg-gradient-to-r dark:from-indigo-900/80 dark:to-purple-900/80 rounded-xl shadow-xl border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 hover:shadow-lg hover:shadow-saffron/10 transition-all duration-300 group"
                 >
                   <div className="flex items-center space-x-4">
                     <span className="text-3xl group-hover:scale-110 transition-transform duration-300">
@@ -153,7 +153,7 @@ export default function EventsAndDarshan() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
-              className="mt-8 p-6 bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-xl border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 text-center shadow-lg"
+              className="mt-8 p-6 bg-saffron/10 rounded-xl border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 text-center shadow-lg"
             >
               <p className="text-gray-800 dark:text-gray-200 mb-2">
                 <span className="text-saffron font-semibold flex items-center gap-1 justify-center"><GiByzantinTemple /> Temple Opens:</span> 5:00 AM - 9:00 PM (Daily)

@@ -107,7 +107,7 @@ export default function VirtualDarshan() {
                   className={`p-4 rounded-xl border transition-all duration-300 shadow-lg outline-none ${
                     activeTab === option.id
                       ? 'bg-saffron-gradient text-white border-saffron'
-                      : 'bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 text-gray-700 dark:text-gray-300 border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50'
+                      : 'bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 text-gray-700 dark:text-gray-300 border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50'
                   } ${!option.available ? 'opacity-50 cursor-not-allowed' : ''}`}
                   whileHover={{ scale: option.available ? 1.02 : 1 }}
                   whileTap={{ scale: option.available ? 0.98 : 1 }}
@@ -128,7 +128,7 @@ export default function VirtualDarshan() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl"
+              className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl"
             >
               {activeTab === 'live' && (
                 <div>
@@ -139,14 +139,14 @@ export default function VirtualDarshan() {
                   <div className="space-y-4 text-gray-700 dark:text-gray-200">
                     <p>Join our live darshan sessions during aarti times:</p>
                     <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div className="bg-orange-100/80 dark:bg-purple-900/30 p-3 rounded-lg">
+                      <div className="bg-orange-100/20 dark:bg-purple-900/30 p-3 rounded-lg">
                         <div className="font-semibold text-gold flex items-center gap-1">
                           <FaClock />
                           Morning Aarti
                         </div>
                         <div>5:00 AM - 6:00 AM</div>
                       </div>
-                      <div className="bg-orange-100/80 dark:bg-purple-900/30 p-3 rounded-lg">
+                      <div className="bg-orange-100/20 dark:bg-purple-900/30 p-3 rounded-lg">
                         <div className="font-semibold text-gold flex items-center gap-1">
                           <FaClock />
                           Evening Aarti
@@ -231,7 +231,7 @@ export default function VirtualDarshan() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl overflow-hidden border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl">
+            <div className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl overflow-hidden border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl">
               <div className="aspect-video bg-gradient-to-br from-orange-100/80 to-amber-100/80 dark:from-saffron/20 dark:to-gold/20 flex items-center justify-center relative">
                 <div className="text-center">
                   <p className="text-gray-800 dark:text-white font-semibold">Virtual Darshan Preview</p>
@@ -275,7 +275,7 @@ export default function VirtualDarshan() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              className="mt-6 bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-xl p-4 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg"
+              className="mt-6 bg-saffron/10 rounded-xl p-4 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg"
             >
               <h4 className="font-semibold text-saffron mb-2 flex items-center gap-2">
                 <FaInfoCircle />

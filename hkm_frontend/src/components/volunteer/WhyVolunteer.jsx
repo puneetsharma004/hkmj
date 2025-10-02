@@ -125,7 +125,7 @@ export default function WhyVolunteer() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group text-center shadow-xl"
+              className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group text-center shadow-xl"
             >
               <div className={`w-16 h-16 bg-gradient-to-r ${benefit.color} rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                 {benefit.icon}
@@ -152,7 +152,7 @@ export default function WhyVolunteer() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="bg-gradient-to-br from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg">
+            <div className=" rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg">
               <div className="text-6xl text-saffron mb-4 text-center">
                 <FaQuoteLeft />
               </div>
@@ -164,7 +164,7 @@ export default function WhyVolunteer() {
               </p>
             </div>
 
-            <div className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-lg">
+            <div className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-lg">
               <h3 className="text-xl font-bold text-gold mb-4 flex items-center gap-2">
                 <FaLightbulb />
                 The Philosophy of Karma Yoga
@@ -197,7 +197,7 @@ export default function WhyVolunteer() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex items-start space-x-4 p-4 bg-white/90 dark:bg-gradient-to-r dark:from-indigo-900/30 dark:to-purple-900/30 rounded-lg border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300 group shadow-lg"
+                className="flex items-start space-x-4 p-4 bg-white/10 dark:bg-gradient-to-r dark:from-indigo-900/30 dark:to-purple-900/30 rounded-lg border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300 group shadow-lg"
               >
                 <div className="flex-shrink-0 w-8 h-8 bg-saffron rounded-full flex items-center justify-center text-white font-bold text-sm">
                   <FaCheckCircle />

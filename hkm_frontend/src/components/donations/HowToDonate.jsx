@@ -130,7 +130,7 @@ export default function HowToDonate() {
           viewport={{ once: true }}
           className="flex justify-center mb-12"
         >
-          <div className="flex space-x-4 bg-white/80 dark:bg-gradient-to-r dark:from-gray-900/50 dark:to-black/50 p-2 rounded-2xl border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-lg">
+          <div className="flex space-x-4 bg-white/10 dark:bg-gradient-to-r dark:from-gray-900/50 dark:to-black/50 p-2 rounded-2xl border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-lg">
             {paymentMethods.map((method) => (
               <motion.button
                 key={method.id}
@@ -159,7 +159,7 @@ export default function HowToDonate() {
           className="grid lg:grid-cols-2 gap-12 mb-16"
         >
           {/* Left: Method Details */}
-          <div className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl">
+          <div className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl">
             <div className="flex items-center space-x-4 mb-6">
               <div className="text-4xl text-saffron">{paymentMethods.find(m => m.id === selectedMethod)?.icon}</div>
               <div>

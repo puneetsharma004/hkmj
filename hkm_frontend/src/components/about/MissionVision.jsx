@@ -69,7 +69,7 @@ export default function MissionVision() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 transition-all duration-300 group"
+            className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 transition-all duration-300 group"
           >
             <div className="text-center mb-6">
               <h3 className="text-2xl font-bold text-saffron group-hover:text-gold transition-colors duration-300">
@@ -92,7 +92,7 @@ export default function MissionVision() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-gold hover:border-opacity-80 dark:hover:border-opacity-50 transition-all duration-300 group"
+            className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-gold hover:border-opacity-80 dark:hover:border-opacity-50 transition-all duration-300 group"
           >
             <div className="text-center mb-6">
               <h3 className="text-2xl font-bold text-gold group-hover:text-saffron transition-colors duration-300">
@@ -116,7 +116,7 @@ export default function MissionVision() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg"
+          className="bg-saffron/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg"
         >
           <h3 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-8">Our Core Values</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -152,7 +152,7 @@ export default function MissionVision() {
           viewport={{ once: true }}
           className="mt-12 text-center"
         >
-          <div className="bg-white/90 dark:bg-gradient-to-r dark:from-purple-900/50 dark:to-indigo-900/50 rounded-2xl p-8 border border-orange-200 dark:border-saffron border-opacity-60 dark:border-opacity-30 backdrop-blur-sm max-w-4xl mx-auto shadow-xl">
+          <div className="bg-white/10 dark:bg-gradient-to-r dark:from-purple-900/50 dark:to-indigo-900/50 rounded-2xl p-8 border border-orange-200 dark:border-saffron border-opacity-60 dark:border-opacity-30 backdrop-blur-sm max-w-4xl mx-auto shadow-xl">
             <div className="text-4xl text-saffron mb-4">
               <FaQuoteLeft />
             </div>

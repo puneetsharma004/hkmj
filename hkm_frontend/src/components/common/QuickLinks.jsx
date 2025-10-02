@@ -95,7 +95,7 @@ export default function QuickLinks() {
               className="group relative"
             >
               {/* Main Card */}
-              <div className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 p-6 rounded-2xl shadow-xl border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-60 hover:shadow-2xl hover:shadow-saffron/20 transition-all duration-300 h-full">
+              <div className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 p-6 rounded-2xl shadow-xl border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-60 hover:shadow-2xl hover:shadow-saffron/20 transition-all duration-300 h-full">
                 
                 {/* Icon Container */}
                 <div className="flex justify-center mb-4">
@@ -140,7 +140,7 @@ export default function QuickLinks() {
           viewport={{ once: true }}
           className="mt-12 text-center"
         >
-          <div className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 p-6 rounded-2xl border border-saffron/50 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm max-w-4xl mx-auto shadow-lg">
+          <div className="bg-saffron/10 p-6 rounded-2xl border border-saffron/50 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm max-w-4xl mx-auto shadow-lg">
             <p className="text-gray-700 dark:text-gray-300 mb-4 flex items-center gap-2 justify-center">
               <span className="text-saffron font-semibold flex items-center gap-2"><IoCall /> 24/7 Support:</span> Need immediate assistance? Our temple staff is always ready to help.
             </p>

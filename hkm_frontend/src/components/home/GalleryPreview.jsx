@@ -143,7 +143,7 @@ export default function GalleryPreview() {
               transition={{ duration: 0.6, delay: 0.4 + (i * 0.1) }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
-              className="text-center p-4 bg-white/70 dark:bg-gradient-to-br dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm shadow-lg hover:shadow-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300"
+              className="text-center p-4 bg-white/70 dark:bg-gradient-to-br dark:from-purple-900/80 dark:to-indigo-900/80 rounded-xl border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm shadow-lg hover:shadow-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300"
             >
               <span className="text-2xl mb-2 text-saffron flex justify-center">{stat.icon}</span>
               <div className="text-2xl font-bold text-saffron glow">{stat.number}</div>

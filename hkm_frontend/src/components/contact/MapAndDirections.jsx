@@ -91,7 +91,7 @@ export default function MapAndDirections() {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <div className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl overflow-hidden border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl">
+            <div className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl overflow-hidden border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl">
               {/* Map Placeholder */}
               <div className="aspect-video bg-gradient-to-br from-orange-100/80 to-amber-100/80 dark:from-saffron/20 dark:to-gold/20 flex items-center justify-center relative">
                 <div className="text-center">
@@ -105,14 +105,14 @@ export default function MapAndDirections() {
                 {/* Map Controls */}
                 <div className="absolute top-4 right-4 space-y-2">
                   <motion.button 
-                    className="bg-white/90 dark:bg-gray-800/90 p-3 rounded-lg shadow-lg hover:bg-white dark:hover:bg-gray-700 transition-all duration-300"
+                    className="bg-white/10 dark:bg-gray-800/90 p-3 rounded-lg shadow-lg hover:bg-white dark:hover:bg-gray-700 transition-all duration-300"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
                     <FaSearch className="text-lg text-saffron" />
                   </motion.button>
                   <motion.button 
-                    className="bg-white/90 dark:bg-gray-800/90 p-3 rounded-lg shadow-lg hover:bg-white dark:hover:bg-gray-700 transition-all duration-300"
+                    className="bg-white/10 dark:bg-gray-800/90 p-3 rounded-lg shadow-lg hover:bg-white dark:hover:bg-gray-700 transition-all duration-300"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -161,7 +161,7 @@ export default function MapAndDirections() {
               {mapFeatures.map((feature, index) => (
                 <div 
                   key={index}
-                  className="bg-white/90 dark:bg-gradient-to-r dark:from-purple-900/30 dark:to-indigo-900/30 rounded-lg p-3 text-center border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 shadow-lg"
+                  className="bg-white/10 dark:bg-gradient-to-r dark:from-purple-900/30 dark:to-indigo-900/30 rounded-lg p-3 text-center border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 shadow-lg"
                 > 
                   <div className="text-2xl mb-1 text-saffron flex justify-center">{feature.icon}</div>
                   <div className="text-gray-700 dark:text-gray-300 text-xs">{feature.feature}</div>
@@ -179,7 +179,7 @@ export default function MapAndDirections() {
             className="space-y-6"
           >
             {/* GPS Coordinates */}
-            <div className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl">
+            <div className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl">
               <h3 className="font-bold text-saffron mb-4 flex items-center gap-2">
                 <FaMapMarkerAlt />
                 GPS Coordinates
@@ -200,7 +200,7 @@ export default function MapAndDirections() {
             </div>
 
             {/* Nearby Landmarks */}
-            <div className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl">
+            <div className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl">
               <h3 className="font-bold text-gold mb-4 flex items-center gap-2">
                 <FaUniversity />
                 Nearby Landmarks
@@ -213,7 +213,7 @@ export default function MapAndDirections() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex items-center justify-between p-3 bg-orange-100/80 dark:bg-purple-900/30 rounded-lg hover:bg-orange-200/80 dark:hover:bg-purple-900/50 transition-all duration-300"
+                    className="flex items-center justify-between p-3 bg-orange-100/20 dark:bg-purple-900/30 rounded-lg hover:bg-orange-200/80 dark:hover:bg-purple-900/50 transition-all duration-300"
                   >
                     <div>
                       <div className="text-gray-800 dark:text-white font-semibold text-sm">{landmark.name}</div>
@@ -226,7 +226,7 @@ export default function MapAndDirections() {
             </div>
 
             {/* Transport Options */}
-            <div className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-xl p-6 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg">
+            <div className="bg-saffron/10 rounded-xl p-6 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg">
               <h3 className="font-bold text-saffron mb-4 flex items-center gap-2">
                 <FaCar />
                 How to Reach

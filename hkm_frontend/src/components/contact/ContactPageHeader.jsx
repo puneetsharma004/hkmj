@@ -63,7 +63,7 @@ export default function ContactPageHeader() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/20 dark:to-gold/20 rounded-2xl p-6 max-w-3xl mx-auto border border-saffron/40 dark:border-saffron/30 border-opacity-60 dark:border-opacity-100 shadow-lg"
+            className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-indigo-900/80 dark:to-purple-900/80 rounded-2xl p-6 max-w-3xl mx-auto border border-saffron/40 dark:border-saffron/30 border-opacity-60 dark:border-opacity-100 shadow-lg"
           >
             <p className="text-gray-800 dark:text-white text-lg">
               Whether you need guidance, have questions, or want to connect with our community, 
@@ -90,7 +90,7 @@ export default function ContactPageHeader() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.8 + (index * 0.1) }}
-              className="text-center p-4 bg-white/90 dark:bg-gradient-to-br dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300 group cursor-pointer shadow-lg"
+              className="text-center p-4 bg-white/10 dark:bg-gradient-to-br dark:from-purple-900/80 dark:to-indigo-900/80 rounded-xl border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300 group cursor-pointer shadow-lg"
             >
               <div className={`text-2xl mb-2 ${contact.color} group-hover:scale-110 transition-transform duration-300 flex justify-center items-center`}>
                 {contact.icon}
@@ -108,7 +108,7 @@ export default function ContactPageHeader() {
           transition={{ duration: 0.8, delay: 1.2 }}
           className="mt-12"
         >
-          <div className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-2xl p-6 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg max-w-4xl mx-auto">
+          <div className="bg-saffron/10 rounded-2xl p-6 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg max-w-4xl mx-auto">
             <div className="grid md:grid-cols-3 gap-6 text-center">
               <div>
                 <div className="text-3xl text-saffron mb-2 flex justify-center items-center">

@@ -368,7 +368,7 @@ export default function ThankYouPage() {
   //             initial={{ opacity: 0, scale: 0.8 }}
   //             animate={{ opacity: 1, scale: 1 }}
   //             transition={{ duration: 0.8, delay: 0.6 }}
-  //             className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/20 dark:to-gold/20 rounded-2xl p-6 max-w-3xl mx-auto border border-saffron/40 dark:border-saffron/30 border-opacity-60 dark:border-opacity-100 shadow-lg mb-8"
+  //             className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-indigo-900/80 dark:to-purple-900/80 rounded-2xl p-6 max-w-3xl mx-auto border border-saffron/40 dark:border-saffron/30 border-opacity-60 dark:border-opacity-100 shadow-lg mb-8"
   //           >
   //             <p className="text-gray-800 dark:text-white text-lg italic mb-2">
   //               "दानं वीर्यं यशस्तेजो धैर्यं चैव पराक्रमः।<br/>
@@ -400,7 +400,7 @@ export default function ThankYouPage() {
   //             {/* Payment Details */}
   //             <div className="space-y-4">
   //               {donationData.amount > 0 && (
-  //                 <div className="flex justify-between items-center p-3 bg-orange-100/80 dark:bg-saffron/10 rounded-lg">
+  //                 <div className="flex justify-between items-center p-3 bg-orange-100/20 dark:bg-saffron/10 rounded-lg">
   //                   <span className="text-gray-600 dark:text-gray-400">Amount:</span>
   //                   <span className={`font-bold text-xl ${statusConfig.color}`}>
   //                     ₹{donationData.amount.toLocaleString()}
@@ -504,7 +504,7 @@ export default function ThankYouPage() {
   //                   initial={{ opacity: 0, y: 20 }}
   //                   animate={{ opacity: 1, y: 0 }}
   //                   transition={{ duration: 0.5, delay: 0.6 + (index * 0.1) }}
-  //                   className="flex items-start gap-3 p-3 bg-orange-100/80 dark:bg-saffron/10 rounded-lg"
+  //                   className="flex items-start gap-3 p-3 bg-orange-100/20 dark:bg-saffron/10 rounded-lg"
   //                 >
   //                   <div className="w-6 h-6 bg-saffron rounded-full flex items-center justify-center flex-shrink-0">
   //                     <FaCheckCircle className="text-white text-xs" />
@@ -530,7 +530,7 @@ export default function ThankYouPage() {
                 
   //               <div className="space-y-3">
   //                 <motion.button
-  //                   className="w-full flex items-center justify-between p-3 bg-orange-100/80 dark:bg-saffron/10 rounded-lg hover:bg-orange-200/80 dark:hover:bg-saffron/20 transition-all duration-300 group"
+  //                   className="w-full flex items-center justify-between p-3 bg-orange-100/20 dark:bg-saffron/10 rounded-lg hover:bg-orange-200/80 dark:hover:bg-saffron/20 transition-all duration-300 group"
   //                   whileHover={{ scale: 1.02 }}
   //                 >
   //                   <div className="flex items-center gap-3">
@@ -541,7 +541,7 @@ export default function ThankYouPage() {
   //                 </motion.button>
                   
   //                 <motion.button
-  //                   className="w-full flex items-center justify-between p-3 bg-orange-100/80 dark:bg-saffron/10 rounded-lg hover:bg-orange-200/80 dark:hover:bg-saffron/20 transition-all duration-300 group"
+  //                   className="w-full flex items-center justify-between p-3 bg-orange-100/20 dark:bg-saffron/10 rounded-lg hover:bg-orange-200/80 dark:hover:bg-saffron/20 transition-all duration-300 group"
   //                   whileHover={{ scale: 1.02 }}
   //                 >
   //                   <div className="flex items-center gap-3">
@@ -552,7 +552,7 @@ export default function ThankYouPage() {
   //                 </motion.button>
                   
   //                 <motion.button
-  //                   className="w-full flex items-center justify-between p-3 bg-orange-100/80 dark:bg-saffron/10 rounded-lg hover:bg-orange-200/80 dark:hover:bg-saffron/20 transition-all duration-300 group"
+  //                   className="w-full flex items-center justify-between p-3 bg-orange-100/20 dark:bg-saffron/10 rounded-lg hover:bg-orange-200/80 dark:hover:bg-saffron/20 transition-all duration-300 group"
   //                   whileHover={{ scale: 1.02 }}
   //                 >
   //                   <div className="flex items-center gap-3">
@@ -660,7 +660,7 @@ export default function ThankYouPage() {
   //           initial={{ opacity: 0, scale: 0.8 }}
   //           animate={{ opacity: 1, scale: 1 }}
   //           transition={{ duration: 0.8, delay: 1.2 }}
-  //           className="text-center bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg"
+  //           className="text-center bg-saffron/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg"
   //         >
   //           <div className="text-5xl mb-4">🙏</div>
   //           <p className="text-gray-700 dark:text-gray-300 italic text-lg mb-4 max-w-2xl mx-auto">

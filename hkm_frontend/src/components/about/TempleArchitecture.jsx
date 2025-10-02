@@ -95,7 +95,7 @@ export default function TempleArchitecture() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl mb-12"
+          className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl mb-12"
         >
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
@@ -130,7 +130,7 @@ export default function TempleArchitecture() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl overflow-hidden border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-2xl hover:shadow-saffron/20 transition-all duration-300 group"
+              className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl overflow-hidden border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-2xl hover:shadow-saffron/20 transition-all duration-300 group"
             >
               {/* Image */}
               <div className="relative overflow-hidden h-48">
@@ -161,7 +161,7 @@ export default function TempleArchitecture() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-12 bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg"
+          className="mt-12 bg-saffron/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg"
         >
           <h3 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-8">Special Architectural Elements</h3>
           <div className="grid md:grid-cols-3 gap-6">
@@ -196,7 +196,7 @@ export default function TempleArchitecture() {
           viewport={{ once: true }}
           className="mt-12 text-center"
         >
-          <div className="bg-white/90 dark:bg-gradient-to-r dark:from-purple-900/50 dark:to-indigo-900/50 rounded-2xl p-8 border border-orange-200 dark:border-saffron border-opacity-60 dark:border-opacity-30 backdrop-blur-sm max-w-4xl mx-auto shadow-xl">
+          <div className="bg-white/10 dark:bg-gradient-to-r dark:from-purple-900/50 dark:to-indigo-900/50 rounded-2xl p-8 border border-orange-200 dark:border-saffron border-opacity-60 dark:border-opacity-30 backdrop-blur-sm max-w-4xl mx-auto shadow-xl">
             <p className="text-gray-700 dark:text-gray-100 text-lg italic">
               "Every stone speaks of devotion, every arch echoes with prayers, and every dome reaches toward the divine - our temple is not just built with materials, but with the faith and love of countless devotees."
             </p>

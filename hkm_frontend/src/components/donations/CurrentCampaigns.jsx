@@ -139,7 +139,7 @@ export default function CurrentCampaigns() {
                 className={`rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 group ${
                   campaign.urgent 
                     ? 'bg-gradient-to-br from-red-100/90 to-orange-100/90 dark:from-red-900/20 dark:to-orange-900/20 border-2 border-red-400 dark:border-red-500 border-opacity-60 dark:border-opacity-50' 
-                    : 'bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 hover:border-orange-500 hover:border-opacity-80 dark:hover:border-opacity-50'
+                    : 'bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 hover:border-orange-500 hover:border-opacity-80 dark:hover:border-opacity-50'
                 } backdrop-blur-xl`}
               >
                 <div className="grid lg:grid-cols-2 gap-8">
@@ -225,7 +225,7 @@ export default function CurrentCampaigns() {
 
                     {/* Campaign Stats */}
                     <div className="grid grid-cols-3 gap-4 mb-6">
-                      <div className="text-center p-3 bg-orange-100/80 dark:bg-purple-900/30 rounded-lg border border-orange-500/20">
+                      <div className="text-center p-3 bg-orange-100/20 dark:bg-purple-900/30 rounded-lg border border-orange-500/20">
                         <div className="text-2xl font-bold text-orange-500">
                           {Math.round(getProgressPercentage(campaign.raised, campaign.target))}%
                         </div>

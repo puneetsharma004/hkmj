@@ -163,7 +163,7 @@ export default function HowToJoin() {
                   <div className="hidden lg:block absolute top-16 left-full w-full h-0.5 bg-saffron-gradient opacity-30 z-0"></div>
                 )}
                 
-                <div className="relative bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group h-full shadow-xl">
+                <div className="relative bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group h-full shadow-xl">
                   {/* Step Number */}
                   <div className="absolute top-4 left-6 w-8 h-8 bg-saffron-gradient rounded-full flex items-center justify-center text-gray-500 dark:text-white font-bold text-sm z-10 shadow-lg">
                     {step.step}
@@ -224,7 +224,7 @@ export default function HowToJoin() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white/90 dark:bg-gradient-to-br dark:from-indigo-900/50 dark:to-purple-900/50 rounded-xl p-6 border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-30 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group shadow-lg"
+                className="bg-white/10 dark:bg-gradient-to-br dark:from-indigo-900/50 dark:to-purple-900/50 rounded-xl p-6 border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-30 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group shadow-lg"
               >
                 <div className="text-center mb-4">
                   <div className="text-4xl mb-3 text-saffron group-hover:scale-110 transition-transform duration-300">
@@ -254,7 +254,7 @@ export default function HowToJoin() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg"
+          className="bg-saffron/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg"
         >
           <h3 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-8 flex items-center justify-center gap-2">
             <FaCalendarAlt />
@@ -268,7 +268,7 @@ export default function HowToJoin() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 1 + (index * 0.1) }}
                 viewport={{ once: true }}
-                className="text-center p-6 bg-white/90 dark:bg-gray-900/50 rounded-xl border border-orange-200 dark:border-saffron border-opacity-60 dark:border-opacity-20 shadow-lg"
+                className="text-center p-6 bg-white/10 dark:bg-gray-900/80 rounded-xl border border-orange-200 dark:border-saffron border-opacity-60 dark:border-opacity-20 shadow-lg"
               >
                 <div className="text-3xl mb-3 text-saffron">
                   <FaGraduationCap />

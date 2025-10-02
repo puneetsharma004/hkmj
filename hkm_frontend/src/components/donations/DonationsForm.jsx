@@ -374,7 +374,7 @@ export default function DonationForm() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-2xl"
+          className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-2xl"
         >
           <form onSubmit={handleSubmit}>
             {/* Step 1: Personal Details */}
@@ -720,7 +720,7 @@ export default function DonationForm() {
                 </div>
 
                 {/* Summary */}
-                <div className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-lg p-6 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg">
+                <div className="bg-saffron/10 rounded-lg p-6 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg">
                   <h4 className="font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
                     <FaHeart />
                     Donation Summary
@@ -847,7 +847,7 @@ export default function DonationForm() {
               </div>
 
               {/* Blessing Message */}
-              <div className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/20 dark:to-gold/20 rounded-xl p-4 mb-6 border border-saffron/40 dark:border-saffron/30">
+              <div className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-indigo-900/80 dark:to-purple-900/80 rounded-xl p-4 mb-6 border border-saffron/40 dark:border-saffron/30">
                 <p className="text-gray-700 dark:text-gray-300 text-center italic text-sm">
                   "दानं वीर्यं यशस्तेजो धैर्यं चैव पराक्रमः।"
                   <br />

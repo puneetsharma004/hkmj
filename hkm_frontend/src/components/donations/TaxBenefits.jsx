@@ -140,7 +140,7 @@ export default function TaxBenefits() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-2xl hover:shadow-saffron/20 transition-all duration-300 group shadow-xl"
+                className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-2xl hover:shadow-saffron/20 transition-all duration-300 group shadow-xl"
               >
                 <div className="flex items-start space-x-4">
                   <div className="text-4xl text-saffron group-hover:scale-110 transition-transform duration-300">
@@ -252,7 +252,7 @@ export default function TaxBenefits() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center p-4 bg-white/60 dark:bg-gray-900/50 rounded-xl border border-blue-300 dark:border-blue-400 border-opacity-40 dark:border-opacity-20 shadow-lg hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300 group"
+                className="text-center p-4 bg-white/60 dark:bg-gray-900/80 rounded-xl border border-blue-300 dark:border-blue-400 border-opacity-40 dark:border-opacity-20 shadow-lg hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300 group"
               >
                 <div className="text-3xl mb-3 text-saffron group-hover:scale-110 transition-transform duration-300">
                   {doc.icon}

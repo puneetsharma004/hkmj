@@ -80,7 +80,7 @@ export default function Testimonials() {
                 y: -10,
                 transition: { duration: 0.3 }
               }}
-              className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 p-8 rounded-2xl shadow-2xl border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-2xl hover:shadow-saffron/20 dark:hover:shadow-saffron/30 transition-all duration-300 group"
+              className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 p-8 rounded-2xl shadow-2xl border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-2xl hover:shadow-saffron/20 dark:hover:shadow-saffron/30 transition-all duration-300 group"
             >
               {/* Quote */}
               <div className="relative mb-6">
@@ -138,7 +138,7 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 p-8 rounded-2xl border border-saffron/50 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm max-w-2xl mx-auto shadow-lg ">
+          <div className="bg-saffron/10 p-8 rounded-2xl border border-saffron/50 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm max-w-2xl mx-auto shadow-lg ">
             <h4 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Share Your Experience</h4>
             <p className="text-gray-700 dark:text-gray-300 mb-6">
               We'd love to hear about your spiritual journey with us. Your words inspire others to join our divine family.
@@ -177,7 +177,7 @@ export default function Testimonials() {
               transition={{ duration: 0.6, delay: 1 + (i * 0.1) }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
-              className="text-center p-4 bg-white/70 dark:bg-gradient-to-br dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm shadow-lg hover:shadow-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300"
+              className="text-center p-4 bg-white/70 dark:bg-gradient-to-br dark:from-purple-900/80 dark:to-indigo-900/80 rounded-xl border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm shadow-lg hover:shadow-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300"
             >
               <div className="text-2xl font-bold text-saffron glow">{stat.number}</div>
               <div className="text-gray-700 dark:text-gray-300 text-xs">{stat.label}</div>

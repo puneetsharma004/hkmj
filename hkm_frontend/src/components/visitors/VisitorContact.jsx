@@ -152,7 +152,7 @@ export default function VisitorContact() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group text-center shadow-xl"
+              className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group text-center shadow-xl"
             >
               <div className={`w-16 h-16 bg-gradient-to-r ${method.color} rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                 {method.icon}
@@ -229,7 +229,7 @@ export default function VisitorContact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white/90 dark:bg-gradient-to-br dark:from-indigo-900/50 dark:to-purple-900/50 rounded-xl p-6 border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-30 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group shadow-lg"
+                className="bg-white/10 dark:bg-gradient-to-br dark:from-indigo-900/50 dark:to-purple-900/50 rounded-xl p-6 border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-30 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group shadow-lg"
               >
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0 w-8 h-8 bg-saffron rounded-full flex items-center justify-center text-white font-bold text-sm">
@@ -280,9 +280,9 @@ export default function VisitorContact() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center p-4 bg-white/90 dark:bg-gray-900/50 rounded-xl border border-red-300 dark:border-red-400 border-opacity-60 dark:border-opacity-20 shadow-lg"
+                className="text-center p-4 bg-white/10 dark:bg-gray-900/80 rounded-xl border border-red-300 dark:border-red-400 border-opacity-60 dark:border-opacity-20 shadow-lg"
               >
-                <div className="text-2xl mb-2 text-red-600">{contact.icon}</div>
+                <div className="text-2xl mb-2 text-red-600 flex justify-center">{contact.icon}</div>
                 <h4 className="font-semibold text-gray-800 dark:text-white mb-2">{contact.service}</h4>
                 <p className="text-red-600 dark:text-red-300 font-mono text-sm mb-2">{contact.number}</p>
                 <p className="text-gray-600 dark:text-gray-400 text-xs">{contact.available}</p>

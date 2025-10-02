@@ -207,7 +207,7 @@ export default function OfficeHours() {
               viewport={{ once: true }}
               className={`rounded-2xl p-8 border backdrop-blur-xl transition-all duration-300 group shadow-xl ${
                 schedule.isWeekend 
-                  ? 'bg-orange-100/80 dark:bg-gradient-to-br dark:from-orange-900/30 dark:to-red-900/30 border-orange-400 dark:border-orange-500 border-opacity-60 dark:border-opacity-30 hover:border-orange-500 hover:border-opacity-80 dark:hover:border-opacity-50' 
+                  ? 'bg-orange-100/20 dark:bg-gradient-to-br dark:from-orange-900/30 dark:to-red-900/30 border-orange-400 dark:border-orange-500 border-opacity-60 dark:border-opacity-30 hover:border-orange-500 hover:border-opacity-80 dark:hover:border-opacity-50' 
                   : 'bg-gradient-to-br from-saffron/20 to-gold/20 dark:from-saffron/20 dark:to-gold/20 border-saffron border-opacity-60 dark:border-opacity-50 hover:border-opacity-80 dark:hover:border-opacity-70'
               }`}
             >
@@ -254,7 +254,7 @@ export default function OfficeHours() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group shadow-xl"
+                className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group shadow-xl"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center space-x-3">
@@ -305,7 +305,7 @@ export default function OfficeHours() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg"
+          className="bg-saffron/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg"
         >
           <h3 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-6">Important Information</h3>
           <div className="grid md:grid-cols-2 gap-8">

@@ -167,7 +167,7 @@ export default function Facilities() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group shadow-xl"
+              className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group shadow-xl"
             >
               <div className="text-center mb-4">
                 <div className="text-4xl mb-3 text-saffron group-hover:scale-110 transition-transform duration-300 flex justify-center items-center">
@@ -221,7 +221,7 @@ export default function Facilities() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-xl p-6 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 text-center shadow-lg"
+                className="rounded-xl p-6 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 text-center shadow-lg"
               >
                 <div className="text-4xl mb-4 text-saffron flex justify-center">{feature.icon}</div>
                 <h4 className="font-bold text-gray-800 dark:text-white mb-3">{feature.feature}</h4>
@@ -229,7 +229,7 @@ export default function Facilities() {
                 
                 <div className="space-y-1">
                   {feature.locations.map((location, locationIndex) => (
-                    <div key={locationIndex} className="text-xs text-saffron bg-orange-100/80 dark:bg-saffron/10 px-2 py-1 rounded">
+                    <div key={locationIndex} className="text-xs text-saffron bg-orange-100/20 dark:bg-saffron/10 px-2 py-1 rounded">
                       {location}
                     </div>
                   ))}
@@ -245,7 +245,7 @@ export default function Facilities() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="bg-white/90 dark:bg-gradient-to-r dark:from-purple-900/30 dark:to-indigo-900/30 rounded-2xl p-8 border border-orange-200 dark:border-purple-500 border-opacity-60 dark:border-opacity-30 backdrop-blur-sm shadow-xl"
+          className="bg-white/10 dark:bg-gradient-to-r dark:from-purple-900/30 dark:to-indigo-900/30 rounded-2xl p-8 border border-orange-200 dark:border-purple-500 border-opacity-60 dark:border-opacity-30 backdrop-blur-sm shadow-xl"
         >
           <h3 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-8">Additional Services</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -261,7 +261,7 @@ export default function Facilities() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center p-4 bg-orange-100/80 dark:bg-gray-900/50 rounded-xl shadow-lg"
+                className="text-center p-4 bg-orange-100/20 dark:bg-gray-900/80 rounded-xl shadow-lg"
               >
                 <div className="text-3xl mb-2 text-saffron flex justify-center">{service.icon}</div>
                 <h4 className="font-semibold text-gray-800 dark:text-white mb-1">{service.service}</h4>

@@ -181,7 +181,7 @@ export default function VolunteerOpportunities() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl overflow-hidden border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group"
+              className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl overflow-hidden border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group"
             >
               {/* Header */}
               <div className="relative p-6 pb-4">
@@ -281,7 +281,7 @@ export default function VolunteerOpportunities() {
           viewport={{ once: true }}
           className="mt-16 grid md:grid-cols-3 gap-8"
         >
-          <div className="text-center p-6 bg-gradient-to-br from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-xl border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg">
+          <div className="text-center p-6  rounded-xl border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg">
             <div className="text-4xl mb-3">🆕</div>
             <h3 className="font-bold text-saffron mb-2">New to Volunteering?</h3>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
@@ -299,7 +299,7 @@ export default function VolunteerOpportunities() {
             </p>
           </div>
           
-          <div className="text-center p-6 bg-purple-100/80 dark:bg-gradient-to-br dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl border border-purple-400 dark:border-purple-500 border-opacity-60 dark:border-opacity-20 shadow-lg">
+          <div className="text-center p-6 bg-purple-100/80 dark:bg-gradient-to-br dark:from-purple-900/80 dark:to-indigo-900/80 rounded-xl border border-purple-400 dark:border-purple-500 border-opacity-60 dark:border-opacity-20 shadow-lg">
             <div className="text-4xl mb-3 text-purple-600 dark:text-purple-400">
               <FaGraduationCap />
             </div>

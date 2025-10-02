@@ -174,7 +174,7 @@ export default function TempleTimings() {
               className={`rounded-2xl p-6 border backdrop-blur-xl transition-all duration-300 group shadow-xl ${
                 schedule.highlight 
                   ? 'bg-gradient-to-br from-saffron/20 to-gold/20 dark:from-saffron/20 dark:to-gold/20 border-saffron/60 dark:border-saffron/50 border-opacity-80 dark:border-opacity-100 hover:border-opacity-90 dark:hover:border-opacity-70' 
-                  : 'bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 border-orange-200 dark:border-gray-600 border-opacity-60 dark:border-opacity-30'
+                  : 'bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 border-orange-200 dark:border-gray-600 border-opacity-60 dark:border-opacity-30'
               }`}
             >
               <div className="text-center">
@@ -193,7 +193,7 @@ export default function TempleTimings() {
                       key={actIndex} 
                       className={`text-sm px-3 py-1 rounded-full ${
                         schedule.highlight 
-                          ? 'bg-orange-100/80 dark:bg-purple-900/30 text-gray-700 dark:text-gray-200' 
+                          ? 'bg-orange-100/20 dark:bg-purple-900/30 text-gray-700 dark:text-gray-200' 
                           : 'bg-gray-200/80 dark:bg-gray-800/50 text-gray-600 dark:text-gray-400'
                       }`}
                     >
@@ -223,7 +223,7 @@ export default function TempleTimings() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white/90 dark:bg-gradient-to-br dark:from-indigo-900/50 dark:to-purple-900/50 rounded-xl p-6 border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-30 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group shadow-lg"
+                className="bg-white/10 dark:bg-gradient-to-br dark:from-indigo-900/50 dark:to-purple-900/50 rounded-xl p-6 border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-30 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group shadow-lg"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
@@ -252,7 +252,7 @@ export default function TempleTimings() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg"
+          className="bg-saffron/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg"
         >
           <h3 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-8 flex items-center justify-center gap-2">
             <FaStar className="text-saffron" />
@@ -266,7 +266,7 @@ export default function TempleTimings() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex items-start space-x-4 p-4 bg-white/90 dark:bg-gray-900/50 rounded-xl shadow-lg"
+                className="flex items-start space-x-4 p-4 bg-white/10 dark:bg-gray-900/80 rounded-xl shadow-lg"
               >
                 <div className="flex-shrink-0 w-12 h-12 bg-saffron-gradient rounded-full flex items-center justify-center text-white font-bold">
                   {index + 1}

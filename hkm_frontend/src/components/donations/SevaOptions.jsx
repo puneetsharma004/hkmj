@@ -143,7 +143,7 @@ export default function SevaOptions() {
               className={`relative rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 group ${
                 seva.popular 
                   ? 'bg-gradient-to-br from-saffron/20 to-gold/20 dark:from-saffron/20 dark:to-gold/20 border-2 border-saffron border-opacity-80' 
-                  : 'bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50'
+                  : 'bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50'
               } backdrop-blur-xl`}
             >
               {seva.popular && (
@@ -219,7 +219,7 @@ export default function SevaOptions() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="mt-16 bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm text-center shadow-lg"
+          className="mt-16 bg-saffron/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm text-center shadow-lg"
         >
           <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Can't find the right seva option?</h3>
           <p className="text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto">

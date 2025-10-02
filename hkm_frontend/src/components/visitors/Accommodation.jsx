@@ -205,7 +205,7 @@ export default function Accommodation() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            className="mt-8 bg-white/90 dark:bg-gradient-to-r dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl p-6 border border-orange-200 dark:border-purple-500 border-opacity-60 dark:border-opacity-30 shadow-lg"
+            className="mt-8 bg-white/10 dark:bg-gradient-to-r dark:from-purple-900/30 dark:to-indigo-900/30 rounded-xl p-6 border border-orange-200 dark:border-purple-500 border-opacity-60 dark:border-opacity-30 shadow-lg"
           >
             <h4 className="font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
               <FaShieldAlt className="text-saffron" />
@@ -239,7 +239,7 @@ export default function Accommodation() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10 }}
-                className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group shadow-xl"
+                className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group shadow-xl"
               >
                 <div className="text-center mb-4">
                   <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-2 group-hover:text-saffron transition-colors duration-300">
@@ -285,7 +285,7 @@ export default function Accommodation() {
                         };
 
                         return (
-                          <div key={amenityIndex} className="text-xs bg-orange-100/80 dark:bg-purple-900/30 px-2 py-1 rounded text-gray-700 dark:text-gray-300 text-center flex items-center justify-center gap-1">
+                          <div key={amenityIndex} className="text-xs bg-orange-100/20 dark:bg-purple-900/30 px-2 py-1 rounded text-gray-700 dark:text-gray-300 text-center flex items-center justify-center gap-1">
                             {getAmenityIcon(amenity)}
                             {amenity}
                           </div>

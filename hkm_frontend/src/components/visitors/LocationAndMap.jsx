@@ -107,7 +107,7 @@ export default function LocationAndMap() {
             className="space-y-6"
           >
             {/* Map Container */}
-            <div className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl overflow-hidden border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl">
+            <div className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl overflow-hidden border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl">
               <div className="aspect-video bg-gradient-to-br from-orange-100/80 to-amber-100/80 dark:from-saffron/20 dark:to-gold/20  relative">
                 {/* Placeholder for Google Maps */}
                 
@@ -136,14 +136,14 @@ export default function LocationAndMap() {
                 </div>
                 
                 {/* Map Controls */}
-                <div className="absolute top-4 right-4 space-y-2">
-                  <button className="bg-white/90 dark:bg-gray-800/90 p-2 rounded-lg shadow-lg hover:bg-white dark:hover:bg-gray-700 transition-all duration-300">
+                {/* <div className="absolute top-4 right-4 space-y-2">
+                  <button className="bg-white/10 dark:bg-gray-800/90 p-2 rounded-lg shadow-lg hover:bg-white dark:hover:bg-gray-700 transition-all duration-300">
                     <FaSearch className="text-lg text-saffron" />
                   </button>
-                  <button className="bg-white/90 dark:bg-gray-800/90 p-2 rounded-lg shadow-lg hover:bg-white dark:hover:bg-gray-700 transition-all duration-300">
+                  <button className="bg-white/10 dark:bg-gray-800/90 p-2 rounded-lg shadow-lg hover:bg-white dark:hover:bg-gray-700 transition-all duration-300">
                     <FaMapPin className="text-lg text-saffron" />
                   </button>
-                </div>
+                </div> */}
               </div>
               
               <div className="p-6">
@@ -171,7 +171,7 @@ export default function LocationAndMap() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="bg-white/90 dark:bg-gradient-to-r dark:from-indigo-900/50 dark:to-purple-900/50 rounded-xl p-4 border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm shadow-lg"
+              className="bg-white/10 dark:bg-gradient-to-r dark:from-indigo-900/80 dark:to-purple-900/80 rounded-xl p-4 border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm shadow-lg"
             >
               <h4 className="font-bold text-gold mb-2 flex items-center gap-2">
                 <FaMapMarkerAlt />
@@ -195,7 +195,7 @@ export default function LocationAndMap() {
             className="space-y-6"
           >
             {/* Full Address */}
-            <div className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl">
+            <div className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl">
               <h3 className="text-2xl font-bold text-saffron mb-6">Complete Address</h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
@@ -234,7 +234,7 @@ export default function LocationAndMap() {
             </div>
 
             {/* Nearby Landmarks */}
-            <div className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl">
+            <div className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl">
               <h3 className="text-2xl font-bold text-gold mb-6 flex items-center gap-2">
                 <FaMapMarkedAlt />
                 Nearby Landmarks
@@ -247,7 +247,7 @@ export default function LocationAndMap() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex items-center justify-between p-3 bg-orange-100/80 dark:bg-purple-900/30 rounded-lg hover:bg-orange-200/80 dark:hover:bg-purple-900/50 transition-all duration-300 group"
+                    className="flex items-center justify-between p-3 bg-orange-100/20 dark:bg-purple-900/30 rounded-lg hover:bg-orange-200/80 dark:hover:bg-purple-900/50 transition-all duration-300 group"
                   >
                     <div className="flex items-center space-x-3">
                       <FaUniversity className="text-xl text-saffron" />

@@ -118,7 +118,7 @@ export default function MajorFestivals() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl overflow-hidden border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group"
+              className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl overflow-hidden border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group"
             >
               {/* Festival Image */}
               <div className="relative h-48 overflow-hidden">
@@ -154,7 +154,7 @@ export default function MajorFestivals() {
                 </div>
 
                 {/* Significance */}
-                <div className="mb-4 p-3 bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-lg border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100">
+                <div className="mb-4 p-3 bg-saffron/10 rounded-lg border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100">
                   <h4 className="text-sm font-semibold text-saffron mb-1 flex items-center gap-1">
                     <FaInfoCircle />
                     Spiritual Significance
@@ -172,7 +172,7 @@ export default function MajorFestivals() {
                     {festival.specialPrograms.map((program, idx) => (
                       <div 
                         key={idx} 
-                        className="bg-orange-100/80 dark:bg-purple-900/30 px-2 py-1 rounded text-xs text-gray-700 dark:text-gray-300 text-center"
+                        className="bg-orange-100/20 dark:bg-purple-900/30 px-2 py-1 rounded text-xs text-gray-700 dark:text-gray-300 text-center"
                       >
                         {program}
                       </div>
@@ -210,7 +210,7 @@ export default function MajorFestivals() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="mt-12 bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg"
+          className="mt-12 bg-saffron/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg"
         >
           <h3 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-8">Why Join Our Festivals?</h3>
           <div className="grid md:grid-cols-3 gap-6">

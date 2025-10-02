@@ -69,7 +69,7 @@ export default function SearchFunction() {
             value={searchQuery}
             onChange={(e) => handleSearch(e.target.value)}
             placeholder="Search articles, teachings, stories..."
-            className="w-full px-6 py-4 pl-12 pr-12 bg-white/90 dark:bg-gray-900/80 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 rounded-2xl text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 backdrop-blur-xl shadow-lg"
+            className="w-full px-6 py-4 pl-12 pr-12 bg-white/10 dark:bg-gray-900/80 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 rounded-2xl text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 backdrop-blur-xl shadow-lg"
           />
           <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400">
             {isSearching ? (
@@ -126,7 +126,7 @@ export default function SearchFunction() {
             {searchResults.map((result, index) => (
               <motion.div
                 key={index}
-                className="p-4 hover:bg-orange-100/80 dark:hover:bg-saffron/10 transition-colors duration-300 border-b border-orange-200/60 dark:border-gray-700 last:border-b-0 cursor-pointer"
+                className="p-4 hover:bg-orange-100/20 dark:hover:bg-saffron/10 transition-colors duration-300 border-b border-orange-200/60 dark:border-gray-700 last:border-b-0 cursor-pointer"
                 whileHover={{ x: 5 }}
               >
                 <div className="flex items-center justify-between">

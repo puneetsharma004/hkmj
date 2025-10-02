@@ -40,7 +40,7 @@ export default function WelcomeSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl p-8 md:p-12 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-40 backdrop-blur-xl"
+          className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl p-8 md:p-12 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-40 backdrop-blur-xl"
         >
           {/* Description */}
           <div className="mb-8">

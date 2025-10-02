@@ -51,7 +51,7 @@ export default function CategoryFilter() {
             className={`px-4 py-2 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2 shadow-lg ${
               activeCategory === category.id
                 ? 'bg-saffron-gradient text-white'
-                : 'bg-white/90 dark:bg-gray-900/80 text-gray-700 dark:text-gray-300 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50'
+                : 'bg-white/10 dark:bg-gray-900/80 text-gray-700 dark:text-gray-300 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50'
             }`}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -78,7 +78,7 @@ export default function CategoryFilter() {
           <select
             value={activeCategory}
             onChange={(e) => setActiveCategory(e.target.value)}
-            className="w-full px-4 py-3 pr-10 bg-white/90 dark:bg-gray-900/80 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 rounded-lg text-gray-800 dark:text-white focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg appearance-none"
+            className="w-full px-4 py-3 pr-10 bg-white/10 dark:bg-gray-900/80 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 rounded-lg text-gray-800 dark:text-white focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg appearance-none"
           >
             {categories.map((category) => (
               <option key={category.id} value={category.id} className="bg-white dark:bg-gray-900">

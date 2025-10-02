@@ -71,7 +71,7 @@ export default function ThankYouPage() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/20 dark:to-gold/20 rounded-2xl p-8 max-w-3xl mx-auto border border-saffron/40 shadow-lg mb-12"
+          className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-indigo-900/80 dark:to-purple-900/80 rounded-2xl p-8 max-w-3xl mx-auto border border-saffron/40 shadow-lg mb-12"
         >
           <div className="text-6xl mb-4">🙏</div>
           <p className="text-gray-800 dark:text-white text-lg italic mb-4">
@@ -121,7 +121,7 @@ export default function ThankYouPage() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 1.0 }}
-          className="text-center bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-2xl p-8 border border-saffron/40 backdrop-blur-sm shadow-lg mb-8"
+          className="text-center bg-saffron/10 rounded-2xl p-8 border border-saffron/40 backdrop-blur-sm shadow-lg mb-8"
         >
           <div className="text-5xl mb-4">🕉️</div>
           <p className="text-gray-700 dark:text-gray-300 italic text-lg mb-4 max-w-2xl mx-auto">

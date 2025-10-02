@@ -134,7 +134,7 @@ export default function DonationsCallToAction() {
                 transition={{ duration: 0.5, delay: 0.2 + (index * 0.1) }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5, scale: 1.05 }}
-                className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-60 transition-all duration-300 group text-center shadow-lg"
+                className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-60 transition-all duration-300 group text-center shadow-lg"
               >
                 <div className="text-3xl font-bold text-saffron mb-2 group-hover:text-gold transition-colors duration-300">
                   {option.amount}
@@ -167,7 +167,7 @@ export default function DonationsCallToAction() {
                 className={`rounded-2xl p-6 border backdrop-blur-xl transition-all duration-300 group shadow-lg outline-none ${
                   need.urgent 
                     ? 'bg-gradient-to-br from-red-100/90 to-orange-100/90 dark:from-red-900/20 dark:to-orange-900/20 border-red-400 dark:border-red-500 border-opacity-60 dark:border-opacity-50' 
-                    : 'bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50'
+                    : 'bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50'
                 }`}
               >
                 {/* Icon Badge */}
@@ -239,7 +239,7 @@ export default function DonationsCallToAction() {
           viewport={{ once: true }}
           className="grid md:grid-cols-3 gap-8 mb-12"
         >
-          <div className="text-center p-6 bg-white/80 dark:bg-gradient-to-br dark:from-gray-900/50 dark:to-black/50 rounded-xl border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 transition-all duration-300 shadow-lg ">
+          <div className="text-center p-6 bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/50 dark:to-black/50 rounded-xl border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 transition-all duration-300 shadow-lg ">
             <div className="text-4xl mb-3 text-saffron flex justify-center items-center">
               <FaComments />
             </div>
@@ -252,7 +252,7 @@ export default function DonationsCallToAction() {
             </button>
           </div>
           
-          <div className="text-center p-6 bg-white/80 dark:bg-gradient-to-br dark:from-gray-900/50 dark:to-black/50 rounded-xl border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 transition-all duration-300 shadow-lg">
+          <div className="text-center p-6 bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/50 dark:to-black/50 rounded-xl border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 transition-all duration-300 shadow-lg">
             <div className="text-4xl mb-3 text-saffron flex justify-center items-center">
               <FaPhone />
             </div>
@@ -265,7 +265,7 @@ export default function DonationsCallToAction() {
             </button>
           </div>
           
-          <div className="text-center p-6 bg-white/80 dark:bg-gradient-to-br dark:from-gray-900/50 dark:to-black/50 rounded-xl border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 transition-all duration-300 shadow-lg">
+          <div className="text-center p-6 bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/50 dark:to-black/50 rounded-xl border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 transition-all duration-300 shadow-lg">
             <div className="text-4xl mb-3 text-saffron flex justify-center items-center">
               <FaEnvelope />
             </div>
@@ -287,7 +287,7 @@ export default function DonationsCallToAction() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg max-w-4xl mx-auto">
+          <div className="bg-saffron/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg max-w-4xl mx-auto">
             <p className="text-gray-700 dark:text-gray-300 italic text-lg mb-4 max-w-2xl mx-auto">
               "न हि कल्याणकृत्कश्चिद्दुर्गतिं तात गच्छति"<br/>
               "One who performs virtuous deeds never meets with misfortune"

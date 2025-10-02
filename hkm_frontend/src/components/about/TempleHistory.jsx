@@ -79,7 +79,7 @@ export default function TempleHistory() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl">
+            <div className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl">
               <h3 className="text-2xl font-bold text-saffron mb-4">Our Sacred Beginning</h3>
               <div className="space-y-4 text-gray-700 dark:text-gray-200 leading-relaxed">
                 <p>
@@ -114,7 +114,7 @@ export default function TempleHistory() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex items-start space-x-4 bg-white/80 dark:bg-gradient-to-r dark:from-indigo-900/50 dark:to-purple-900/50 rounded-xl p-4 border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300 group shadow-lg"
+                className="flex items-start space-x-4 bg-white/10 dark:bg-gradient-to-r dark:from-indigo-900/80 dark:to-purple-900/80 rounded-xl p-4 border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300 group shadow-lg"
               >
                 <div className="flex-shrink-0 w-12 h-12 bg-saffron-gradient rounded-full flex items-center justify-center text-white font-bold shadow-lg">
                   {item.icon}
@@ -141,7 +141,7 @@ export default function TempleHistory() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg max-w-4xl mx-auto">
+          <div className="bg-saffron/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Living Heritage</h3>
             <p className="text-gray-700 dark:text-gray-200 text-lg italic leading-relaxed">
               "From humble beginnings to a magnificent spiritual center, our temple's history is a testament to the unwavering faith of countless devotees. Each milestone represents not just physical growth, but the deepening of our community's spiritual roots in the sacred soil of Rajasthan."

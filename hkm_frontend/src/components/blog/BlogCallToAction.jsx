@@ -127,7 +127,7 @@ export default function BlogCallToAction() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/30 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm mb-16 shadow-lg"
+          className="bg-saffron/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/30 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm mb-16 shadow-lg"
         >
           <div className="max-w-2xl mx-auto">
             {isSubscribed ? (
@@ -161,7 +161,7 @@ export default function BlogCallToAction() {
                       value={newsletterData.name}
                       onChange={(e) => setNewsletterData(prev => ({ ...prev, name: e.target.value }))}
                       placeholder="Your Full Name"
-                      className="px-6 py-4 bg-white/90 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-xl text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
+                      className="px-6 py-4 bg-white/10 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-xl text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
                       required
                     />
                     <input
@@ -169,7 +169,7 @@ export default function BlogCallToAction() {
                       value={newsletterData.email}
                       onChange={(e) => setNewsletterData(prev => ({ ...prev, email: e.target.value }))}
                       placeholder="your.email@example.com"
-                      className="px-6 py-4 bg-white/90 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-xl text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
+                      className="px-6 py-4 bg-white/10 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-xl text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
                       required
                     />
                   </div>
@@ -213,7 +213,7 @@ export default function BlogCallToAction() {
                 transition={{ duration: 0.5, delay: 0.4 + (index * 0.1) }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.05 }}
-                className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-60 hover:shadow-saffron/20 transition-all duration-300 group text-center shadow-xl"
+                className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-60 hover:shadow-saffron/20 transition-all duration-300 group text-center shadow-xl"
               >
                 <div className={`w-16 h-16 bg-gradient-to-r ${action.color} rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                   {action.icon}
@@ -258,7 +258,7 @@ export default function BlogCallToAction() {
                 transition={{ duration: 0.5, delay: 0.6 + (index * 0.1) }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5, scale: 1.05 }}
-                className="bg-white/90 dark:bg-gradient-to-br dark:from-indigo-900/50 dark:to-purple-900/50 rounded-xl p-6 border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-30 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group text-center shadow-lg"
+                className="bg-white/10 dark:bg-gradient-to-br dark:from-indigo-900/50 dark:to-purple-900/50 rounded-xl p-6 border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-30 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group text-center shadow-lg"
               >
                 <div className={`text-4xl mb-3 group-hover:scale-110 transition-transform duration-300 ${platform.color} flex justify-center items-center`}>
                   {platform.icon}
@@ -281,7 +281,7 @@ export default function BlogCallToAction() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
           viewport={{ once: true }}
-          className="bg-white/90 dark:bg-gradient-to-r dark:from-purple-900/30 dark:to-indigo-900/30 rounded-2xl p-8 border border-orange-200 dark:border-purple-500 border-opacity-60 dark:border-opacity-30 backdrop-blur-sm mb-12 text-center shadow-lg"
+          className="bg-white/10 dark:bg-gradient-to-r dark:from-purple-900/30 dark:to-indigo-900/30 rounded-2xl p-8 border border-orange-200 dark:border-purple-500 border-opacity-60 dark:border-opacity-30 backdrop-blur-sm mb-12 text-center shadow-lg"
         >
           <h3 className="text-2xl font-bold text-gray-600 dark:text-white mb-4 flex items-center justify-center gap-2">
             <FaShare />

@@ -121,7 +121,7 @@ export default function HowToReach() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group shadow-xl"
+              className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-saffron/20 transition-all duration-300 group shadow-xl"
             >
               <div className="grid lg:grid-cols-3 gap-8">
                 {/* Left: Transport Mode */}
@@ -169,7 +169,7 @@ export default function HowToReach() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: detailIndex * 0.1 }}
                         viewport={{ once: true }}
-                        className="bg-orange-100/80 dark:bg-purple-900/30 rounded-xl p-4 border border-orange-300 dark:border-gold border-opacity-60 dark:border-opacity-20 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300 shadow-lg"
+                        className="bg-orange-100/20 dark:bg-purple-900/30 rounded-xl p-4 border border-orange-300 dark:border-gold border-opacity-60 dark:border-opacity-20 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300 shadow-lg"
                       >
                         <div className="text-center">
                           <h5 className="font-semibold text-gray-800 dark:text-white mb-2">{detail.label}</h5>
@@ -212,9 +212,9 @@ export default function HowToReach() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg"
+          className="bg-saffron/80 rounded-2xl p-8 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg"
         >
-          <h3 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-8">Public Transport Options</h3>
+          <h3 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-8">Public Transport Options</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {publicTransport.map((transport, index) => (
               <motion.div
@@ -223,9 +223,9 @@ export default function HowToReach() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center p-6 bg-white/90 dark:bg-gray-900/50 rounded-xl border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-20 shadow-lg"
+                className="text-center p-6 bg-white/10 dark:bg-gray-900/80 rounded-xl border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-20 shadow-lg"
               >
-                <div className="text-3xl mb-3 text-saffron">
+                <div className="text-3xl mb-3 text-saffron flex justify-center">
                   {transport.route.includes('Auto') ? <FaTaxi /> : <FaBus />}
                 </div>
                 <h4 className="font-semibold text-gray-800 dark:text-white mb-2">{transport.route}</h4>

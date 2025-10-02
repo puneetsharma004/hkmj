@@ -142,7 +142,7 @@ export default function EventsCallToAction() {
               className={`relative rounded-2xl p-6 border backdrop-blur-xl transition-all duration-300 group shadow-lg ${
                 action.urgent 
                   ? 'bg-gradient-to-br from-saffron/20 to-gold/20 dark:from-saffron/20 dark:to-gold/20 border-saffron border-opacity-80 shadow-saffron/30' 
-                  : 'bg-white/90 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50'
+                  : 'bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50'
               }`}
             >
               {action.urgent && (
@@ -178,7 +178,7 @@ export default function EventsCallToAction() {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
           id="newsletter"
-          className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm mb-12 shadow-lg"
+          className="bg-saffron/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm mb-12 shadow-lg"
         >
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Stay Connected with Krishna</h3>
@@ -192,7 +192,7 @@ export default function EventsCallToAction() {
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 rounded-lg bg-white dark:bg-gray-900/50 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:border-opacity-80 dark:focus:border-opacity-60 transition-all duration-300"
+                className="flex-1 px-4 py-3 rounded-lg bg-white dark:bg-gray-900/80 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:border-opacity-80 dark:focus:border-opacity-60 transition-all duration-300"
               />
               <motion.button
                 className="px-6 py-3 bg-saffron-gradient text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2"
@@ -265,7 +265,7 @@ export default function EventsCallToAction() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-saffron/10 dark:to-gold/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg max-w-4xl mx-auto">
+          <div className="bg-saffron/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg max-w-4xl mx-auto">
             <p className="text-gray-700 dark:text-gray-300 italic text-lg mb-4">
               "Wherever you are, whatever you do, remember Krishna and His divine love"
             </p>
