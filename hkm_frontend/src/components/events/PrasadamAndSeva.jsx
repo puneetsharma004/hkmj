@@ -20,6 +20,8 @@ import {
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
 import { FaHandHoldingHeart } from "react-icons/fa";
+import { useEffect, useState } from 'react';
+import { supabase } from '../../lib/supabase';
 
 export default function PrasadamAndSeva() {
   const prasadamSchedule = [
@@ -104,29 +106,48 @@ export default function PrasadamAndSeva() {
     }
   ];
 
-  const sponsorshipTiers = [
-    {
-      name: 'Daily Prasadam',
-      amount: '₹2,500',
-      serves: '100 people',
-      includes: ['Complete meal', 'Your name in announcement', 'Special prayers'],
-      popular: false
-    },
-    {
-      name: 'Sunday Feast',
-      amount: '₹10,000',
-      serves: '300 people',
-      includes: ['Grand feast', 'Special decoration', 'Name display', 'Photo with deity'],
-      popular: true
-    },
-    {
-      name: 'Festival Prasadam',
-      amount: '₹25,000',
-      serves: '500+ people',
-      includes: ['Festival feast', 'Special programs', 'Family recognition', 'Blessed offerings'],
-      popular: false
-    }
-  ];
+  const [sponsorshipTiers, setSponsorshipTiers] = useState([]);
+      // Fetch sponsorshipTiers dynamically from Supabase
+      useEffect(() => {
+        const fetchSponsorshipTiers = async () => {
+          const { data, error } = await supabase
+            .from('sponsorshipTiers')
+            .select('*')
+            .order('created_at', { ascending: false });
+    
+          if (error) {
+            console.error('Error fetching sponsorshipTiers:', error);
+          } else {
+            setSponsorshipTiers(data || []);
+          }
+        };
+
+        fetchSponsorshipTiers();
+      }, []);
+
+  // const sponsorshipTiers = [
+  //   {
+  //     name: 'Daily Prasadam',
+  //     amount: '₹2,500',
+  //     serves: '100 people',
+  //     includes: ['Complete meal', 'Your name in announcement', 'Special prayers'],
+  //     popular: false
+  //   },
+  //   {
+  //     name: 'Sunday Feast',
+  //     amount: '₹10,000',
+  //     serves: '300 people',
+  //     includes: ['Grand feast', 'Special decoration', 'Name display', 'Photo with deity'],
+  //     popular: true
+  //   },
+  //   {
+  //     name: 'Festival Prasadam',
+  //     amount: '₹25,000',
+  //     serves: '500+ people',
+  //     includes: ['Festival feast', 'Special programs', 'Family recognition', 'Blessed offerings'],
+  //     popular: false
+  //   }
+  // ];
 
   return (
     <section className="relative py-16 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:bg-black">
@@ -331,7 +352,7 @@ export default function PrasadamAndSeva() {
                   <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-2">{tier.name}</h4>
                   <div className="text-3xl font-bold text-saffron mb-1 flex items-center justify-center gap-1">
                     <FaRupeeSign className="text-2xl" />
-                    {tier.amount.replace('₹', '')}
+                    {tier.amount}
                   </div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">Serves {tier.serves}</div>
                 </div>

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { 
   FaGift, 
   FaUniversity, 
@@ -14,70 +15,89 @@ import {
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
 import { IoCalendar } from "react-icons/io5";
+import { supabase } from '../../lib/supabase';
 
 export default function MajorFestivals() {
-  const majorFestivals = [
-    {
-      name: 'Janmashtami',
-      date: 'August/September',
-      description: 'The grand celebration of Lord Krishna\'s birth with midnight festivities, devotional singing, and special darshan.',
-      significance: 'The most important festival celebrating Krishna\'s divine appearance on Earth',
-      specialPrograms: ['Midnight Aarti', 'Krishna Jhanki', 'Devotional Drama', 'Special Bhog'],
-      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&h=300&fit=crop',
-      color: 'from-blue-600 to-purple-600',
-      duration: '2 Days'
-    },
-    {
-      name: 'Radhashtami',
-      date: 'August/September',
-      description: 'Celebrating the appearance of Srimati Radharani, Krishna\'s eternal consort and the embodiment of divine love.',
-      significance: 'Honoring the divine feminine energy and devotion',
-      specialPrograms: ['Radha Abhishek', 'Flower Decorations', 'Special Kirtans', 'Radha Katha'],
-      image: 'https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=500&h=300&fit=crop',
-      color: 'from-pink-500 to-rose-600',
-      duration: '1 Day'
-    },
-    {
-      name: 'Holi Festival',
-      date: 'March',
-      description: 'The festival of colors celebrating Krishna\'s playful nature with organic colors, music, and community celebration.',
-      significance: 'Celebrating the victory of good over evil and divine play',
-      specialPrograms: ['Color Celebrations', 'Holika Dahan', 'Community Feast', 'Cultural Programs'],
-      image: 'https://images.unsplash.com/photo-1583211892916-5e38c6ee3297?w=500&h=300&fit=crop',
-      color: 'from-yellow-500 to-red-500',
-      duration: '2 Days'
-    },
-    {
-      name: 'Rath Yatra',
-      date: 'June/July',
-      description: 'The grand chariot festival where Lord Krishna travels through the streets blessing all devotees.',
-      significance: 'Commemorating Krishna\'s journey and his accessibility to all',
-      specialPrograms: ['Grand Procession', 'Chariot Pulling', 'Street Kirtans', 'Public Darshan'],
-      image: 'https://images.unsplash.com/photo-1589802829985-817e51171b92?w=500&h=300&fit=crop',
-      color: 'from-orange-500 to-amber-600',
-      duration: '1 Day'
-    },
-    {
-      name: 'Diwali',
-      date: 'October/November',
-      description: 'Festival of lights celebrating Krishna\'s victory over darkness with lamp decorations and special prayers.',
-      significance: 'The triumph of light over darkness and good over evil',
-      specialPrograms: ['Lamp Lighting', 'Fireworks Display', 'Special Aarti', 'Community Dinner'],
-      image: 'https://images.unsplash.com/photo-1605538883669-825200433431?w=500&h=300&fit=crop',
-      color: 'from-amber-500 to-yellow-600',
-      duration: '3 Days'
-    },
-    {
-      name: 'Govardhan Puja',
-      date: 'October/November',
-      description: 'Commemorating Krishna lifting Mount Govardhan with elaborate food offerings and mountain replica.',
-      significance: 'Celebrating Krishna\'s protection of devotees and nature worship',
-      specialPrograms: ['Mountain Replica', 'Anna Koot', '108 Food Items', 'Parikrama'],
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=300&fit=crop',
-      color: 'from-green-500 to-teal-600',
-      duration: '1 Day'
-    }
-  ];
+  const [majorFestivals, setMajorFestivals] = useState([]);
+    // Fetch majorFestivals dynamically from Supabase
+    useEffect(() => {
+      const fetchMajorFestivals = async () => {
+        const { data, error } = await supabase
+          .from('majorFestivals')
+          .select('*')
+          .order('created_at', { ascending: false });
+  
+        if (error) {
+          console.error('Error fetching majorFestivals:', error);
+        } else {
+          setMajorFestivals(data || []);
+        }
+      };
+
+      fetchMajorFestivals();
+    }, []);
+  // const majorFestivals = [
+  //   {
+  //     name: 'Janmashtami',
+  //     date: 'August/September',
+  //     description: 'The grand celebration of Lord Krishna\'s birth with midnight festivities, devotional singing, and special darshan.',
+  //     significance: 'The most important festival celebrating Krishna\'s divine appearance on Earth',
+  //     specialPrograms: ['Midnight Aarti', 'Krishna Jhanki', 'Devotional Drama', 'Special Bhog'],
+  //     image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&h=300&fit=crop',
+  //     color: 'from-blue-600 to-purple-600',
+  //     duration: '2 Days'
+  //   },
+  //   {
+  //     name: 'Radhashtami',
+  //     date: 'August/September',
+  //     description: 'Celebrating the appearance of Srimati Radharani, Krishna\'s eternal consort and the embodiment of divine love.',
+  //     significance: 'Honoring the divine feminine energy and devotion',
+  //     specialPrograms: ['Radha Abhishek', 'Flower Decorations', 'Special Kirtans', 'Radha Katha'],
+  //     image: 'https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=500&h=300&fit=crop',
+  //     color: 'from-pink-500 to-rose-600',
+  //     duration: '1 Day'
+  //   },
+  //   {
+  //     name: 'Holi Festival',
+  //     date: 'March',
+  //     description: 'The festival of colors celebrating Krishna\'s playful nature with organic colors, music, and community celebration.',
+  //     significance: 'Celebrating the victory of good over evil and divine play',
+  //     specialPrograms: ['Color Celebrations', 'Holika Dahan', 'Community Feast', 'Cultural Programs'],
+  //     image: 'https://images.unsplash.com/photo-1583211892916-5e38c6ee3297?w=500&h=300&fit=crop',
+  //     color: 'from-yellow-500 to-red-500',
+  //     duration: '2 Days'
+  //   },
+  //   {
+  //     name: 'Rath Yatra',
+  //     date: 'June/July',
+  //     description: 'The grand chariot festival where Lord Krishna travels through the streets blessing all devotees.',
+  //     significance: 'Commemorating Krishna\'s journey and his accessibility to all',
+  //     specialPrograms: ['Grand Procession', 'Chariot Pulling', 'Street Kirtans', 'Public Darshan'],
+  //     image: 'https://images.unsplash.com/photo-1589802829985-817e51171b92?w=500&h=300&fit=crop',
+  //     color: 'from-orange-500 to-amber-600',
+  //     duration: '1 Day'
+  //   },
+  //   {
+  //     name: 'Diwali',
+  //     date: 'October/November',
+  //     description: 'Festival of lights celebrating Krishna\'s victory over darkness with lamp decorations and special prayers.',
+  //     significance: 'The triumph of light over darkness and good over evil',
+  //     specialPrograms: ['Lamp Lighting', 'Fireworks Display', 'Special Aarti', 'Community Dinner'],
+  //     image: 'https://images.unsplash.com/photo-1605538883669-825200433431?w=500&h=300&fit=crop',
+  //     color: 'from-amber-500 to-yellow-600',
+  //     duration: '3 Days'
+  //   },
+  //   {
+  //     name: 'Govardhan Puja',
+  //     date: 'October/November',
+  //     description: 'Commemorating Krishna lifting Mount Govardhan with elaborate food offerings and mountain replica.',
+  //     significance: 'Celebrating Krishna\'s protection of devotees and nature worship',
+  //     specialPrograms: ['Mountain Replica', 'Anna Koot', '108 Food Items', 'Parikrama'],
+  //     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=300&fit=crop',
+  //     color: 'from-green-500 to-teal-600',
+  //     duration: '1 Day'
+  //   }
+  // ];
 
   return (
     <section className="relative py-16 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:bg-black">
@@ -169,7 +189,7 @@ export default function MajorFestivals() {
                     Special Programs
                   </h4>
                   <div className="grid grid-cols-2 gap-2">
-                    {festival.specialPrograms.map((program, idx) => (
+                    {festival.specialPrograms.split(',').map((program, idx) => (
                       <div 
                         key={idx} 
                         className="bg-orange-100/20 dark:bg-purple-900/30 px-2 py-1 rounded text-xs text-gray-700 dark:text-gray-300 text-center"

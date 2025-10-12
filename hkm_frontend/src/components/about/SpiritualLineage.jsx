@@ -6,31 +6,53 @@ import {
   FaHeart,
   FaGraduationCap
 } from 'react-icons/fa';
+import { supabase } from '../../lib/supabase';
+import { useEffect, useState } from 'react';
+
 
 export default function SpiritualLineage() {
-  const spiritualTeachers = [
-    {
-      name: 'A.C. Bhaktivedanta Swami Prabhupada',
-      title: 'Founder-Acharya of ISKCON',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face',
-      description: 'The visionary who brought Krishna consciousness to the Western world and established ISKCON globally.',
-      icon: <FaCrown />
-    },
-    {
-      name: 'His Holiness Radhanath Swami',
-      title: 'Senior Spiritual Guide',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face',
-      description: 'Renowned spiritual teacher and author who has guided countless souls on the path of devotion.',
-      icon: <FaHeart />
-    },
-    {
-      name: 'Local Temple President',
-      title: 'Temple Administrator',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face',
-      description: 'Dedicated leader overseeing daily temple operations and community spiritual programs.',
-      icon: <FaGraduationCap />
-    }
-  ];
+    const [spiritualTeachers, setSpiritualTeachers] = useState([]);
+
+    useEffect(() => {
+        const fetchSpiritualTeachers = async () => {
+          const { data, error } = await supabase
+            .from('spiritualTeachers')
+            .select('*')
+            .order('created_at', { ascending: true });
+    
+          if (error) {
+            console.error('Error fetching Spiritual Teachers:', error);
+          } else {
+            setSpiritualTeachers(data || []);
+          }
+        };
+
+        fetchSpiritualTeachers();
+      }, []);
+  
+  // const spiritualTeachers = [
+  //   {
+  //     name: 'A.C. Bhaktivedanta Swami Prabhupada',
+  //     title: 'Founder-Acharya of ISKCON',
+  //     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face',
+  //     description: 'The visionary who brought Krishna consciousness to the Western world and established ISKCON globally.',
+  //     icon: <FaCrown />
+  //   },
+  //   {
+  //     name: 'His Holiness Radhanath Swami',
+  //     title: 'Senior Spiritual Guide',
+  //     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face',
+  //     description: 'Renowned spiritual teacher and author who has guided countless souls on the path of devotion.',
+  //     icon: <FaHeart />
+  //   },
+  //   {
+  //     name: 'Local Temple President',
+  //     title: 'Temple Administrator',
+  //     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face',
+  //     description: 'Dedicated leader overseeing daily temple operations and community spiritual programs.',
+  //     icon: <FaGraduationCap />
+  //   }
+  // ];
 
   return (
     <section className="relative py-16 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:bg-black">
@@ -132,9 +154,6 @@ export default function SpiritualLineage() {
                     alt={teacher.name}
                     className="w-24 h-24 rounded-full mx-auto border-4 border-saffron border-opacity-50 group-hover:border-opacity-80 transition-all duration-300 shadow-lg"
                   />
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-saffron-gradient rounded-full flex items-center justify-center text-white text-sm shadow-lg">
-                    {teacher.icon}
-                  </div>
                 </div>
                 <div className="absolute inset-0 rounded-full group-hover:shadow-saffron/30 transition-shadow duration-300"></div>
               </div>
@@ -142,7 +161,7 @@ export default function SpiritualLineage() {
               <h4 className="font-bold text-gray-800 dark:text-white text-lg mb-2 group-hover:text-saffron transition-colors duration-300">
                 {teacher.name}
               </h4>
-              <p className="text-gold text-sm font-medium mb-3">{teacher.title}</p>
+              <p className="text-gold text-sm font-medium mb-3">{teacher.role}</p>
               <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-100 transition-colors duration-300">
                 {teacher.description}
               </p>

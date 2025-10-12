@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { supabase } from '../../lib/supabase';
 import { 
   FaCalendarAlt, 
   FaCalendar, 
@@ -25,6 +26,8 @@ import { HiSparkles } from 'react-icons/hi';
 export default function EventsCalendar() {
   const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth());
   const [selectedFilter, setSelectedFilter] = useState('all');
+  const [events, setEvents] = useState([]);
+
 
   const eventTypes = [
     { id: 'all', name: 'All Events', color: 'saffron', icon: <FaTheaterMasks /> },
@@ -35,74 +38,92 @@ export default function EventsCalendar() {
     { id: 'seva', name: 'Community Service', color: 'orange-500', icon: <FaHandshake /> }
   ];
 
-  const events = [
-    {
-      id: 1,
-      title: 'Janmashtami Celebration',
-      date: '2024-09-06',
-      time: '6:00 PM',
-      type: 'festivals',
-      description: 'Grand celebration of Lord Krishna\'s birth',
-      location: 'Main Temple Hall',
-      registration: true,
-      featured: true
-    },
-    {
-      id: 2,
-      title: 'Weekly Bhagavad Gita Class',
-      date: '2024-09-08',
-      time: '7:00 PM',
-      type: 'lectures',
-      description: 'Deep dive into Krishna\'s teachings',
-      location: 'Study Hall',
-      registration: false,
-      featured: false
-    },
-    {
-      id: 3,
-      title: 'Radhashtami Festival',
-      date: '2024-09-15',
-      time: '5:00 AM',
-      type: 'festivals',
-      description: 'Celebration of Radha Rani\'s appearance',
-      location: 'Temple Complex',
-      registration: true,
-      featured: true
-    },
-    {
-      id: 4,
-      title: 'Community Kirtan',
-      date: '2024-09-20',
-      time: '7:30 PM',
-      type: 'kirtans',
-      description: 'Devotional singing and dancing',
-      location: 'Main Hall',
-      registration: false,
-      featured: false
-    },
-    {
-      id: 5,
-      title: 'Sunday Feast',
-      date: '2024-09-22',
-      time: '1:00 PM',
-      type: 'prasadam',
-      description: 'Free prasadam distribution',
-      location: 'Community Kitchen',
-      registration: false,
-      featured: false
-    },
-    {
-      id: 6,
-      title: 'Temple Cleaning Seva',
-      date: '2024-09-25',
-      time: '8:00 AM',
-      type: 'seva',
-      description: 'Volunteer temple maintenance',
-      location: 'Temple Premises',
-      registration: true,
-      featured: false
-    }
-  ];
+    // Fetch events dynamically from Supabase
+    useEffect(() => {
+      const fetchEvents = async () => {
+        const { data, error } = await supabase
+          .from('events')
+          .select('*')
+          .order('created_at', { ascending: false });
+  
+        if (error) {
+          console.error('Error fetching events:', error);
+        } else {
+          setEvents(data || []);
+        }
+      };
+
+      fetchEvents();
+    }, []);
+
+  // const events = [
+  //   {
+  //     id: 1,
+  //     title: 'Janmashtami Celebration',
+  //     date: '2024-09-06',
+  //     time: '6:00 PM',
+  //     type: 'festivals',
+  //     description: 'Grand celebration of Lord Krishna\'s birth',
+  //     location: 'Main Temple Hall',
+  //     registration: true,
+  //     featured: true
+  //   },
+  //   {
+  //     id: 2,
+  //     title: 'Weekly Bhagavad Gita Class',
+  //     date: '2024-09-08',
+  //     time: '7:00 PM',
+  //     type: 'lectures',
+  //     description: 'Deep dive into Krishna\'s teachings',
+  //     location: 'Study Hall',
+  //     registration: false,
+  //     featured: false
+  //   },
+  //   {
+  //     id: 3,
+  //     title: 'Radhashtami Festival',
+  //     date: '2024-09-15',
+  //     time: '5:00 AM',
+  //     type: 'festivals',
+  //     description: 'Celebration of Radha Rani\'s appearance',
+  //     location: 'Temple Complex',
+  //     registration: true,
+  //     featured: true
+  //   },
+  //   {
+  //     id: 4,
+  //     title: 'Community Kirtan',
+  //     date: '2024-09-20',
+  //     time: '7:30 PM',
+  //     type: 'kirtans',
+  //     description: 'Devotional singing and dancing',
+  //     location: 'Main Hall',
+  //     registration: false,
+  //     featured: false
+  //   },
+  //   {
+  //     id: 5,
+  //     title: 'Sunday Feast',
+  //     date: '2024-09-22',
+  //     time: '1:00 PM',
+  //     type: 'prasadam',
+  //     description: 'Free prasadam distribution',
+  //     location: 'Community Kitchen',
+  //     registration: false,
+  //     featured: false
+  //   },
+  //   {
+  //     id: 6,
+  //     title: 'Temple Cleaning Seva',
+  //     date: '2024-09-25',
+  //     time: '8:00 AM',
+  //     type: 'seva',
+  //     description: 'Volunteer temple maintenance',
+  //     location: 'Temple Premises',
+  //     registration: true,
+  //     featured: false
+  //   }
+  // ];
 
   const months = [
     'January', 'February', 'March', 'April', 'May', 'June',

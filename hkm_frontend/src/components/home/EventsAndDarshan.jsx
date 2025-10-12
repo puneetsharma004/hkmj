@@ -1,11 +1,34 @@
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { supabase } from '../../lib/supabase';
 import { GiByzantinTemple } from "react-icons/gi";
+
 export default function EventsAndDarshan() {
-  const events = [
-    { img: '/images/event1.jpg', title: 'Janmashtami 2025', date: '6 Sep', desc: 'Celebrate the birth of Lord Krishna.' },
-    { img: '/images/event2.jpg', title: 'Radhashtami', date: '21 Sep', desc: 'Devotional singing and offerings.' },
-    { img: '/images/event3.jpg', title: 'Diwali', date: '12 Nov', desc: 'Festival of lights celebration.' }
-  ];
+    const [upcomingEvents, setupComingEvents] = useState([]);
+
+    // Fetch upcomingEvents dynamically from Supabase
+      useEffect(() => {
+        const fetchupComingEvents = async () => {
+          const { data, error } = await supabase
+            .from('upcomingEvents')
+            .select('*')
+            .order('created_at', { ascending: false });
+    
+          if (error) {
+            console.error('Error fetching upcomingEvents:', error);
+          } else {
+            setupComingEvents(data || []);
+          }
+        };
+
+        fetchupComingEvents();
+      }, []);
+  
+  // const upcomingEvents = [
+  //   { img: '/images/event1.jpg', title: 'Janmashtami 2025', date: '6 Sep', desc: 'Celebrate the birth of Lord Krishna.' },
+  //   { img: '/images/event2.jpg', title: 'Radhashtami', date: '21 Sep', desc: 'Devotional singing and offerings.' },
+  //   { img: '/images/event3.jpg', title: 'Diwali', date: '12 Nov', desc: 'Festival of lights celebration.' }
+  // ];
 
   const darshan = [
     { time: '6:00 AM', name: 'Mangala Aarti', icon: '🌅' },
@@ -33,7 +56,7 @@ export default function EventsAndDarshan() {
       </div>
 
       <div className="relative max-w-6xl mx-auto z-10">
-        {/* Events Section */}
+        {/* upcomingEvents Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +74,7 @@ export default function EventsAndDarshan() {
 
           {/* Events Grid */}
           <div className="grid md:grid-cols-3 gap-8">
-            {events.map((ev, i) => (
+            {upcomingEvents.map((ev, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 50 }}
@@ -64,7 +87,7 @@ export default function EventsAndDarshan() {
                 {/* Event Image */}
                 <div className="relative overflow-hidden">
                   <img 
-                    src={ev.img} 
+                    src={ev.image} 
                     alt={ev.title} 
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" 
                   />
@@ -79,17 +102,18 @@ export default function EventsAndDarshan() {
                   <h4 className="font-bold text-xl text-gray-800 dark:text-white mb-2 group-hover:text-saffron transition-colors duration-300">
                     {ev.title}
                   </h4>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{ev.desc}</p>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{ev.description}</p>
                   
                   <div className="mt-4 flex justify-between items-center">
-                    <span className="text-orange-600 dark:text-gold text-sm font-semibold">🎉 Festival</span>
-                    <motion.button
+                    <span className="text-orange-600 dark:text-gold text-sm font-semibold">{ev.location}</span>
+                    <motion.a
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       className="text-saffron hover:text-orange-600 dark:hover:text-gold transition-colors duration-300 font-medium text-sm"
+                      href='/events'
                     >
                       Learn More →
-                    </motion.button>
+                    </motion.a>
                   </div>
                 </div>
               </motion.div>
