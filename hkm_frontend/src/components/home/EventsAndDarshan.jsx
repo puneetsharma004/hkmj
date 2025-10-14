@@ -137,7 +137,7 @@ export default function EventsAndDarshan() {
 
             {/* Subheading */}
             <h3 className="text-xl md:text-2xl font-semibold text-gray-600 dark:text-gray-300 mt-2">
-              The Hare Krishna Movement, Mumbai
+              The Hare Krishna Movement, Jodhpur
             </h3>
 
             {/* Scrollable Content */}
