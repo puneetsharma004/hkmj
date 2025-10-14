@@ -3,20 +3,20 @@ import React from 'react';
 // Mock slides data - replace with your actual images
 const slides = [
   {
-    img: 'https://images.unsplash.com/photo-1544077960-604201fe74bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80',
-    text: 'Experience Divine Serenity',
+    img: '/images/1.jpg',
+    // text: 'Experience Divine Serenity',
     cta: 'Visit Us',
     link: '/visitor-info'
   },
   {
-    img: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80',
-    text: 'Join Us in Devotion',
+    img: '/images/2.jpg',
+    // text: 'Join Us in Devotion',
     cta: 'Donate Now',
     link: '/donations'
   },
   {
-    img: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80',
-    text: 'Celebrate With the Community',
+    img: '/images/3.jpg',
+    // text: 'Celebrate With the Community',
     cta: 'View Events',
     link: '/events'
   }
@@ -75,12 +75,12 @@ export default function HeroSlider() {
                 {slide.text}
               </h1>
               <div className="mt-8">
-                <button
+                {/* <button
                   onClick={() => window.location.href = slide.link}
                   className="bg-gradient-to-r from-amber-400 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-blue-900 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
                 >
                   {slide.cta}
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

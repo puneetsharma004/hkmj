@@ -16,7 +16,7 @@ export default function WelcomeSection() {
       </div>
 
       {/* Main Content Container */}
-      <div className="relative max-w-5xl mx-auto z-10">
+      <div className="relative max-w-6xl mx-auto z-10">
         {/* Header Section */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -30,7 +30,6 @@ export default function WelcomeSection() {
             <span className="block gradient-text-saffron-gold mt-2">
               Hare Krishna Marwar Mandir
             </span>
-            <span className="block text-2xl md:text-3xl font-medium text-orange-600 dark:text-purple-300 mt-2">Jodhpur</span>
           </h2>
         </motion.div>
 
@@ -44,10 +43,36 @@ export default function WelcomeSection() {
         >
           {/* Description */}
           <div className="mb-8">
-            <p className="text-lg md:text-xl leading-relaxed text-gray-700 dark:text-gray-100 mb-6">
-              Nestled in the heart of the <span className="font-semibold text-blue-600 dark:text-cyan-300 glow">Blue City</span>, our temple is a beacon of devotion, heritage, and spiritual bliss. 
-              Part of the <span className="font-semibold text-saffron dark:text-saffron glow">ISKCON family</span>, the Hare Krishna Marwar Mandir offers daily darshan, cultural events, and a warm welcome to all.
-            </p>
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center mb-8">
+            {/* Video Container */}
+            <div className="w-full lg:w-1/2 lg:max-w-2xl">
+              <div className="aspect-video">
+                <iframe 
+                  className="w-full h-full rounded-lg shadow-lg"
+                  src="https://www.youtube.com/embed/BSCzANVn60o" 
+                  title="ISKCON MYSURU: Nava Brindavan Dham..Sri Sri Radha Krishna Temple & Cultural Centre" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  allowFullScreen
+                />
+              </div>
+            </div>
+
+            {/* Content Container */}
+            <div className="w-full lg:w-1/2 lg:flex-1">
+              <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
+                Featured Videos
+              </h3>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                A Magnificent Temple for Krishna
+              </h2>
+              <p className="text-base md:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                In the city of monuments, ISKCON Mysore plans to build Nava Brindavan Dham – a spectacular cultural monument for social and spiritual upliftment. Designed in neo-classical style, the cultural complex on nine acres of land, harmoniously integrates the age-old charm of Hoysala architecture and modern architectural forms, blending ethnicity with abstractness. This prestigious project is estimated to cost Rs.120 crores and shall enrich the glory of Indian heritage.
+              </p>
+            </div>
+          </div>
+
 
             {/* Decorative Quote Container */}
             <div className="relative bg-gradient-to-r from-orange-100/80 to-amber-100/80 dark:from-purple-900/80 dark:to-indigo-900/80 p-6 rounded-xl shadow-lg border border-saffron/30 dark:border-saffron/50 border-opacity-50 backdrop-blur-sm">

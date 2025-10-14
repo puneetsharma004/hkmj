@@ -62,12 +62,12 @@ export default function EventsAndDarshan() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-16"
+          className="mb- lg:mb-16"
         >
           {/* Section Header */}
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold gradient-text-saffron-gold mb-2">
-              Upcoming Events
+              Programs
             </h3>
             <p className="text-gray-700 dark:text-gray-300 text-lg">Join us in divine celebrations</p>
           </div>
@@ -120,6 +120,117 @@ export default function EventsAndDarshan() {
             ))}
           </div>
         </motion.div>
+        {/* About Us Section */}
+        <motion.div 
+          className="mx-auto px-4 py-6 md:px-6 mt-8 rounded-lg bg-white"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          >
+            {/* Main Heading */}
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mt-3">
+              About us
+            </h2>
+
+            {/* Subheading */}
+            <h3 className="text-xl md:text-2xl font-semibold text-gray-600 dark:text-gray-300 mt-2">
+              The Hare Krishna Movement, Mumbai
+            </h3>
+
+            {/* Scrollable Content */}
+            <div className="my-4 pr-2">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed border-t border-gray-200 dark:border-gray-700 pt-3 mb-4">
+                The Hare Krishna Movement Mumbai (HKM Mumbai) is a spiritual organization that aims 
+                to gift human society an opportunity for a life of happiness, good health, peace of 
+                mind and all good qualities through God Consciousness.
+              </p>
+              
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed border-t border-gray-200 dark:border-gray-700 pt-3">
+                Registered as a trust in 2010, it is spiritually mentored by ISKCON Bangalore. In 
+                accordance with the desire of His Divine Grace A.C. Bhaktivedanta Swami Prabhupada, 
+                Founder-Acharya of the worldwide Hare Krishna Movement, who wished "to organize Bombay 
+                as world headquarters from every point of view, culturally, scientifically, and 
+                philosophically". Following in the footsteps of Srila Prabhupada, the devotees at HKM 
+                Mumbai conduct their activities based on the teachings of the Bhagavad Gita and the Vedas.
+              </p>
+            </div>
+
+            {/* Call to Action Button */}
+            <a 
+              href="/about/" 
+              className="inline-block px-6 py-2.5 mb-4 
+                        border-2 border-orange-500 text-orange-600 
+                        font-semibold rounded-md 
+                        hover:bg-orange-500 hover:text-white hover:scale-105
+                        transition-all duration-300 ease-in-out
+                        focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+            >
+              Know more
+            </a>
+          
+        </motion.div>
+
+        <motion.div className="flex flex-col lg:flex-row mt-6"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          >
+            {/* Image Container - Takes 1/3 width on large screens */}
+            <div className="w-full lg:w-1/3">
+              <div className="relative w-full h-64 lg:h-full">
+                <img
+                  src="/images/srila-prabhupada-hkm.webp"
+                  srcSet="/images/srila-prabhupada-hkm.webp 750w, 
+                          /images/srila-prabhupada-hkm.webp 1080w"
+                  sizes="(min-width: 1024px) 33vw, 100vw"
+                  alt="Srila Prabhupada"
+                  className="w-full h-full object-cover rounded-2xl"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* Content Container - Takes 2/3 width on large screens */}
+            <div className="w-full lg:w-2/3 ">
+              <div className="p-6 lg:p-8 lg:pr-12">
+                {/* Dedication Label */}
+                <div className="text-sm font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400">
+                  Humble dedication
+                </div>
+
+                {/* Heading */}
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-700 dark:text-gray-300 mt-2">
+                  His Divine Grace Srila Prabhupada
+                </h3>
+
+                {/* Scrollable Content */}
+                <div className="my-4 pr-2">
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed border-t border-gray-200 pt-4">
+                    His Divine Grace Srila Prabhupada is the Acharya or Diksha Guru of the Hare Krishna 
+                    Movement. He worked relentlessly to impart knowledge, enlighten minds and establish the 
+                    Hare Krishna movement globally. Srila Prabhupada lived a truly inspirational life and is 
+                    a phenomenal role model for anyone who seeks to bring about transformation in any field 
+                    of work. As a 70-year-old, Srila Prabhupada travelled to New York with the sole purpose 
+                    of fulfilling his guru's dream of spreading the message of Krishna Consciousness all over 
+                    the world. Starting his work from a tiny office in New York, he went on to ignite a 
+                    worldwide phenomenon, now known as the Hare Krishna Movement.
+                  </p>
+                </div>
+
+                {/* Call to Action Button */}
+                <a 
+                  href="/srila-prabhupada/" 
+                  className="inline-block px-6 py-2.5 border-2 border-orange-500 text-orange-500 
+                            font-semibold rounded-md hover:bg-orange-500 hover:text-white 
+                            transition-all duration-300 mb-4"
+                >
+                  Know more
+                </a>
+              </div>
+            </div>
+        </motion.div>
 
         {/* Darshan Timings Section */}
         <motion.div
@@ -129,7 +240,7 @@ export default function EventsAndDarshan() {
           viewport={{ once: true }}
         >
           {/* Section Header */}
-          <div className="text-center mb-12">
+          <div className="text-center my-12">
             <h3 className="text-3xl md:text-4xl font-bold gradient-text-saffron-gold mb-2">
               Darshan Timings
             </h3>
