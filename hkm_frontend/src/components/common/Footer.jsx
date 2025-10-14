@@ -260,9 +260,9 @@ export default function Footer() {
               variants={containerVariants}
             >
               {[
-                { icon: GiSunrise, text: "Morning Aarti: 5:00 AM" },
-                { icon: GiSunset, text: "Evening Aarti: 7:00 PM" },
-                { icon: GiDoor, text: "Open Daily: 5:00 AM - 9:00 PM" }
+                { icon: GiSunrise, text: "Morning Aarti: 4:30 AM" },
+                { icon: GiSunset, text: "Evening Aarti: 8:00 PM" },
+                { icon: GiDoor, text: "Opens Daily: 08:30 AM - 08:30 PM" }
               ].map((timing, index) => (
                 <motion.p 
                   key={index}

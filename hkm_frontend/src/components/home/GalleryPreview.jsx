@@ -2,12 +2,13 @@ import { motion } from 'framer-motion';
 import { IoMdPhotos } from "react-icons/io";
 import { BsCalendar2Event } from "react-icons/bs";
 import { MdFestival } from "react-icons/md";
+import { CiSearch } from "react-icons/ci";
 export default function GalleryPreview() {
   const gallery = [
-    '/images/gallery1.jpg',
-    '/images/gallery2.jpg',
-    '/images/gallery3.jpg',
-    '/images/gallery4.jpg'
+    '/images/gallery/gallery-1.jpg',
+    '/images/gallery/gallery-2.jpg',
+    '/images/gallery/gallery-3.jpg',
+    '/images/gallery/gallery-4.jpg'
   ];
 
   return (
@@ -75,7 +76,7 @@ export default function GalleryPreview() {
                 {/* Hover Icon */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="bg-saffron text-white dark:text-black p-3 rounded-full shadow-xl glow-button">
-                    <span className="text-2xl">🔍</span>
+                    <span className="text-2xl"><CiSearch /></span>
                   </div>
                 </div>
               </div>
