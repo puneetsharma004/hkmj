@@ -133,7 +133,7 @@ export default function QuickLinks() {
         </motion.div>
 
         {/* Additional Info Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -159,7 +159,7 @@ export default function QuickLinks() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Emergency Contact Section */}
         <motion.div

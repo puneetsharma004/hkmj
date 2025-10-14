@@ -123,34 +123,6 @@ export default function GalleryPreview() {
           </motion.p>
         </motion.div>
 
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-3 gap-6 mt-12 max-w-2xl mx-auto"
-        >
-          {[
-            { number: '500+', label: 'Photos', icon: <IoMdPhotos /> },
-            { number: '50+', label: 'Events', icon: <BsCalendar2Event /> },
-            { number: '25+', label: 'Festivals', icon: <MdFestival /> }
-          ].map((stat, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 + (i * 0.1) }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
-              className="text-center p-4 bg-white/70 dark:bg-gradient-to-br dark:from-purple-900/80 dark:to-indigo-900/80 rounded-xl border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm shadow-lg hover:shadow-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300"
-            >
-              <span className="text-2xl mb-2 text-saffron flex justify-center">{stat.icon}</span>
-              <div className="text-2xl font-bold text-saffron glow">{stat.number}</div>
-              <div className="text-gray-700 dark:text-gray-300 text-sm">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { supabase } from '../../lib/supabase';
 import { GiByzantinTemple } from "react-icons/gi";
+import ContributeSection from '../common/ContributeSection';
 
 export default function EventsAndDarshan() {
     const [upcomingEvents, setupComingEvents] = useState([]);
@@ -31,12 +32,13 @@ export default function EventsAndDarshan() {
   // ];
 
   const darshan = [
-    { time: '6:00 AM', name: 'Mangala Aarti', icon: '🌅' },
+    { time: '04:30 AM', name: 'Mangala Aarti', icon: '🌅' },
     { time: '12:00 PM', name: 'Raj Bhog Aarti', icon: '☀️' },
-    { time: '7:00 PM', name: 'Sandhya Aarti', icon: '🌇' }
+    { time: '08:00 PM', name: 'Sandhya Aarti', icon: '🌇' }
   ];
 
   return (
+    <>
     <section className="relative py-16 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:bg-black">
       {/* Light/Dark Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-100/50 via-amber-100/50 to-yellow-100/50 dark:from-black dark:via-purple-950 dark:to-indigo-950"></div>
@@ -141,18 +143,13 @@ export default function EventsAndDarshan() {
             {/* Scrollable Content */}
             <div className="my-4 pr-2">
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed border-t border-gray-200 dark:border-gray-700 pt-3 mb-4">
-                The Hare Krishna Movement Mumbai (HKM Mumbai) is a spiritual organization that aims 
-                to gift human society an opportunity for a life of happiness, good health, peace of 
-                mind and all good qualities through God Consciousness.
+                Hare Krishna Marwar Mandir is a spiritual organization devoted to uplifting human life by offering opportunities for true happiness, inner peace, good health, and all noble qualities through the practice of God Consciousness.
               </p>
               
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed border-t border-gray-200 dark:border-gray-700 pt-3">
-                Registered as a trust in 2010, it is spiritually mentored by ISKCON Bangalore. In 
-                accordance with the desire of His Divine Grace A.C. Bhaktivedanta Swami Prabhupada, 
-                Founder-Acharya of the worldwide Hare Krishna Movement, who wished "to organize Bombay 
-                as world headquarters from every point of view, culturally, scientifically, and 
-                philosophically". Following in the footsteps of Srila Prabhupada, the devotees at HKM 
-                Mumbai conduct their activities based on the teachings of the Bhagavad Gita and the Vedas.
+                
+              Registered as a trust and guided by the teachings of His Divine Grace A.C. Bhaktivedanta Swami Prabhupada, the revered Founder-Acharya of the worldwide Hare Krishna Movement, the Mandir follows his vision of spreading spiritual knowledge, culture, and devotion in society. Inspired by Srila Prabhupada’s mission, the devotees at Hare Krishna Marwar Mandir conduct all activities in harmony with the Bhagavad Gita, Vedic wisdom, and Krishna consciousness, fostering spiritual growth for individuals and the community alike.
+
               </p>
             </div>
 
@@ -208,14 +205,10 @@ export default function EventsAndDarshan() {
                 {/* Scrollable Content */}
                 <div className="my-4 pr-2">
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed border-t border-gray-200 pt-4">
-                    His Divine Grace Srila Prabhupada is the Acharya or Diksha Guru of the Hare Krishna 
-                    Movement. He worked relentlessly to impart knowledge, enlighten minds and establish the 
-                    Hare Krishna movement globally. Srila Prabhupada lived a truly inspirational life and is 
-                    a phenomenal role model for anyone who seeks to bring about transformation in any field 
-                    of work. As a 70-year-old, Srila Prabhupada travelled to New York with the sole purpose 
-                    of fulfilling his guru's dream of spreading the message of Krishna Consciousness all over 
-                    the world. Starting his work from a tiny office in New York, he went on to ignite a 
-                    worldwide phenomenon, now known as the Hare Krishna Movement.
+                    His Divine Grace Srila Prabhupada is the revered Acharya and Diksha Guru of the Hare Krishna Movement. With unwavering dedication, he sought to enlighten minds, impart spiritual knowledge, and establish Krishna Consciousness across the globe.
+                    <br />
+                    Srila Prabhupada’s life serves as a timeless inspiration for anyone aspiring to bring meaningful transformation through devotion, discipline, and service. At the age of 70, he journeyed to New York with the sole purpose of fulfilling his guru’s wish to spread the teachings of Lord Krishna worldwide. From a small office, he initiated a spiritual renaissance that grew into the global phenomenon now known as the Hare Krishna Movement, touching millions of hearts and lives.
+
                   </p>
                 </div>
 
@@ -291,7 +284,7 @@ export default function EventsAndDarshan() {
               className="mt-8 p-6 bg-saffron/10 rounded-xl border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 text-center shadow-lg"
             >
               <p className="text-gray-800 dark:text-gray-200 mb-2">
-                <span className="text-saffron font-semibold flex items-center gap-1 justify-center"><GiByzantinTemple /> Temple Opens:</span> 5:00 AM - 9:00 PM (Daily)
+                <span className="text-saffron font-semibold flex items-center gap-1 justify-center"><GiByzantinTemple /> Temple Opens:</span> 08:30 AM - 08:30 PM (Daily)
               </p>
               <p className="text-gray-700 dark:text-gray-300 text-sm">
                 Visitors are welcome during all aarti timings. Please maintain silence during prayers.
@@ -301,5 +294,9 @@ export default function EventsAndDarshan() {
         </motion.div>
       </div>
     </section>
+
+    <ContributeSection />
+</>
+
   );
 }

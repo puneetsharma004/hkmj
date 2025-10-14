@@ -49,9 +49,8 @@ export default function WelcomeSection() {
               <div className="aspect-video">
                 <iframe 
                   className="w-full h-full rounded-lg shadow-lg"
-                  src="https://www.youtube.com/embed/BSCzANVn60o" 
-                  title="ISKCON MYSURU: Nava Brindavan Dham..Sri Sri Radha Krishna Temple & Cultural Centre" 
-                  frameBorder="0" 
+                  src="https://www.youtube.com/embed/Czg2XVn8hTI?si=9Ur35i4c8-JEqOZN"
+                  title="Hare Krishna Marwar Mandir" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                   referrerPolicy="strict-origin-when-cross-origin" 
                   allowFullScreen
@@ -68,7 +67,12 @@ export default function WelcomeSection() {
                 A Magnificent Temple for Krishna
               </h2>
               <p className="text-base md:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                In the city of monuments, ISKCON Mysore plans to build Nava Brindavan Dham – a spectacular cultural monument for social and spiritual upliftment. Designed in neo-classical style, the cultural complex on nine acres of land, harmoniously integrates the age-old charm of Hoysala architecture and modern architectural forms, blending ethnicity with abstractness. This prestigious project is estimated to cost Rs.120 crores and shall enrich the glory of Indian heritage.
+                In the royal city of Jodhpur, renowned for its rich heritage and timeless architecture, Hare Krishna Marwar Mandir is envisioned as a magnificent spiritual landmark — a sanctuary of devotion, culture, and divine harmony.
+                <br />
+                Spread across serene acres of land, this grand temple complex will beautifully blend the artistic essence of Rajasthani and Marwari architecture with refined modern design, symbolizing a perfect union of tradition and innovation.
+                <br />
+                Dedicated to the glorification of Lord Krishna, the Hare Krishna Marwar Mandir aims to serve as a center for spiritual awakening, cultural celebration, and social upliftment. This monumental project will stand as a radiant testament to the enduring glory of India’s spiritual and architectural heritage.
+
               </p>
             </div>
           </div>
@@ -110,15 +114,15 @@ export default function WelcomeSection() {
             {/* Additional Links */}
             <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
               <a href="/events" className="text-gray-600 dark:text-gray-400 hover:text-saffron transition-colors duration-300 font-medium hover:glow flex items-center gap-1">
-                <GoPeople /> <span>Events & Programs</span>
+                <GoPeople className='text-lg'/> <span>Events & Programs</span>
               </a>
               <span className="text-gray-400 dark:text-gray-700">•</span>
               <a href="/visitor-info" className="text-gray-600 dark:text-gray-400 hover:text-saffron transition-colors duration-300 font-medium hover:glow flex items-center gap-1">
-                <CiCircleInfo /> <span>Visitor Information</span>
+                <CiCircleInfo className='text-lg'/> <span>Visitor Information</span>
               </a>
               <span className="text-gray-400 dark:text-gray-700">•</span>
               <a href="/donations" className="text-gray-600 dark:text-gray-400 hover:text-saffron transition-colors duration-300 font-medium hover:glow flex items-center gap-1">
-                <PiHandsPraying /> <span>Make a Donation</span>
+                <PiHandsPraying className='text-lg'/> <span>Make a Donation</span>
               </a>
             </div>
           </div>

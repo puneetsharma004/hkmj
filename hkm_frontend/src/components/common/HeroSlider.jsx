@@ -1,29 +1,78 @@
 import React from 'react';
 
+
+// Custom hook to detect mobile screens
+const useIsMobile = (breakpoint = 1025) => {
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const mql = window.matchMedia(`(max-width: ${breakpoint - 1}px)`);
+    
+    const onChange = () => {
+      setIsMobile(window.innerWidth < breakpoint);
+    };
+
+    mql.addEventListener('change', onChange);
+    setIsMobile(window.innerWidth < breakpoint);
+
+    return () => mql.removeEventListener('change', onChange);
+  }, [breakpoint]);
+
+  return isMobile;
+};
+
+
 // Mock slides data - replace with your actual images
 const slides = [
   {
-    img: '/images/1.jpg',
+    img: '/images/banners/Banner-1-1.jpg',
+    mobileImg: '/images/banners/mobile/Banner-1.jpg', // Add mobile version
     // text: 'Experience Divine Serenity',
-    cta: 'Visit Us',
+    // cta: 'Visit Us',
     link: '/visitor-info'
   },
   {
-    img: '/images/2.jpg',
+    img: '/images/banners/Banner-2-1.jpg',
+    mobileImg: '/images/banners/mobile/Banner-2.jpg', // Add mobile version
     // text: 'Join Us in Devotion',
-    cta: 'Donate Now',
+    // cta: 'Donate Now',
     link: '/donations'
   },
   {
-    img: '/images/3.jpg',
+    img: '/images/banners/Banner-3-1.jpg',
+    mobileImg: '/images/banners/mobile/Banner-3.jpg', // Add mobile version
     // text: 'Celebrate With the Community',
-    cta: 'View Events',
+    // cta: 'View Events',
     link: '/events'
-  }
+  },
+  {
+    img: '/images/banners/Banner-4-1.jpg',
+    mobileImg: '/images/banners/mobile/Banner-4.jpg', // Add mobile version
+    // text: 'Celebrate With the Community',
+    // cta: 'View Events',
+    link: '/events'
+  },
+  {
+    img: '/images/banners/Banner-5-1.jpg',
+    mobileImg: '/images/banners/mobile/Banner-5.jpg', // Add mobile version
+    // text: 'Celebrate With the Community',
+    // cta: 'View Events',
+    link: '/events'
+  },
+  {
+    img: '/images/banners/Banner-6-1.jpg',
+    mobileImg: '/images/banners/mobile/Banner-6.jpg', // Add mobile version
+    // text: 'Celebrate With the Community',
+    // cta: 'View Events',
+    link: '/events'
+  },
 ];
+
 
 export default function HeroSlider() {
   const [currentSlide, setCurrentSlide] = React.useState(0);
+  const isMobile = useIsMobile(); // Detect mobile screen
+
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -32,20 +81,24 @@ export default function HeroSlider() {
     return () => clearInterval(timer);
   }, []);
 
+
   const goToSlide = (index) => {
     setCurrentSlide(index);
   };
+
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
+
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden bg-amber-50 dark:bg-gray-900">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
@@ -56,10 +109,12 @@ export default function HeroSlider() {
               : 'opacity-0 scale-105'
           }`}
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${slide.img})`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.2)), url(${isMobile ? slide.mobileImg : slide.img})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
+            backgroundRepeat: 'no-repeat',
+            scale: ".9",
+            borderRadius: "20px"
           }}
         >
           {/* Content */}
@@ -72,7 +127,7 @@ export default function HeroSlider() {
               }`}
             >
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                {slide.text}
+                {/* {slide.text} */}
               </h1>
               <div className="mt-8">
                 {/* <button
@@ -87,6 +142,7 @@ export default function HeroSlider() {
         </div>
       ))}
 
+
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
@@ -98,6 +154,7 @@ export default function HeroSlider() {
         </svg>
       </button>
 
+
       <button
         onClick={nextSlide}
         className="absolute right-6 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110 z-10"
@@ -107,6 +164,7 @@ export default function HeroSlider() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </button>
+
 
       {/* Dot Indicators */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-10">
@@ -124,6 +182,7 @@ export default function HeroSlider() {
         ))}
       </div>
 
+
       {/* Progress Bar */}
       <div className="absolute bottom-0 left-0 w-full h-1 bg-black/20">
         <div 
@@ -133,6 +192,7 @@ export default function HeroSlider() {
           }}
         />
       </div>
+
 
       {/* Floating Elements for Visual Interest */}
       <div className="absolute top-20 right-20 w-2 h-2 bg-white/30 rounded-full animate-pulse" />
