@@ -122,7 +122,7 @@ export default function EventsAndDarshan() {
         </motion.div>
         {/* About Us Section */}
         <motion.div 
-          className="mx-auto px-4 py-6 md:px-6 mt-8 rounded-lg bg-white"
+          className="mx-auto px-4 py-6 md:px-6 mt-8 rounded-lg bg-white dark:bg-gray-900"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
