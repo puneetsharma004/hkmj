@@ -9,7 +9,7 @@ import {
 
 export default function PageHeader() {
   return (
-    <section className="relative py-20 px-4 overflow-hidden contribute-about-bg h-[60vh] lg:h-[80vh] flex items-center bg-top">
+    <section className="relative py-20 px-4 overflow-hidden contribute-about-bg h-[80vh] flex items-center bg-top">
       {/* Light/Dark Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-100/50 via-amber-100/50 to-yellow-100/50 dark:from-black/80 dark:via-purple-950/80 dark:to-indigo-950/80"></div>
 
