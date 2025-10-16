@@ -33,7 +33,7 @@ export default function QuickLinks() {
     { 
       icon: <FaPhone size={30} />, 
       text: 'Contact Temple', 
-      // link: '/contact',
+      link: 'tel:+919116139371',
       description: 'Get in touch with us',
       color: 'from-orange-500 to-red-600',
       lightColor: 'from-orange-400 to-red-500'
@@ -92,10 +92,10 @@ export default function QuickLinks() {
                 transition: { duration: 0.3 }
               }}
               whileTap={{ scale: 0.95 }}
-              className="group relative"
+              className="group relative outline-none"
             >
               {/* Main Card */}
-              <div className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 p-6 rounded-2xl shadow-xl border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-60 hover:shadow-2xl hover:shadow-saffron/20 transition-all duration-300 h-full">
+              <div className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 p-6 rounded-2xl shadow-xl border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-60 hover:shadow-2xl hover:shadow-saffron/20 transition-all duration-300 h-full outline-none">
                 
                 {/* Icon Container */}
                 <div className="flex justify-center mb-4">
