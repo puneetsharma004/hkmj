@@ -210,3 +210,20 @@ html {
     background-size: 100%;
   }
 }
+
+/*about Mobile header- default */
+.contribute-about-bg {
+  background-image: url('/images/about/HeroMobile.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/*about page header Tablet and above */
+@media (min-width: 767px) {
+  .contribute-about-bg {
+    background-image: url('/images/about/HeroDesktop.jpg');
+    background-position: right;
+    background-size: 100%;
+  }
+}
+

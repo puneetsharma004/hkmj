@@ -9,9 +9,9 @@ import {
 
 export default function PageHeader() {
   return (
-    <section className="relative py-20 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:bg-black">
+    <section className="relative py-20 px-4 overflow-hidden contribute-about-bg">
       {/* Light/Dark Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-100/50 via-amber-100/50 to-yellow-100/50 dark:from-black dark:via-purple-950 dark:to-indigo-950"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-100/50 via-amber-100/50 to-yellow-100/50 dark:from-black/80 dark:via-purple-950/80 dark:to-indigo-950/80"></div>
 
       <div className="relative max-w-6xl mx-auto z-10 text-center">
         {/* Breadcrumb */}
@@ -24,12 +24,12 @@ export default function PageHeader() {
           <div className="flex items-center justify-center space-x-2 text-sm">
             <a 
               href="/" 
-              className="text-gray-600 dark:text-gray-400 hover:text-saffron transition-colors duration-300 flex items-center space-x-1"
+              className="text-gray-600 dark:text-gray-200 hover:text-saffron transition-colors duration-300 flex items-center space-x-1"
             >
               <FaHome className="text-xs" />
               <span>Home</span>
             </a>
-            <FaChevronRight className="text-gray-500 dark:text-gray-600 text-xs" />
+            <FaChevronRight className="text-gray-500 dark:text-gray-300 text-xs" />
             <span className="text-saffron font-medium">About Us</span>
           </div>
         </motion.nav>
@@ -44,7 +44,7 @@ export default function PageHeader() {
             About Us
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-200 max-w-4xl mx-auto leading-relaxed">
             Journey of Devotion and Heritage in Jodhpur
           </p>
           
@@ -52,7 +52,7 @@ export default function PageHeader() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-8 text-gray-600 dark:text-gray-400 text-lg"
+            className="mt-8 text-gray-600 dark:text-gray-300 text-lg"
           >
             Discover the spiritual legacy of Hare Krishna Marwar Mandir
           </motion.div>
