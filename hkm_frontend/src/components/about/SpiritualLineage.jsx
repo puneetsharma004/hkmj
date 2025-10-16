@@ -86,7 +86,7 @@ export default function SpiritualLineage() {
             Spiritual Lineage
           </h2>
           <p className="text-gray-700 dark:text-gray-300 text-lg max-w-3xl mx-auto">
-            Connected to a global family of devotees through the International Society for Krishna Consciousness
+            Connected to a global family of devotees through the Worldwide Hare Krishna Movement
           </p>
         </motion.div>
 
@@ -100,24 +100,24 @@ export default function SpiritualLineage() {
         >
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl font-bold text-saffron mb-4">ISKCON Global Network</h3>
+              <h3 className="text-2xl font-bold text-saffron mb-4">Hare Krishna Movement Global Network</h3>
               <div className="space-y-4 text-gray-700 dark:text-gray-200 leading-relaxed">
                 <p>
-                  Our temple is an integral part of the International Society for Krishna Consciousness (ISKCON), founded in 1966 by His Divine Grace A.C. Bhaktivedanta Swami Prabhupada.
+                  Hare Krishna Marwar Mandir, Jodhpur, is a part of the worldwide Hare Krishna Movement, founded in 1965 by His Divine Grace A.C. Bhaktivedanta Swami Srila Prabhupada.
                 </p>
                 <p>
-                  With over 800 centers worldwide, ISKCON represents the largest Krishna consciousness movement on Earth, dedicated to spreading the ancient Vedic wisdom and culture.
+                  With a global presence of over 800 temples and centers, the movement is dedicated to sharing the timeless wisdom of the Vedas, spreading devotion to Lord Krishna, and promoting spiritual harmony and cultural upliftment across the world.
                 </p>
                 <div className="grid grid-cols-2 gap-4 mt-6">
                   <div className="text-center p-4 bg-gradient-to-r from-saffron/10 to-gold/10 rounded-lg border border-saffron/20">
                     <div className="text-2xl font-bold text-gold flex items-center justify-center gap-2">
-                      800+
+                      55+
                     </div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Global Centers</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">Centers Across India</div>
                   </div>
                   <div className="text-center p-4 bg-gradient-to-r from-gold/10 to-saffron/10 rounded-lg border border-gold/20">
                     <div className="text-2xl font-bold text-gold flex items-center justify-center gap-2">
-                      50+
+                      25+
                     </div>
                     <div className="text-sm text-gray-600 dark:text-gray-400">Countries</div>
                   </div>
@@ -125,8 +125,8 @@ export default function SpiritualLineage() {
               </div>
             </div>
             <div className="text-center">
-              <div className="text-8xl mb-4 text-saffron flex justify-center items-center">
-                <FaGlobeAmericas />
+              <div className="w-full mb-4 text-saffron flex justify-center items-center">
+                <img className='w-full lg:w-[70%] h-auto rounded-2xl' src="/images/about/WorldwideHKM.png" alt="Worldwide HKM" />
               </div>
               <p className="text-gray-600 dark:text-gray-300 italic">
                 "The whole world is one family under Krishna's love"
@@ -135,7 +135,7 @@ export default function SpiritualLineage() {
           </div>
         </motion.div>
 
-        {/* Spiritual Teachers */}
+        {/* Spiritual Teachers
         <div className="grid md:grid-cols-3 gap-8">
           {spiritualTeachers.map((teacher, index) => (
             <motion.div
@@ -167,7 +167,7 @@ export default function SpiritualLineage() {
               </p>
             </motion.div>
           ))}
-        </div>
+        </div> */}
 
         {/* Connection Message */}
         <motion.div

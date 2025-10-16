@@ -74,7 +74,7 @@ export default function WelcomeSection() {
               <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
                 Featured Videos
               </h3>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              <h2 className="text-start lg:text-center text-2xl md:text-3xl  lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                 A Magnificent Temple for Krishna
               </h2>
               
@@ -164,16 +164,16 @@ export default function WelcomeSection() {
 
             {/* Additional Links */}
             <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
-              <a href="/events" className="text-gray-600 dark:text-gray-400 hover:text-[#ff9933] transition-colors duration-300 font-medium flex items-center gap-1 p-2 border border-text-gray-400 rounded-lg hover:bg-saffron">
+              <a href="/events" className="text-gray-600 dark:text-gray-400 hover:text-[#ff9933] transition-colors duration-300 font-medium flex items-center gap-1 p-2 border border-text-gray-400 rounded-lg hover:bg-saffron w-fit">
                 <GoPeople className='text-lg'/> <span>Events & Programs</span>
               </a>
-              <span className="text-gray-400 dark:text-gray-700">•</span>
+              <span className="text-gray-400 dark:text-gray-700 hidden lg:block">•</span>
               <a href="/visitor-info" className="text-gray-600 dark:text-gray-400 hover:text-[#ff9933] transition-colors duration-300 font-medium flex items-center gap-1 p-2 border border-text-gray-400 rounded-lg hover:bg-saffron">
                 <CiCircleInfo className='text-lg'/> <span>Visitor Information</span>
               </a>
-              <span className="text-gray-400 dark:text-gray-700">•</span>
-              <a href="/donations" className="text-gray-600 dark:text-gray-400 hover:text-[#ff9933] transition-colors duration-300 font-medium flex items-center gap-1 p-2 border border-text-gray-400 rounded-lg hover:bg-saffron">
-                <PiHandsPraying className='text-lg'/> <span>Make a Donation</span>
+              <span className="text-gray-400 dark:text-gray-700 hidden lg:block">•</span>
+              <a href="/donations" className="text-gray-600 dark:text-gray-400 hover:text-[#ff9933] transition-colors duration-300 font-medium flex items-center gap-1 p-2 border border-text-gray-400 rounded-lg hover:bg-saffron w-fit">
+                <PiHandsPraying className='text-lg'/>  <span>Make a Donationn</span> 
               </a>
             </div>
           </div>

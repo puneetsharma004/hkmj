@@ -97,9 +97,9 @@ export default function EventsAndDarshan() {
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute top-4 right-4 bg-saffron text-white dark:text-black font-bold px-3 py-1 rounded-full text-sm shadow-lg glow-button">
+                  {/* <div className="absolute top-4 right-4 bg-saffron text-white dark:text-black font-bold px-3 py-1 rounded-full text-sm shadow-lg glow-button">
                     {ev.date}
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Event Content */}

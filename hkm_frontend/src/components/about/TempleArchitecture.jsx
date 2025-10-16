@@ -112,8 +112,9 @@ export default function TempleArchitecture() {
                 </p>
               </div>
             </div>
-            <div className="text-center">
-              <p className="text-gray-600 dark:text-gray-300 italic">
+            <div className="text-center flex flex-col justify-center items-center ">
+              <img className='w-full lg:w-[70%] h-auto rounded-2xl shadow-xl' src="/images/about/TempleArchitecture.jpg" alt="Temple Architecture" />
+              <p className="text-gray-600 dark:text-gray-300 italic mt-4">
                 "Where ancient artistry meets divine inspiration"
               </p>
             </div>
@@ -198,7 +199,7 @@ export default function TempleArchitecture() {
         >
           <div className="bg-white/10 dark:bg-gradient-to-r dark:from-purple-900/50 dark:to-indigo-900/50 rounded-2xl p-8 border border-orange-200 dark:border-saffron border-opacity-60 dark:border-opacity-30 backdrop-blur-sm max-w-4xl mx-auto shadow-xl">
             <p className="text-gray-700 dark:text-gray-100 text-lg italic">
-              "Every stone speaks of devotion, every arch echoes with prayers, and every dome reaches toward the divine - our temple is not just built with materials, but with the faith and love of countless devotees."
+              "Every stone speaks of devotion, every arch echoes with prayers, and every dome reaches toward the divine - our temple is not just built with materials, but with the faith and love of countless devotees." <br /> - Srila Prabhupada
             </p>
           </div>
         </motion.div>

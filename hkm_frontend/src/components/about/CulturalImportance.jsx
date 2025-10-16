@@ -17,23 +17,23 @@ import { HiSparkles } from 'react-icons/hi';
 
 export default function CulturalImportance() {
   const communityPrograms = [
-    { name: 'Bhagavad Gita Classes', frequency: 'Weekly', icon: <FaBook />, participants: '200+' },
-    { name: 'Cultural Festivals', frequency: 'Monthly', icon: <FaTheaterMasks />, participants: '1000+' },
-    { name: 'Prasadam Distribution', frequency: 'Daily', icon: <FaUtensils />, participants: '300+' },
-    { name: 'Youth Programs', frequency: 'Bi-weekly', icon: <FaUsers />, participants: '150+' },
-    { name: 'Spiritual Retreats', frequency: 'Quarterly', icon: <FaLeaf />, participants: '100+' },
-    { name: 'Heritage Workshops', frequency: 'Monthly', icon: <FaPaintBrush />, participants: '80+' }
+    { name: 'Bhagavad Gita Classes', frequency: 'Daily', icon: <FaBook />, participants: '1000+' },
+    { name: 'Cultural Festivals', frequency: 'Occasionally', icon: <FaTheaterMasks />, participants: '200+' },
+    { name: 'Prasadam Distribution', frequency: 'Daily', icon: <FaUtensils />, participants: '50 lakhs+ Meals' },
+    { name: 'Youth Programs', frequency: 'Bi-weekly', icon: <FaUsers />, participants: '250+' },
+    { name: 'Spiritual Trips', frequency: 'Monthly ', icon: <FaLeaf />, participants: '100+' },
+    { name: 'Sessions Delivered', frequency: 'Fortnightly', icon: <FaPaintBrush />, participants: '100+' }
   ];
 
   const impactStats = [
-    { number: '25+', label: 'Years of Service', icon: <FaClock /> },
+    { number: '14+', label: 'Years of Devotion', icon: <FaClock /> },
     { number: '50,000+', label: 'Lives Touched', icon: <FaHeart /> },
-    { number: '100+', label: 'Festivals Celebrated', icon: <FaGift /> },
-    { number: '15+', label: 'Community Projects', icon: <FaHandshake /> }
+    { number: '200+', label: 'Festivals Celebrated', icon: <FaGift /> },
+    { number: '4+', label: 'Community Projects', icon: <FaHandshake /> }
   ];
 
   return (
-    <section className="relative py-16 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:bg-black">
+    <section className="relative pt-8 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:bg-black">
       {/* Light/Dark Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-100/50 via-amber-100/50 to-yellow-100/50 dark:from-black dark:via-purple-950 dark:to-indigo-950"></div>
       
@@ -80,7 +80,7 @@ export default function CulturalImportance() {
             Cultural Importance
           </h2>
           <p className="text-gray-700 dark:text-gray-300 text-lg max-w-3xl mx-auto">
-            A cornerstone of spiritual and cultural life in Jodhpur's Marwar region
+            Reviving the divine essence of Vedic Culture in the Heart of Marwar
           </p>
         </motion.div>
 
@@ -106,6 +106,9 @@ export default function CulturalImportance() {
               </p>
             </div>
             <div className="text-center">
+              <div className='w-full mb-4 text-saffron flex justify-center items-center'>
+                <img className='w-full lg:w-[70%] h-auto rounded-2xl shadow-xl' src="/images/about/HeartoftheCommunity.jpg" alt="Worldwide HKM" />
+              </div>
               <p className="text-gray-600 dark:text-gray-300 italic">
                 "Building bridges through devotion"
               </p>
@@ -181,31 +184,6 @@ export default function CulturalImportance() {
           </div>
         </motion.div>
 
-        {/* Testimonial */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <div className="bg-white/10 dark:bg-gradient-to-r dark:from-purple-900/50 dark:to-indigo-900/50 rounded-2xl p-8 border border-orange-200 dark:border-saffron border-opacity-60 dark:border-opacity-30 backdrop-blur-sm max-w-4xl mx-auto shadow-xl">
-            <div className="flex items-center justify-center space-x-4 mb-6">
-              <img
-                src="https://images.unsplash.com/photo-1494790108755-2616b612b002?w=80&h=80&fit=crop&crop=face"
-                alt="Community member"
-                className="w-16 h-16 rounded-full border-2 border-saffron shadow-lg"
-              />
-              <div className="text-left">
-                <div className="font-bold text-gray-800 dark:text-white">Rajeshwari Devi</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Long-time Devotee</div>
-              </div>
-            </div>
-            <blockquote className="text-xl italic text-gray-700 dark:text-gray-100 mb-4">
-              "This temple has been our family's spiritual anchor for over 15 years. It's not just a place of worship, but a guardian of our cultural values and a beacon of hope for our community."
-            </blockquote>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

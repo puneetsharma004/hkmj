@@ -14,10 +14,10 @@ import {
 
 export default function TempleHistory() {
   const timeline = [
-    { year: '1985', event: 'Foundation laid by spiritual leaders', icon: <FaTools /> },
-    { year: '1995', event: 'Major expansion and renovation', icon: <FaUniversity /> },
-    { year: '2000', event: 'Community hall construction', icon: <FaBuilding /> },
-    { year: '2010', event: 'Digital darshan system introduced', icon: <FaMobile /> },
+    { year: '2011', event: 'Foundation of Akshaya Patra Kitchen & Hostel laid in Jodhpur at Ratanada', icon: <FaTools /> },
+    { year: '2017', event: 'Major expansion and Started Building Chaitanya Kunj (The Spiritual Oasis) in front of IIT Jodhpur, Karwar', icon: <FaUniversity /> },
+    { year: '2022', event: 'Sanctioned Land by Jodhpur Development Authority for Cultural Centre & Kitchen', icon: <FaBuilding /> },
+    { year: '2023', event: 'Started Construction of Hare Krishna Marwar Mandir', icon: <FaMobile /> },
   ];
 
   return (
@@ -83,13 +83,11 @@ export default function TempleHistory() {
               <h3 className="text-2xl font-bold text-saffron mb-4">Our Sacred Beginning</h3>
               <div className="space-y-4 text-gray-700 dark:text-gray-200 leading-relaxed">
                 <p>
-                  In the heart of Jodhpur, the Blue City of Rajasthan, our temple stands as a beacon of spiritual light. Founded in 1985 by devoted disciples of the ISKCON movement, the Hare Krishna Marwar Mandir was established with a vision to spread the message of Lord Krishna in the land of the Maharajas.
+                  Hare Krishna Marwar Mandir is a spiritual initiative inspired by His Divine Grace A.C. Bhaktivedanta Swami Srila Prabhupada, dedicated to spreading Krishna Consciousness and Vedic cultural values in the land of Marwar.
+
                 </p>
                 <p>
-                  The temple's foundation was blessed by senior spiritual leaders who recognized Jodhpur's strategic importance in connecting the ancient wisdom of Krishna consciousness with the rich cultural heritage of Marwar region.
-                </p>
-                <p>
-                  Over the decades, our temple has grown from a small meditation hall to a magnificent complex that serves thousands of devotees daily, while preserving the authentic traditions of bhakti yoga and Vedic culture.
+                  Guided by the teachings of the Bhagavad Gita and Srimad Bhagavatam, the temple promotes devotion, service, and spiritual growth through its various programs like Annadana Seva, Gau Seva, youth empowerment, and cultural festivals—uplifting lives with the message of Lord Krishna.
                 </p>
               </div>
             </div>

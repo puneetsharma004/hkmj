@@ -19,7 +19,11 @@ const ContributeSection = () => {
             a beacon of devotion and culture in the heart of Marwar.
           </p>
 
-          <div className="text-center">
+          <blockquote className="mt-6 text-center text-gray-700 italic border-l-4 border-orange-400 pl-4 md:pl-6">
+            "Building a temple for Sri Madhav leads to Vaikunthaloka and protects eight generations of ancestors from hell."
+            <footer className="mt-6 text-sm text-gray-500">— Vamana Purana</footer>
+          </blockquote>
+          <div className="text-center mt-6">
             <a
               href="/donations#donation-form"
               className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-md transition-colors duration-300"

@@ -5,7 +5,7 @@ import MissionVision from '../components/about/MissionVision';
 import SpiritualLineage from '../components/about/SpiritualLineage';
 import TempleArchitecture from '../components/about/TempleArchitecture';
 import CulturalImportance from '../components/about/CulturalImportance';
-import CallToAction from '../components/about/CallToAction';
+import QuickLinks from '../components/common/QuickLinks';
 
 export default function About() {
   return (
@@ -16,7 +16,7 @@ export default function About() {
       <SpiritualLineage />
       <TempleArchitecture />
       <CulturalImportance />
-      <CallToAction />
+      <QuickLinks />
     </div>
   );
 }

@@ -119,7 +119,7 @@ export default function MissionVision() {
           className="bg-saffron/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 shadow-lg"
         >
           <h3 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-8">Our Core Values</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: <FaPray />, title: 'Devotion', desc: 'Pure love for Krishna' },
               { icon: <FaHandshake />, title: 'Service', desc: 'Selfless community service' },
@@ -159,8 +159,8 @@ export default function MissionVision() {
             <blockquote className="text-xl italic text-gray-700 dark:text-gray-100 mb-4">
               A temple is not just a building; it is a living embodiment of divine love where every soul can find their eternal home in Krishna's embrace.
             </blockquote>
-            <p className="text-saffron font-semibold">– Temple Founder</p>
-             <div className="text-4xl text-saffron mb-4 flex justify-end items-center">
+            <p className="text-saffron font-semibold">– His Divine Grace A.C. Bhaktivedanta Swami Srila Prabhupada</p>
+            <div className="text-4xl text-saffron mb-4 flex justify-end items-center">
               <FaQuoteRight />
             </div>
           </div>

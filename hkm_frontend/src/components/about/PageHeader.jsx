@@ -5,7 +5,7 @@ import {
   FaHome,
   FaChevronRight
 } from 'react-icons/fa';
-import { HiSparkles } from 'react-icons/hi';
+
 
 export default function PageHeader() {
   return (
@@ -54,7 +54,7 @@ export default function PageHeader() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-8 text-gray-600 dark:text-gray-400 text-lg"
           >
-            Discover the spiritual legacy of Marwar Mandir
+            Discover the spiritual legacy of Hare Krishna Marwar Mandir
           </motion.div>
         </motion.div>
       </div>
