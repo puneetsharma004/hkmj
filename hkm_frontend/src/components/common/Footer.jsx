@@ -148,7 +148,7 @@ export default function Footer() {
             >
               {[
                 { icon: FaLocationDot, text: "123 Temple Road, Jodhpur, Rajasthan" },
-                { icon: FaPhone, text: "+91 98765 43210" },
+                { icon: FaPhone, text: "+91 91161 39371" },
                 { icon: FaEnvelope, text: "info@Marwarmandir.org" }
               ].map((item, index) => (
                 <motion.p 

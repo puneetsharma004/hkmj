@@ -39,7 +39,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="relative py-16 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:bg-black">
+    <section className="relative py-4 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:bg-black">
       {/* Light/Dark Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-100/30 via-amber-100/30 to-yellow-100/30 dark:from-black dark:via-purple-950 dark:to-indigo-950"></div>
       
@@ -86,7 +86,7 @@ export default function Testimonials() {
               <div className="relative mb-6">
                 <div className="absolute -top-4 -left-6 text-2xl text-saffron opacity-50 dark:opacity-30"><BiSolidQuoteLeft /></div>
                 <div className="absolute -bottom-4 -right-2 text-2xl text-saffron opacity-50 dark:opacity-30"><BiSolidQuoteRight /></div>
-                <p className="text-gray-700 dark:text-gray-100 text-lg italic leading-relaxed relative z-10 group-hover:text-gray-800 dark:group-hover:text-white transition-colors duration-300">
+                <p className="text-gray-700 dark:text-gray-100 text-lg italic leading-relaxed relative z-10 group-hover:text-gray-800 dark:group-hover:text-white transition-colors duration-300 text-justify">
                   {testimonial.quote}
                 </p>
               </div>
@@ -179,7 +179,7 @@ export default function Testimonials() {
               whileHover={{ scale: 1.05 }}
               className="text-center p-4 bg-white/70 dark:bg-gradient-to-br dark:from-purple-900/80 dark:to-indigo-900/80 rounded-xl border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm shadow-lg hover:shadow-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300"
             >
-              <div className="text-2xl font-bold text-saffron glow">{stat.number}</div>
+              <div className="text-md md:text-2xl font-bold text-saffron glow">{stat.number}</div>
               <div className="text-gray-700 dark:text-gray-300 text-xs">{stat.label}</div>
             </motion.div>
           ))}

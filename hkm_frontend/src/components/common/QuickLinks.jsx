@@ -33,7 +33,7 @@ export default function QuickLinks() {
     { 
       icon: <FaPhone size={30} />, 
       text: 'Contact Temple', 
-      link: '/contact',
+      // link: '/contact',
       description: 'Get in touch with us',
       color: 'from-orange-500 to-red-600',
       lightColor: 'from-orange-400 to-red-500'

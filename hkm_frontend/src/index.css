@@ -194,3 +194,19 @@ html {
 }
 
 *{scrollbar-color: #ff9933;}
+
+/* Mobile - default */
+.contribute-bg {
+  background-image: url('/images/contribution-mob.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Tablet and above */
+@media (min-width: 1025px) {
+  .contribute-bg {
+    background-image: url('/images/contribution.jpg');
+    background-position: right;
+    background-size: 100%;
+  }
+}

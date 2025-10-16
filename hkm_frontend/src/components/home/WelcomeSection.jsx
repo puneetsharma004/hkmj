@@ -1,8 +1,11 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { CiCircleInfo } from "react-icons/ci";
 import { PiHandsPraying } from "react-icons/pi";
 import { GoPeople } from "react-icons/go";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa6";
+import { useState } from 'react';
 export default function WelcomeSection() {
+  const [isExpanded, setIsExpanded] = useState(false);
   return (
     <section className="relative py-16 px-4 overflow-hidden bg-white ">
       {/* Light Gradient Background */}
@@ -47,6 +50,14 @@ export default function WelcomeSection() {
             {/* Video Container */}
             <div className="w-full lg:w-1/2 lg:max-w-2xl">
               <div className="aspect-video">
+                <iframe className="w-full h-full rounded-lg shadow-lg" src="https://www.youtube.com/embed/Ul1mUVnE1r4?si=RYqUMiGeB1Jq3GgQ" 
+                title="Hare Krishna Marwar Mandir" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" 
+                allowFullScreen/>
+                </div>
+            </div>
+            <div className="w-full lg:w-1/2 lg:max-w-2xl">
+              <div className="aspect-video">
                 <iframe 
                   className="w-full h-full rounded-lg shadow-lg"
                   src="https://www.youtube.com/embed/Czg2XVn8hTI?si=9Ur35i4c8-JEqOZN"
@@ -57,25 +68,65 @@ export default function WelcomeSection() {
                 />
               </div>
             </div>
-
-            {/* Content Container */}
-            <div className="w-full lg:w-1/2 lg:flex-1">
+          </div>
+          {/* Content Container */}
+            <div className="w-full text-justify lg:text-center lg:max-w-6xl mx-auto mb-8">
               <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
                 Featured Videos
               </h3>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                 A Magnificent Temple for Krishna
               </h2>
-              <p className="text-base md:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                In the royal city of Jodhpur, renowned for its rich heritage and timeless architecture, Hare Krishna Marwar Mandir is envisioned as a magnificent spiritual landmark — a sanctuary of devotion, culture, and divine harmony.
-                <br />
-                Spread across serene acres of land, this grand temple complex will beautifully blend the artistic essence of Rajasthani and Marwari architecture with refined modern design, symbolizing a perfect union of tradition and innovation.
-                <br />
-                Dedicated to the glorification of Lord Krishna, the Hare Krishna Marwar Mandir aims to serve as a center for spiritual awakening, cultural celebration, and social upliftment. This monumental project will stand as a radiant testament to the enduring glory of India’s spiritual and architectural heritage.
+              
+              <div className="text-base md:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                {/* First paragraph - Always visible */}
+                <p>
+                  In the royal city of Jodhpur, renowned for its rich heritage and timeless architecture, Hare Krishna Marwar Mandir is envisioned as a magnificent spiritual landmark — a sanctuary of devotion, culture, and divine harmony.
+                </p>
+                
+                {/* Remaining paragraphs - Expandable on mobile, always visible on desktop */}
+                <div className="md:block">
+                  <AnimatePresence>
+                    {(isExpanded || typeof window !== 'undefined' && window.innerWidth >= 768) && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <p className="mt-4">
+                          Spread across serene acres of land, this grand temple complex will beautifully blend the artistic essence of Rajasthani and Marwari architecture with refined modern design, symbolizing a perfect union of tradition and innovation.
+                        </p>
+                        <p className="mt-4">
+                          Dedicated to the glorification of Lord Krishna, the Hare Krishna Marwar Mandir aims to serve as a center for spiritual awakening, cultural celebration, and social upliftment. This monumental project will stand as a radiant testament to the enduring glory of India's spiritual and architectural heritage.
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
 
-              </p>
+                {/* Read More button - only on mobile */}
+                <div className="md:hidden mt-4 flex justify-center">
+                  <button
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    className="flex items-center gap-2 text-orange-500 hover:text-orange-600 font-semibold transition-colors duration-300 outline-none"
+                  >
+                    {isExpanded ? (
+                      <>
+                        Read Less
+                        <faChevronUp className="w-4 h-4" />
+                      </>
+                    ) : (
+                      <>
+                        Read More
+                        <FaChevronDown className="w-4 h-4" />
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
 
 
             {/* Decorative Quote Container */}
@@ -113,15 +164,15 @@ export default function WelcomeSection() {
 
             {/* Additional Links */}
             <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
-              <a href="/events" className="text-gray-600 dark:text-gray-400 hover:text-saffron transition-colors duration-300 font-medium hover:glow flex items-center gap-1">
+              <a href="/events" className="text-gray-600 dark:text-gray-400 hover:text-[#ff9933] transition-colors duration-300 font-medium flex items-center gap-1 p-2 border border-text-gray-400 rounded-lg hover:bg-saffron">
                 <GoPeople className='text-lg'/> <span>Events & Programs</span>
               </a>
               <span className="text-gray-400 dark:text-gray-700">•</span>
-              <a href="/visitor-info" className="text-gray-600 dark:text-gray-400 hover:text-saffron transition-colors duration-300 font-medium hover:glow flex items-center gap-1">
+              <a href="/visitor-info" className="text-gray-600 dark:text-gray-400 hover:text-[#ff9933] transition-colors duration-300 font-medium flex items-center gap-1 p-2 border border-text-gray-400 rounded-lg hover:bg-saffron">
                 <CiCircleInfo className='text-lg'/> <span>Visitor Information</span>
               </a>
               <span className="text-gray-400 dark:text-gray-700">•</span>
-              <a href="/donations" className="text-gray-600 dark:text-gray-400 hover:text-saffron transition-colors duration-300 font-medium hover:glow flex items-center gap-1">
+              <a href="/donations" className="text-gray-600 dark:text-gray-400 hover:text-[#ff9933] transition-colors duration-300 font-medium flex items-center gap-1 p-2 border border-text-gray-400 rounded-lg hover:bg-saffron">
                 <PiHandsPraying className='text-lg'/> <span>Make a Donation</span>
               </a>
             </div>

@@ -14,6 +14,7 @@ import ReactLenis from 'lenis/react';
 import { ThemeProvider } from './context/ThemeContext.jsx';
 import ThankYouPage from './components/common/ThankYouPage.jsx';
 import ScrollToAnchor from './utils/ScrollToAnchor.js';
+import WhatsAppButton from './components/common/Whatsapp.jsx';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
       <Layout>
         {/* Loader can be conditionally shown based on loading state */}
         <Loader />
+        <WhatsAppButton/>
         <ScrollToAnchor /> {/* Add this component */}
         <Routes>
           <Route path="/" element={<Home />} />

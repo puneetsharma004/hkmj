@@ -1,5 +1,12 @@
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
 // Custom hook to detect mobile screens
 const useIsMobile = (breakpoint = 1025) => {
@@ -21,183 +28,149 @@ const useIsMobile = (breakpoint = 1025) => {
   return isMobile;
 };
 
-
-// Mock slides data - replace with your actual images
+// Slides data
 const slides = [
   {
     img: '/images/banners/Banner-1-1.jpg',
-    mobileImg: '/images/banners/mobile/Banner-1.jpg', // Add mobile version
-    // text: 'Experience Divine Serenity',
-    // cta: 'Visit Us',
+    mobileImg: '/images/banners/mobile/Banner-1.jpg',
     link: '/visitor-info'
   },
   {
     img: '/images/banners/Banner-2-1.jpg',
-    mobileImg: '/images/banners/mobile/Banner-2.jpg', // Add mobile version
-    // text: 'Join Us in Devotion',
-    // cta: 'Donate Now',
+    mobileImg: '/images/banners/mobile/Banner-2.jpg',
     link: '/donations'
   },
   {
     img: '/images/banners/Banner-3-1.jpg',
-    mobileImg: '/images/banners/mobile/Banner-3.jpg', // Add mobile version
-    // text: 'Celebrate With the Community',
-    // cta: 'View Events',
+    mobileImg: '/images/banners/mobile/Banner-3.jpg',
     link: '/events'
   },
   {
     img: '/images/banners/Banner-4-1.jpg',
-    mobileImg: '/images/banners/mobile/Banner-4.jpg', // Add mobile version
-    // text: 'Celebrate With the Community',
-    // cta: 'View Events',
+    mobileImg: '/images/banners/mobile/Banner-4.jpg',
     link: '/events'
   },
   {
     img: '/images/banners/Banner-5-1.jpg',
-    mobileImg: '/images/banners/mobile/Banner-5.jpg', // Add mobile version
-    // text: 'Celebrate With the Community',
-    // cta: 'View Events',
+    mobileImg: '/images/banners/mobile/Banner-5.jpg',
     link: '/events'
   },
   {
     img: '/images/banners/Banner-6-1.jpg',
-    mobileImg: '/images/banners/mobile/Banner-6.jpg', // Add mobile version
-    // text: 'Celebrate With the Community',
-    // cta: 'View Events',
+    mobileImg: '/images/banners/mobile/Banner-6.jpg',
     link: '/events'
   },
 ];
 
-
 export default function HeroSlider() {
-  const [currentSlide, setCurrentSlide] = React.useState(0);
-  const isMobile = useIsMobile(); // Detect mobile screen
-
-
-  React.useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
-
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
+  const isMobile = useIsMobile();
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-amber-50 dark:bg-gray-900">
-      {/* Slides */}
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-            index === currentSlide 
-              ? 'opacity-100 scale-100' 
-              : 'opacity-0 scale-105'
-          }`}
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.2)), url(${isMobile ? slide.mobileImg : slide.img})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            scale: ".9",
-            borderRadius: "20px"
-          }}
-        >
-          {/* Content */}
-          <div className="flex items-center justify-center h-full">
+      <style jsx>{`
+        .swiper-button-prev,
+        .swiper-button-next {
+          background: rgba(255, 255, 255, 0.2);
+          backdrop-filter: blur(4px);
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          color: #FF6B35;
+          transition: all 0.3s ease;
+        }
+        
+        .swiper-button-prev:hover,
+        .swiper-button-next:hover {
+          background: rgba(255, 255, 255, 0.3);
+          transform: scale(1.1);
+        }
+        
+        .swiper-button-prev:after,
+        .swiper-button-next:after {
+          font-size: 20px;
+          font-weight: bold;
+        }
+        
+        .swiper-pagination-bullet {
+          width: 12px;
+          height: 12px;
+          background: rgba(0, 0, 0, 0.5);
+          opacity: 1;
+          transition: all 0.3s ease;
+        }
+        
+        .swiper-pagination-bullet-active {
+          background: #FF6B35;
+          transform: scale(1.25);
+        }
+        
+        .swiper-pagination-bullet:hover {
+          background: rgba(255, 255, 255, 0.75);
+        }
+        
+        .slide-content {
+          border-radius: 20px;
+          overflow: hidden;
+        }
+      `}</style>
+
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay, EffectFade]}
+        spaceBetween={0}
+        slidesPerView={1}
+        navigation
+        pagination={{ 
+          clickable: true,
+          dynamicBullets: false
+        }}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        effect="fade"
+        fadeEffect={{
+          crossFade: true
+        }}
+        speed={1000}
+        loop={true}
+        className="h-full"
+      >
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
             <div 
-              className={`text-center text-white max-w-4xl px-6 transition-all duration-1000 delay-300 ${
-                index === currentSlide 
-                  ? 'opacity-100 transform translate-y-0' 
-                  : 'opacity-0 transform translate-y-8'
-              }`}
+              className="slide-content w-full h-full"
+              style={{
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.2)), url(${isMobile ? slide.mobileImg : slide.img})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+              }}
             >
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                {/* {slide.text} */}
-              </h1>
-              <div className="mt-8">
-                {/* <button
-                  onClick={() => window.location.href = slide.link}
-                  className="bg-gradient-to-r from-amber-400 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-blue-900 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
-                >
-                  {slide.cta}
-                </button> */}
+              {/* Content container */}
+              <div className="flex items-center justify-center h-full">
+                <div className="text-center text-white max-w-4xl px-6">
+                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                    {/* Your slide text here */}
+                  </h1>
+                  <div className="mt-8">
+                    {/* Your CTA button here */}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      ))}
-
-
-      {/* Navigation Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-6 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110 z-10"
-        aria-label="Previous slide"
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-
-
-      <button
-        onClick={nextSlide}
-        className="absolute right-6 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110 z-10"
-        aria-label="Next slide"
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-
-
-      {/* Dot Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-10">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide
-                ? 'bg-white scale-125'
-                : 'bg-white/50 hover:bg-white/75'
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
+          </SwiperSlide>
         ))}
-      </div>
-
+      </Swiper>
 
       {/* Progress Bar */}
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-black/20">
-        <div 
-          className="h-full bg-gradient-to-r from-amber-400 to-amber-600 transition-all duration-300 ease-linear"
-          style={{ 
-            width: `${((currentSlide + 1) / slides.length) * 100}%` 
-          }}
-        />
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-black/20 z-10">
+        <div className="swiper-progress h-full bg-gradient-to-r from-amber-400 to-amber-600" />
       </div>
 
-
       {/* Floating Elements for Visual Interest */}
-      <div className="absolute top-20 right-20 w-2 h-2 bg-white/30 rounded-full animate-pulse" />
-      <div className="absolute top-32 right-32 w-1 h-1 bg-white/20 rounded-full animate-pulse delay-500" />
-      <div className="absolute bottom-32 left-20 w-1.5 h-1.5 bg-white/25 rounded-full animate-pulse delay-1000" />
+      <div className="absolute top-20 right-20 w-2 h-2 bg-white/30 rounded-full animate-pulse z-10" />
+      <div className="absolute top-32 right-32 w-1 h-1 bg-white/20 rounded-full animate-pulse delay-500 z-10" />
+      <div className="absolute bottom-32 left-20 w-1.5 h-1.5 bg-white/25 rounded-full animate-pulse delay-1000 z-10" />
     </div>
   );
 }
