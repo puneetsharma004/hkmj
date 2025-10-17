@@ -97,7 +97,7 @@ export default function TempleArchitecture() {
           viewport={{ once: true }}
           className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl mb-12"
         >
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
             <div>
               <h3 className="text-2xl font-bold text-saffron mb-6">Architectural Heritage</h3>
               <div className="space-y-4 text-gray-700 dark:text-gray-200 leading-relaxed">
@@ -113,7 +113,7 @@ export default function TempleArchitecture() {
               </div>
             </div>
             <div className="text-center flex flex-col justify-center items-center ">
-              <img className='w-full lg:w-[70%] h-auto rounded-2xl shadow-xl' src="/images/about/TempleArchitecture.jpg" alt="Temple Architecture" />
+              <img className='w-full lg:w-[60%] h-auto rounded-2xl shadow-xl' src="/images/about/TempleArchitecture.jpg" alt="Temple Architecture" />
               <p className="text-gray-600 dark:text-gray-300 italic mt-4">
                 "Where ancient artistry meets divine inspiration"
               </p>

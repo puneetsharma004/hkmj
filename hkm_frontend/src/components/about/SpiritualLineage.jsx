@@ -126,7 +126,7 @@ export default function SpiritualLineage() {
             </div>
             <div className="text-center">
               <div className="w-full mb-4 text-saffron flex justify-center items-center">
-                <img className='w-full lg:w-[70%] h-auto rounded-2xl' src="/images/about/WorldwideHKM.png" alt="Worldwide HKM" />
+                <img className='w-full lg:w-[60%] h-auto rounded-2xl' src="/images/about/WorldwideHKM.png" alt="Worldwide HKM" />
               </div>
               <p className="text-gray-600 dark:text-gray-300 italic">
                 "The whole world is one family under Krishna's love"
