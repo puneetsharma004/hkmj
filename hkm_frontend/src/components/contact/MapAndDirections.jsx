@@ -27,7 +27,7 @@ export default function MapAndDirections() {
   ];
 
   const landmarks = [
-    { name: 'Blue City Mall', distance: '50m', direction: 'East' },
+    { name: 'Vastra Mantralay', distance: '50m', direction: 'East' },
     { name: 'City Hospital', distance: '100m', direction: 'West' },
     { name: 'Jodhpur Railway Station', distance: '5 km', direction: 'South' },
     { name: 'Mehrangarh Fort', distance: '8 km', direction: 'North' }
@@ -94,31 +94,27 @@ export default function MapAndDirections() {
             <div className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl overflow-hidden border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-xl">
               {/* Map Placeholder */}
               <div className="aspect-video bg-gradient-to-br from-orange-100/80 to-amber-100/80 dark:from-saffron/20 dark:to-gold/20 flex items-center justify-center relative">
-                <div className="text-center">
-                  <div className="text-6xl mb-4 text-saffron flex justify-center items-center">
-                    <FaMap />
-                  </div>
-                  <p className="text-gray-800 dark:text-white font-semibold text-xl">Interactive Map</p>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm mt-2">Google Maps Loading...</p>
-                </div>
-                
-                {/* Map Controls */}
-                <div className="absolute top-4 right-4 space-y-2">
-                  <motion.button 
-                    className="bg-white/10 dark:bg-gray-800/90 p-3 rounded-lg shadow-lg hover:bg-white dark:hover:bg-gray-700 transition-all duration-300"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
+                {/* Google Maps embed (responsive iframe) - uses lat/lng coordinates */}
+                <iframe
+                  title="Hare Krishna Marwar Mandir - Map"
+                  src="https://maps.google.com/maps?q=26.2863,73.0392&z=15&output=embed"
+                  className="w-full h-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+
+                {/* Small 'Open in Google Maps' button */}
+                <div className="absolute bottom-4 right-4">
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=26.2863,73.0392"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3 py-2 bg-white/90 dark:bg-gray-800/90 text-saffron rounded-lg shadow-md hover:shadow-lg transition"
                   >
-                    <FaSearch className="text-lg text-saffron" />
-                  </motion.button>
-                  <motion.button 
-                    className="bg-white/10 dark:bg-gray-800/90 p-3 rounded-lg shadow-lg hover:bg-white dark:hover:bg-gray-700 transition-all duration-300"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <FaMapMarkerAlt className="text-lg text-saffron" />
-                  </motion.button>
-                </div>
+                    <FaDirections />
+                    Open in Google Maps
+                  </a>
+                </div>  
               </div>
 
               {/* Map Info Bar */}
@@ -126,26 +122,9 @@ export default function MapAndDirections() {
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="font-bold text-gray-800 dark:text-white text-lg">Hare Krishna Marwar Mandir</h3>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">Sector 12, Near Blue City Mall, Jodhpur</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">Chopasani, Near Vastra Mantralay, Jodhpur, RJ PIN: 342024</p>
                   </div>
-                  <div className="flex space-x-3">
-                    <motion.button
-                      className="px-4 py-2 bg-saffron-gradient text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <FaDirections />
-                      Get Directions
-                    </motion.button>
-                    <motion.button
-                      className="px-4 py-2 border border-saffron text-saffron rounded-lg hover:bg-saffron hover:text-white dark:hover:text-black transition-all duration-300 flex items-center gap-2"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <FaShareAlt />
-                      Share Location
-                    </motion.button>
-                  </div>
+                  
                 </div>
               </div>
             </div>
