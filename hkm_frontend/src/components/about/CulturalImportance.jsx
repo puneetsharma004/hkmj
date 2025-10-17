@@ -93,7 +93,7 @@ export default function CulturalImportance() {
           className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl p-8 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl mb-12"
         >
           <h3 className="text-2xl font-bold text-saffron mb-6 text-center">Heart of the Community</h3>
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 items-center lg:items-start">
             <div className="space-y-4 text-gray-700 dark:text-gray-200 leading-relaxed">
               <p>
                 For over two decades, the Hare Krishna Marwar Mandir has served as the spiritual and cultural heart of Jodhpur's devotional community. Our temple plays a vital role in preserving the rich heritage of the Marwar region while fostering spiritual growth and community unity.

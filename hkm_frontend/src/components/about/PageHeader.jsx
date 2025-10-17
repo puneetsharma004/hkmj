@@ -9,11 +9,11 @@ import {
 
 export default function PageHeader() {
   return (
-    <section className="relative py-20 px-4 overflow-hidden contribute-about-bg h-[80vh] flex items-center bg-top">
+    <section className="relative py-20 px-4 overflow-hidden contribute-about-bg h-[80vh] flex justify-center lg:justify-start items-center bg-no-repeat bg-center w-full">
       {/* Light/Dark Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-100/50 via-amber-100/50 to-yellow-100/50 dark:from-black/80 dark:via-purple-950/80 dark:to-indigo-950/80"></div>
 
-      <div className="relative max-w-6xl mx-auto z-10 text-center">
+      <div className="relative max-w-6xl z-10 text-center bg-white rounded-2xl p-6 lg:p-10 shadow-lg">
         {/* Breadcrumb */}
         <motion.nav
           initial={{ opacity: 0, y: -20 }}
@@ -21,7 +21,7 @@ export default function PageHeader() {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <div className="flex items-center justify-center space-x-2 text-sm">
+          <div className="flex items-center justify-center pace-x-2 text-sm">
             <a 
               href="/" 
               className="text-gray-600 dark:text-gray-200 hover:text-saffron transition-colors duration-300 flex items-center space-x-1"

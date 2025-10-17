@@ -219,7 +219,7 @@ html {
 }
 
 /*about page header Tablet and above */
-@media (min-width: 767px) {
+@media (min-width: 1025px) {
   .contribute-about-bg {
     background-image: url('/images/about/HeroDesktop.jpg');
     background-position: right;

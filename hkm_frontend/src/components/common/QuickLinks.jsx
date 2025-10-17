@@ -41,7 +41,7 @@ export default function QuickLinks() {
   ];
 
   return (
-    <section className="relative py-16 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:bg-black">
+    <section className="relative py-8 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:bg-black">
       {/* Light/Dark Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-100/40 via-amber-100/40 to-yellow-100/40 dark:from-black dark:via-purple-950 dark:to-indigo-950"></div>
       

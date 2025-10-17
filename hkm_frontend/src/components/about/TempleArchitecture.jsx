@@ -122,7 +122,7 @@ export default function TempleArchitecture() {
         </motion.div>
 
         {/* Architectural Features Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+       {/* <div className="grid md:grid-cols-2 gap-8">
           {architecturalFeatures.map((feature, index) => (
             <motion.div
               key={index}
@@ -133,7 +133,7 @@ export default function TempleArchitecture() {
               whileHover={{ y: -10, scale: 1.02 }}
               className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl overflow-hidden border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-2xl hover:shadow-saffron/20 transition-all duration-300 group"
             >
-              {/* Image */}
+              //image
               <div className="relative overflow-hidden h-48">
                 <img 
                   src={feature.image} 
@@ -143,7 +143,7 @@ export default function TempleArchitecture() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
               </div>
 
-              {/* Content */}
+              //content
               <div className="p-6">
                 <h4 className="font-bold text-gray-800 dark:text-white text-xl mb-3 group-hover:text-saffron transition-colors duration-300">
                   {feature.title}
@@ -154,7 +154,7 @@ export default function TempleArchitecture() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </div>*/}
 
         {/* Special Features */}
         <motion.div

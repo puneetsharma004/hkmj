@@ -89,6 +89,9 @@ export default function TempleHistory() {
                 <p>
                   Guided by the teachings of the Bhagavad Gita and Srimad Bhagavatam, the temple promotes devotion, service, and spiritual growth through its various programs like Annadana Seva, Gau Seva, youth empowerment, and cultural festivals—uplifting lives with the message of Lord Krishna.
                 </p>
+                <p>
+                  Aligned with the global Hare Krishna Movement, the temple promotes spiritual growth and social welfare through its many initiatives — including Bhagavad Gita study sessions, Annadana Seva, Gau Seva, youth development programs, cultural festivals, and community outreach.
+                </p>
               </div>
             </div>
           </motion.div>
