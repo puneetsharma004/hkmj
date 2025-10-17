@@ -80,16 +80,17 @@ export default function ContactPageHeader() {
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-3xl mx-auto"
         >
           {[
-            { icon: <FaPhone />, method: 'Call Us', detail: '+91 98765 43210', color: 'text-green-600' },
-            { icon: <FaEnvelope />, method: 'Email Us', detail: 'info@Marwarmandir.org', color: 'text-blue-600' },
-            { icon: <FaWhatsapp />, method: 'WhatsApp', detail: 'Quick Response', color: 'text-green-500' },
-            { icon: <FaMapMarkerAlt />, method: 'Visit Us', detail: 'Jodhpur, Rajasthan', color: 'text-purple-600' }
+            { icon: <FaPhone />, method: 'Call Us', detail: '+91 98765 43210', color: 'text-green-600', link: "tel:+919876543210" },
+            { icon: <FaEnvelope />, method: 'Email Us', detail: 'info@Marwarmandir.org', color: 'text-blue-600', link: "mailto:info@Marwarmandir.org" },
+            { icon: <FaWhatsapp />, method: 'WhatsApp', detail: 'Quick Response', color: 'text-green-500', link: "https://wa.me/919876543210" },
+            { icon: <FaMapMarkerAlt />, method: 'Visit Us', detail: 'Jodhpur, Rajasthan', color: 'text-purple-600', link: "https://goo.gl/maps/xyz" }
           ].map((contact, index) => (
-            <motion.div
+            <motion.a
               key={index}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.8 + (index * 0.1) }}
+              href={contact.link}
               className="text-center p-4 bg-white/10 dark:bg-gradient-to-br dark:from-purple-900/80 dark:to-indigo-900/80 rounded-xl border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300 group cursor-pointer shadow-lg"
             >
               <div className={`text-2xl mb-2 ${contact.color} group-hover:scale-110 transition-transform duration-300 flex justify-center items-center`}>
@@ -97,7 +98,7 @@ export default function ContactPageHeader() {
               </div>
               <div className="text-saffron font-bold text-sm">{contact.method}</div>
               <div className="text-gray-600 dark:text-gray-300 text-xs">{contact.detail}</div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
 
@@ -114,7 +115,7 @@ export default function ContactPageHeader() {
                 <div className="text-3xl text-saffron mb-2 flex justify-center items-center">
                   <FaComments />
                 </div>
-                <div className="text-2xl font-bold text-gray-800 dark:text-white">24/7</div>
+                <div className="text-2xl font-bold text-gray-800 dark:text-white">08:30 AM - 08:30 PM</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">Available Support</div>
               </div>
               <div>

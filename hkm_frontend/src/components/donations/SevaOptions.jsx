@@ -25,7 +25,7 @@ export default function SevaOptions() {
       description: 'Support the care and feeding of our sacred temple cows. Help maintain the goshala and provide nutritious food for these gentle souls.',
       icon: <FaCow />,
       color: 'from-green-500 to-teal-600',
-      suggestedAmount: '₹2,500',
+      suggestedAmount: '₹2,100',
       impact: 'Feeds 1 cow for a month',
       popular: false
     },
@@ -35,8 +35,8 @@ export default function SevaOptions() {
       description: 'Provide free prasadam to devotees and the needy. Your contribution helps us serve hundreds of meals daily with love and devotion.',
       icon: <FaUtensils />,
       color: 'from-orange-500 to-red-600',
-      suggestedAmount: '₹5,000',
-      impact: 'Provides 200 meals',
+      suggestedAmount: '₹4,500',
+      impact: 'Provides 100 meals',
       popular: true
     },
     {
@@ -45,19 +45,19 @@ export default function SevaOptions() {
       description: 'Sponsor major festivals like Janmashtami, Holi, and Rath Yatra. Help create divine celebrations that inspire thousands.',
       icon: <FaGift />,
       color: 'from-purple-500 to-pink-600',
-      suggestedAmount: '₹25,000',
-      impact: 'Sponsors complete festival',
+      suggestedAmount: '₹11,000',
+      impact: 'Sponsor any seva like Flower Decoration/Water Supply for complete festival',
       popular: false
     },
     {
-      id: 'temple-construction',
-      title: 'Temple Construction & Renovation',
+      id: 'square-feet-seva',
+      title: 'Square Feet Seva',
       description: 'Contribute to infrastructure development, maintenance, and beautification of our sacred temple premises.',
       icon: <FaTools />,
       color: 'from-blue-500 to-indigo-600',
-      suggestedAmount: '₹50,000',
+      suggestedAmount: '₹2,100/Sq.ft.',
       impact: 'Major infrastructure support',
-      popular: false
+      popular: true
     },
     {
       id: 'aarti-sponsorship',
@@ -65,7 +65,7 @@ export default function SevaOptions() {
       description: 'Sponsor morning or evening aarti ceremonies. Your name will be announced during the sacred offering to the deities.',
       icon: <GiByzantinTemple />,
       color: 'from-yellow-500 to-orange-600',
-      suggestedAmount: '₹1,500',
+      suggestedAmount: '₹1,100',
       impact: 'Sponsors one complete aarti',
       popular: true
     },
@@ -75,8 +75,8 @@ export default function SevaOptions() {
       description: 'Fund spiritual education programs, book distribution, and outreach activities to spread Krishna consciousness.',
       icon: <FaBook />,
       color: 'from-cyan-500 to-blue-600',
-      suggestedAmount: '₹10,000',
-      impact: 'Supports 50 students monthly',
+      suggestedAmount: '₹5,100',
+      impact: 'Supports 10 students monthly',
       popular: false
     }
   ];

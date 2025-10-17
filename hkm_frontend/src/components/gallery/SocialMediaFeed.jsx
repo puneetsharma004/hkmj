@@ -19,9 +19,9 @@ export default function SocialMediaFeed() {
   const [selectedPlatform, setSelectedPlatform] = useState('instagram');
 
   const socialPlatforms = [
-    { id: 'instagram', name: 'Instagram', icon: <FaInstagram />, color: 'from-pink-500 to-purple-600' },
-    { id: 'facebook', name: 'Facebook', icon: <FaFacebookF />, color: 'from-blue-500 to-indigo-600' },
-    { id: 'youtube', name: 'YouTube', icon: <FaYoutube />, color: 'from-red-500 to-pink-600' }
+    { id: 'instagram', name: 'Instagram', icon: <FaInstagram />, color: 'from-pink-500 to-purple-600', link: ' https://www.instagram.com/harekrishnamarwar/' },
+    { id: 'facebook', name: 'Facebook', icon: <FaFacebookF />, color: 'from-blue-500 to-indigo-600', link: 'https://www.facebook.com/Harekrishnamarwar' },
+    { id: 'youtube', name: 'YouTube', icon: <FaYoutube />, color: 'from-red-500 to-pink-600', link: 'https://www.youtube.com/@HareKrishnaJodhpur' }
   ];
 
   const socialPosts = {
@@ -32,7 +32,7 @@ export default function SocialMediaFeed() {
         caption: 'Beautiful moments from today\'s Janmashtami celebration! 🎉✨ #JanmashtamiFestival #HareKrishna',
         likes: 245,
         comments: 18,
-        timeAgo: '2 hours ago'
+        timeAgo: '2 hours ago',
       },
       {
         id: 2,
@@ -156,10 +156,10 @@ export default function SocialMediaFeed() {
         >
           <div className="flex space-x-4 bg-white/10 dark:bg-gradient-to-r dark:from-gray-900/50 dark:to-black/50 p-2 rounded-2xl border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl shadow-lg">
             {socialPlatforms.map((platform) => (
-              <motion.button
+              <motion.a
                 key={platform.id}
                 onClick={() => setSelectedPlatform(platform.id)}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2 ${
+                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2 cursor-pointer outline-none ${
                   selectedPlatform === platform.id
                     ? `bg-gradient-to-r ${platform.color} text-white`
                     : 'text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/10'
@@ -169,7 +169,7 @@ export default function SocialMediaFeed() {
               >
                 <span className="text-xl">{platform.icon}</span>
                 <span>{platform.name}</span>
-              </motion.button>
+              </motion.a>
             ))}
           </div>
         </motion.div>
@@ -248,7 +248,7 @@ export default function SocialMediaFeed() {
               {socialPlatforms.map((platform, index) => (
                 <motion.a
                   key={platform.id}
-                  href="#"
+                  href={platform.link}
                   className={`w-16 h-16 bg-gradient-to-r ${platform.color} rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg hover:shadow-2xl transition-all duration-300`}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -264,14 +264,6 @@ export default function SocialMediaFeed() {
             <p className="text-gray-700 dark:text-gray-300 mb-4 text-sm">
               Follow us for daily updates, spiritual insights, and community moments
             </p>
-            <motion.button
-              className="inline-flex items-center gap-2 px-6 py-3 bg-saffron-gradient text-white font-semibold rounded-full hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <FaExternalLinkAlt />
-              Visit All Our Channels
-            </motion.button>
           </div>
         </motion.div>
 

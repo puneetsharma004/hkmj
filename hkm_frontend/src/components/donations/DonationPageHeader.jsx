@@ -77,10 +77,10 @@ export default function DonationsPageHeader() {
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-4xl mx-auto"
         >
           {[
-            { number: '₹50L+', label: 'Raised This Year', icon: <GiReceiveMoney /> },
-            { number: '1000+', label: 'Happy Donors', icon: <FaHeart /> },
-            { number: '25+', label: 'Active Projects', icon: <FaTools /> },
-            { number: '500+', label: 'Daily Meals Served', icon: <FaUtensils /> }
+            { number: '35000 Sq. Ft.', label: 'Temple Built Up Area', icon: <GiReceiveMoney /> },
+            { number: '70 Feet', label: 'Dome Height', icon: <FaHeart /> },
+            { number: '4+', label: 'Active Community Projects', icon: <FaTools /> },
+            { number: '1000+', label: 'Daily Meals Served', icon: <FaUtensils /> }
           ].map((stat, index) => (
             <motion.div
               key={index}

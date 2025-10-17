@@ -324,30 +324,33 @@ export default function ContactForm() {
             Prefer to contact us directly? Choose your preferred method:
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <motion.button
-              className="px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-all duration-300 flex items-center space-x-2 shadow-lg"
+            <motion.a
+              className="px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-all duration-300 flex items-center space-x-2 shadow-lg cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              href="tel:+919876543210"
             >
               <FaPhone />
               <span>Call: +91 98765 43210</span>
-            </motion.button>
-            <motion.button
-              className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 flex items-center space-x-2 shadow-lg"
+            </motion.a>
+            <motion.a
+              className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 flex items-center space-x-2 shadow-lg cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              href="mailto:info@Marwarmandir.org"
             >
               <FaEnvelope />
               <span>Email: info@Marwarmandir.org</span>
-            </motion.button>
-            <motion.button
-              className="px-6 py-3 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition-all duration-300 flex items-center space-x-2 shadow-lg"
+            </motion.a>
+            <motion.a
+              className="px-6 py-3 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition-all duration-300 flex items-center space-x-2 shadow-lg cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              href="https://wa.me/919876543210"
             >
               <FaComments />
               <span>WhatsApp Us</span>
-            </motion.button>
+            </motion.a>
           </div>
         </motion.div>
 

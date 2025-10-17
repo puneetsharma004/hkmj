@@ -42,14 +42,14 @@ export default function HowToDonate() {
       methods: ['NEFT/RTGS', 'IMPS', 'Cheque/DD', 'Cash Deposit'],
       benefits: ['No Processing Fee', 'Large Amounts', 'Traditional Method', 'Bank Records']
     },
-    {
-      id: 'international',
-      title: 'International',
-      description: 'For devotees contributing from outside India',
-      icon: <FaGlobe />,
-      methods: ['PayPal', 'Wire Transfer', 'Western Union', 'Wise Transfer'],
-      benefits: ['Multi-Currency', 'Global Access', 'Secure Transfer', 'Tax Receipt']
-    }
+    // {
+    //   id: 'international',
+    //   title: 'International',
+    //   description: 'For devotees contributing from outside India',
+    //   icon: <FaGlobe />,
+    //   methods: ['PayPal', 'Wire Transfer', 'Western Union', 'Wise Transfer'],
+    //   benefits: ['Multi-Currency', 'Global Access', 'Secure Transfer', 'Tax Receipt']
+    // }
   ];
 
   const bankDetails = {

@@ -8,6 +8,7 @@ import DonationForm from '../components/donations/DonationsForm';
 import TaxBenefits from '../components/donations/TaxBenefits';
 import DonorTestimonials from '../components/donations/DonorTestimonials';
 import DonationsCallToAction from '../components/donations/DonationsCallToAction';
+import QuickLinks from '../components/common/QuickLinks';
 
 
 export default function Donations() {
@@ -19,9 +20,10 @@ export default function Donations() {
       <CurrentCampaigns />
       <HowToDonate />
       <DonationForm />
-      <TaxBenefits />
+      {/* <TaxBenefits /> */}
       <DonorTestimonials />
       <DonationsCallToAction />
+      <QuickLinks />
     </div>
   );
 }

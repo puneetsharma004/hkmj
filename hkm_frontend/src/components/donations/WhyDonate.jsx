@@ -24,31 +24,31 @@ export default function WhyDonate() {
       icon: <FaUniversity />,
       title: 'Temple Operations',
       description: 'Daily maintenance, utilities, and keeping the sacred space beautiful',
-      percentage: '30%'
+      // percentage: '30%'
     },
     {
       icon: <FaUtensils />,
       title: 'Prasadam Distribution',
       description: 'Free meals for devotees and community members in need',
-      percentage: '25%'
+      // percentage: '25%'
     },
     {
       icon: <FaCalendarAlt />,
       title: 'Festivals & Events',
       description: 'Celebrating divine festivals and organizing spiritual programs',
-      percentage: '20%'
+      // percentage: '20%'
     },
     {
       icon: <FaBook />,
       title: 'Education & Outreach',
       description: 'Spiritual classes, books, and spreading Krishna consciousness',
-      percentage: '15%'
+      // percentage: '15%'
     },
     {
       icon: <FaHandshake />,
       title: 'Community Service',
       description: 'Supporting the underprivileged and community welfare',
-      percentage: '10%'
+      // percentage: '10%'
     }
   ];
 

@@ -100,7 +100,7 @@ export default function OfficeHours() {
   };
 
   return (
-    <section className="relative py-16 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:bg-black">
+    <section className="relative py-8 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:bg-black">
       {/* Light/Dark Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-100/50 via-amber-100/50 to-yellow-100/50 dark:from-black dark:via-purple-950 dark:to-indigo-950"></div>
       
@@ -173,7 +173,7 @@ export default function OfficeHours() {
               )}
             </motion.div>
             <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
-              Office is currently {isOfficeOpen ? 'OPEN' : 'CLOSED'}
+              Office is currently {isOfficeOpen ? 'OPEN Till 08:30 PM' : 'CLOSED'}
             </h3>
             <p className="text-gray-700 dark:text-gray-300 text-lg flex items-center justify-center gap-2">
               <FaCalendarAlt />
@@ -238,7 +238,7 @@ export default function OfficeHours() {
         </div>
 
         {/* Department Contacts */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -297,10 +297,10 @@ export default function OfficeHours() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Important Notes */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -351,10 +351,10 @@ export default function OfficeHours() {
               </ul>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Additional Info */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
@@ -375,7 +375,7 @@ export default function OfficeHours() {
               <span>Dedicated Support</span>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

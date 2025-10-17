@@ -21,44 +21,44 @@ export default function DonorTestimonials() {
   const testimonials = [
     {
       id: 1,
-      name: 'Rajesh Kumar Agarwal',
+      name: 'Ankit Jain',
       location: 'Mumbai, Maharashtra',
       donorSince: '2019',
       contribution: 'Monthly Prasadam Sponsor',
-      quote: 'Donating to the temple has brought immense peace to my life. Knowing that my contribution helps feed hundreds of devotees daily fills my heart with joy. The transparency in operations and regular updates make me trust the temple completely.',
+      quote: 'Contributing to Hare Krishna Marwar Mandir has been one of the most fulfilling experiences of my life. Knowing that my support helps spread devotion and serve those in need fills my heart with peace and gratitude.',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face',
       amount: '₹5,000/month',
       impact: 'Feeds 200+ devotees monthly'
     },
     {
       id: 2,
-      name: 'Priya Sharma',
+      name: 'Sunita Mehta',
       location: 'Delhi, India',
       donorSince: '2020',
       contribution: 'Festival Sponsor',
-      quote: 'Being part of temple festivals through sponsorship has been the most rewarding experience. Seeing thousands of devotees celebrate with pure joy during Janmashtami, knowing I contributed to that happiness, is indescribable. Hare Krishna!',
+      quote: 'I feel blessed to be a small part of this divine mission. The temple’s initiatives like Annadan Seva and Gau Seva truly embody the spirit of selfless service taught by Lord Krishna.',
       image: 'https://images.unsplash.com/photo-1494790108755-2616b612b002?w=80&h=80&fit=crop&crop=face',
       amount: '₹25,000/year',
       impact: 'Sponsors 2 major festivals annually'
     },
     {
       id: 3,
-      name: 'Dr. Suresh Patel',
+      name: 'Rajendra Singh Rathore',
       location: 'Ahmedabad, Gujarat',
       donorSince: '2018',
       contribution: 'Gau Seva Supporter',
-      quote: 'Supporting cow protection through the temple has been my way of following dharma. The regular photos and updates of the cows, their health reports, and seeing them well-cared for brings me immense satisfaction. This is true seva.',
+      quote: 'Supporting the temple’s construction and social programs gives me a sense of purpose. Every visit reminds me that my contribution is helping preserve our spiritual and cultural heritage.',
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face',
       amount: '₹10,000/year',
       impact: 'Supports 4 cows annually'
     },
     {
       id: 4,
-      name: 'Meera Krishnan',
+      name: 'Pooja Sharma',
       location: 'Bangalore, Karnataka',
       donorSince: '2021',
       contribution: 'Education Program Donor',
-      quote: 'As a teacher myself, I believe in the power of spiritual education. Contributing to the temple\'s Bhagavad Gita classes and book distribution programs feels like I\'m helping spread timeless wisdom. The impact reports show real transformation in people\'s lives.',
+      quote: 'Hare Krishna Marwar Mandir isn’t just a temple — it’s a movement of compassion and faith. Donating here feels like offering directly at the lotus feet of Lord Krishna.',
       image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face',
       amount: '₹15,000/year',
       impact: 'Educates 50+ students monthly'
@@ -122,7 +122,7 @@ export default function DonorTestimonials() {
         </motion.div>
 
         {/* Donor Stats */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -145,7 +145,7 @@ export default function DonorTestimonials() {
               <div className="text-gray-600 dark:text-gray-300 text-sm">{stat.label}</div>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
 
         {/* Testimonials Grid */}
         <div className="grid lg:grid-cols-2 gap-8">
@@ -234,7 +234,7 @@ export default function DonorTestimonials() {
         </div>
 
         {/* Call to Share Experience */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -264,7 +264,7 @@ export default function DonorTestimonials() {
               Join Donor Community
             </motion.button>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Trust Indicators */}
         <motion.div

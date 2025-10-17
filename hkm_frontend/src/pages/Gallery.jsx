@@ -13,7 +13,7 @@ export default function Gallery() {
       <GalleryPageHeader />
       <PhotoGallery />
       <VideoGallery />
-      <FeaturedMoments />
+      {/* <FeaturedMoments /> */}
       <SocialMediaFeed />
       <GalleryCallToAction />
     </div>

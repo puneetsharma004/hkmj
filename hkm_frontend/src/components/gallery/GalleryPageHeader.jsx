@@ -67,7 +67,7 @@ export default function GalleryPageHeader() {
           >
             <div className="flex items-center justify-center space-x-2 text-gray-600 dark:text-gray-400">
               <FaCamera className="text-saffron" />
-              <span>500+ Sacred Moments</span>
+              <span>Sacred Moments</span>
             </div>
             <div className="flex items-center justify-center space-x-2 text-gray-600 dark:text-gray-400">
               <FaPlay className="text-gold" />
@@ -88,10 +88,10 @@ export default function GalleryPageHeader() {
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-4xl mx-auto"
         >
           {[
-            { number: '500+', label: 'Photos', icon: <FaCamera /> },
-            { number: '50+', label: 'Videos', icon: <FaPlay /> },
-            { number: '25+', label: 'Festivals', icon: <FaGift /> },
-            { number: '10+', label: 'Years Captured', icon: <FaCalendarAlt /> }
+            { number: '300+', label: 'Photos', icon: <FaCamera /> },
+            { number: '25+', label: 'Videos', icon: <FaPlay /> },
+            { number: '200+', label: 'Festivals', icon: <FaGift /> },
+            { number: '14+', label: 'Years Captured', icon: <FaCalendarAlt /> }
           ].map((stat, index) => (
             <motion.div
               key={index}

@@ -23,17 +23,17 @@ export default function DonationsCallToAction() {
   const urgentNeeds = [
     {
       title: 'Emergency Gau Seva',
-      description: 'Winter shelter needed for 20 cows',
-      amount: '₹75,000',
-      deadline: '15 days',
+      description: 'Winter shelter needed for 5 cows',
+      amount: '₹50,000',
+      deadline: 'Ongoing',
       urgent: true,
       icon: <PiCowFill />
     },
     {
-      title: 'Festival Kitchen Upgrade',
-      description: 'Equipment for 1000+ devotee meals',
-      amount: '₹2,50,000',
-      deadline: '30 days',
+      title: 'Annadan Seva for Hospital Patients & Attendants',
+      description: 'Help us arrange nutritious food for hospital patients and their attendants.',
+      amount: '₹5,00,000',
+      deadline: 'Ongoing',
       urgent: false,
       icon: <FaUtensils />
     }
@@ -47,7 +47,7 @@ export default function DonationsCallToAction() {
   ];
 
   return (
-    <section className="relative py-20 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:bg-black">
+    <section className="relative py-5 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:bg-black">
       {/* Light/Dark Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-100/50 via-amber-100/50 to-yellow-100/50 dark:from-black dark:via-purple-950 dark:to-indigo-950"></div>
       
@@ -117,7 +117,7 @@ export default function DonationsCallToAction() {
         </motion.div>
 
         {/* Quick Donation Options */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -145,7 +145,7 @@ export default function DonationsCallToAction() {
               </motion.button>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Urgent Needs */}
         <motion.div
@@ -232,7 +232,7 @@ export default function DonationsCallToAction() {
         </motion.div>
 
         {/* Contact & Support */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -277,7 +277,7 @@ export default function DonationsCallToAction() {
               donations@Marwarmandir.org
             </button>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Final Blessing */}
         <motion.div
