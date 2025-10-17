@@ -164,7 +164,7 @@ export default function CulturalImportance() {
           className="bg-saffron/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 mb-12 shadow-lg"
         >
           <h3 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-8">Our Impact</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {impactStats.map((stat, index) => (
               <motion.div
                 key={index}
