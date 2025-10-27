@@ -43,7 +43,6 @@ export default function Videos() {
 
   // Category options
   const categoryOptions = [
-    'all',
     'festivals',
     'kirtans',
     'teachings',

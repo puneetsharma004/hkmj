@@ -40,7 +40,6 @@ export default function Photos() {
 
   // Category options
   const categoryOptions = [
-    'all',
     'festivals',
     'worship',
     'architecture',
