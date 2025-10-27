@@ -14,9 +14,10 @@ import {
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
 import { supabase } from '../../lib/supabase';
-
+import { RemoveScroll } from 'react-remove-scroll';
 
 export default function PhotoGallery() {
+
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -38,6 +39,8 @@ export default function PhotoGallery() {
 
         fetchImages();
       }, []);
+
+      
 
   const categories = [
     { id: 'all', name: 'All Photos', icon: <FaImages /> },
@@ -276,39 +279,43 @@ export default function PhotoGallery() {
 
         {/* Modal for enlarged image */}
         {selectedImage && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
-            onClick={() => setSelectedImage(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              className="max-w-4xl max-h-[90vh] relative"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <img
-                src={selectedImage.src}
-                alt={selectedImage.title}
-                className="w-full h-auto rounded-2xl shadow-2xl"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-2xl">
-                <h3 className="text-white font-bold text-xl mb-2">{selectedImage.title}</h3>
-                <p className="text-gray-300 mb-2">{selectedImage.description}</p>
-                <span className="text-saffron font-semibold">{selectedImage.date}</span>
-              </div>
-              <button
-                onClick={() => setSelectedImage(null)}
-                className="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-all duration-300 flex items-center justify-center"
-              >
-                <FaTimes />
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
+  <RemoveScroll>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4 overflow-hidden"
+      onClick={() => setSelectedImage(null)}
+    >
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.8, opacity: 0 }}
+        className="max-w-4xl max-h-[90vh] relative overflow-hidden"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <img
+          src={selectedImage.src}
+          alt={selectedImage.title}
+          className="w-full h-auto rounded-2xl shadow-2xl"
+        />
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-2xl">
+          <h3 className="text-white font-bold text-xl mb-2">
+            {selectedImage.title}
+          </h3>
+          <p className="text-gray-300 mb-2">{selectedImage.description}</p>
+          <span className="text-saffron font-semibold">{selectedImage.date}</span>
+        </div>
+        <button
+          onClick={() => setSelectedImage(null)}
+          className="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-all duration-300 flex items-center justify-center"
+        >
+          <FaTimes />
+        </button>
+      </motion.div>
+    </motion.div>
+  </RemoveScroll>
+)}
 
         {/* Gallery Info */}
         <motion.div

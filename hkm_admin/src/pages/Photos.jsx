@@ -40,14 +40,12 @@ export default function Photos() {
 
   // Category options
   const categoryOptions = [
-    'Festival',
-    'Temple',
-    'Community',
-    'Rituals',
-    'Cultural',
-    'Events',
-    'Architecture',
-    'Other'
+    'all',
+    'festivals',
+    'worship',
+    'architecture',
+    'community',
+    'workshops',
   ];
 
   // Handle form submission (Create or Update)
