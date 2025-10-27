@@ -24,7 +24,7 @@ export default function VisitorContact() {
     {
       title: 'Visitor Helpline',
       description: 'Dedicated support for visitor queries and assistance',
-      contact: '+91 98765 43210',
+      contact: '+91 91161 39371',
       hours: '24/7 Available',
       icon: <FaPhone />,
       color: 'from-green-500 to-emerald-600',

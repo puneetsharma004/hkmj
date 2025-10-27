@@ -47,14 +47,14 @@ export default function ContactCallToAction() {
   const contactMethods = [
     {
       method: 'Call Us Directly',
-      detail: '+91 98765 43210',
+      detail: '+91 91161 39371',
       description: 'Speak with our team for immediate assistance',
       icon: <FaPhone />,
       action: 'Call Now'
     },
     {
       method: 'Send an Email',
-      detail: 'info@Marwarmandir.org',
+      detail: 'nljd@hkmjodhpur.org',
       description: 'Detailed inquiries and official communication',
       icon: <FaEnvelope />,
       action: 'Email Us'

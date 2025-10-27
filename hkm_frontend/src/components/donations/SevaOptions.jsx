@@ -46,7 +46,7 @@ export default function SevaOptions() {
       icon: <FaGift />,
       color: 'from-purple-500 to-pink-600',
       suggestedAmount: '₹11,000',
-      impact: 'Sponsor any seva like Flower Decoration/Water Supply for complete festival',
+      impact: 'Sponsor any for complete festival',
       popular: false
     },
     {

@@ -220,7 +220,7 @@ export default function ContactForm() {
                   value={formData.phone}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800/50 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300"
-                  placeholder="+91 98765 43210"
+                  placeholder="+91 91161 39371"
                 />
               </motion.div>
 
@@ -331,16 +331,16 @@ export default function ContactForm() {
               href="tel:+919876543210"
             >
               <FaPhone />
-              <span>Call: +91 98765 43210</span>
+              <span>Call: +91 91161 39371</span>
             </motion.a>
             <motion.a
               className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 flex items-center space-x-2 shadow-lg cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="mailto:info@Marwarmandir.org"
+              href="mailto:nljd@hkmjodhpur.org"
             >
               <FaEnvelope />
-              <span>Email: info@Marwarmandir.org</span>
+              <span>Email: nljd@hkmjodhpur.org</span>
             </motion.a>
             <motion.a
               className="px-6 py-3 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition-all duration-300 flex items-center space-x-2 shadow-lg cursor-pointer"

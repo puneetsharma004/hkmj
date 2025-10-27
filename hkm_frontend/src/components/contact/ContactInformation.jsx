@@ -23,9 +23,9 @@ export default function ContactInformation() {
       icon: <FaMapMarkerAlt />,
       color: 'from-blue-500 to-cyan-600',
       details: [
-        { label: 'Full Address', value: 'Hare Krishna Marwar Mandir, Sector 12, Near Blue City Mall, Jodhpur, Rajasthan - 342001, India', icon: <FaBuilding /> },
-        { label: 'Nearest Landmark', value: 'Blue City Mall, Opposite City Hospital', icon: <FaMapPin /> },
-        { label: 'Pin Code', value: '342001', icon: <FaMapMarkerAlt /> },
+        { label: 'Full Address', value: 'Chopasani, Near Vastra Mantralay, Jodhpur, RJ', icon: <FaBuilding /> },
+        { label: 'Nearest Landmark', value: 'Vastra Mantralay', icon: <FaMapPin /> },
+        { label: 'Pin Code', value: '342024', icon: <FaMapMarkerAlt /> },
         { label: 'GPS Coordinates', value: '26.2863° N, 73.0392° E', icon: <MdGpsFixed /> }
       ]
     },
@@ -35,7 +35,7 @@ export default function ContactInformation() {
       color: 'from-green-500 to-teal-600',
       details: [
         { label: 'General Inquiries', value: '+91 291 2612345', icon: <FaInfoCircle /> },
-        { label: 'Visitor Assistance', value: '+91 98765 43210', icon: <FaPhone /> },
+        { label: 'Visitor Assistance', value: '+91 91161 39371', icon: <FaPhone /> },
         { label: 'Donations & Seva', value: '+91 98765 43211', icon: <FaHandsHelping /> },
         { label: 'Emergency Contact', value: '+91 98765 43212', icon: <FaPhone /> }
       ]
@@ -45,7 +45,7 @@ export default function ContactInformation() {
       icon: <FaEnvelope />,
       color: 'from-purple-500 to-pink-600',
       details: [
-        { label: 'General Information', value: 'info@Marwarmandir.org', icon: <FaInfoCircle /> },
+        { label: 'General Information', value: 'nljd@hkmjodhpur.org', icon: <FaInfoCircle /> },
         { label: 'Donations & Seva', value: 'donations@Marwarmandir.org', icon: <FaHandsHelping /> },
         { label: 'Volunteer Opportunities', value: 'volunteer@Marwarmandir.org', icon: <FaHandsHelping /> },
         { label: 'Media & Press', value: 'media@Marwarmandir.org', icon: <FaNewspaper /> }
@@ -54,8 +54,8 @@ export default function ContactInformation() {
   ];
 
   const quickActions = [
-    { action: 'Call Now', icon: <FaPhone />, color: 'bg-green-600', number: '+91 98765 43210' },
-    { action: 'Send Email', icon: <FaEnvelope />, color: 'bg-blue-600', email: 'info@Marwarmandir.org' },
+    { action: 'Call Now', icon: <FaPhone />, color: 'bg-green-600', number: '+91 91161 39371' },
+    { action: 'Send Email', icon: <FaEnvelope />, color: 'bg-blue-600', email: 'nljd@hkmjodhpur.org' },
     { action: 'WhatsApp', icon: <FaWhatsapp />, color: 'bg-green-500', number: '+91 98765 43211' },
     { action: 'Get Directions', icon: <FaDirections />, color: 'bg-purple-600', link: '#map' }
   ];

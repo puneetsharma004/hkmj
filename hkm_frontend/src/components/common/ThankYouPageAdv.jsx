@@ -624,7 +624,7 @@ export default function ThankYouPage() {
   //           <h4 className="font-bold text-saffron mb-2">Questions?</h4>
   //           <p className="text-gray-600 dark:text-gray-300 text-sm">
   //             Contact our support team<br/>
-  //             +91 98765 43210<br/>
+  //             +91 91161 39371<br/>
   //             Mon-Sat: 9 AM - 6 PM
   //           </p>
   //         </div>

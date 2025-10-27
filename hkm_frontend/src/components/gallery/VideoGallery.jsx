@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { 
   FaVideo, 
   FaFilm, 
@@ -16,10 +16,30 @@ import {
   FaPlayCircle
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
+import { supabase } from '../../lib/supabase';
 
 export default function VideoGallery() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedVideo, setSelectedVideo] = useState(null);
+
+  const [videos, setVideos] = useState([]);
+  
+      useEffect(() => {
+          const fetchImages = async () => {
+            const { data, error } = await supabase
+              .from('videos')
+              .select('*')
+              .order('created_at', { ascending: true });
+      
+            if (error) {
+              console.error('Error fetching Images:', error);
+            } else {
+              setVideos(data || []);
+            }
+          };
+  
+          fetchImages();
+        }, []);
 
   const videoCategories = [
     { id: 'all', name: 'All Videos', icon: <FaVideo /> },
@@ -29,74 +49,74 @@ export default function VideoGallery() {
     { id: 'community', name: 'Community Outreach', icon: <FaHandshake /> }
   ];
 
-  const videos = [
-    {
-      id: 1,
-      title: 'Janmashtami 2024 Grand Celebration',
-      description: 'Complete coverage of Lord Krishna\'s birth celebration with midnight aarti',
-      thumbnail: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      duration: '45:30',
-      category: 'festivals',
-      views: '15K',
-      date: 'Aug 2024'
-    },
-    {
-      id: 2,
-      title: 'Morning Kirtan - Hare Krishna Mahamantra',
-      description: 'Beautiful morning devotional singing session',
-      thumbnail: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      duration: '25:15',
-      category: 'kirtans',
-      views: '8K',
-      date: 'Sep 2024'
-    },
-    {
-      id: 3,
-      title: 'Bhagavad Gita Chapter 2 - Complete Lecture',
-      description: 'In-depth explanation of Krishna\'s teachings on the soul',
-      thumbnail: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      duration: '1:15:45',
-      category: 'teachings',
-      views: '12K',
-      date: 'Sep 2024'
-    },
-    {
-      id: 4,
-      title: 'Holi Festival 2024 - Colors of Joy',
-      description: 'Vibrant celebration of the festival of colors',
-      thumbnail: 'https://images.unsplash.com/photo-1583211892916-5e38c6ee3297?w=400&h=300&fit=crop',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      duration: '32:20',
-      category: 'festivals',
-      views: '20K',
-      date: 'Mar 2024'
-    },
-    {
-      id: 5,
-      title: 'Community Food Distribution Drive',
-      description: 'Serving prasadam to the underprivileged community',
-      thumbnail: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      duration: '18:10',
-      category: 'community',
-      views: '5K',
-      date: 'Aug 2024'
-    },
-    {
-      id: 6,
-      title: 'Evening Sandhya Aarti - Complete Ceremony',
-      description: 'Daily evening worship with lamp offerings',
-      thumbnail: 'https://images.unsplash.com/photo-1582555172866-f73bb12ba8c6?w=400&h=300&fit=crop',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      duration: '28:45',
-      category: 'festivals',
-      views: '18K',
-      date: 'Sep 2024'
-    }
-  ];
+  // const videos = [
+  //   {
+  //     id: 1,
+  //     title: 'Janmashtami 2024 Grand Celebration',
+  //     description: 'Complete coverage of Lord Krishna\'s birth celebration with midnight aarti',
+  //     thumbnail: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop',
+  //     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+  //     duration: '45:30',
+  //     category: 'festivals',
+  //     views: '15K',
+  //     date: 'Aug 2024'
+  //   },
+  //   {
+  //     id: 2,
+  //     title: 'Morning Kirtan - Hare Krishna Mahamantra',
+  //     description: 'Beautiful morning devotional singing session',
+  //     thumbnail: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop',
+  //     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+  //     duration: '25:15',
+  //     category: 'kirtans',
+  //     views: '8K',
+  //     date: 'Sep 2024'
+  //   },
+  //   {
+  //     id: 3,
+  //     title: 'Bhagavad Gita Chapter 2 - Complete Lecture',
+  //     description: 'In-depth explanation of Krishna\'s teachings on the soul',
+  //     thumbnail: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop',
+  //     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+  //     duration: '1:15:45',
+  //     category: 'teachings',
+  //     views: '12K',
+  //     date: 'Sep 2024'
+  //   },
+  //   {
+  //     id: 4,
+  //     title: 'Holi Festival 2024 - Colors of Joy',
+  //     description: 'Vibrant celebration of the festival of colors',
+  //     thumbnail: 'https://images.unsplash.com/photo-1583211892916-5e38c6ee3297?w=400&h=300&fit=crop',
+  //     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+  //     duration: '32:20',
+  //     category: 'festivals',
+  //     views: '20K',
+  //     date: 'Mar 2024'
+  //   },
+  //   {
+  //     id: 5,
+  //     title: 'Community Food Distribution Drive',
+  //     description: 'Serving prasadam to the underprivileged community',
+  //     thumbnail: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop',
+  //     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+  //     duration: '18:10',
+  //     category: 'community',
+  //     views: '5K',
+  //     date: 'Aug 2024'
+  //   },
+  //   {
+  //     id: 6,
+  //     title: 'Evening Sandhya Aarti - Complete Ceremony',
+  //     description: 'Daily evening worship with lamp offerings',
+  //     thumbnail: 'https://images.unsplash.com/photo-1582555172866-f73bb12ba8c6?w=400&h=300&fit=crop',
+  //     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+  //     duration: '28:45',
+  //     category: 'festivals',
+  //     views: '18K',
+  //     date: 'Sep 2024'
+  //   }
+  // ];
 
   const filteredVideos = selectedCategory === 'all' 
     ? videos 
@@ -203,9 +223,10 @@ export default function VideoGallery() {
             >
               {/* Video Thumbnail */}
               <div className="relative overflow-hidden">
-                <img 
-                  src={video.thumbnail} 
-                  alt={video.title}
+                <iframe
+                  src={video.videoUrl}
+                  title={video.title}
+                  allowFullScreen
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 

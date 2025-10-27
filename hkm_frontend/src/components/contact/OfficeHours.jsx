@@ -79,7 +79,7 @@ export default function OfficeHours() {
     {
       department: 'Visitor Services',
       hours: 'Daily: 5 AM - 9 PM',
-      contact: '+91 98765 43210',
+      contact: '+91 91161 39371',
       services: ['Accommodation booking', 'Visit planning', 'Guest assistance'],
       available: true,
       icon: <FaInfoCircle />

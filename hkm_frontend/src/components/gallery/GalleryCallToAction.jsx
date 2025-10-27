@@ -11,9 +11,11 @@ import {
   FaInstagram, 
   FaArrowRight,
   FaShare,
-  FaHeart
+  FaHeart,
+  
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function GalleryCallToAction() {
   const actionCards = [
@@ -158,7 +160,7 @@ export default function GalleryCallToAction() {
             <div className="flex justify-center space-x-4">
               {[
                 { platform: 'Facebook', icon: <FaFacebook />, color: 'bg-blue-600 hover:bg-blue-700' },
-                { platform: 'Twitter', icon: <FaTwitter />, color: 'bg-sky-500 hover:bg-sky-600' },
+                { platform: 'Twitter', icon: <FaXTwitter />, color: 'bg-black hover:bg-black/80' },
                 { platform: 'WhatsApp', icon: <FaWhatsapp />, color: 'bg-green-600 hover:bg-green-700' },
                 { platform: 'Instagram', icon: <FaInstagram />, color: 'bg-pink-600 hover:bg-pink-700' }
               ].map((social, index) => (

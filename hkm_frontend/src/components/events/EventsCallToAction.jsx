@@ -235,7 +235,7 @@ export default function EventsCallToAction() {
             </div>
             <h4 className="font-bold text-saffron mb-2">Call Us</h4>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
-              Temple: +91 98765 43210<br/>
+              Temple: +91 91161 39371<br/>
               Office: +91 98765 43211<br/>
               <span className="flex items-center justify-center gap-1">
                 <FaWhatsapp className="text-green-500" />

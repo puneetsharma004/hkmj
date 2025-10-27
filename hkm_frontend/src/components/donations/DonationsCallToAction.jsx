@@ -31,7 +31,7 @@ export default function DonationsCallToAction() {
     },
     {
       title: 'Annadan Seva for Hospital Patients & Attendants',
-      description: 'Help us arrange nutritious food for hospital patients and their attendants.',
+      description: 'Help us arrange nutritious food for hospital patients & attendants.',
       amount: '₹5,00,000',
       deadline: 'Ongoing',
       urgent: false,
@@ -261,7 +261,7 @@ export default function DonationsCallToAction() {
               Speak directly with our donation coordinators for personalized assistance.
             </p>
             <button className="text-saffron hover:text-gold transition-colors duration-300 font-semibold">
-              +91 98765 43210
+              +91 91161 39371
             </button>
           </div>
           

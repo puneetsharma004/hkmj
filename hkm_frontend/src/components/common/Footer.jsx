@@ -147,9 +147,9 @@ export default function Footer() {
               variants={containerVariants}
             >
               {[
-                { icon: FaLocationDot, text: "123 Temple Road, Jodhpur, Rajasthan" },
+                { icon: FaLocationDot, text: "Chopasani, Near Vastra Mantralay, Jodhpur, RJ PIN: 342024, Nearest Landmark: Vastra Mantralay" },
                 { icon: FaPhone, text: "+91 91161 39371" },
-                { icon: FaEnvelope, text: "info@Marwarmandir.org" }
+                { icon: FaEnvelope, text: "nljd@hkmjodhpur.org" }
               ].map((item, index) => (
                 <motion.p 
                   key={index}

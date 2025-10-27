@@ -151,11 +151,11 @@ export default function QuickLinks() {
               </div>
               <div className="flex items-center justify-center space-x-2 hover:text-saffron transition-colors duration-300">
                 <span><SiMinutemailer /></span>
-                <span>Email: info@Marwarmandir.org</span>
+                <span>Email: nljd@hkmjodhpur.org</span>
               </div>
               <div className="flex items-center justify-center space-x-2 hover:text-saffron transition-colors duration-300">
                 <span><FaWhatsapp /></span>
-                <span>WhatsApp: +91 98765 43210</span>
+                <span>WhatsApp: +91 91161 39371</span>
               </div>
             </div>
           </div>

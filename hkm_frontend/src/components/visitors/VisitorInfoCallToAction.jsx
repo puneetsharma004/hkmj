@@ -329,7 +329,7 @@ export default function VisitorInfoCallToAction() {
             </div>
             <h4 className="font-bold text-saffron mb-2">Call Us</h4>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
-              Visitor Helpline: +91 98765 43210<br/>
+              Visitor Helpline: +91 91161 39371<br/>
               Temple Office: +91 98765 43211<br/>
               WhatsApp: +91 98765 43212
             </p>

@@ -277,7 +277,7 @@ export default function VolunteerRegistrationForm() {
                     value={formData.phone}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 bg-white/10 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 91161 39371"
                     required
                   />
                 </div>
@@ -457,7 +457,7 @@ export default function VolunteerRegistrationForm() {
                     value={formData.emergencyPhone}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 bg-white/10 dark:bg-gray-800/50 border border-orange-200 dark:border-gray-600 border-opacity-60 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 shadow-lg"
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 91161 39371"
                   />
                 </div>
               </div>

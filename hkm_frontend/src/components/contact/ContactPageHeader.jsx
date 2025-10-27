@@ -80,10 +80,10 @@ export default function ContactPageHeader() {
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-3xl mx-auto"
         >
           {[
-            { icon: <FaPhone />, method: 'Call Us', detail: '+91 98765 43210', color: 'text-green-600', link: "tel:+919876543210" },
-            { icon: <FaEnvelope />, method: 'Email Us', detail: 'info@Marwarmandir.org', color: 'text-blue-600', link: "mailto:info@Marwarmandir.org" },
+            { icon: <FaPhone />, method: 'Call Us', detail: '+91 91161 39371', color: 'text-green-600', link: "tel:+919876543210" },
+            { icon: <FaEnvelope />, method: 'Email Us', detail: 'nljd@hkmjodhpur.org', color: 'text-blue-600', link: "mailto:nljd@hkmjodhpur.org" },
             { icon: <FaWhatsapp />, method: 'WhatsApp', detail: 'Quick Response', color: 'text-green-500', link: "https://wa.me/919876543210" },
-            { icon: <FaMapMarkerAlt />, method: 'Visit Us', detail: 'Jodhpur, Rajasthan', color: 'text-purple-600', link: "https://goo.gl/maps/xyz" }
+            { icon: <FaMapMarkerAlt />, method: 'Visit Us', detail: 'Jodhpur, Rajasthan', color: 'text-purple-600', link: "https://maps.app.goo.gl/Y3wsrxUAw5cdoKk96" }
           ].map((contact, index) => (
             <motion.a
               key={index}

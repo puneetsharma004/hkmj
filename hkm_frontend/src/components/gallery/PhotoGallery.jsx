@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { 
   FaCamera, 
   FaPalette, 
@@ -13,10 +13,31 @@ import {
   FaEye
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
+import { supabase } from '../../lib/supabase';
+
 
 export default function PhotoGallery() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedImage, setSelectedImage] = useState(null);
+
+  const [photos, setPhotos] = useState([]);
+
+    useEffect(() => {
+        const fetchImages = async () => {
+          const { data, error } = await supabase
+            .from('photos')
+            .select('*')
+            .order('created_at', { ascending: true });
+    
+          if (error) {
+            console.error('Error fetching Images:', error);
+          } else {
+            setPhotos(data || []);
+          }
+        };
+
+        fetchImages();
+      }, []);
 
   const categories = [
     { id: 'all', name: 'All Photos', icon: <FaImages /> },
@@ -27,84 +48,84 @@ export default function PhotoGallery() {
     { id: 'workshops', name: 'Workshops & Classes', icon: <FaBook /> }
   ];
 
-  const photos = [
-    {
-      id: 1,
-      src: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop',
-      category: 'festivals',
-      title: 'Janmashtami Celebration 2024',
-      description: 'Grand celebration of Lord Krishna\'s birth',
-      date: 'August 2024'
-    },
-    {
-      id: 2,
-      src: 'https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=400&h=300&fit=crop',
-      category: 'worship',
-      title: 'Morning Mangala Aarti',
-      description: 'Daily morning prayers and worship',
-      date: 'Daily 5:00 AM'
-    },
-    {
-      id: 3,
-      src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop',
-      category: 'architecture',
-      title: 'Temple Main Hall',
-      description: 'Beautiful Marwar style architecture',
-      date: '2023'
-    },
-    {
-      id: 4,
-      src: 'https://images.unsplash.com/photo-1583211892916-5e38c6ee3297?w=400&h=300&fit=crop',
-      category: 'festivals',
-      title: 'Holi Festival Colors',
-      description: 'Joyful celebration with natural colors',
-      date: 'March 2024'
-    },
-    {
-      id: 5,
-      src: 'https://images.unsplash.com/photo-1589802829985-817e51171b92?w=400&h=300&fit=crop',
-      category: 'community',
-      title: 'Prasadam Distribution',
-      description: 'Serving the community with love',
-      date: 'Weekly Service'
-    },
-    {
-      id: 6,
-      src: 'https://images.unsplash.com/photo-1605538883669-825200433431?w=400&h=300&fit=crop',
-      category: 'festivals',
-      title: 'Diwali Decorations',
-      description: 'Festival of lights celebration',
-      date: 'November 2023'
-    },
-    {
-      id: 7,
-      src: 'https://images.unsplash.com/photo-1582555172866-f73bb12ba8c6?w=400&h=300&fit=crop',
-      category: 'worship',
-      title: 'Evening Sandhya Aarti',
-      description: 'Beautiful evening lamp ceremony',
-      date: 'Daily 7:00 PM'
-    },
-    {
-      id: 8,
-      src: 'https://images.unsplash.com/photo-1571896848203-97f5ce0b9e9e?w=400&h=300&fit=crop',
-      category: 'workshops',
-      title: 'Bhagavad Gita Class',
-      description: 'Weekly spiritual learning sessions',
-      date: 'Every Sunday'
-    },
-    {
-      id: 9,
-      src: 'https://images.unsplash.com/photo-1574401572222-9e4c2b6b5e4c?w=400&h=300&fit=crop',
-      category: 'architecture',
-      title: 'Sacred Sanctum',
-      description: 'Inner temple deity chamber',
-      date: '2023'
-    }
-  ];
+  // const photos = [
+  //   {
+  //     id: 1,
+  //     src: 'https://photos.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop',
+  //     category: 'festivals',
+  //     title: 'Janmashtami Celebration 2024',
+  //     description: 'Grand celebration of Lord Krishna\'s birth',
+  //     date: 'August 2024'
+  //   },
+  //   {
+  //     id: 2,
+  //     src: 'https://photos.unsplash.com/photo-1545558014-8692077e9b5c?w=400&h=300&fit=crop',
+  //     category: 'worship',
+  //     title: 'Morning Mangala Aarti',
+  //     description: 'Daily morning prayers and worship',
+  //     date: 'Daily 5:00 AM'
+  //   },
+  //   {
+  //     id: 3,
+  //     src: 'https://photos.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop',
+  //     category: 'architecture',
+  //     title: 'Temple Main Hall',
+  //     description: 'Beautiful Marwar style architecture',
+  //     date: '2023'
+  //   },
+  //   {
+  //     id: 4,
+  //     src: 'https://photos.unsplash.com/photo-1583211892916-5e38c6ee3297?w=400&h=300&fit=crop',
+  //     category: 'festivals',
+  //     title: 'Holi Festival Colors',
+  //     description: 'Joyful celebration with natural colors',
+  //     date: 'March 2024'
+  //   },
+  //   {
+  //     id: 5,
+  //     src: 'https://photos.unsplash.com/photo-1589802829985-817e51171b92?w=400&h=300&fit=crop',
+  //     category: 'community',
+  //     title: 'Prasadam Distribution',
+  //     description: 'Serving the community with love',
+  //     date: 'Weekly Service'
+  //   },
+  //   {
+  //     id: 6,
+  //     src: 'https://photos.unsplash.com/photo-1605538883669-825200433431?w=400&h=300&fit=crop',
+  //     category: 'festivals',
+  //     title: 'Diwali Decorations',
+  //     description: 'Festival of lights celebration',
+  //     date: 'November 2023'
+  //   },
+  //   {
+  //     id: 7,
+  //     src: 'https://photos.unsplash.com/photo-1582555172866-f73bb12ba8c6?w=400&h=300&fit=crop',
+  //     category: 'worship',
+  //     title: 'Evening Sandhya Aarti',
+  //     description: 'Beautiful evening lamp ceremony',
+  //     date: 'Daily 7:00 PM'
+  //   },
+  //   {
+  //     id: 8,
+  //     src: 'https://photos.unsplash.com/photo-1571896848203-97f5ce0b9e9e?w=400&h=300&fit=crop',
+  //     category: 'workshops',
+  //     title: 'Bhagavad Gita Class',
+  //     description: 'Weekly spiritual learning sessions',
+  //     date: 'Every Sunday'
+  //   },
+  //   {
+  //     id: 9,
+  //     src: 'https://photos.unsplash.com/photo-1574401572222-9e4c2b6b5e4c?w=400&h=300&fit=crop',
+  //     category: 'architecture',
+  //     title: 'Sacred Sanctum',
+  //     description: 'Inner temple deity chamber',
+  //     date: '2023'
+  //   }
+  // ];
 
-  const filteredPhotos = selectedCategory === 'all' 
+  const filteredImages = selectedCategory === 'all' 
     ? photos 
-    : photos.filter(photo => photo.category === selectedCategory);
+    : photos.filter(image => image.category === selectedCategory);
 
   return (
     <section className="relative py-16 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:bg-black">
@@ -194,31 +215,31 @@ export default function PhotoGallery() {
           transition={{ duration: 0.5 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
         >
-          {filteredPhotos.map((photo, index) => (
+          {filteredImages.map((image, index) => (
             <motion.div
-              key={photo.id}
+              key={image.id}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10, scale: 1.02 }}
               className="group relative cursor-pointer"
-              onClick={() => setSelectedImage(photo)}
+              onClick={() => setSelectedImage(image)}
             >
               <div className="relative overflow-hidden rounded-2xl shadow-2xl border-2 border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 group-hover:border-saffron group-hover:border-opacity-80 dark:group-hover:border-opacity-60 transition-all duration-300">
                 <img 
-                  src={photo.src} 
-                  alt={photo.title}
+                  src={image.src} 
+                  alt={image.title}
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-white font-bold text-sm mb-1">{photo.title}</h3>
-                    <p className="text-gray-300 text-xs mb-2">{photo.description}</p>
+                    <h3 className="text-white font-bold text-sm mb-1">{image.title}</h3>
+                    <p className="text-gray-300 text-xs mb-2">{image.description}</p>
                     <div className="flex items-center justify-between">
-                      <span className="text-saffron text-xs font-semibold">{photo.date}</span>
+                      <span className="text-saffron text-xs font-semibold">{image.date}</span>
                       <div className="bg-saffron text-white p-2 rounded-full shadow-lg">
                         <FaSearch className="text-xs" />
                       </div>
@@ -228,7 +249,7 @@ export default function PhotoGallery() {
 
                 {/* Category Badge */}
                 <div className="absolute top-3 left-3 bg-black/70 text-white text-xs px-2 py-1 rounded-full backdrop-blur-sm">
-                  {categories.find(cat => cat.id === photo.category)?.name}
+                  {categories.find(cat => cat.id === image.category)?.name}
                 </div>
               </div>
             </motion.div>
@@ -236,7 +257,7 @@ export default function PhotoGallery() {
         </motion.div>
 
         {/* Load More Button */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -251,7 +272,7 @@ export default function PhotoGallery() {
             <FaImages />
             Load More Photos
           </motion.button>
-        </motion.div>
+        </motion.div> */}
 
         {/* Modal for enlarged image */}
         {selectedImage && (

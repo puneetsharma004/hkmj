@@ -53,11 +53,11 @@ export default function HowToDonate() {
   ];
 
   const bankDetails = {
-    accountName: 'Hare Krishna Marwar Mandir Trust',
-    accountNumber: '123456789012',
-    ifscCode: 'SBIN0001234',
-    bankName: 'State Bank of India',
-    branch: 'Jodhpur Main Branch',
+    accountName: 'Hare Krishna Movement Jodhpur',
+    accountNumber: '729901000990',
+    ifscCode: 'ICIC0007299',
+    bankName: 'ICICI Bank',
+    branch: 'Jagatpura Mahal Road branch, Jaipur',
     swiftCode: 'SBININBB123' // For international transfers
   };
 
