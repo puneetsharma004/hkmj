@@ -43,14 +43,11 @@ export default function Videos() {
 
   // Category options
   const categoryOptions = [
-    'Festival',
-    'Rituals',
-    'Cultural',
-    'Educational',
-    'Devotional',
-    'Events',
-    'Tours',
-    'Other'
+    'all',
+    'festivals',
+    'kirtans',
+    'teachings',
+    'community',
   ];
 
   // Handle form submission (Create or Update)

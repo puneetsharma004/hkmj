@@ -46,7 +46,7 @@ export default function VideoGallery() {
     { id: 'festivals', name: 'Festival Highlights', icon: <FaGift /> },
     { id: 'kirtans', name: 'Kirtan Performances', icon: <FaMusic /> },
     { id: 'teachings', name: 'Teachings & Lectures', icon: <FaBook /> },
-    { id: 'community', name: 'Community Outreach', icon: <FaHandshake /> }
+    { id: ' ', name: 'Community Outreach', icon: <FaHandshake /> }
   ];
 
   // const videos = [
