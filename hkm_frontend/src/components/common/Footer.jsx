@@ -187,7 +187,8 @@ export default function Footer() {
                 { href: "/", text: "Home", icon: GiGreekTemple },
                 { href: "/about", text: "About Us", icon: FaCircleInfo },
                 { href: "/events", text: "Darshan & Events", icon: GiLotus },
-                { href: "/gallery", text: "Gallery", icon: FaBlog }
+                { href: "/gallery", text: "Gallery", icon: FaBlog },
+                { href: "/donations", text: "Donations", icon: FaHandHoldingHeart },
               ].map((link, index) => (
                 <motion.a 
                   key={index}
@@ -209,42 +210,30 @@ export default function Footer() {
             </motion.div>
           </motion.div>
 
-          {/* Services */}
+          {/* Location map embed */}
           <motion.div className="space-y-4" variants={itemVariants}>
             <motion.h3 
               className="text-lg font-semibold text-saffron dark:text-purple-300 mb-4"
               variants={itemVariants}
             >
-              Services
+              Reach Us
             </motion.h3>
             <motion.div 
-              className="space-y-2 text-sm"
-              variants={containerVariants}
+              className="w-full h-44 rounded-lg overflow-hidden"
+              variants={itemVariants}
             >
-              {[
-                { href: "/donations", text: "Donations", icon: FaHandHoldingHeart },
-                { href: "/visitor-info", text: "Visitor Information", icon: FaCircleInfo },
-                { href: "/volunteer", text: "Volunteer", icon: MdVolunteerActivism },
-                { href: "/blog", text: "Blog", icon: FaBlog }
-              ].map((link, index) => (
-                <motion.a 
-                  key={index}
-                  href={link.href} 
-                  className="flex items-center gap-2 py-1 px-2 rounded-md text-gray-700 dark:text-gray-200 transition-all hover:bg-orange-200/50 dark:hover:bg-purple-800/30 hover:text-saffron dark:hover:text-purple-200"
-                  variants={itemVariants}
-                  whileHover="hover"
-                  linkVariants={linkVariants}
-                >
-                  <motion.span
-                    whileHover={{ rotate: 10, scale: 1.1 }}
-                    className="text-saffron dark:text-purple-300"
-                  >
-                    <link.icon />
-                  </motion.span>
-                  {link.text}
-                </motion.a>
-              ))}
+              <iframe
+                title="Hare Krishna Marwar Mandir Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d223.60221799336995!2d72.92808394879104!3d26.273491250976406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418f00266be169%3A0x9ca057426b5d4bec!2sHare%20Krishna%20Marwar%20Mandir%2C%20Chokha%2CChopasni%2C%20Jodhpur!5e0!3m2!1sen!2sin!4v1759394060148!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </motion.div>
+
           </motion.div>
 
           {/* Temple Timings & Connect */}
@@ -294,14 +283,14 @@ export default function Footer() {
                 variants={containerVariants}
               >
                 {[
-                  { icon: FaFacebookF, className: "hover:text-blue-600 dark:hover:text-blue-400" },
-                  { icon: FaInstagram, className: "hover:text-pink-600 dark:hover:text-pink-400" },
-                  { icon: FaXTwitter, className: "hover:text-gray-800 dark:hover:text-gray-300" },
-                  { icon: FaYoutube, className: "hover:text-red-600 dark:hover:text-red-400" }
+                  { icon: FaFacebookF, className: "hover:text-blue-600 dark:hover:text-blue-400", link: "https://www.facebook.com/Harekrishnamarwar" },
+                  { icon: FaInstagram, className: "hover:text-pink-600 dark:hover:text-pink-400", link: "https://www.instagram.com/harekrishnamarwar/" },
+                  { icon: FaXTwitter, className: "hover:text-gray-800 dark:hover:text-gray-300", link: "https://twitter.com" },
+                  { icon: FaYoutube, className: "hover:text-red-600 dark:hover:text-red-400", link: "https://www.youtube.com/@HareKrishnaJodhpur" }
                 ].map((social, index) => (
                   <motion.a 
                     key={index}
-                    href="#" 
+                    href={social.link} 
                     className={`w-10 h-10 rounded-lg bg-orange-200/50 dark:bg-purple-800/30 flex items-center justify-center border border-orange-300/60 dark:border-purple-600/30 text-gray-700 dark:text-gray-200 transition-all ${social.className}`}
                     variants={itemVariants}
                     whileHover="hover"

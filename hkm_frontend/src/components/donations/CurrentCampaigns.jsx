@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { 
   FaBullseye, 
   FaChartLine, 
@@ -18,6 +18,7 @@ import {
   FaTimes
 } from 'react-icons/fa';
 import { GiCow, GiWaterDrop } from 'react-icons/gi';
+import { supabase } from '../../lib/supabase';
 
 export default function CurrentCampaigns() {
   const [showAllCampaigns, setShowAllCampaigns] = useState(false);
@@ -26,22 +27,44 @@ export default function CurrentCampaigns() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [loadingMore, setLoadingMore] = useState(false);
 
-  const campaigns = [
-    {
-      id: 1,
-      title: 'Vrindavan Flood Relief Emergency',
-      description: 'Urgent relief campaign for flood-affected families in Vrindavan. Providing immediate aid including food, clean water, temporary shelter, medicines, and essential supplies to help our community recover from devastating floods.',
-      image: 'https://media.istockphoto.com/id/612255400/photo/kusum-sarovar.jpg?s=612x612&w=0&k=20&c=S_KX7oE-oj0IAj5Bhl9r4U2ZrGOcWT5ZkKco7K3sBkc=',
-      target: 1500000,
-      raised: 300000,
-      deadline: '2024-10-15',
-      daysLeft: 33,
-      donors: 12,
-      urgent: true,
-      video: '/videos/flood.mp4',
-      icon: <GiWaterDrop />
-    }
-  ];
+  const [campaigns, setCampaigns] = useState([]);
+
+        useEffect(() => {
+            const fetchCampaigns = async () => {
+              const { data, error } = await supabase
+                .from('campaigns')
+                .select('*')
+                .order('created_at', { ascending: true });
+
+              if (error) {
+                console.error('Error fetching campaigns:', error);
+              } else {
+                setCampaigns(data || []);
+              }
+            };
+
+            fetchCampaigns();
+          }, []);
+
+
+  // const campaigns = [
+
+  //   {
+  //     id: 1,
+  //     title: 'Vrindavan Flood Relief Emergency',
+  //     description: 'Urgent relief campaign for flood-affected families in Vrindavan. Providing immediate aid including food, clean water, temporary shelter, medicines, and essential supplies to help our community recover from devastating floods.',
+  //     image: 'https://media.istockphoto.com/id/612255400/photo/kusum-sarovar.jpg?s=612x612&w=0&k=20&c=S_KX7oE-oj0IAj5Bhl9r4U2ZrGOcWT5ZkKco7K3sBkc=',
+  //     target: 1500000,
+  //     raised: 300000,
+  //     deadline: '2024-10-15',
+  //     daysLeft: 33,
+  //     donors: 12,
+  //     urgent: true,
+  //     video: '/videos/flood.mp4',
+  //     icon: <GiWaterDrop />
+  //   }
+  // ];
+
 
   // Helper functions
   const getProgressPercentage = (raised, target) => {
