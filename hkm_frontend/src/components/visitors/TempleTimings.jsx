@@ -38,7 +38,7 @@ export default function TempleTimings() {
   const dailySchedule = [
     {
       session: 'Morning Session',
-      time: '5:00 AM - 12:00 PM',
+      time: '4:30 AM - 12:00 PM',
       icon: <BsFillSunriseFill />,
       activities: ['Mangala Aarti', 'Guru Puja', 'Sringar Aarti', 'Raj Bhog'],
       highlight: true

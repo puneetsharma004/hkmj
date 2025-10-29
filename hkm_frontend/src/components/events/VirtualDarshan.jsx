@@ -31,13 +31,13 @@ export default function VirtualDarshan() {
       description: 'Join live streaming during aarti times',
       available: true
     },
-    {
-      id: '360',
-      title: '360° Tour',
-      icon: <FaVrCardboard />,
-      description: 'Virtual temple tour experience',
-      available: true
-    },
+    // {
+    //   id: '360',
+    //   title: '360° Tour',
+    //   icon: <FaVrCardboard />,
+    //   description: 'Virtual temple tour experience',
+    //   available: true
+    // },
     {
       id: 'gallery',
       title: 'Photo Gallery',
@@ -45,13 +45,13 @@ export default function VirtualDarshan() {
       description: 'High-quality deity photographs',
       available: true
     },
-    {
-      id: 'booking',
-      title: 'Book Session',
-      icon: <FaCalendarPlus />,
-      description: 'Schedule personal virtual darshan',
-      available: false
-    }
+    // {
+    //   id: 'booking',
+    //   title: 'Book Session',
+    //   icon: <FaCalendarPlus />,
+    //   description: 'Schedule personal virtual darshan',
+    //   available: false
+    // }
   ];
 
   return (
@@ -144,7 +144,7 @@ export default function VirtualDarshan() {
                           <FaClock />
                           Morning Aarti
                         </div>
-                        <div>5:00 AM - 6:00 AM</div>
+                        <div>4:30 AM - 6:00 AM</div>
                       </div>
                       <div className="bg-orange-100/20 dark:bg-purple-900/30 p-3 rounded-lg">
                         <div className="font-semibold text-gold flex items-center gap-1">

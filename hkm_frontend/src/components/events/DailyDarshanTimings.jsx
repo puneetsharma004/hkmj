@@ -23,8 +23,8 @@ export default function DailyDarshanTimings() {
   const aartiSchedule = [
     {
       name: 'Mangala Aarti',
-      time: '5:00 AM',
-      timeValue: 5 * 60,
+      time: '4:30 AM',
+      timeValue: 4.5 * 60,
       description: 'Wake up the deity with devotional songs',
       significance: 'The first aarti awakens Lord Krishna and welcomes the new day with gratitude',
       icon: <FaSun />,

@@ -18,6 +18,25 @@ import { HiSparkles } from 'react-icons/hi';
 import { FaHandHoldingHeart } from "react-icons/fa";
 
 export default function SevaOptions() {
+  // Scroll to donation form
+  const scrollToDonationForm = () => {
+    const donationForm = document.querySelector('#donation-form');
+    if (donationForm) {
+      donationForm.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else {
+      // Fallback: scroll to a section with class name if ID doesn't exist
+      const donationSection = document.querySelector('.donation-form, .donate-section');
+      if (donationSection) {
+        donationSection.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  };
   const sevaOptions = [
     {
       id: 'gau-seva',
@@ -190,6 +209,7 @@ export default function SevaOptions() {
 
                 {/* Donate Button */}
                 <motion.button
+                  onClick={scrollToDonationForm}
                   className={`w-full font-bold py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg ${
                     seva.popular
                       ? 'bg-saffron-gradient text-white hover:shadow-saffron/30'
@@ -197,6 +217,7 @@ export default function SevaOptions() {
                   }`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
+                  href='#'
                 >
                   <FaHandHoldingHeart />
                   Donate Now
@@ -229,6 +250,7 @@ export default function SevaOptions() {
             className="px-8 py-3 bg-saffron-gradient text-white font-bold rounded-full hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2 mx-auto"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={scrollToDonationForm}
           >
             Make Custom Donation
             <FaArrowRight />

@@ -223,9 +223,7 @@ export default function EventsCallToAction() {
             </div>
             <h4 className="font-bold text-saffron mb-2">Visit Us</h4>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
-              123 Temple Road<br/>
-              Jodhpur, Rajasthan<br/>
-              India - 342001
+              Chopasani, Near Vastra Mantralay, <br /> Jodhpur, RJ PIN: 342024,<br /> Nearest Landmark: Vastra Mantralay
             </p>
           </div>
           
@@ -236,10 +234,10 @@ export default function EventsCallToAction() {
             <h4 className="font-bold text-saffron mb-2">Call Us</h4>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
               Temple: +91 91161 39371<br/>
-              Office: +91 98765 43211<br/>
+              Office: +91 91161 39371<br/>
               <span className="flex items-center justify-center gap-1">
                 <FaWhatsapp className="text-green-500" />
-                WhatsApp: +91 98765 43212
+                WhatsApp: +91 91161 39371
               </span>
             </p>
           </div>
@@ -250,7 +248,7 @@ export default function EventsCallToAction() {
             </div>
             <h4 className="font-bold text-saffron mb-2">Temple Hours</h4>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
-              Morning: 5:00 AM - 12:00 PM<br/>
+              Morning: 4:30 AM - 12:00 PM<br/>
               Evening: 4:00 PM - 9:30 PM<br/>
               Closed: 12:00 PM - 4:00 PM
             </p>

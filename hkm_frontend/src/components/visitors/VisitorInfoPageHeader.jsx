@@ -84,7 +84,7 @@ export default function VisitorInfoPageHeader() {
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-3xl mx-auto"
         >
           {[
-            { icon: <FaClock />, text: 'Open Daily', detail: '5 AM - 9 PM' },
+            { icon: <FaClock />, text: 'Open Daily', detail: '4:30 AM - 9 PM' },
             { icon: <FaParking />, text: 'Free Parking', detail: 'Available' },
             { icon: <FaUtensils />, text: 'Free Prasadam', detail: 'Daily Distribution' },
             { icon: <FaPhone />, text: '24/7 Help', detail: 'Visitor Support' }

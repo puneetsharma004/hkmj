@@ -20,6 +20,25 @@ import { HiSparkles } from 'react-icons/hi';
 import { PiCowFill } from "react-icons/pi";
 
 export default function DonationsCallToAction() {
+  // Scroll to donation form
+  const scrollToDonationForm = () => {
+    const donationForm = document.querySelector('#donation-form');
+    if (donationForm) {
+      donationForm.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else {
+      // Fallback: scroll to a section with class name if ID doesn't exist
+      const donationSection = document.querySelector('.donation-form, .donate-section');
+      if (donationSection) {
+        donationSection.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  };
   const urgentNeeds = [
     {
       title: 'Emergency Gau Seva',
@@ -90,7 +109,7 @@ export default function DonationsCallToAction() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="relative z-10 flex items-center space-x-3">
+              <span className="relative z-10 flex items-center space-x-3 cursor-pointer" onClick={scrollToDonationForm}>
                 <FaGift />
                 <span>Donate Now</span>
                 <motion.span
@@ -106,9 +125,10 @@ export default function DonationsCallToAction() {
 
             {/* Recurring Donation */}
             <motion.button
-              className="group border-2 border-saffron text-saffron font-bold px-8 py-4 rounded-full hover:bg-saffron hover:text-white dark:hover:text-black transition-all duration-300 flex items-center space-x-3 outline-none"
+              className="group border-2 border-saffron text-saffron font-bold px-8 py-4 rounded-full hover:bg-saffron hover:text-white dark:hover:text-black transition-all duration-300 flex items-center space-x-3 outline-none cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={scrollToDonationForm}
             >
               <FaRedo />
               <span>Monthly Donation</span>
@@ -177,7 +197,7 @@ export default function DonationsCallToAction() {
                   </div>
                   {need.urgent && (
                     <motion.div
-                      className="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 shadow-lg"
+                      className="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 shadow-lg "
                       animate={{ scale: [1, 1.1, 1] }}
                       transition={{ duration: 2, repeat: Infinity }}
                     >
@@ -215,13 +235,14 @@ export default function DonationsCallToAction() {
                 </div>
                 
                 <motion.button
-                  className={`w-full font-bold py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg outline-none ${
+                  className={`w-full font-bold py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg outline-none cursor-pointer ${
                     need.urgent
                       ? 'bg-gradient-to-r from-red-500 to-orange-500 text-white hover:shadow-red-500/30'
                       : 'bg-saffron-gradient text-white hover:shadow-saffron/30'
                   }`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
+                  onClick={scrollToDonationForm}
                 >
                   <FaHeart />
                   Contribute Now

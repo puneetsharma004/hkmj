@@ -67,7 +67,7 @@ export default function EventsPageHeader() {
           >
             <div className="flex items-center justify-center space-x-2 text-gray-600 dark:text-gray-400">
               <FaClock className="text-saffron" />
-              <span>Daily Darshan: 5 AM - 9 PM</span>
+              <span>Daily Darshan: 4:30 AM - 9 PM</span>
             </div>
             <div className="flex items-center justify-center space-x-2 text-gray-600 dark:text-gray-400">
               <FaMobileAlt className="text-gold" />
