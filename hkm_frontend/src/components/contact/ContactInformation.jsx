@@ -34,10 +34,10 @@ export default function ContactInformation() {
       icon: <FaPhone />,
       color: 'from-green-500 to-teal-600',
       details: [
-        { label: 'General Inquiries', value: '+91 291 2612345', icon: <FaInfoCircle /> },
+        { label: 'General Inquiries', value: '+91 91161 39371', icon: <FaInfoCircle /> },
         { label: 'Visitor Assistance', value: '+91 91161 39371', icon: <FaPhone /> },
-        { label: 'Donations & Seva', value: '+91 98765 43211', icon: <FaHandsHelping /> },
-        { label: 'Emergency Contact', value: '+91 98765 43212', icon: <FaPhone /> }
+        { label: 'Donations & Seva', value: '+91 91161 39371', icon: <FaHandsHelping /> },
+        { label: 'Emergency Contact', value: '+91 91161 39371', icon: <FaPhone /> }
       ]
     },
     {
@@ -46,9 +46,9 @@ export default function ContactInformation() {
       color: 'from-purple-500 to-pink-600',
       details: [
         { label: 'General Information', value: 'nljd@hkmjodhpur.org', icon: <FaInfoCircle /> },
-        { label: 'Donations & Seva', value: 'donations@Marwarmandir.org', icon: <FaHandsHelping /> },
-        { label: 'Volunteer Opportunities', value: 'volunteer@Marwarmandir.org', icon: <FaHandsHelping /> },
-        { label: 'Media & Press', value: 'media@Marwarmandir.org', icon: <FaNewspaper /> }
+        { label: 'Donations & Seva', value: 'nljd@hkmjodhpur.org', icon: <FaHandsHelping /> },
+        { label: 'Volunteer Opportunities', value: 'nljd@hkmjodhpur.org', icon: <FaHandsHelping /> },
+        { label: 'Media & Press', value: 'nljd@hkmjodhpur.org', icon: <FaNewspaper /> }
       ]
     }
   ];

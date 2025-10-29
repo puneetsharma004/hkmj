@@ -328,7 +328,8 @@ export default function ContactForm() {
               className="px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-all duration-300 flex items-center space-x-2 shadow-lg cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="tel:+919876543210"
+              href="tel:+919116139371
+"
             >
               <FaPhone />
               <span>Call: +91 91161 39371</span>

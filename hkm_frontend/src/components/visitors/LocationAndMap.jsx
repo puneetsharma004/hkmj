@@ -286,7 +286,7 @@ export default function LocationAndMap() {
                 className="p-4 border border-saffron text-saffron font-semibold rounded-xl hover:bg-saffron hover:text-white dark:hover:text-black transition-all duration-300 flex items-center justify-center space-x-2 cursor-pointer outline-none"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => { window.location.href = "tel:+919876543210"; }}
+                onClick={() => { window.location.href = "tel:+919116139371"; }}
               >
                 <FaPhone />
                 <span>Call Temple</span>
