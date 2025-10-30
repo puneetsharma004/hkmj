@@ -161,7 +161,7 @@ export default function QuickLinks() {
           </div>
         </motion.div> */}
 
-        {/* Emergency Contact Section */}
+        {/* Emergency Contact Section
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -186,7 +186,7 @@ export default function QuickLinks() {
               <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">Next Aarti: 7:00 PM</span>
             </motion.div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

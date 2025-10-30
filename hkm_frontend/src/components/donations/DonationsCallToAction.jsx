@@ -226,12 +226,13 @@ export default function DonationsCallToAction() {
                   <div className="text-right">
                     <div className="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-1">
                       <FaCalendarAlt />
-                      Deadline
+                      Cycle
                     </div>
-                    <div className={`text-lg font-bold ${need.urgent ? 'text-red-500 dark:text-red-400' : 'text-gold'}`}>
-                      {need.deadline}
+                    <div className="text-lg font-bold text-yellow-600 dark:text-yellow-400">
+                      Monthly
                     </div>
                   </div>
+
                 </div>
                 
                 <motion.button
