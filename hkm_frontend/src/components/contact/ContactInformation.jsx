@@ -56,8 +56,7 @@ export default function ContactInformation() {
   const quickActions = [
     { action: 'Call Now', icon: <FaPhone />, color: 'bg-green-600', number: '+91 91161 39371' },
     { action: 'Send Email', icon: <FaEnvelope />, color: 'bg-blue-600', email: 'nljd@hkmjodhpur.org' },
-    { action: 'WhatsApp', icon: <FaWhatsapp />, color: 'bg-green-500', number: '+91 91161 39371
-' },
+    { action: 'WhatsApp', icon: <FaWhatsapp />, color: 'bg-green-500', number: '+91 91161 39371' },
     { action: 'Get Directions', icon: <FaDirections />, color: 'bg-purple-600', link: '#map' }
   ];
 

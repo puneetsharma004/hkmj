@@ -71,8 +71,7 @@ export default function OfficeHours() {
     {
       department: 'Donations & Seva',
       hours: 'Mon-Sat: 9 AM - 6 PM',
-      contact: '+91 91161 39371
-',
+      contact: '+91 91161 39371',
       services: ['Donation receipts', 'Seva opportunities', 'Sponsorships'],
       available: true,
       icon: <FaDollarSign />
@@ -88,8 +87,7 @@ export default function OfficeHours() {
     {
       department: 'Emergency Support',
       hours: '24/7 Available',
-      contact: '+91 91161 39371
-',
+      contact: '+91 91161 39371',
       services: ['Medical emergency', 'Security', 'Urgent assistance'],
       available: true,
       icon: <FaExclamationTriangle />

@@ -30,8 +30,7 @@ export default function EmergencyNotices() {
     },
     {
       service: 'Temple Security',
-      number: '+91 91161 39371
-',
+      number: '+91 91161 39371',
       description: 'Security issues, lost items, safety concerns',
       availability: '24/7',
       icon: <FaLock />,
