@@ -77,16 +77,16 @@ export default function TempleTimings() {
 
   const specialTimings = [
     { occasion: 'Festival Days', timing: 'Extended Hours (4 AM - 10 PM)', note: 'During major festivals' },
-    { occasion: 'Ekadashi', timing: 'Special Schedule', note: '24-hour darshan available' },
-    { occasion: 'Janmashtami', timing: 'All Night Open', note: 'Midnight celebration' },
-    { occasion: 'Sunday', timing: 'Regular + Special Programs', note: 'Community feast at 1 PM' }
+    { occasion: 'Ekadashi (15th November 2025)', timing: 'Same as Daily Schedule', note: 'Fasting from Grains, Delicious Prasadam Distribution' },
+    { occasion: 'Janmashtami (04 September 2025)', timing: 'Full Night Open', note: 'Midnight Celebrations, Optional Fasting' },
+    { occasion: 'Weekends', timing: 'Regular Schedule + Palki Utsav', note: 'Bhagavatam & Srimad Bhagavat Gita Classes for all' }
   ];
 
   const bestTimes = [
-    { time: 'Early Morning (5-7 AM)', reason: 'Peaceful atmosphere, less crowded', crowd: 'Low' },
-    { time: 'Evening Aarti (7-8 PM)', reason: 'Beautiful ceremony, vibrant energy', crowd: 'High' },
-    { time: 'Weekday Afternoons (4-6 PM)', reason: 'Perfect for photography', crowd: 'Medium' },
-    { time: 'Sunday Mornings (6-10 AM)', reason: 'Special programs, community feel', crowd: 'High' }
+    { time: 'Morning Artis (4:30 AM - 7:00 AM)', reason: 'Peaceful atmosphere, less crowded', crowd: 'Low' },
+    { time: 'Evening Aarti (07:00 PM - 08:30 PM)', reason: 'Beautiful ceremony, vibrant energy', crowd: 'High' },
+    { time: 'Weekend Evenings (07:00 PM - 08:45 PM)', reason: 'Ecstatic Kirtan followed by Palki Utsav & Prasadam', crowd: 'Medium' },
+    { time: 'Sunday Mornings (07:00 AM - 10:00 AM)', reason: 'Special Programs including Aartis, Bhagvatam & Srimad Bhagavat Gita Classes & Prasadam Distribution', crowd: 'High' }
   ];
 
   return (

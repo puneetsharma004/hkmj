@@ -139,7 +139,7 @@ export default function DressCodeEtiquette() {
       </div>
 
       <div className="relative max-w-6xl mx-auto z-10">
-        {/* Section Header */}
+        {/* Section Header
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -163,7 +163,7 @@ export default function DressCodeEtiquette() {
           </p>
         </motion.div>
 
-        {/* Dress Code Guidelines */}
+        Dress Code Guidelines 
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {dressCodeGuidelines.map((guideline, index) => (
             <motion.div
@@ -202,7 +202,7 @@ export default function DressCodeEtiquette() {
               </ul>
             </motion.div>
           ))}
-        </div>
+        </div> */}
 
         {/* Etiquette Rules */}
         <motion.div

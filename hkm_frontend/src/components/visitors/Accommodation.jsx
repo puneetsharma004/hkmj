@@ -26,7 +26,7 @@ export default function Accommodation() {
     {
       type: 'Guest Rooms',
       capacity: '2-4 people per room',
-      price: '₹800/night',
+      description: 'Separate Rooms inside the Temple premises for Families/Individuals',
       amenities: ['Attached bathroom', 'AC/Fan options', 'Basic furniture', 'Clean bedding'],
       availability: 'Subject to availability',
       booking: 'Advance booking required',
@@ -35,7 +35,7 @@ export default function Accommodation() {
     {
       type: 'Dormitory',
       capacity: '8-12 people',
-      price: '₹300/bed',
+      description: 'Bunk Beds Best for Single/Group of Young Individuals, Students',
       amenities: ['Shared bathrooms', 'Lockers provided', 'Common area', 'Basic facilities'],
       availability: 'Usually available',
       booking: 'Walk-in or advance booking',
@@ -43,35 +43,35 @@ export default function Accommodation() {
     }
   ];
 
-  const nearbyHotels = [
-    {
-      name: 'Hotel Shanti Palace',
-      category: 'Budget',
-      distance: '2 km',
-      price: '₹1,200-2,000/night',
-      rating: '4.2',
-      amenities: ['Free WiFi', 'Restaurant', 'Room service', 'Parking'],
-      contact: '+91 291 XXXXXX'
-    },
-    {
-      name: 'Rajputana Heritage',
-      category: 'Mid-Range',
-      distance: '3 km',
-      price: '₹2,500-4,000/night',
-      rating: '4.5',
-      amenities: ['Pool', 'Spa', 'Multi-cuisine restaurant', 'Travel desk'],
-      contact: '+91 291 XXXXXX'
-    },
-    {
-      name: 'Blue City Boutique',
-      category: 'Luxury',
-      distance: '4 km',
-      price: '₹5,000-8,000/night',
-      rating: '4.8',
-      amenities: ['Heritage property', 'Fine dining', 'Concierge', 'Airport transfer'],
-      contact: '+91 291 XXXXXX'
-    }
-  ];
+  // const nearbyHotels = [
+  //   {
+  //     name: 'Hotel Shanti Palace',
+  //     category: 'Budget',
+  //     distance: '2 km',
+  //     price: '₹1,200-2,000/night',
+  //     rating: '4.2',
+  //     amenities: ['Free WiFi', 'Restaurant', 'Room service', 'Parking'],
+  //     contact: '+91 291 XXXXXX'
+  //   },
+  //   {
+  //     name: 'Rajputana Heritage',
+  //     category: 'Mid-Range',
+  //     distance: '3 km',
+  //     price: '₹2,500-4,000/night',
+  //     rating: '4.5',
+  //     amenities: ['Pool', 'Spa', 'Multi-cuisine restaurant', 'Travel desk'],
+  //     contact: '+91 291 XXXXXX'
+  //   },
+  //   {
+  //     name: 'Blue City Boutique',
+  //     category: 'Luxury',
+  //     distance: '4 km',
+  //     price: '₹5,000-8,000/night',
+  //     rating: '4.8',
+  //     amenities: ['Heritage property', 'Fine dining', 'Concierge', 'Airport transfer'],
+  //     contact: '+91 291 XXXXXX'
+  //   }
+  // ];
 
   const accommodationGuidelines = [
     'Check-in: 12:00 PM | Check-out: 11:00 AM',
@@ -153,9 +153,8 @@ export default function Accommodation() {
                 <div className="text-center mb-6">
                   <div className="text-5xl mb-4 text-saffron flex justify-center items-center">{room.icon}</div>
                   <h4 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">{room.type}</h4>
-                  <div className="text-3xl font-bold text-saffron flex items-center justify-center gap-2">
-                    <FaRupeeSign className="text-2xl" />
-                    {room.price.replace('₹', '')}
+                  <div className="text-lg font-bold text-saffron flex items-center justify-center gap-2">
+                    {room.description}
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-300 flex items-center justify-center gap-2 mt-2">
                     <FaUsers />
@@ -223,7 +222,7 @@ export default function Accommodation() {
         </motion.div>
 
         {/* Nearby Hotels */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -311,7 +310,7 @@ export default function Accommodation() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Additional Info */}
         <motion.div

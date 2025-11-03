@@ -71,7 +71,8 @@ export default function OfficeHours() {
     {
       department: 'Donations & Seva',
       hours: 'Mon-Sat: 9 AM - 6 PM',
-      contact: '+91 98765 43211',
+      contact: '+91 91161 39371
+',
       services: ['Donation receipts', 'Seva opportunities', 'Sponsorships'],
       available: true,
       icon: <FaDollarSign />
@@ -87,7 +88,8 @@ export default function OfficeHours() {
     {
       department: 'Emergency Support',
       hours: '24/7 Available',
-      contact: '+91 98765 43212',
+      contact: '+91 91161 39371
+',
       services: ['Medical emergency', 'Security', 'Urgent assistance'],
       available: true,
       icon: <FaExclamationTriangle />
@@ -317,7 +319,8 @@ export default function OfficeHours() {
               <ul className="space-y-2 text-gray-700 dark:text-gray-300">
                 <li className="flex items-center space-x-2">
                   <FaExclamationTriangle className="text-red-600" />
-                  <span>Emergency: +91 98765 43212 (24/7)</span>
+                  <span>Emergency: +91 91161 39371
+ (24/7)</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <FaFirstAid className="text-green-600" />

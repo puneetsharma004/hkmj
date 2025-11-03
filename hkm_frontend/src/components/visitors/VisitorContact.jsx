@@ -33,7 +33,7 @@ export default function VisitorContact() {
     {
       title: 'WhatsApp Support',
       description: 'Quick responses to your questions via WhatsApp',
-      contact: '+91 98765 43211',
+      contact: '+91 91161 39371',
       hours: '9 AM - 9 PM',
       icon: <FaWhatsapp />,
       color: 'from-green-400 to-green-600',
@@ -42,7 +42,7 @@ export default function VisitorContact() {
     {
       title: 'Email Assistance',
       description: 'Detailed information and booking support',
-      contact: 'visitors@Marwarmandir.org',
+      contact: 'nljd@hkmjodhpur.org',
       hours: 'Response within 24 hours',
       icon: <FaEnvelope />,
       color: 'from-blue-500 to-cyan-600',
@@ -62,7 +62,7 @@ export default function VisitorContact() {
   const frequentlyAsked = [
     {
       question: 'What are the temple timings?',
-      answer: 'Temple is open daily from 5:00 AM to 9:00 PM with a break from 12:00 PM to 4:00 PM.'
+      answer: 'Temple is open daily from 04:30 AM to 08:30 PM with a break from 01:00 PM - 04:00 PM.'
     },
     {
       question: 'Is there any entry fee?',
@@ -78,7 +78,7 @@ export default function VisitorContact() {
     },
     {
       question: 'Is prasadam available for all?',
-      answer: 'Yes, free prasadam is distributed after every aarti. Special feast on Sundays at 1 PM.'
+      answer: 'Yes, prasadam distribution timings are from 07:00 AM - 09:00 AM, 12:00 PM - 02:00 PM & 07:00 PM - 09:00 PM.'
     },
     {
       question: 'How can I participate in temple activities?',
@@ -87,10 +87,10 @@ export default function VisitorContact() {
   ];
 
   const emergencyContacts = [
-    { service: 'Temple Security', number: '+91 98765 43212', available: '24/7', icon: <FaShieldAlt /> },
-    { service: 'Medical Emergency', number: '+91 98765 43213', available: '24/7', icon: <FaFirstAid /> },
-    { service: 'Lost & Found', number: '+91 98765 43214', available: 'Temple Hours', icon: <FaSearch /> },
-    { service: 'Group Bookings', number: '+91 98765 43215', available: '9 AM - 6 PM', icon: <FaUsers /> }
+    { service: 'Temple Security', number: '+91 91161 39371', available: '24/7', icon: <FaShieldAlt /> },
+    { service: 'Medical Emergency', number: '+91 91161 39371', available: '24/7', icon: <FaFirstAid /> },
+    { service: 'Lost & Found', number: '+91 91161 39371', available: 'Temple Hours', icon: <FaSearch /> },
+    { service: 'Group Bookings', number: '+91 91161 39371', available: '9 AM - 6 PM', icon: <FaUsers /> }
   ];
 
   return (
@@ -174,15 +174,29 @@ export default function VisitorContact() {
                 </div>
               </div>
 
-              <motion.button
-                className={`mt-4 w-full py-2 px-4 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 ${
-                  method.type === 'phone' || method.type === 'whatsapp' 
-                    ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:shadow-lg hover:shadow-green-600/30'
-                    : 'border border-saffron text-saffron hover:bg-saffron hover:text-white dark:hover:text-black'
-                }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <a
+                href={
+                  method.type === 'phone'
+                    ? `tel:${method.contact}`
+                    : method.type === 'whatsapp'
+                    ? `https://wa.me/${method.contact.replace(/\D/g, '')}`
+                    : method.type === 'email'
+                    ? `mailto:${method.contact}`
+                    : undefined
+                }
+                target={method.type !== 'reception' ? '_blank' : undefined}
+                rel={method.type !== 'reception' ? 'noopener noreferrer' : undefined}
+                className="w-full"
               >
+                <motion.button
+                  className={`mt-4 w-full py-2 px-4 rounded-lg font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 ${
+                    method.type === 'phone' || method.type === 'whatsapp'
+                      ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:shadow-lg hover:shadow-green-600/30'
+                      : 'border border-saffron text-saffron hover:bg-saffron hover:text-white dark:hover:text-black'
+                  }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                 {method.type === 'phone' && (
                   <>
                     <FaPhone />
@@ -208,6 +222,7 @@ export default function VisitorContact() {
                   </>
                 )}
               </motion.button>
+              </a>
             </motion.div>
           ))}
         </div>
@@ -248,7 +263,7 @@ export default function VisitorContact() {
             ))}
           </div>
 
-          <div className="text-center mt-8">
+          {/* <div className="text-center mt-8">
             <motion.button
               className="px-6 py-3 border border-saffron text-saffron rounded-lg hover:bg-saffron hover:text-white dark:hover:text-black transition-all duration-300 font-semibold flex items-center gap-2 mx-auto"
               whileHover={{ scale: 1.05 }}
@@ -257,7 +272,7 @@ export default function VisitorContact() {
               View All FAQs
               <FaArrowRight />
             </motion.button>
-          </div>
+          </div> */}
         </motion.div>
 
         {/* Emergency Contacts */}

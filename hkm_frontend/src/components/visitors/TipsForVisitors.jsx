@@ -199,7 +199,7 @@ export default function TipsForVisitors() {
 
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Section Header */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -220,10 +220,10 @@ export default function TipsForVisitors() {
           <p className="text-gray-700 dark:text-gray-300 text-lg max-w-3xl mx-auto">
             Make the most of your temple visit with these helpful tips and local insights
           </p>
-        </motion.div>
+        </motion.div> */}
 
         {/* Seasonal Guide */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -266,10 +266,10 @@ export default function TipsForVisitors() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Nearby Attractions */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -323,7 +323,7 @@ export default function TipsForVisitors() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Special Needs Tips */}
         <motion.div

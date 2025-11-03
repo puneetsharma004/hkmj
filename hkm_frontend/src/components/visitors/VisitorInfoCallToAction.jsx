@@ -22,14 +22,14 @@ import { HiSparkles } from 'react-icons/hi';
 
 export default function VisitorInfoCallToAction() {
   const quickActions = [
-    {
-      title: 'Plan Your Visit',
-      description: 'Get personalized visit recommendations',
-      icon: <FaCalendarAlt />,
-      color: 'from-blue-500 to-cyan-600',
-      action: 'Start Planning',
-      link: '#plan-visit'
-    },
+    // {
+    //   title: 'Plan Your Visit',
+    //   description: 'Get personalized visit recommendations',
+    //   icon: <FaCalendarAlt />,
+    //   color: 'from-blue-500 to-cyan-600',
+    //   action: 'Start Planning',
+    //   link: '#plan-visit'
+    // },
     {
       title: 'Book Accommodation',
       description: 'Reserve your temple guest room',
@@ -179,7 +179,7 @@ export default function VisitorInfoCallToAction() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
+          className="grid lg:grid-cols-3 gap-8 mb-16"
         >
           {quickActions.map((action, index) => (
             <motion.a
@@ -216,7 +216,7 @@ export default function VisitorInfoCallToAction() {
         </motion.div>
 
         {/* Visit Packages */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -301,7 +301,7 @@ export default function VisitorInfoCallToAction() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Contact Information */}
         <motion.div
@@ -330,8 +330,10 @@ export default function VisitorInfoCallToAction() {
             <h4 className="font-bold text-saffron mb-2">Call Us</h4>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
               Visitor Helpline: +91 91161 39371<br/>
-              Temple Office: +91 98765 43211<br/>
-              WhatsApp: +91 98765 43212
+              Temple Office: +91 91161 39371
+<br/>
+              WhatsApp: +91 91161 39371
+
             </p>
           </div>
           
@@ -363,7 +365,7 @@ export default function VisitorInfoCallToAction() {
             Hare Krishna! We look forward to welcoming you 
           </p>
           
-          <div className="mt-8 text-center">
+          {/* <div className="mt-8 text-center">
             <motion.button
               className="px-8 py-3 bg-saffron-gradient text-white font-bold rounded-full hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2 mx-auto shadow-2xl"
               whileHover={{ scale: 1.05 }}
@@ -373,7 +375,7 @@ export default function VisitorInfoCallToAction() {
               Download Visitor Guide
               <FaMobileAlt />
             </motion.button>
-          </div>
+          </div> */}
         </motion.div>
 
         {/* Additional Info */}

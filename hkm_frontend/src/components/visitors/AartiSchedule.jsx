@@ -19,7 +19,7 @@ export default function AartiSchedule() {
   const aartiSchedule = [
     {
       name: 'Mangala Aarti',
-      time: '5:00 AM',
+      time: '4:30 AM',
       duration: '30 mins',
       description: 'Early morning awakening ceremony for the deities',
       significance: 'Awakens the deities with devotional songs and prayers',
@@ -27,8 +27,8 @@ export default function AartiSchedule() {
       color: 'from-orange-500 to-yellow-500'
     },
     {
-      name: 'Sringar Aarti',
-      time: '7:30 AM',
+      name: 'Darshan Aarti',
+      time: '7:00 AM',
       duration: '45 mins',
       description: 'Morning dress and decoration ceremony',
       significance: 'Adorning the deities with beautiful clothes and ornaments',
@@ -38,7 +38,7 @@ export default function AartiSchedule() {
     {
       name: 'Raj Bhog Aarti',
       time: '12:00 PM',
-      duration: '1 hour',
+      duration: '15 mins',
       description: 'Grand midday offering ceremony',
       significance: 'The royal lunch offering to Krishna with elaborate bhog',
       icon: <BsFillSunFill /> ,
@@ -55,8 +55,8 @@ export default function AartiSchedule() {
     },
     {
       name: 'Sandhya Aarti',
-      time: '7:00 PM',
-      duration: '1 hour',
+      time: '7:30 PM',
+      duration: '15 mins',
       description: 'Evening lamp offering ceremony',
       significance: 'The most beautiful evening aarti with ghee lamps',
       icon: <BsSunsetFill />,
@@ -64,7 +64,7 @@ export default function AartiSchedule() {
     },
     {
       name: 'Shayan Aarti',
-      time: '9:30 PM',
+      time: '8:30 PM',
       duration: '30 mins',
       description: 'Night rest ceremony',
       significance: 'Putting the deities to peaceful rest for the night',

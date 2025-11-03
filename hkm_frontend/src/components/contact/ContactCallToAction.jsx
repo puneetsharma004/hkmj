@@ -61,7 +61,8 @@ export default function ContactCallToAction() {
     },
     {
       method: 'WhatsApp Chat',
-      detail: '+91 98765 43211',
+      detail: '+91 91161 39371
+',
       description: 'Quick messages and instant responses',
       icon: <FaWhatsapp />,
       action: 'Chat Now'
