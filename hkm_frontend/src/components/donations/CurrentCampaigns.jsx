@@ -263,7 +263,6 @@ export default function CurrentCampaigns() {
                       </div>
                       <div className="text-center p-3 bg-green-100/80 dark:bg-purple-900/30 rounded-lg border border-green-400/20">
                         <div className="text-2xl font-bold text-green-600 dark:text-green-400 flex items-center justify-center gap-1">
-                          <FaRupeeSign className="text-lg" />
                           {formatAmount(campaign.target - campaign.raised)}
                         </div>
                         <div className="text-xs text-gray-600 dark:text-gray-400">Remaining</div>

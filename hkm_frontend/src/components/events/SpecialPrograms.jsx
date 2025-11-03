@@ -27,97 +27,97 @@ export default function SpecialPrograms() {
       programs: [
         {
           name: 'Bhagavad Gita Study',
-          schedule: 'Every Sunday, 10:00 AM',
-          duration: '2 hours',
-          description: 'Deep dive into Krishna\'s teachings with experienced instructors',
-          instructor: 'Pandit Raghunath Das',
+          schedule: 'Every Sunday, 09:00 AM',
+          duration: '1 hours',
+          description: 'Deep dive into Krishnas teachings with experienced instructors',
+          instructor: 'Jaggnath prabhu',
           level: 'All Levels',
           registration: true
         },
         {
-          name: 'Sanskrit Classes',
-          schedule: 'Tuesdays & Thursdays, 6:00 PM',
-          duration: '1.5 hours',
-          description: 'Learn the sacred language of the scriptures',
-          instructor: 'Dr. Sunita Sharma',
+          name: 'Skills Development Sessions',
+          schedule: 'Every Sunday, 05:00 PM',
+          duration: '1 hours',
+          description: 'Enhance your spiritual skills and practical applications of teachings',
+          instructor: 'Jaggnath prabhu',
           level: 'Beginner to Advanced',
           registration: true
         }
       ]
     },
-    {
-      category: 'Meditation & Yoga',
-      icon: <GiMeditation />,
-      color: 'from-green-500 to-teal-600',
-      programs: [
-        {
-          name: 'Morning Meditation',
-          schedule: 'Daily, 6:30 AM',
-          duration: '45 minutes',
-          description: 'Start your day with peaceful meditation and mantras',
-          instructor: 'Yoga Acharya Krishnan',
-          level: 'All Levels',
-          registration: false
-        },
-        {
-          name: 'Hatha Yoga Sessions',
-          schedule: 'Mon, Wed, Fri - 7:00 PM',
-          duration: '1 hour',
-          description: 'Traditional yoga practice for physical and spiritual wellness',
-          instructor: 'Yogini Radha Devi',
-          level: 'Beginner to Intermediate',
-          registration: true
-        }
-      ]
-    },
-    {
-      category: 'Cultural Workshops',
-      icon: <FaTheaterMasks />,
-      color: 'from-purple-500 to-pink-600',
-      programs: [
-        {
-          name: 'Classical Dance',
-          schedule: 'Saturdays, 4:00 PM',
-          duration: '2 hours',
-          description: 'Learn Bharatanatyam and devotional dance forms',
-          instructor: 'Guru Lakshmi Priya',
-          level: 'All Levels',
-          registration: true
-        },
-        {
-          name: 'Kirtan & Music',
-          schedule: 'Fridays, 7:30 PM',
-          duration: '1.5 hours',
-          description: 'Learn devotional singing and traditional instruments',
-          instructor: 'Musician Govind Das',
-          level: 'All Levels',
-          registration: false
-        }
-      ]
-    },
+    // {
+    //   category: 'Meditation & Yoga',
+    //   icon: <GiMeditation />,
+    //   color: 'from-green-500 to-teal-600',
+    //   programs: [
+    //     {
+    //       name: 'Morning Meditation',
+    //       schedule: 'Daily, 6:30 AM',
+    //       duration: '45 minutes',
+    //       description: 'Start your day with peaceful meditation and mantras',
+    //       instructor: 'Yoga Acharya Krishnan',
+    //       level: 'All Levels',
+    //       registration: false
+    //     },
+    //     {
+    //       name: 'Hatha Yoga Sessions',
+    //       schedule: 'Mon, Wed, Fri - 7:00 PM',
+    //       duration: '1 hour',
+    //       description: 'Traditional yoga practice for physical and spiritual wellness',
+    //       instructor: 'Yogini Radha Devi',
+    //       level: 'Beginner to Intermediate',
+    //       registration: true
+    //     }
+    //   ]
+    // },
+    // {
+    //   category: 'Cultural Workshops',
+    //   icon: <FaTheaterMasks />,
+    //   color: 'from-purple-500 to-pink-600',
+    //   programs: [
+    //     {
+    //       name: 'Classical Dance',
+    //       schedule: 'Saturdays, 4:00 PM',
+    //       duration: '2 hours',
+    //       description: 'Learn Bharatanatyam and devotional dance forms',
+    //       instructor: 'Guru Lakshmi Priya',
+    //       level: 'All Levels',
+    //       registration: true
+    //     },
+    //     {
+    //       name: 'Kirtan & Music',
+    //       schedule: 'Fridays, 7:30 PM',
+    //       duration: '1.5 hours',
+    //       description: 'Learn devotional singing and traditional instruments',
+    //       instructor: 'Musician Govind Das',
+    //       level: 'All Levels',
+    //       registration: false
+    //     }
+    //   ]
+    // },
     {
       category: 'Youth Programs',
       icon: <FaUsers />,
       color: 'from-orange-500 to-red-600',
       programs: [
         {
-          name: 'Krishna Kids Club',
-          schedule: 'Sundays, 11:00 AM',
+          name: 'Secrets of Success',
+          schedule: 'Sundays, 6:00 PM',
           duration: '2 hours',
-          description: 'Fun activities and moral stories for children aged 5-12',
-          instructor: 'Sister Priya & Team',
-          level: 'Ages 5-12',
+          description: 'Empowering youth with spiritual values and life skills',
+          instructor: 'Jaggnath Prabhu',
+          level: 'Ages 16-28',
           registration: true
         },
-        {
-          name: 'Teen Spiritual Circle',
-          schedule: 'Saturdays, 6:00 PM',
-          duration: '1.5 hours',
-          description: 'Interactive discussions and activities for teenagers',
-          instructor: 'Brother Arjun',
-          level: 'Ages 13-18',
-          registration: true
-        }
+        // {
+        //   name: 'Teen Spiritual Circle',
+        //   schedule: 'Saturdays, 6:00 PM',
+        //   duration: '1.5 hours',
+        //   description: 'Interactive discussions and activities for teenagers',
+        //   instructor: 'Brother Arjun',
+        //   level: 'Ages 13-18',
+        //   registration: true
+        // }
       ]
     }
   ];
@@ -130,9 +130,9 @@ export default function SpecialPrograms() {
       image: 'https://images.unsplash.com/photo-1494790108755-2616b612b002?w=60&h=60&fit=crop&crop=face'
     },
     {
-      name: 'Rahul Sharma',
-      program: 'Morning Meditation',
-      quote: 'Starting my day with meditation has brought so much peace to my life.',
+      name: 'Abhishek Sharma',
+      program: 'MahaMantra Meditation',
+      quote: 'Starting my day with mantra meditation has brought so much peace to my life.',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face'
     }
   ];

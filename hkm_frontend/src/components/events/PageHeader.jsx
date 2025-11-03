@@ -67,7 +67,7 @@ export default function EventsPageHeader() {
           >
             <div className="flex items-center justify-center space-x-2 text-gray-600 dark:text-gray-400">
               <FaClock className="text-saffron" />
-              <span>Daily Darshan: 4:30 AM - 9 PM</span>
+              <span>Daily Darshan: 8:30 AM - 8:30 PM</span>
             </div>
             <div className="flex items-center justify-center space-x-2 text-gray-600 dark:text-gray-400">
               <FaMobileAlt className="text-gold" />
@@ -93,21 +93,21 @@ export default function EventsPageHeader() {
                 <div className="text-3xl text-saffron mb-2 flex justify-center items-center">
                   <FaEye />
                 </div>
-                <div className="text-2xl font-bold text-gray-800 dark:text-white">100K+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Monthly Darshan</div>
+                <div className="text-2xl font-bold text-gray-800 dark:text-white">10K+</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Monthly Visitors</div>
               </div>
               <div>
                 <div className="text-3xl text-gold mb-2 flex justify-center items-center">
                   <FaUsers />
                 </div>
-                <div className="text-2xl font-bold text-gray-800 dark:text-white">5000+</div>
+                <div className="text-2xl font-bold text-gray-800 dark:text-white">1000+</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">Community Members</div>
               </div>
               <div>
                 <div className="text-3xl text-saffron mb-2 flex justify-center items-center">
                   <HiSparkles />
                 </div>
-                <div className="text-2xl font-bold text-gray-800 dark:text-white">15+</div>
+                <div className="text-2xl font-bold text-gray-800 dark:text-white">14+</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">Years of Service</div>
               </div>
             </div>

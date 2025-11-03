@@ -230,24 +230,8 @@ export default function HowToReach() {
                 </div>
                 <h4 className="font-semibold text-gray-800 dark:text-white mb-2">{transport.route}</h4>
                 <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">{transport.stops}</p>
-                <div className="text-saffron font-bold flex items-center justify-center gap-1">
-                  <FaRupeeSign />
-                  {transport.fare.replace('₹', '')}
-                </div>
               </motion.div>
             ))}
-          </div>
-
-          <div className="mt-8 text-center">
-            <motion.button
-              className="px-6 py-3 bg-saffron-gradient text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center gap-2 mx-auto outline-none"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <FaDownload />
-              Download Transport Guide
-              <FaMobileAlt />
-            </motion.button>
           </div>
         </motion.div>
 

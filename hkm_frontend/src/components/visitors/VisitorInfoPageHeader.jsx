@@ -86,7 +86,7 @@ export default function VisitorInfoPageHeader() {
           {[
             { icon: <FaClock />, text: 'Open Daily', detail: '4:30 AM - 9 PM' },
             { icon: <FaParking />, text: 'Free Parking', detail: 'Available' },
-            { icon: <FaUtensils />, text: 'Free Prasadam', detail: 'Daily Distribution' },
+            { icon: <FaUtensils />, text: 'Swadisht Prasadam', detail: 'Daily Distribution' },
             { icon: <FaPhone />, text: '24/7 Help', detail: 'Visitor Support' }
           ].map((info, index) => (
             <motion.div

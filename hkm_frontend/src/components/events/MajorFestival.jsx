@@ -143,17 +143,11 @@ export default function MajorFestivals() {
               {/* Festival Image */}
               <div className="relative h-48 overflow-hidden">
                 <img 
-                  src={festival.image} 
+                  src={festival.image}
                   alt={festival.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent`}></div>
-                
-                {/* Duration Badge */}
-                <div className="absolute top-4 left-4 bg-saffron text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center gap-1">
-                  <FaClock />
-                  {festival.duration}
-                </div>
               </div>
 
               {/* Festival Content */}

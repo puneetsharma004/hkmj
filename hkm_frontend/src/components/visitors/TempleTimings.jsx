@@ -27,32 +27,48 @@ export default function TempleTimings() {
       setCurrentTime(now);
       
       const currentHour = now.getHours();
-      // Temple open: 5 AM - 12 PM and 4 PM - 9 PM
-      const isCurrentlyOpen = (currentHour >= 5 && currentHour < 12) || (currentHour >= 16 && currentHour < 21);
+      // Temple open: 4:30 AM - 1 PM and 4:30 PM - 8:30 PM
+      const isCurrentlyOpen = (currentHour >= 4 && currentHour < 13) || (currentHour >= 16 && currentHour < 21);
       setIsOpen(isCurrentlyOpen);
     }, 1000);
 
     return () => clearInterval(timer);
   }, []);
 
+  // Calculate next opening time message
+  const getNextOpening = () => {
+    const hour = currentTime.getHours();
+    const minute = currentTime.getMinutes();
+
+    if (hour < 4 || (hour === 4 && minute < 30)) {
+      return '4:30 AM Today';
+    } else if (hour < 13) {
+      return '4:30 PM Today';
+    } else if (hour < 16 || (hour === 16 && minute < 30)) {
+      return '4:30 PM Today';
+    } else {
+      return '4:30 AM Tomorrow';
+    }
+  };
+
   const dailySchedule = [
     {
       session: 'Morning Session',
-      time: '4:30 AM - 12:00 PM',
+      time: '4:30 AM - 1:00 PM',
       icon: <BsFillSunriseFill />,
       activities: ['Mangala Aarti', 'Guru Puja', 'Sringar Aarti', 'Raj Bhog'],
       highlight: true
     },
     {
       session: 'Afternoon Break',
-      time: '12:00 PM - 4:00 PM',
+      time: '1:00 PM - 4:30 PM',
       icon: <RiRestTimeFill />,
       activities: ['Temple Closed', 'Deity Rest Time'],
       highlight: false
     },
     {
       session: 'Evening Session',
-      time: '4:00 PM - 9:00 PM',
+      time: '4:30 PM - 8:30 PM',
       icon: <BsFillSunsetFill />,
       activities: ['Utthapan Aarti', 'Sandhya Aarti', 'Shayan Aarti'],
       highlight: true
@@ -135,31 +151,31 @@ export default function TempleTimings() {
           }`}
         >
           <div className="text-center">
-            <motion.div
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="text-4xl mb-3"
-            >
-              {isOpen ? (
-                <FaCheckCircle className="text-green-600 dark:text-green-400 mx-auto" />
-              ) : (
-                <FaTimesCircle className="text-red-600 dark:text-red-400 mx-auto" />
-              )}
-            </motion.div>
-            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
-              Temple is currently {isOpen ? 'OPEN' : 'CLOSED'}
-            </h3>
-            <p className="text-gray-700 dark:text-gray-300 text-lg flex items-center justify-center gap-2">
-              <FaClock />
-              Current time: {currentTime.toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata' })}
-            </p>
-            {!isOpen && (
-              <p className="text-orange-600 dark:text-yellow-300 mt-2 flex items-center justify-center gap-2">
-                <FaBell />
-                Next opening: {currentTime.getHours() < 5 ? '5:00 AM Today' : '5:00 AM Tomorrow'}
-              </p>
-            )}
-          </div>
+      <motion.div
+        animate={{ scale: [1, 1.1, 1] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="text-4xl mb-3"
+      >
+        {isOpen ? (
+          <FaCheckCircle className="text-green-600 dark:text-green-400 mx-auto" />
+        ) : (
+          <FaTimesCircle className="text-red-600 dark:text-red-400 mx-auto" />
+        )}
+      </motion.div>
+      <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+        Temple is currently {isOpen ? 'OPEN' : 'CLOSED'}
+      </h3>
+      <p className="text-gray-700 dark:text-gray-300 text-lg flex items-center justify-center gap-2">
+        <FaClock />
+        Current time: {currentTime.toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata' })}
+      </p>
+      {!isOpen && (
+        <p className="text-orange-600 dark:text-yellow-300 mt-2 flex items-center justify-center gap-2">
+          <FaBell />
+          Next opening: {getNextOpening()}
+        </p>
+      )}
+    </div>
         </motion.div>
 
         {/* Daily Schedule */}
@@ -255,7 +271,6 @@ export default function TempleTimings() {
           className="bg-saffron/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm shadow-lg"
         >
           <h3 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-8 flex items-center justify-center gap-2">
-            <FaStar className="text-saffron" />
             Best Times to Visit
           </h3>
           <div className="grid md:grid-cols-2 gap-6">

@@ -27,37 +27,38 @@ export default function PrasadamAndSeva() {
   const prasadamSchedule = [
     {
       name: 'Morning Prasadam',
-      time: '8:00 AM - 10:00 AM',
+      time: '7:00 AM - 9:00 AM',
       description: 'Light breakfast prasadam after morning aarti',
       items: ['Kheer', 'Fruits', 'Tea/Milk'],
-      location: 'Temple Courtyard',
+      location: 'Prasadam Hall',
       type: 'daily',
       icon: <FaSun />
     },
     {
       name: 'Raj Bhog Prasadam',
-      time: '1:00 PM - 2:30 PM',
+      time: '12:00 PM - 2:00 PM',
       description: 'Complete lunch prasadam with traditional dishes',
       items: ['Rice', 'Dal', 'Sabzi', 'Roti', 'Sweet'],
-      location: 'Community Hall',
+      location: 'Prasadam Hall',
       type: 'daily',
       icon: <FaUtensils />
     },
     {
       name: 'Evening Prasadam',
-      time: '8:00 PM - 9:00 PM',
+      time: '7:00 PM - 9:00 PM',
       description: 'Light dinner prasadam after evening aarti',
       items: ['Khichdi', 'Vegetables', 'Sweets'],
-      location: 'Temple Courtyard',
+      location: 'Prasadam Hall',
+
       type: 'daily',
       icon: <FaMoon />
     },
     {
       name: 'Sunday Special Feast',
-      time: '1:00 PM - 3:00 PM',
+      time: '7:00 PM - 9:00 PM',
       description: 'Grand community feast with special preparations',
       items: ['15+ Dishes', 'Special Sweets', 'Festive Menu'],
-      location: 'Main Hall',
+      location: 'Prasadam Hall',
       type: 'weekly',
       icon: <FaGift />
     }
@@ -95,11 +96,11 @@ export default function PrasadamAndSeva() {
       participants: '15+'
     },
     {
-      title: 'Grocery Procurement',
-      description: 'Source fresh ingredients for temple kitchen',
-      commitment: 'Flexible timing',
-      requirements: 'Vehicle, knowledge of quality ingredients',
-      benefits: 'Ensure best offerings to Krishna',
+      title: 'Management for Prasadam Distribution',
+      description: 'Help organize and manage prasadam logistics',
+      commitment: '2-3 hours Daily',
+      requirements: 'Organizational skills, leadership qualities',
+      benefits: 'Ensure smooth distribution, gain management experience',
       icon: <FaShoppingCart />,
       color: 'from-purple-500 to-pink-600',
       participants: '10+'
@@ -221,27 +222,11 @@ export default function PrasadamAndSeva() {
                 <p className="text-gray-600 dark:text-gray-300 mb-4 group-hover:text-gray-700 dark:group-hover:text-gray-100 transition-colors duration-300">
                   {prasadam.description}
                 </p>
-
-                <div className="mb-4">
-                  <h5 className="text-sm font-semibold text-saffron mb-2">Items Served:</h5>
-                  <div className="flex flex-wrap gap-2">
-                    {prasadam.items.map((item, idx) => (
-                      <span 
-                        key={idx} 
-                        className="bg-orange-100/20 dark:bg-purple-900/30 px-2 py-1 rounded text-xs text-gray-700 dark:text-gray-300"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
                 <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
                   <div className="flex items-center space-x-1">
                     <FaMapMarkerAlt />
                     <span>{prasadam.location}</span>
                   </div>
-                  <span className="text-gold font-semibold">Free for All</span>
                 </div>
               </motion.div>
             ))}
@@ -396,7 +381,7 @@ export default function PrasadamAndSeva() {
             {[
               { number: '50,000+', label: 'Meals Served Monthly', icon: <FaUtensils /> },
               { number: '200+', label: 'Daily Beneficiaries', icon: <FaUsers /> },
-              { number: '15+', label: 'Years of Service', icon: <FaChartLine /> },
+              { number: '14+', label: 'Years of Service', icon: <FaChartLine /> },
               { number: '100%', label: 'Spiritual Satisfaction', icon: <FaHeart /> }
             ].map((stat, index) => (
               <motion.div

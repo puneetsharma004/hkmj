@@ -34,15 +34,7 @@ export default function EventsCallToAction() {
       description: 'Book your spot in upcoming programs',
       icon: <FaEdit />,
       color: 'from-blue-500 to-cyan-600',
-      link: '/register',
-      urgent: true
-    },
-    {
-      title: 'Volunteer Today',
-      description: 'Serve Krishna through community seva',
-      icon: <FaHandshake />,
-      color: 'from-green-500 to-teal-600',
-      link: '/volunteer',
+      link: '#newsletter',
       urgent: false
     },
     {
@@ -128,7 +120,7 @@ export default function EventsCallToAction() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
         >
           {quickActions.map((action, index) => (
             <motion.a
@@ -249,7 +241,7 @@ export default function EventsCallToAction() {
             <h4 className="font-bold text-saffron mb-2">Temple Hours</h4>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
               Morning: 4:30 AM - 12:00 PM<br/>
-              Evening: 4:00 PM - 9:30 PM<br/>
+              Evening: 4:00 PM - 8:30 PM<br/>
               Closed: 12:00 PM - 4:00 PM
             </p>
           </div>

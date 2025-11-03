@@ -13,7 +13,7 @@ export default function DarshanAndEvents() {
   return (
     <div className="bg-black">
       <EventsPageHeader />
-      <VirtualDarshan />
+      {/* <VirtualDarshan /> */}
       <DailyDarshanTimings />
       <EventsCalendar />
       <MajorFestivals />

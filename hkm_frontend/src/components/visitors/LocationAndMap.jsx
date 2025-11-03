@@ -25,7 +25,7 @@ export default function LocationAndMap() {
   const [mapLoaded, setMapLoaded] = useState(false);
 
   const templeLocation = {
-    address: 'Hare Krishna Marwar Mandir, Chokha Chopasni Rd, Gopal Bari, Jodhpur, Rajasthan 342024, India',
+    address: 'Chopasani, Near Vastra Mantralay, Jodhpur',
     gpsCoordinates: '26.273568206420695, 72.92895033343702',
     landmark: 'Opposite JDA Colony',
     pincode: '342024',
@@ -37,7 +37,7 @@ export default function LocationAndMap() {
     { name: 'Mehrangarh Fort', distance: '14.5 km', time: '33 mins' },
     { name: 'Jodhpur Railway Station', distance: '11.7 km', time: '26 mins' },
     { name: 'Umaid Bhawan Palace', distance: '15.6 km', time: '33 mins' },
-    { name: 'Clock Tower Market', distance: '12.7 km', time: '32 mins' }
+    // { name: 'Clock Tower Market', distance: '12.7 km', time: '32 mins' }
   ];
   const Copy = () => {
     toast.success('Coordinates Copied')
@@ -270,28 +270,6 @@ export default function LocationAndMap() {
               </div>
             </div>
 
-            {/* Quick Actions */}
-            <div className="grid grid-cols-2 gap-4">
-              <motion.button
-                className="p-4 bg-saffron-gradient text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center justify-center space-x-2 cursor-pointer outline-none"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => window.open('https://www.google.com/maps/dir/?api=1&destination=Hare+Krishna+Marwar+Mandir,+Sector+12,+Near+Blue+City+Mall,+Jodhpur,+Rajasthan+342024,+India', '_blank')}
-              >
-                <FaDirections />
-                <span>Get Directions</span>
-              </motion.button>
-              
-              <motion.button
-                className="p-4 border border-saffron text-saffron font-semibold rounded-xl hover:bg-saffron hover:text-white dark:hover:text-black transition-all duration-300 flex items-center justify-center space-x-2 cursor-pointer outline-none"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => { window.location.href = "tel:+919116139371"; }}
-              >
-                <FaPhone />
-                <span>Call Temple</span>
-              </motion.button>
-            </div>
           </motion.div>
         </div>
 

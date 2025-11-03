@@ -28,16 +28,16 @@ export default function DailyDarshanTimings() {
       description: 'Wake up the deity with devotional songs',
       significance: 'The first aarti awakens Lord Krishna and welcomes the new day with gratitude',
       icon: <FaSun />,
-      duration: '30 mins'
+      // duration: '30 mins'
     },
     {
-      name: 'Sringar Aarti',
+      name: 'Darshan Aarti',
       time: '7:30 AM',
       timeValue: 7.5 * 60,
       description: 'Morning dress and decoration of deities',
       significance: 'Adorning the deities with beautiful clothes and ornaments',
       icon: <FaCrown />,
-      duration: '45 mins'
+      // duration: '45 mins'
     },
     {
       name: 'Raj Bhog Aarti',
@@ -46,7 +46,7 @@ export default function DailyDarshanTimings() {
       description: 'Midday offering and bhog',
       significance: 'The grand afternoon meal offering to the deities',
       icon: <FaSun />,
-      duration: '1 hour'
+      // duration: '1 hour'
     },
     {
       name: 'Utthapan Aarti',
@@ -55,7 +55,7 @@ export default function DailyDarshanTimings() {
       description: 'Afternoon awakening ceremony',
       significance: 'Waking the deities from their afternoon rest',
       icon: <FaCloud />,
-      duration: '20 mins'
+      // duration: '20 mins'
     },
     {
       name: 'Sandhya Aarti',
@@ -64,16 +64,16 @@ export default function DailyDarshanTimings() {
       description: 'Evening prayers and lamp ceremony',
       significance: 'The most popular evening aarti with beautiful lamp offerings',
       icon: <BsFillSunsetFill />,
-      duration: '1 hour'
+      // duration: '1 hour'
     },
     {
       name: 'Shayan Aarti',
-      time: '9:30 PM',
-      timeValue: 21.5 * 60,
+      time: '8:15 PM',
+      timeValue: 20.25 * 60,
       description: 'Night rest ceremony',
       significance: 'Putting the deities to peaceful rest for the night',
       icon: <FaMoon />,
-      duration: '30 mins'
+      // duration: '30 mins'
     }
   ];
 
@@ -179,10 +179,6 @@ export default function DailyDarshanTimings() {
                     <div className={`text-2xl font-bold ${isNext ? 'text-saffron' : 'text-gold'}`}>
                       {aarti.time}
                     </div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1">
-                      <FaRegClock />
-                      {aarti.duration}
-                    </div>
                   </div>
                 </div>
 
@@ -239,7 +235,7 @@ export default function DailyDarshanTimings() {
                 <FaSun />
               </div>
               <h4 className="font-bold text-saffron mb-2">Morning Session</h4>
-              <p className="text-gray-700 dark:text-gray-300">5:00 AM - 12:30 PM</p>
+              <p className="text-gray-700 dark:text-gray-300">4:30 AM - 12:30 PM</p>
               <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Daily darshan and morning activities</p>
             </div>
             <div className="text-center">
@@ -247,7 +243,7 @@ export default function DailyDarshanTimings() {
                 <BsFillSunsetFill />
               </div>
               <h4 className="font-bold text-saffron mb-2">Evening Session</h4>
-              <p className="text-gray-700 dark:text-gray-300">4:00 PM - 9:30 PM</p>
+              <p className="text-gray-700 dark:text-gray-300">4:00 PM - 8:30 PM</p>
               <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Evening darshan and night aarti</p>
             </div>
           </div>

@@ -256,7 +256,7 @@ export default function VirtualDarshan() {
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-saffron font-semibold">Evening Aarti</div>
-                    <div className="text-gray-600 dark:text-gray-400 text-sm">Today at 7:00 PM</div>
+                    <div className="text-gray-600 dark:text-gray-400 text-sm">Today at 7:30 PM</div>
                   </div>
                   <div className="text-right">
                     <div className="text-gold font-bold text-lg flex items-center gap-1">
