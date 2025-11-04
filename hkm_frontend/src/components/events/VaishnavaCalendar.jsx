@@ -111,7 +111,7 @@ const VaishnavaCalendar = () => {
         </div>
 
         {/* Filter */}
-        <div className="mb-6 flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm">
+        {/* <div className="mb-6 flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm">
           <Filter className="w-5 h-5 text-orange-600" />
           <label className="font-semibold text-gray-700">Filter by Month:</label>
           <select 
@@ -125,7 +125,7 @@ const VaishnavaCalendar = () => {
               </option>
             ))}
           </select>
-        </div>
+        </div> */}
 
         {/* Calendar Table */}
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
