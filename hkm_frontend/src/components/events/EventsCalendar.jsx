@@ -22,6 +22,7 @@ import {
   FaArrowDown
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
+import VaishnavaCalendar from './VaishnavaCalendar';
 
 export default function EventsCalendar() {
   const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth());
@@ -165,7 +166,7 @@ export default function EventsCalendar() {
 
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Section Header */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -186,10 +187,12 @@ export default function EventsCalendar() {
           <p className="text-gray-700 dark:text-gray-300 text-lg max-w-3xl mx-auto">
             Stay updated with all our spiritual celebrations, community programs, and special events
           </p>
-        </motion.div>
+        </motion.div> */}
+
+        <VaishnavaCalendar/>
 
         {/* Filter Tabs */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -217,10 +220,10 @@ export default function EventsCalendar() {
               </motion.button>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Calendar Header */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -253,7 +256,7 @@ export default function EventsCalendar() {
               <span>{filteredEvents.length} events this month</span>
             </span>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Events List */}
         <div className="space-y-6">
@@ -350,7 +353,7 @@ export default function EventsCalendar() {
         </div>
 
         {/* Load More Events */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -365,7 +368,7 @@ export default function EventsCalendar() {
             <FaArrowDown />
             Load More Events
           </motion.button>
-        </motion.div>
+        </motion.div> */}
 
         {/* Additional Info */}
         <motion.div
