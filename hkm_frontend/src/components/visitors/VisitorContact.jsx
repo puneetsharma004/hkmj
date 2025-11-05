@@ -52,7 +52,7 @@ export default function VisitorContact() {
       title: 'Reception Desk',
       description: 'In-person assistance at temple entrance',
       contact: 'Temple Reception',
-      hours: 'Temple Hours: 5 AM - 9 PM',
+      hours: 'Temple Hours: 08:30 AM - 08:30 PM',
       icon: <FaBuilding />,
       color: 'from-purple-500 to-indigo-600',
       type: 'reception'

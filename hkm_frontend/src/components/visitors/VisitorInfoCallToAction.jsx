@@ -317,9 +317,7 @@ export default function VisitorInfoCallToAction() {
             </div>
             <h4 className="font-bold text-saffron mb-2">Visit Us</h4>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
-              Sector 12, Near Blue City Mall<br/>
-              Jodhpur, Rajasthan - 342001<br/>
-              India
+              Chopasani, Near Vastra Mantralay, <br />Jodhpur, RJ PIN: 342024,<br /> Nearest Landmark: Vastra Mantralay
             </p>
           </div>
           

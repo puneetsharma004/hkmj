@@ -78,7 +78,7 @@ export default function TempleTimings() {
   const specialTimings = [
     { occasion: 'Festival Days', timing: 'Extended Hours (4 AM - 10 PM)', note: 'During major festivals' },
     { occasion: 'Ekadashi (15th November 2025)', timing: 'Same as Daily Schedule', note: 'Fasting from Grains, Delicious Prasadam Distribution' },
-    { occasion: 'Janmashtami (04 September 2025)', timing: 'Full Night Open', note: 'Midnight Celebrations, Optional Fasting' },
+    { occasion: 'Janmashtami (04 September 2026)', timing: 'Full Night Open', note: 'Midnight Celebrations, Optional Fasting' },
     { occasion: 'Weekends', timing: 'Regular Schedule + Palki Utsav', note: 'Bhagavatam & Srimad Bhagavat Gita Classes for all' }
   ];
 
