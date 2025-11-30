@@ -1,8 +1,7 @@
 import { FaWhatsapp } from 'react-icons/fa';
 
 export default function WhatsAppButton() {
-  const whatsappNumber = '9191161 39371
-'; // Replace with your WhatsApp number
+  const whatsappNumber = '9191161 39371'; // Replace with your WhatsApp number
   const whatsappMessage = 'Hare Krishna! I would like to know more about your services.';
 
   const openWhatsApp = () => {
