@@ -227,3 +227,23 @@ html {
   }
 }
 
+
+.primary{
+  background: #AF1E2E;
+} 
+.secondary {
+  background: #FFFAEE;
+}
+.tertiary {
+  background: #FFFFFF;
+}
+
+.text-primary {
+  color: #AF1E2E;
+}
+.text-secondary {
+  color: #FFFAEE;
+}
+.text-tertiary {
+  color: #FFFFFF;
+}

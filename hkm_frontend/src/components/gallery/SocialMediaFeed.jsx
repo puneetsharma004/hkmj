@@ -108,19 +108,6 @@ export default function SocialMediaFeed() {
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-saffron/30 to-orange-400/30 dark:bg-orange-600 rounded-full opacity-30 dark:opacity-10 blur-3xl animate-pulse delay-1500"></div>
       </div>
 
-      {/* Spiritual Background Elements */}
-      <div className="absolute inset-0 opacity-20 dark:opacity-5">
-        <div className="absolute top-16 left-16 text-5xl text-saffron animate-pulse delay-400">
-          <FaMobileAlt />
-        </div>
-        <div className="absolute top-32 right-20 text-4xl text-gold animate-pulse delay-900">
-          <FaComments />
-        </div>
-        <div className="absolute bottom-32 left-20 text-6xl text-saffron animate-pulse delay-1300">
-          <FaTabletAlt />
-        </div>
-      </div>
-
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Section Header */}
         <motion.div
@@ -130,13 +117,6 @@ export default function SocialMediaFeed() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="flex justify-center items-center mb-6">
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-            <span className="mx-4 text-4xl text-saffron animate-pulse">
-              <FaMobileAlt />
-            </span>
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-          </div>
           
           <h2 className="text-3xl md:text-4xl font-bold gradient-text-saffron-gold mb-4">
             Follow Our Journey

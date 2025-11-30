@@ -2,6 +2,11 @@ import { motion } from 'framer-motion';
 import { BiSolidQuoteLeft } from "react-icons/bi";
 import { BiSolidQuoteRight } from "react-icons/bi";
 import { FaStar } from "react-icons/fa";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+
 export default function Testimonials() {
   const testimonials = [
     { 
@@ -68,67 +73,74 @@ export default function Testimonials() {
         </motion.div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          pagination={{ clickable: true }}
+          spaceBetween={30}
+          slidesPerView={1}
+          breakpoints={{
+            768: { slidesPerView: 2 }
+          }}
+          className="pb-12"
+        >
           {testimonials.map((testimonial, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: i * 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ 
-                y: -10,
-                transition: { duration: 0.3 }
-              }}
-              className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 p-8 rounded-2xl shadow-2xl border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-2xl hover:shadow-saffron/20 dark:hover:shadow-saffron/30 transition-all duration-300 group"
-            >
-              {/* Quote */}
-              <div className="relative mb-6">
-                <div className="absolute -top-4 -left-6 text-2xl text-saffron opacity-50 dark:opacity-30"><BiSolidQuoteLeft /></div>
-                <div className="absolute -bottom-4 -right-2 text-2xl text-saffron opacity-50 dark:opacity-30"><BiSolidQuoteRight /></div>
-                <p className="text-gray-700 dark:text-gray-100 text-lg italic leading-relaxed relative z-10 group-hover:text-gray-800 dark:group-hover:text-white transition-colors duration-300 text-justify">
-                  {testimonial.quote}
-                </p>
-              </div>
+            <SwiperSlide key={i}>
+              <div
+                    className="
+                    p-8 rounded-2xl 
+                    bg-white/20 dark:bg-white/5 
+                    border border-white/30 dark:border-white/10 
+                    backdrop-blur-xl 
+                    transition-all duration-300 
+                    hover:-translate-y-1 
+                    hover:bg-white/30 dark:hover:bg-white/10
+                    hover:border-saffron/60"
+              >
+                {/* Quote */}
+                <div className="relative mb-6">
+                  <div className="absolute -top-4 -left-6 text-2xl text-saffron opacity-50 dark:opacity-30">
+                    <BiSolidQuoteLeft />
+                  </div>
+                  <div className="absolute -bottom-4 -right-2 text-2xl text-saffron opacity-50 dark:opacity-30">
+                    <BiSolidQuoteRight />
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-100 text-lg italic leading-relaxed relative z-10">
+                    {testimonial.quote}
+                  </p>
+                </div>
 
-              {/* Rating Stars */}
-              <div className="flex justify-center mb-4">
-                {[...Array(testimonial.rating)].map((_, starIndex) => (
-                  <motion.span
-                    key={starIndex}
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: (i * 0.2) + (starIndex * 0.1) }}
-                    viewport={{ once: true }}
-                    className="text-gold text-xl mr-1 glow"
-                  >
-                    <FaStar />
-                  </motion.span>
-                ))}
-              </div>
+                {/* Stars */}
+                <div className="flex justify-center mb-4">
+                  {[...Array(testimonial.rating)].map((_, starIndex) => (
+                    <FaStar key={starIndex} className="text-gold text-xl mr-1" />
+                  ))}
+                </div>
 
-              {/* Devotee Info */}
-              <div className="flex items-center space-x-4">
-                <div className="relative">
-                  <img 
-                    src={testimonial.img} 
+                {/* Devotee Info */}
+                <div className="flex items-center space-x-4">
+                  <img
+                    src={testimonial.img}
                     alt={testimonial.name}
-                    className="w-16 h-16 rounded-full border-3 border-saffron border-opacity-60 dark:border-opacity-50 group-hover:border-opacity-100 dark:group-hover:border-opacity-80 transition-all duration-300 shadow-lg"
+                    className="w-16 h-16 rounded-full border-4 border-saffron shadow-lg"
                   />
-                  <div className="absolute inset-0 rounded-full shadow-lg group-hover:shadow-saffron/40 dark:group-hover:shadow-saffron/30 transition-shadow duration-300"></div>
-                </div>
-                
-                <div className="flex-1">
-                  <h4 className="font-bold text-gray-800 dark:text-white text-lg group-hover:text-saffron transition-colors duration-300">
-                    {testimonial.name}
-                  </h4>
-                  <p className="text-orange-600 dark:text-gold text-sm font-medium">{testimonial.role}</p>
-                  <p className="text-gray-600 dark:text-gray-400 text-xs">{testimonial.location}</p>
+                  <div>
+                    <h4 className="font-bold text-gray-800 dark:text-white text-lg">
+                      {testimonial.name}
+                    </h4>
+                    <p className="text-orange-600 dark:text-gold text-sm font-medium">
+                      {testimonial.role}
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-400 text-xs">
+                      {testimonial.location}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </motion.div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
+
 
         {/* Call to Action */}
         <motion.div

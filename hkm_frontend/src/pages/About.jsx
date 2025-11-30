@@ -16,7 +16,6 @@ export default function About() {
       <SpiritualLineage />
       <TempleArchitecture />
       <CulturalImportance />
-      <QuickLinks />
     </div>
   );
 }

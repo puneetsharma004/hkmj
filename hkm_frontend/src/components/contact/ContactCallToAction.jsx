@@ -87,22 +87,6 @@ export default function ContactCallToAction() {
         <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-gradient-to-r from-gold/20 to-saffron/20 dark:bg-gold rounded-full opacity-25 dark:opacity-10 blur-3xl animate-pulse delay-500 transform -translate-x-1/2 -translate-y-1/2"></div>
       </div>
 
-      {/* Spiritual Background Elements */}
-      <div className="absolute inset-0 opacity-20 dark:opacity-5">
-        <div className="absolute top-16 left-16 text-6xl text-saffron animate-pulse delay-500">
-          <FaComments />
-        </div>
-        <div className="absolute top-32 right-20 text-4xl text-gold animate-pulse delay-1000">
-          <HiSparkles />
-        </div>
-        <div className="absolute bottom-32 left-20 text-5xl text-saffron animate-pulse delay-1500">
-          <FaPray />
-        </div>
-        <div className="absolute bottom-16 right-16 text-4xl text-gold animate-pulse delay-200">
-          <FaPhone />
-        </div>
-      </div>
-
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Main CTA Header */}
         <motion.div

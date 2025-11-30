@@ -60,7 +60,7 @@ export default function SocialMediaLinks() {
       color: 'from-green-500 to-green-600',
       followers: '5K',
       description: 'Direct updates and community broadcasts',
-      url: 'https://wa.me/919876543210',
+      url: 'https://wa.me/9191161 39371',
       posts: 'Announcements'
     },
     {
@@ -109,18 +109,6 @@ export default function SocialMediaLinks() {
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-r from-purple-400/25 to-indigo-400/25 dark:bg-purple-600 rounded-full opacity-30 dark:opacity-10 blur-3xl animate-pulse delay-1500"></div>
       </div>
 
-      {/* Spiritual Background Elements */}
-      <div className="absolute inset-0 opacity-20 dark:opacity-5">
-        <div className="absolute top-16 left-16 text-5xl text-saffron animate-pulse delay-400">
-          <FaMobileAlt />
-        </div>
-        <div className="absolute top-32 right-20 text-4xl text-gold animate-pulse delay-900">
-          <FaComments />
-        </div>
-        <div className="absolute bottom-32 left-20 text-6xl text-saffron animate-pulse delay-1300">
-          <FaShare />
-        </div>
-      </div>
 
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Section Header */}
@@ -131,13 +119,6 @@ export default function SocialMediaLinks() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="flex justify-center items-center mb-6">
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-            <span className="mx-4 text-4xl text-saffron animate-pulse">
-              <FaMobileAlt />
-            </span>
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-          </div>
           
           <h2 className="text-3xl md:text-4xl font-bold gradient-text-saffron-gold mb-4">
             Connect With Us Online

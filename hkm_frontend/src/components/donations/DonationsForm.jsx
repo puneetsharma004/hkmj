@@ -298,17 +298,7 @@ export default function DonationForm() {
         <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-purple-400/25 to-indigo-400/25 dark:bg-purple-600 rounded-full opacity-30 dark:opacity-15 blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="absolute inset-0 opacity-20 dark:opacity-5">
-        <div className="absolute top-16 left-16 text-5xl text-saffron animate-pulse delay-500">
-          <FaFileAlt />
-        </div>
-        <div className="absolute top-32 right-20 text-4xl text-gold animate-pulse delay-1000">
-          <FaCreditCard />
-        </div>
-        <div className="absolute bottom-32 left-20 text-6xl text-saffron animate-pulse delay-1500">
-          <HiSparkles />
-        </div>
-      </div>
+
 
       <div className="relative max-w-4xl mx-auto z-10">
         {/* Section Header */}
@@ -319,14 +309,6 @@ export default function DonationForm() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="flex justify-center items-center mb-6">
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-            <span className="mx-4 text-4xl text-saffron animate-pulse">
-              <FaFileAlt />
-            </span>
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-          </div>
-          
           <h2 className="text-3xl md:text-4xl font-bold gradient-text-saffron-gold mb-4">
             Make Your Donation
           </h2>
@@ -453,7 +435,8 @@ export default function DonationForm() {
                         className={`flex-1 px-4 py-3 bg-white dark:bg-gray-800/50 border border-l-0 rounded-r-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-saffron focus:ring-1 focus:ring-saffron transition-all duration-300 ${
                           errors.phone ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
                         }`}
-                        placeholder="9876543210"
+                        placeholder="91161 39371
+"
                         maxLength="10"
                       />
                     </div>

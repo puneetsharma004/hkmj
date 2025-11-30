@@ -57,21 +57,7 @@ export default function GalleryCallToAction() {
         <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-gradient-to-r from-gold/20 to-saffron/20 dark:bg-gold rounded-full opacity-25 dark:opacity-10 blur-3xl animate-pulse delay-500 transform -translate-x-1/2 -translate-y-1/2"></div>
       </div>
 
-      {/* Spiritual Background Elements */}
-      <div className="absolute inset-0 opacity-20 dark:opacity-5">
-        <div className="absolute top-16 left-16 text-6xl text-saffron animate-pulse delay-500">
-          <FaCamera />
-        </div>
-        <div className="absolute top-32 right-20 text-4xl text-gold animate-pulse delay-1000">
-          <HiSparkles />
-        </div>
-        <div className="absolute bottom-32 left-20 text-5xl text-saffron animate-pulse delay-1500">
-          <FaPalette />
-        </div>
-        <div className="absolute bottom-16 right-16 text-4xl text-gold animate-pulse delay-200">
-          <HiSparkles />
-        </div>
-      </div>
+
 
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Main CTA Header */}
@@ -82,13 +68,6 @@ export default function GalleryCallToAction() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="flex justify-center items-center mb-8">
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-32"></div>
-            <span className="mx-6 text-5xl text-saffron animate-pulse">
-              <FaPalette />
-            </span>
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-32"></div>
-          </div>
           
           <h2 className="text-4xl md:text-5xl font-bold gradient-text-saffron-gold mb-6">
             Be Part of Our Story

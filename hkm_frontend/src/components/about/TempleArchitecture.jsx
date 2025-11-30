@@ -48,22 +48,6 @@ export default function TempleArchitecture() {
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-purple-400/25 to-indigo-400/25 dark:bg-purple-600 rounded-full opacity-30 dark:opacity-10 blur-3xl animate-pulse delay-300"></div>
       </div>
 
-      {/* Spiritual Background Elements */}
-      <div className="absolute inset-0 opacity-20 dark:opacity-5">
-        <div className="absolute top-16 left-16 text-5xl text-saffron animate-pulse delay-500">
-          <FaTools />
-        </div>
-        <div className="absolute top-32 right-20 text-4xl text-gold animate-pulse delay-1000">
-          <FaPaintBrush />
-        </div>
-        <div className="absolute bottom-32 left-20 text-6xl text-saffron animate-pulse delay-1500">
-          <FaUniversity />
-        </div>
-        <div className="absolute bottom-16 right-16 text-4xl text-gold animate-pulse delay-200">
-          <HiSparkles />
-        </div>
-      </div>
-
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Section Header */}
         <motion.div
@@ -73,14 +57,6 @@ export default function TempleArchitecture() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="flex justify-center items-center mb-6">
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-            <span className="mx-4 text-4xl text-saffron animate-pulse">
-              <FaUniversity />
-            </span>
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-          </div>
-          
           <h2 className="text-3xl md:text-4xl font-bold gradient-text-saffron-gold mb-4">
             Temple Architecture
           </h2>
@@ -120,41 +96,6 @@ export default function TempleArchitecture() {
             </div>
           </div>
         </motion.div>
-
-        {/* Architectural Features Grid */}
-       {/* <div className="grid md:grid-cols-2 gap-8">
-          {architecturalFeatures.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl overflow-hidden border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-2xl hover:shadow-saffron/20 transition-all duration-300 group"
-            >
-              //image
-              <div className="relative overflow-hidden h-48">
-                <img 
-                  src={feature.image} 
-                  alt={feature.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-              </div>
-
-              //content
-              <div className="p-6">
-                <h4 className="font-bold text-gray-800 dark:text-white text-xl mb-3 group-hover:text-saffron transition-colors duration-300">
-                  {feature.title}
-                </h4>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-100 transition-colors duration-300">
-                  {feature.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>*/}
 
         {/* Special Features */}
         <motion.div

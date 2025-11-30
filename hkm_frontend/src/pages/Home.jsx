@@ -21,7 +21,6 @@ function Home() {
       <EventsAndDarshan />
       <GalleryPreview />
       <Testimonials />
-      <QuickLinks />
       <Announcements />
     </>
   );

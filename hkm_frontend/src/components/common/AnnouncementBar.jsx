@@ -77,7 +77,7 @@ export default function Announcements() {
             </div>
 
             {/* Main Content */}
-            <div className="flex-1 flex items-center justify-center min-h-[60px]">
+            <div className="flex-1 flex items-center justify-center min-h-[40px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentAnnouncement}
@@ -87,12 +87,6 @@ export default function Announcements() {
                   transition={{ duration: 0.6, ease: 'easeOut' }}
                   className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-6 text-center"
                 >
-                  {/* Icon
-                  {currentItem.icon && (
-                    <div className="hidden md:block relative bg-gradient-to-br from-gold to-saffron p-3 rounded-full shadow-2xl">
-                      <span className="text-2xl">{currentItem.icon}</span>
-                    </div>
-                  )} */}
 
                   {/* Text */}
                   <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">

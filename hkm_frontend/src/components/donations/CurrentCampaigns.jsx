@@ -108,21 +108,6 @@ export default function CurrentCampaigns() {
         <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-orange-400/30 to-yellow-400/30 dark:bg-orange-600 rounded-full opacity-30 dark:opacity-15 blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="absolute inset-0 opacity-20 dark:opacity-5">
-        <div className="absolute top-16 left-16 text-5xl text-orange-500 animate-pulse delay-600">
-          <FaBullseye />
-        </div>
-        <div className="absolute top-32 right-20 text-4xl text-yellow-500 animate-pulse delay-1100">
-          <FaChartLine />
-        </div>
-        <div className="absolute bottom-32 left-20 text-6xl text-orange-500 animate-pulse delay-400">
-          <FaTools />
-        </div>
-        <div className="absolute bottom-16 right-16 text-4xl text-yellow-500 animate-pulse delay-900">
-          <FaBolt />
-        </div>
-      </div>
-
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Section Header */}
         <motion.div
@@ -132,14 +117,6 @@ export default function CurrentCampaigns() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="flex justify-center items-center mb-6">
-            <div className="h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent w-24"></div>
-            <span className="mx-4 text-4xl text-orange-500 animate-pulse">
-              <FaBullseye />
-            </span>
-            <div className="h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent w-24"></div>
-          </div>
-          
           <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-orange-600 to-yellow-600 bg-clip-text text-transparent mb-4">
             Current Campaigns
           </h2>

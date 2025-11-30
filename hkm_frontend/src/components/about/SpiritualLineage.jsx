@@ -29,30 +29,6 @@ export default function SpiritualLineage() {
 
         fetchSpiritualTeachers();
       }, []);
-  
-  // const spiritualTeachers = [
-  //   {
-  //     name: 'A.C. Bhaktivedanta Swami Prabhupada',
-  //     title: 'Founder-Acharya of ISKCON',
-  //     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face',
-  //     description: 'The visionary who brought Krishna consciousness to the Western world and established ISKCON globally.',
-  //     icon: <FaCrown />
-  //   },
-  //   {
-  //     name: 'His Holiness Radhanath Swami',
-  //     title: 'Senior Spiritual Guide',
-  //     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face',
-  //     description: 'Renowned spiritual teacher and author who has guided countless souls on the path of devotion.',
-  //     icon: <FaHeart />
-  //   },
-  //   {
-  //     name: 'Local Temple President',
-  //     title: 'Temple Administrator',
-  //     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face',
-  //     description: 'Dedicated leader overseeing daily temple operations and community spiritual programs.',
-  //     icon: <FaGraduationCap />
-  //   }
-  // ];
 
   return (
     <section className="relative py-16 px-4 overflow-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 dark:bg-black">
@@ -74,13 +50,6 @@ export default function SpiritualLineage() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="flex justify-center items-center mb-6">
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-            <span className="mx-4 text-4xl text-saffron animate-pulse">
-              <FaGlobeAmericas />
-            </span>
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-          </div>
           
           <h2 className="text-3xl md:text-4xl font-bold gradient-text-saffron-gold mb-4">
             Spiritual Lineage
@@ -134,40 +103,6 @@ export default function SpiritualLineage() {
             </div>
           </div>
         </motion.div>
-
-        {/* Spiritual Teachers
-        <div className="grid md:grid-cols-3 gap-8">
-          {spiritualTeachers.map((teacher, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10 }}
-              className="bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 rounded-2xl shadow-2xl p-6 border border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 backdrop-blur-xl hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50 hover:shadow-2xl hover:shadow-saffron/20 transition-all duration-300 group text-center"
-            >
-              <div className="relative mb-6">
-                <div className="relative">
-                  <img
-                    src={teacher.image}
-                    alt={teacher.name}
-                    className="w-24 h-24 rounded-full mx-auto border-4 border-saffron border-opacity-50 group-hover:border-opacity-80 transition-all duration-300 shadow-lg"
-                  />
-                </div>
-                <div className="absolute inset-0 rounded-full group-hover:shadow-saffron/30 transition-shadow duration-300"></div>
-              </div>
-              
-              <h4 className="font-bold text-gray-800 dark:text-white text-lg mb-2 group-hover:text-saffron transition-colors duration-300">
-                {teacher.name}
-              </h4>
-              <p className="text-gold text-sm font-medium mb-3">{teacher.role}</p>
-              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-100 transition-colors duration-300">
-                {teacher.description}
-              </p>
-            </motion.div>
-          ))}
-        </div> */}
 
         {/* Connection Message */}
         <motion.div

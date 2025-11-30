@@ -119,18 +119,6 @@ export default function Facilities() {
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-r from-purple-400/25 to-indigo-400/25 dark:bg-purple-600 rounded-full opacity-30 dark:opacity-10 blur-3xl animate-pulse delay-1500"></div>
       </div>
 
-      {/* Spiritual Background Elements */}
-      <div className="absolute inset-0 opacity-20 dark:opacity-5">
-        <div className="absolute top-16 left-16 text-5xl text-saffron animate-pulse delay-400">
-          <FaBuilding />
-        </div>
-        <div className="absolute top-32 right-20 text-4xl text-gold animate-pulse delay-900">
-          <FaTools />
-        </div>
-        <div className="absolute bottom-32 left-20 text-6xl text-saffron animate-pulse delay-1300">
-          <FaCog />
-        </div>
-      </div>
 
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Section Header */}
@@ -140,15 +128,7 @@ export default function Facilities() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center mb-16"
-        >
-          <div className="flex justify-center items-center mb-6">
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-            <span className="mx-4 text-4xl text-saffron animate-pulse">
-              <FaBuilding />
-            </span>
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-          </div>
-          
+        >  
           <h2 className="text-3xl md:text-4xl font-bold gradient-text-saffron-gold mb-4">
             Temple Facilities
           </h2>
@@ -203,41 +183,6 @@ export default function Facilities() {
             </motion.div>
           ))}
         </div>
-
-        {/* Accessibility Features */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h3 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-8">Accessibility & Special Care</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {accessibilityFeatures.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="rounded-xl p-6 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 text-center shadow-lg"
-              >
-                <div className="text-4xl mb-4 text-saffron flex justify-center">{feature.icon}</div>
-                <h4 className="font-bold text-gray-800 dark:text-white mb-3">{feature.feature}</h4>
-                <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{feature.description}</p>
-                
-                <div className="space-y-1">
-                  {feature.locations.map((location, locationIndex) => (
-                    <div key={locationIndex} className="text-xs text-saffron bg-orange-100/20 dark:bg-saffron/10 px-2 py-1 rounded">
-                      {location}
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div> */}
 
         {/* Additional Services */}
         <motion.div

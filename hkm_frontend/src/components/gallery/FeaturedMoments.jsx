@@ -91,22 +91,6 @@ export default function FeaturedMoments() {
         <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-purple-400/25 to-indigo-400/25 dark:bg-purple-600 rounded-full opacity-30 dark:opacity-15 blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      {/* Spiritual Background Elements */}
-      <div className="absolute inset-0 opacity-20 dark:opacity-5">
-        <div className="absolute top-16 left-16 text-5xl text-saffron animate-pulse delay-600">
-          <FaStar />
-        </div>
-        <div className="absolute top-32 right-20 text-4xl text-gold animate-pulse delay-1100">
-          <FaStar />
-        </div>
-        <div className="absolute bottom-32 left-20 text-6xl text-saffron animate-pulse delay-400">
-          <HiSparkles />
-        </div>
-        <div className="absolute bottom-16 right-16 text-4xl text-gold animate-pulse delay-900">
-          <HiSparkles />
-        </div>
-      </div>
-
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Section Header */}
         <motion.div

@@ -11,9 +11,6 @@ import {
   FaMapMarkerAlt, 
   FaCalendarAlt, 
   FaGift, 
-  FaPen, 
-  FaUserFriends,
-  FaRupeeSign
 } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
 import { BiSolidDonateHeart } from "react-icons/bi";
@@ -83,19 +80,6 @@ export default function DonorTestimonials() {
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-r from-purple-400/25 to-indigo-400/25 dark:bg-purple-600 rounded-full opacity-30 dark:opacity-10 blur-3xl animate-pulse delay-1500"></div>
       </div>
 
-      {/* Spiritual Background Elements */}
-      <div className="absolute inset-0 opacity-20 dark:opacity-5">
-        <div className="absolute top-16 left-16 text-5xl text-saffron animate-pulse delay-400">
-          <FaComments />
-        </div>
-        <div className="absolute top-32 right-20 text-4xl text-gold animate-pulse delay-900">
-          <FaStar />
-        </div>
-        <div className="absolute bottom-32 left-20 text-6xl text-saffron animate-pulse delay-1300">
-          <FaHeart />
-        </div>
-      </div>
-
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Section Header */}
         <motion.div
@@ -105,14 +89,6 @@ export default function DonorTestimonials() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="flex justify-center items-center mb-6">
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-            <span className="mx-4 text-4xl text-saffron animate-pulse">
-              <FaComments />
-            </span>
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-          </div>
-          
           <h2 className="text-3xl md:text-4xl font-bold gradient-text-saffron-gold mb-4">
             What Our Donors Say
           </h2>
@@ -120,32 +96,6 @@ export default function DonorTestimonials() {
             Hear from our beloved donor community about their experience contributing to our spiritual mission
           </p>
         </motion.div>
-
-        {/* Donor Stats */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
-        >
-          {donorStats.map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="text-center p-6 bg-white/10 dark:bg-gradient-to-br dark:from-purple-900/80 dark:to-indigo-900/80 rounded-xl border border-orange-200 dark:border-gold border-opacity-60 dark:border-opacity-20 backdrop-blur-sm shadow-lg hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-40 transition-all duration-300 group"
-            >
-              <div className="text-4xl mb-3 text-saffron group-hover:scale-110 transition-transform duration-300 flex justify-center items-center">
-                {stat.icon}
-              </div>
-              <div className="text-2xl font-bold text-saffron glow mb-2">{stat.number}</div>
-              <div className="text-gray-600 dark:text-gray-300 text-sm">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div> */}
 
         {/* Testimonials Grid */}
         <div className="grid lg:grid-cols-2 gap-8">
@@ -213,58 +163,9 @@ export default function DonorTestimonials() {
                   </div>
                 </div>
               </div>
-
-              {/* Rating
-              <div className="flex items-center justify-center mt-4 space-x-1">
-                {[...Array(5)].map((_, starIndex) => (
-                  <motion.span
-                    key={starIndex}
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: (index * 0.1) + (starIndex * 0.05) }}
-                    viewport={{ once: true }}
-                    className="text-gold text-lg"
-                  >
-                    <FaStar />
-                  </motion.span>
-                ))}
-              </div> */}
             </motion.div>
           ))}
         </div>
-
-        {/* Call to Share Experience */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-16 bg-saffron/10 rounded-2xl p-8 border border-saffron/40 dark:border-saffron/20 border-opacity-60 dark:border-opacity-100 backdrop-blur-sm text-center shadow-lg"
-        >
-          <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">Share Your Donation Experience</h3>
-          <p className="text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-            Your story can inspire others to join our mission. Share how donating to the temple has impacted your life and helped our community.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.button
-              className="px-6 py-3 bg-saffron-gradient text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-saffron/30 transition-all duration-300 flex items-center justify-center gap-2 outline-none"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <FaPen />
-              Share Your Story
-            </motion.button>
-            <motion.button
-              className="px-6 py-3 border border-saffron text-saffron rounded-lg hover:bg-saffron hover:text-white dark:hover:text-black transition-all duration-300 flex items-center justify-center gap-2 outline-none"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <FaUserFriends />
-              Join Donor Community
-            </motion.button>
-          </div>
-        </motion.div> */}
 
         {/* Trust Indicators */}
         <motion.div

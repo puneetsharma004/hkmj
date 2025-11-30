@@ -52,14 +52,6 @@ export default function EventsAndDarshan() {
         <div className="absolute bottom-32 left-32 w-96 h-96 bg-gradient-to-r from-amber-400/25 to-yellow-400/25 dark:bg-purple-600 rounded-full opacity-30 dark:opacity-15 blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      {/* Spiritual Background Elements */}
-      <div className="absolute inset-0 opacity-20 dark:opacity-5">
-        <div className="absolute top-20 left-16 text-5xl text-saffron animate-pulse delay-300">🎭</div>
-        <div className="absolute top-40 right-16 text-4xl text-gold animate-pulse delay-700">⏰</div>
-        <div className="absolute bottom-40 left-20 text-6xl text-saffron animate-pulse delay-1100">🏛️</div>
-        <div className="absolute bottom-20 right-20 text-4xl text-gold animate-pulse delay-1500">🔔</div>
-      </div>
-
       <div className="relative max-w-6xl mx-auto z-10">
         {/* upcomingEvents Section */}
         <motion.div

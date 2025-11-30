@@ -23,7 +23,6 @@ export default function Donations() {
       {/* <TaxBenefits /> */}
       <DonorTestimonials />
       <DonationsCallToAction />
-      <QuickLinks />
     </div>
   );
 }

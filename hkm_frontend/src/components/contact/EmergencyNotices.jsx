@@ -108,18 +108,6 @@ export default function EmergencyNotices() {
         <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-purple-400/25 to-indigo-400/25 dark:bg-purple-600 rounded-full opacity-30 dark:opacity-15 blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      {/* Spiritual Background Elements */}
-      <div className="absolute inset-0 opacity-20 dark:opacity-5">
-        <div className="absolute top-16 left-16 text-5xl text-saffron animate-pulse delay-500">
-          <FaExclamationTriangle />
-        </div>
-        <div className="absolute top-32 right-20 text-4xl text-gold animate-pulse delay-1000">
-          <FaBullhorn />
-        </div>
-        <div className="absolute bottom-32 left-20 text-6xl text-saffron animate-pulse delay-1500">
-          <FaShieldAlt />
-        </div>
-      </div>
 
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Section Header */}
@@ -130,13 +118,6 @@ export default function EmergencyNotices() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="flex justify-center items-center mb-6">
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-            <span className="mx-4 text-4xl text-saffron animate-pulse">
-              <FaExclamationTriangle />
-            </span>
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-          </div>
           
           <h2 className="text-3xl md:text-4xl font-bold gradient-text-saffron-gold mb-4">
             Emergency Contacts & Important Notices

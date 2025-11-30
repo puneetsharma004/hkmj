@@ -72,16 +72,7 @@ const Loader = () => {
           <div className="text-center relative z-10">
 
             {/* Decorative Elements */}
-            <div className="flex items-center justify-center mb-6">
-              <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-2xl text-gold mr-4"
-              >
-                <GiLotus/>
-              </motion.div>
-              
+            <div className="flex items-center justify-center mb-6">          
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -90,15 +81,6 @@ const Loader = () => {
               >
                 Welcome
               </motion.h2>
-              
-              <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-2xl text-gold ml-4"
-              >
-                <GiLotus/>
-              </motion.div>
             </div>
 
             {/* Temple Name */}
@@ -108,11 +90,9 @@ const Loader = () => {
               transition={{ delay: 0.8, duration: 0.8 }}
               className="flex items-center justify-center"
             >
-              <GiByzantinTemple className="text-saffron text-xl mr-2" />
               <p className="text-white text-2xl font-medium tracking-wide">
                 Hare Krishna Marwar Mandir
               </p>
-              <GiByzantinTemple className="text-saffron text-2xl ml-2" />
             </motion.div>
           </div>
 

@@ -49,74 +49,6 @@ export default function VideoGallery() {
     { id: ' ', name: 'Community Outreach', icon: <FaHandshake /> }
   ];
 
-  // const videos = [
-  //   {
-  //     id: 1,
-  //     title: 'Janmashtami 2024 Grand Celebration',
-  //     description: 'Complete coverage of Lord Krishna\'s birth celebration with midnight aarti',
-  //     thumbnail: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop',
-  //     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-  //     duration: '45:30',
-  //     category: 'festivals',
-  //     views: '15K',
-  //     date: 'Aug 2024'
-  //   },
-  //   {
-  //     id: 2,
-  //     title: 'Morning Kirtan - Hare Krishna Mahamantra',
-  //     description: 'Beautiful morning devotional singing session',
-  //     thumbnail: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop',
-  //     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-  //     duration: '25:15',
-  //     category: 'kirtans',
-  //     views: '8K',
-  //     date: 'Sep 2024'
-  //   },
-  //   {
-  //     id: 3,
-  //     title: 'Bhagavad Gita Chapter 2 - Complete Lecture',
-  //     description: 'In-depth explanation of Krishna\'s teachings on the soul',
-  //     thumbnail: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop',
-  //     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-  //     duration: '1:15:45',
-  //     category: 'teachings',
-  //     views: '12K',
-  //     date: 'Sep 2024'
-  //   },
-  //   {
-  //     id: 4,
-  //     title: 'Holi Festival 2024 - Colors of Joy',
-  //     description: 'Vibrant celebration of the festival of colors',
-  //     thumbnail: 'https://images.unsplash.com/photo-1583211892916-5e38c6ee3297?w=400&h=300&fit=crop',
-  //     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-  //     duration: '32:20',
-  //     category: 'festivals',
-  //     views: '20K',
-  //     date: 'Mar 2024'
-  //   },
-  //   {
-  //     id: 5,
-  //     title: 'Community Food Distribution Drive',
-  //     description: 'Serving prasadam to the underprivileged community',
-  //     thumbnail: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop',
-  //     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-  //     duration: '18:10',
-  //     category: 'community',
-  //     views: '5K',
-  //     date: 'Aug 2024'
-  //   },
-  //   {
-  //     id: 6,
-  //     title: 'Evening Sandhya Aarti - Complete Ceremony',
-  //     description: 'Daily evening worship with lamp offerings',
-  //     thumbnail: 'https://images.unsplash.com/photo-1582555172866-f73bb12ba8c6?w=400&h=300&fit=crop',
-  //     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-  //     duration: '28:45',
-  //     category: 'festivals',
-  //     views: '18K',
-  //     date: 'Sep 2024'
-  //   }
-  // ];
 
   const filteredVideos = selectedCategory === 'all' 
     ? videos 
@@ -133,19 +65,6 @@ export default function VideoGallery() {
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-r from-purple-400/25 to-indigo-400/25 dark:bg-purple-600 rounded-full opacity-30 dark:opacity-10 blur-3xl animate-pulse delay-1500"></div>
       </div>
 
-      {/* Spiritual Background Elements */}
-      <div className="absolute inset-0 opacity-20 dark:opacity-5">
-        <div className="absolute top-16 left-16 text-5xl text-saffron animate-pulse delay-400">
-          <FaVideo />
-        </div>
-        <div className="absolute top-32 right-20 text-4xl text-gold animate-pulse delay-900">
-          <FaFilm />
-        </div>
-        <div className="absolute bottom-32 left-20 text-6xl text-saffron animate-pulse delay-1300">
-          <FaPlay />
-        </div>
-      </div>
-
       <div className="relative max-w-7xl mx-auto z-10">
         {/* Section Header */}
         <motion.div
@@ -155,13 +74,6 @@ export default function VideoGallery() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="flex justify-center items-center mb-6">
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-            <span className="mx-4 text-4xl text-saffron animate-pulse">
-              <FaVideo />
-            </span>
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-24"></div>
-          </div>
           
           <h2 className="text-3xl md:text-4xl font-bold gradient-text-saffron-gold mb-4">
             Video Gallery

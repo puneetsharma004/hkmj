@@ -347,35 +347,9 @@ export default function Footer() {
             <motion.div className="mb-2 md:mb-0" variants={itemVariants}>
               <p>© {currentYear} Hare Krishna Marwar Mandir. All rights reserved.</p>
             </motion.div>
-            <motion.div 
-              className="flex items-center space-x-1"
-              variants={itemVariants}
-            >
-              <span>Made with</span>
-              <motion.span 
-                className="text-red-500 dark:text-red-400"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.8, 1, 0.8]
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <FaHeart onClick={() => window.location.href = "https://www.youtube.com/channel/UC4Jr9xeXapc8fXb9N1fiXnw"} />
-              </motion.span>
-              <span>and devotion for Lord Krishna</span>
-            </motion.div>
-          </motion.div>
-          
-          {/* Additional Links */}
-          <motion.div 
-            className="text-center mt-3 pt-3 border-t border-orange-300/30 dark:border-purple-700/30"
-            variants={itemVariants}
-          >
-            <motion.div 
+
+            {/* Additional Links */}
+           <motion.div 
               className="flex justify-center space-x-4 text-xs text-gray-600 dark:text-gray-300"
               variants={containerVariants}
             >
@@ -394,6 +368,9 @@ export default function Footer() {
               ))}
             </motion.div>
           </motion.div>
+          
+          
+
         </div>
       </motion.div>
     </motion.footer>

@@ -6,8 +6,6 @@ import Gallery from './pages/Gallery';
 import Donations from './pages/Donations';
 import VisitorInfo from './pages/VisitorInfo';
 import Contact from './pages/Contact';
-import Blog from './pages/Blog';
-import Volunteer from './pages/Volunteer';
 import Loader from './components/common/Loader';
 import Layout from './components/Layout.jsx';
 import ReactLenis from 'lenis/react';
@@ -47,8 +45,6 @@ function App() {
           <Route path="/donations" element={<Donations />} />
           <Route path="/visitor-info" element={<VisitorInfo />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/volunteer" element={<Volunteer />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
         </Routes>
       </Layout>

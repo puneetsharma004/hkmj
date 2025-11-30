@@ -95,22 +95,6 @@ export default function VisitorInfoCallToAction() {
         <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-gradient-to-r from-gold/20 to-saffron/20 dark:bg-gold rounded-full opacity-30 dark:opacity-10 blur-3xl animate-pulse delay-500 transform -translate-x-1/2 -translate-y-1/2"></div>
       </div>
 
-      {/* Spiritual Background Elements */}
-      <div className="absolute inset-0 opacity-20 dark:opacity-5">
-        <div className="absolute top-16 left-16 text-6xl text-saffron animate-pulse delay-500">
-          <FaDoorOpen />
-        </div>
-        <div className="absolute top-32 right-20 text-4xl text-gold animate-pulse delay-1000">
-          <HiSparkles />
-        </div>
-        <div className="absolute bottom-32 left-20 text-5xl text-saffron animate-pulse delay-1500">
-          <FaPrayingHands />
-        </div>
-        <div className="absolute bottom-16 right-16 text-4xl text-gold animate-pulse delay-200">
-          <span>💫</span>
-        </div>
-      </div>
-
       <div className="relative max-w-6xl mx-auto z-10">
         {/* Main CTA Header */}
         <motion.div
@@ -119,15 +103,7 @@ export default function VisitorInfoCallToAction() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center mb-16"
-        >
-          <div className="flex justify-center items-center mb-8">
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-32"></div>
-            <span className="mx-6 text-5xl text-saffron animate-pulse">
-              <FaDoorOpen />
-            </span>
-            <div className="h-px bg-gradient-to-r from-transparent via-saffron to-transparent w-32"></div>
-          </div>
-          
+        >  
           <h2 className="text-4xl md:text-5xl font-bold gradient-text-saffron-gold mb-6">
             Ready to Visit Us?
           </h2>
@@ -214,94 +190,6 @@ export default function VisitorInfoCallToAction() {
             </motion.a>
           ))}
         </motion.div>
-
-        {/* Visit Packages */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h3 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-8">Choose Your Visit Experience</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {visitingPackages.map((pkg, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className={`rounded-2xl p-6 border backdrop-blur-xl transition-all duration-300 group shadow-xl ${
-                  index === 1 
-                    ? 'bg-gradient-to-br from-saffron/20 to-gold/20 dark:from-saffron/20 dark:to-gold/20 border-saffron border-opacity-80 dark:border-opacity-60' 
-                    : 'bg-white/10 dark:bg-gradient-to-br dark:from-gray-900/80 dark:to-black/80 border-orange-200 dark:border-purple-400 border-opacity-60 dark:border-opacity-30 hover:border-saffron hover:border-opacity-80 dark:hover:border-opacity-50'
-                }`}
-              >
-                {index === 1 && (
-                  <div className="text-center mb-4">
-                    <span className="bg-saffron text-white font-bold px-3 py-1 rounded-full text-xs flex items-center justify-center gap-1 mx-auto w-fit">
-                      <FaStar />
-                      RECOMMENDED
-                    </span>
-                  </div>
-                )}
-
-                <div className="text-center mb-6">
-                  <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-2 group-hover:text-saffron transition-colors duration-300">
-                    {pkg.name}
-                  </h4>
-                  <div className="text-saffron font-semibold mb-1 flex items-center justify-center gap-1">
-                    <FaClock />
-                    {pkg.duration}
-                  </div>
-                  <div className="text-2xl font-bold text-gold">{pkg.price}</div>
-                </div>
-
-                <div className="space-y-4 mb-6">
-                  <div>
-                    <h5 className="font-semibold text-gray-800 dark:text-white mb-2 flex items-center gap-2">
-                      <FaGift />
-                      Includes:
-                    </h5>
-                    <ul className="space-y-1">
-                      {pkg.includes.map((item, itemIndex) => (
-                        <li key={itemIndex} className="flex items-center space-x-2">
-                          <FaCheckCircle className="text-saffron" />
-                          <span className="text-gray-600 dark:text-gray-300 text-sm">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <span className="text-gray-500 dark:text-gray-400">Timing:</span>
-                      <div className="text-gray-800 dark:text-white font-semibold">{pkg.timing}</div>
-                    </div>
-                    <div>
-                      <span className="text-gray-500 dark:text-gray-400">Best for:</span>
-                      <div className="text-gray-800 dark:text-white font-semibold">{pkg.suitable}</div>
-                    </div>
-                  </div>
-                </div>
-
-                <motion.button
-                  className={`w-full font-bold py-3 rounded-lg transition-all duration-300 ${
-                    index === 1
-                      ? 'bg-saffron-gradient text-white hover:shadow-lg hover:shadow-saffron/30'
-                      : 'border border-saffron text-saffron hover:bg-saffron hover:text-white dark:hover:text-black'
-                  }`}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Choose This Experience
-                </motion.button>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div> */}
 
         {/* Contact Information */}
         <motion.div
